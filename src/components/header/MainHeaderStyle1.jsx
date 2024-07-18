@@ -38,7 +38,7 @@ const MainHeaderStyle1 = () => {
                                     <div className="attr-nav">
                                         <ul>
                                             <li className="button">
-                                                <Link href="/contact-us">Get consultant</Link>
+                                                <Link href="/contact-us">Contact Us</Link>
                                             </li>
                                         </ul>
                                     </div>

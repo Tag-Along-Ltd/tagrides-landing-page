@@ -10,7 +10,7 @@ const ChooseStyle1 = () => {
                 <div className="shape-left-top">
                     <Image src={shape17} alt="Shape" />
                 </div>
-                <div className="text-invisible">Consua</div>
+                <div className="text-invisible">Tag-Rides</div>
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6 pr-80 pr-md-15 pr-xs-15">
@@ -18,15 +18,15 @@ const ChooseStyle1 = () => {
                                 <h2 className="title mb-35">Be at the forefront of the new innovation</h2>
                                 <ul className="list-item">
                                     <li className="wow fadeInUp">
-                                        <h4>Best Business Consulting </h4>
+                                        <h4>Join Tag-Rides to Revolutionize Urban Mobility </h4>
                                         <p>
-                                            Seeing rather her you not esteem men settle genius excuse. International Deal say over you age from. Comparison new ham melancholy son themselves.
+                                            Soon, you'll enjoy seamless, efficient, and affordable rides designed for your convenience. Join us on our journey to redefine ride-sharing and be among the first to benefit from this innovative solution.
                                         </p>
                                     </li>
                                     <li className="wow fadeInUp" data-wow-delay="300ms">
-                                        <h4>24/7 Customer Support </h4>
+                                        <h4>We Listen</h4>
                                         <p>
-                                            Tohether rather her you not esteem men settle genius excuse. Deal say over you age from. Comparison new ham melancholy son.
+                                            At Tag-Along, we value your feedback and ideas. Our mission is to create a ride-sharing experience tailored to your needs. By listening to our community, we ensure our service is always improving and evolving.
                                         </p>
                                     </li>
                                 </ul>

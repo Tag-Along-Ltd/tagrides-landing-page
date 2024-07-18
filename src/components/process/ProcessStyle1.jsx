@@ -16,7 +16,7 @@ const ProcessStyle1 = ({ sectionClass }) => {
                         <div className="col-lg-8 offset-lg-2">
                             <div className="site-heading text-center">
                                 <h4 className="sub-heading">Our Process</h4>
-                                <h2 className="title">Steps of Recruitment <br /> work process</h2>
+                                <h2 className="title">Market Entry <br /> Strategy</h2>
                                 <div className="devider"></div>
                             </div>
                         </div>

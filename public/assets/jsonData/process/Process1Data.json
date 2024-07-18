@@ -4,23 +4,23 @@
         "thumb": "3.jpg",
         "activeClass": "active",
         "steps": "01",
-        "title": "Differentiate from the competition",
-        "text": "Capitalize on low hanging fruit to identify a ballpark value added."
+        "title": "Launch in Specific Targeted Routes",
+        "text": "Expand from specific high-demand routes to build a local customer base."
     },
     {
         "id": "2",
         "thumb": "6.jpg",
         "activeClass": "",
         "steps": "02",
-        "title": "Target the right people effectively",
-        "text": "Capitalize on low hanging fruit to identify a ballpark value added."
+        "title": "Digital Marketing and Social Media",
+        "text": "Sponsor targeted ads and marketing campaigns for maximum effectiveness."
     },
     {
         "id": "3",
         "thumb": "5.jpg",
         "activeClass": "",
         "steps": "03",
-        "title": "Communicate your story consistently",
-        "text": "Capitalize on low hanging fruit to identify a ballpark value added."
+        "title": "Community Outreach and Partnerships",
+        "text": "Engage with local communities and organizations focused on accessibility and inclusivity."
     }
 ]

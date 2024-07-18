@@ -28,23 +28,8 @@ const FooterStyle1 = ({ shape, shapeClass, logo, formStyle }) => {
                                         {logo ? <Image className="logo" src={logo} alt="Logo" /> : <Image className="logo" src={logoLight} alt="Logo" />}
                                     </Link>
                                     <p>
-                                        Excellence decisively nay man twins impression maximum contrasted remarkably is perfect.
+                                        Affordable, comfortable rides that reduce traffic and carbon footprint. Join us for a better commuting experience.
                                     </p>
-                                    <div className="opening-hours">
-                                        <h5>Opening Hours</h5>
-                                        <ul>
-                                            <li>
-                                                <div className="working-day">Monday – Sunday:</div>
-                                                <div className="marker"></div>
-                                                <div className="working-hour">2pm – 2pm</div>
-                                            </li>
-                                            <li>
-                                                <div className="working-day">Sunday:</div>
-                                                <div className="marker"></div>
-                                                <div className="working-hour">Off Day</div>
-                                            </li>
-                                        </ul>
-                                    </div>
                                 </div>
                             </div>
                             <div className="col-lg-2 col-md-6 footer-item">
@@ -54,7 +39,7 @@ const FooterStyle1 = ({ shape, shapeClass, logo, formStyle }) => {
                                         <li>
                                             <Link href="/about-us">Compnay Profile</Link>
                                         </li>
-                                        <li>
+                                        {/* <li>
                                             <Link href="/contact-us">Help Center</Link>
                                         </li>
                                         <li>
@@ -62,7 +47,7 @@ const FooterStyle1 = ({ shape, shapeClass, logo, formStyle }) => {
                                         </li>
                                         <li>
                                             <Link href="/pricing">Plans & Pricing</Link>
-                                        </li>
+                                        </li> */}
                                         <li>
                                             <Link href="/contact-us">Contact</Link>
                                         </li>
@@ -94,7 +79,7 @@ const FooterStyle1 = ({ shape, shapeClass, logo, formStyle }) => {
                             <div className="col-lg-4 col-md-6 footer-item">
                                 <h4 className="widget-title">Newsletter</h4>
                                 <p>
-                                    Join our subscribers list to get the latest <br /> news and special offers.
+                                    Join our subscribers list and be one of<br /> the first people to know when our product is in market.
                                 </p>
                                 <div className={`f-item newsletter ${formStyle}`}>
                                     <FooterNewsLetter />

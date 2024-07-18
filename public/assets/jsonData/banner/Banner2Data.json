@@ -1,17 +1,17 @@
 [
     {
         "id": 1,
-        "titleFirst": "Financial Analysis",
-        "titleLast": "Developing Meeting.",
+        "titleFirst": "The Ride Sharing",
+        "titleLast": "Service For You.",
         "text": "Values-driven company that provides affordable, marketing tools for ambitious people and teams.",
-        "btnText": "Get Consultant",
+        "btnText": "Contact Us",
         "thumb": "1.png",
         "shape": "3.png"
     },
     {
         "id": 2,
-        "titleFirst": "Financial Analysis",
-        "titleLast": "Developing Meeting.",
+        "titleFirst": "The Ride Sharing",
+        "titleLast": "Service For You.",
         "text": "Values-driven company that provides affordable, marketing tools for ambitious people and teams.",
         "btnText": "Get Consultant",
         "thumb": "2.png",

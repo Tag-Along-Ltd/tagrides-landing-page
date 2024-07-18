@@ -9,29 +9,29 @@
                 "id": 1,
                 "animationDelay": 0,
                 "icon": "flaticon-personal",
-                "title": "Investment Planning",
-                "text": "Prevailed always tolerably discourse and loser assurance creatively coin applauded more uncommonly. Him everything trouble"
+                "title": "Cost Efficiency",
+                "text": "Offering competitive pricing to ensure affordability for all riders."
             },
             {
                 "id": 2,
                 "animationDelay": "",
                 "icon": "flaticon-career",
-                "title": "Markets Research",
-                "text": "Prevailed always tolerably discourse and loser assurance creatively coin applauded more uncommonly. Him everything trouble"
+                "title": "Convenient Booking",
+                "text": "Simplified booking process via our user-friendly app."
             },
             {
                 "id": 3,
                 "animationDelay": "",
                 "icon": "flaticon-group",
-                "title": "Consultancy & Advice",
-                "text": "Prevailed always tolerably discourse and loser assurance creatively coin applauded more uncommonly. Him everything trouble"
+                "title": "Reliable Service",
+                "text": "Ensuring timely pickups and drop-offs with minimal wait times"
             },
             {
                 "id": 4,
                 "animationDelay": "",
                 "icon": "flaticon-solution-5",
-                "title": "Business Planning",
-                "text": "Prevailed always tolerably discourse and loser assurance creatively coin applauded more uncommonly. Him everything trouble"
+                "title": "Negotiable Service",
+                "text": "Offering options for negotiating for better prices"
             }
         ]
     },
@@ -45,29 +45,29 @@
                 "id": 1,
                 "animationDelay": 0,
                 "icon": "flaticon-business-trip",
-                "title": "Strategy & Planning",
-                "text": "Prevailed always tolerably discourse and loser assurance creatively coin applauded more uncommonly. Him everything trouble"
+                "title": "Comfortable Vehicles",
+                "text": "Vehicle validations, spacious vehicles for a pleasant travel experience."
             },
             {
                 "id": 2,
                 "animationDelay": "",
                 "icon": "flaticon-online-store",
-                "title": "Online Business",
-                "text": "Prevailed always tolerably discourse and loser assurance creatively coin applauded more uncommonly. Him everything trouble"
+                "title": "Optimized Routes",
+                "text": "Efficient routing to minimize travel time and enhance comfort."
             },
             {
                 "id": 3,
                 "animationDelay": "",
                 "icon": "flaticon-funds",
-                "title": "Saving & Investments",
-                "text": "Prevailed always tolerably discourse and loser assurance creatively coin applauded more uncommonly. Him everything trouble"
+                "title": "Safety Measures",
+                "text": "Implementing rigorous background checks, rating systems and safety protocols for a secure journey."
             },
             {
                 "id": 4,
                 "animationDelay": "",
                 "icon": "flaticon-career",
-                "title": "Markets Research",
-                "text": "Prevailed always tolerably discourse and loser assurance creatively coin applauded more uncommonly. Him everything trouble"
+                "title": "Verified Drivers",
+                "text": "Verified drivers rigorous background checks offer courteous and safe service"
             }
         ]
     },
@@ -81,29 +81,29 @@
                 "id": 1,
                 "animationDelay": 0,
                 "icon": "flaticon-budget",
-                "title": "Investment Planning",
-                "text": "Prevailed always tolerably discourse and loser assurance creatively coin applauded more uncommonly. Him everything trouble"
+                "title": "Quick Roadside Pickups and Drop-offs",
+                "text": "Minimize time spent during pickups and drop-offs."
             },
             {
                 "id": 2,
                 "animationDelay": "",
                 "icon": "flaticon-money-1",
-                "title": "Mutual Funds",
-                "text": "Prevailed always tolerably discourse and loser assurance creatively coin applauded more uncommonly. Him everything trouble"
+                "title": "Instant Matching",
+                "text": "Match riders instantly, eliminating wait times for other passengers and reducing pooling."
             },
             {
                 "id": 3,
                 "animationDelay": "",
                 "icon": "flaticon-funds",
-                "title": "Saving & Investments",
-                "text": "Prevailed always tolerably discourse and loser assurance creatively coin applauded more uncommonly. Him everything trouble"
+                "title": "Traffic Reduction",
+                "text": "Decreasing the number of vehicles on the road through ride-sharing."
             },
             {
                 "id": 4,
                 "animationDelay": "",
                 "icon": "flaticon-world-globe",
-                "title": "Global Business",
-                "text": "Prevailed always tolerably discourse and loser assurance creatively coin applauded more uncommonly. Him everything trouble"
+                "title": "Seamless Payments",
+                "text": "Use our in-app wallet for instant payment processing, ensuring riders have enough funds before the trip."
             }
         ]
     }

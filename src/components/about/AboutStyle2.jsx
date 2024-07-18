@@ -26,12 +26,12 @@ const AboutStyle2 = ({ sectionClass }) => {
                             </div>
                         </div>
                         <div className="about-style-two col-lg-6 offset-lg-1">
-                            <h2 className="title">Finance Consulting for <br /> Challenging Times</h2>
+                            <h2 className="title">Shared Rides Saves Cost for<br /> Better Comfort in Urban Areas</h2>
                             <p>
-                                We work to understand your issues and are driven to ask better questions in the pursuit of
-                                making work. Me contained explained my education. Vulgar as hearts by garret. Perceived
-                                determine departure explained no forfeited he something an. Contrasted dissimilar get joy you
-                                instrument out reasonably. Again keep.
+                                We found that urban commuters face issues of uncomfortable public transportation, expensive ride-hailing options,
+                                and wasted time in traffic. To solve this, we developed a cost-effective, localized solution that enhances comfort,
+                                speeds up travel, reduces traffic congestion, lowers carbon footprints, encourages social interaction, and promotes
+                                sustainability.
                             </p>
                             <div className="default-features mt-30">
                                 <div className="default-feature-item">

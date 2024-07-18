@@ -3,8 +3,8 @@
         "id": 1,
         "activeClass": "active",
         "memberThumb": "1.jpg",
-        "designation": "CEO & Founder",
-        "name": "Md Sohag",
+        "designation": "CEO & Founder, Mobile Engineer.",
+        "name": "Olaiya Oniya",
         "email": "sohag@digital.com",
         "skillProgress": [
             {
@@ -66,8 +66,8 @@
         "id": 2,
         "activeClass": "",
         "memberThumb": "2.jpg",
-        "designation": "Product Manager",
-        "name": "Kevin Martin",
+        "designation": "Senior Backend Engineer",
+        "name": "Oniya Adesubomi",
         "email": "kevin@digital.com",
         "skillProgress": [
             {
@@ -129,8 +129,8 @@
         "id": 3,
         "activeClass": "",
         "memberThumb": "8.jpg",
-        "designation": "Financial Consultant",
-        "name": "Sarah Albert",
+        "designation": "Adviser(CEO @ Apex Networks)",
+        "name": "Efemena Abraham",
         "email": "sarah@digital.com",
         "skillProgress": [
             {
@@ -192,8 +192,8 @@
         "id": 4,
         "activeClass": "",
         "memberThumb": "4.jpg",
-        "designation": "Developer",
-        "name": "Aleesha Brown",
+        "designation": "Manager @ Total Energies",
+        "name": "Pst Wale Olasoji",
         "email": "aleesha@digital.com",
         "skillProgress": [
             {
@@ -319,7 +319,7 @@
         "activeClass": "",
         "memberThumb": "7.jpg",
         "designation": "Product Manager",
-        "name": "Kevin Martin",
+        "name": "Oniya Adesubomi",
         "email": "kevin@digital.com",
         "skillProgress": [
             {
