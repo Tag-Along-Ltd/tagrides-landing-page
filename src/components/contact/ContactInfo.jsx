@@ -25,7 +25,7 @@ const ContactInfo = () => {
                         <div className="info">
                             <h5 className="title">Our Location</h5>
                             <p>
-                                55 Main Street, The Grand Avenue 2nd Block, <br /> New York City
+                                6, Memud Odedina, Ajah, Lakki<br /> Lagos State.
                             </p>
                         </div>
                     </li>
