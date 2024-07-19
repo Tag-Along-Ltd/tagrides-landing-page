@@ -14,7 +14,7 @@ const HeaderTopStyle2 = () => {
                                     </div>
                                     <div className="info">
                                         <strong>Address</strong>
-                                        70240 Avenue of the Moon, California
+                                        Paul Odili Street, River Park Estate, Abuja.
                                     </div>
                                 </li>
                                 <li>
@@ -23,7 +23,7 @@ const HeaderTopStyle2 = () => {
                                     </div>
                                     <div className="info">
                                         <strong>Phone</strong>
-                                        <a href="tel:+4733378901">+4733378901</a>
+                                        <a href="tel:+2349064520743">+2349064520743</a>
                                     </div>
                                 </li>
                             </ul>

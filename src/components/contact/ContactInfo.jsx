@@ -15,7 +15,7 @@ const ContactInfo = () => {
                         </div>
                         <div className="content">
                             <h5 className="title">Hotline</h5>
-                            <a href="">+4733378901</a>
+                            <a href="">+2349064520743</a>
                         </div>
                     </li>
                     <li className="wow fadeInUp" data-wow-delay="300ms">
