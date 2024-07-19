@@ -3,7 +3,7 @@ import BlogStandardContent from '@/components/blog/BlogStandardContent';
 import React from 'react';
 
 export const metadata = {
-    title: "Consua - Consulting Business - Blog Standard"
+    title: "Tag Rides - Ride-Sharing Service -    Blog Standard"
 }
 
 const BlogStandardPage = () => {
