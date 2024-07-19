@@ -20,7 +20,7 @@ const ProjectDetailsContent = ({ projectInfo }) => {
                                         <h4 className="title">Project Info</h4>
                                         <ul>
                                             <li>
-                                                Client <span>themeforest.validthemes.com</span>
+                                                Client <span>themeforest.Tag-Rides.com</span>
                                             </li>
                                             <li>
                                                 Date <span>25 February, 2022</span>
