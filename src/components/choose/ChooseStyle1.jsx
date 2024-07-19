@@ -20,7 +20,7 @@ const ChooseStyle1 = () => {
                                     <li className="wow fadeInUp">
                                         <h4>Join Tag-Rides to Revolutionize Urban Mobility </h4>
                                         <p>
-                                            Soon, you'll enjoy seamless, efficient, and affordable rides designed for your convenience. Join us on our journey to redefine ride-sharing and be among the first to benefit from this innovative solution.
+                                            Take control with Tag-Along. Decide your wait times, pickup and drop-off locations, drivers, and even the prices you pay. With Tag-Along, enjoy a smooth, efficient, and affordable ride-sharing experience designed for you.
                                         </p>
                                     </li>
                                     <li className="wow fadeInUp" data-wow-delay="300ms">
