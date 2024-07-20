@@ -8,6 +8,7 @@ import ProcessStyle1 from '@/components/process/ProcessStyle1';
 import ProjectStyle1 from '@/components/project/ProjectStyle1';
 import RequestCallStyle1 from '@/components/request/RequestCallStyle1';
 import ServicesStyle1 from '@/components/services/ServicesStyle1';
+import SoftwareVideo from '@/components/software/SoftwareVideo';
 import TeamStyle1 from '@/components/team/TeamStyle1';
 import TestimonialStyle1 from '@/components/testimonial/TestimonialStyle1';
 import React from 'react';
@@ -25,7 +26,8 @@ const Home1 = () => {
                 <ServicesStyle1 />
                 <ProcessStyle1 />
                 <ChooseStyle1 />
-                <PartnerStyle1 sectionClass="default-padding" />
+                {/* <PartnerStyle1 sectionClass="default-padding" /> */}
+                <SoftwareVideo />
                 <TeamStyle1 sectionClass="bg-gray" teamTitle={true} />
                 <ProjectStyle1 />
                 <RequestCallStyle1 />
