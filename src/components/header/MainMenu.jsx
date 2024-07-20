@@ -143,7 +143,7 @@ const MainMenu = ({ toggleSubMenu, navbarPlacement }) => {
               <Link href="/blog-2-column">Blog Grid Two Colum</Link>
             </li>
             <li>
-              <Link href="/blog-3-column">Blog Grid Three Colum</Link>
+              <Link href="/Blogs and Updates">Blog Grid Three Colum</Link>
             </li>
             <li>
               <Link href="/blog-single/1">Blog Single</Link>
