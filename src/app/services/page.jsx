@@ -17,10 +17,10 @@ const ServicesPage = () => {
             <LayoutStyle7 breadCrumb="services" title="Our Services">
                 <ServicesStyle1 />
                 <ProcessStyle1 />
-                <PartnerStyle1 sectionClass="default-padding bg-gray" />
+                {/* <PartnerStyle1 sectionClass="default-padding bg-gray" /> */}
                 <TeamStyle1 teamTitle={true} />
                 <RequestCallStyle1 />
-                <PriceStyle1 priceTitle={true} sectionClass="primary" />
+                {/* <PriceStyle1 priceTitle={true} sectionClass="primary" /> */}
             </LayoutStyle7>
         </>
     );

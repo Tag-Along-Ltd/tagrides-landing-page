@@ -16,7 +16,7 @@ const AchievementCounter1 = () => {
                                 <div className="timer"><CountUp end={500} enableScrollSpy /></div>
                                 <div className="operator">+</div>
                             </div>
-                            <span className="medium">Business advices given over 30 years</span>
+                            <span className="medium">Trusted by Tony Elumelu Foundation TEF.</span>
                         </div>
                     </li>
                     <li>
@@ -28,7 +28,7 @@ const AchievementCounter1 = () => {
                                 <div className="timer"><CountUp end={30} enableScrollSpy /></div>
                                 <div className="operator">+</div>
                             </div>
-                            <span className="medium">Business Excellence awards achieved</span>
+                            <span className="medium">In partnership with ALX Ventures.</span>
                         </div>
                     </li>
                 </ul>

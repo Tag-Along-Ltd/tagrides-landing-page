@@ -29,7 +29,7 @@ const ChooseStyle1 = () => {
             <div className="col-lg-6 pr-80 pr-md-15 pr-xs-15">
               <div className="choose-us-style-one">
                 <h2 className="title mb-35">
-                  Be at the forefront of the new innovation
+                  Be at the forefront of our innovation to launch in
                 </h2>
 
                 {/* Countdown timer */}
