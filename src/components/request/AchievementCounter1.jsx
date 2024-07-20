@@ -13,10 +13,11 @@ const AchievementCounter1 = () => {
                         </div>
                         <div className="fun-fact">
                             <div className="counter">
-                                <div className="timer"><CountUp end={500} enableScrollSpy /></div>
-                                <div className="operator">+</div>
+                                <h2 className="title">TEF</h2>
+                                {/* <div className="timer"><CountUp end={500} enableScrollSpy /></div>
+                                <div className="operator">+</div> */}
                             </div>
-                            <span className="medium">Trusted by Tony Elumelu Foundation TEF.</span>
+                            <span className="medium">Trusted by Tony Elumelu Foundation.</span>
                         </div>
                     </li>
                     <li>
@@ -25,8 +26,9 @@ const AchievementCounter1 = () => {
                         </div>
                         <div className="fun-fact">
                             <div className="counter">
-                                <div className="timer"><CountUp end={30} enableScrollSpy /></div>
-                                <div className="operator">+</div>
+                                <h2 className="title">ALX</h2>
+                                {/* <div className="timer"><CountUp end={30} enableScrollSpy /></div>
+                                <div className="operator">+</div> */}
                             </div>
                             <span className="medium">In partnership with ALX Ventures.</span>
                         </div>

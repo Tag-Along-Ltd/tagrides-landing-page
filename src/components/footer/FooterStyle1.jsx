@@ -37,26 +37,26 @@ const FooterStyle1 = ({ shape, shapeClass, logo, formStyle }) => {
                                     <h4 className="widget-title">Our Company</h4>
                                     <ul>
                                         <li>
-                                            <Link href="/about-us">Compnay Profile</Link>
+                                            <Link href="/about-us">About Us</Link>
                                         </li>
                                         {/* <li>
                                             <Link href="/contact-us">Help Center</Link>
-                                        </li>
+                                        </li> */}
                                         <li>
-                                            <Link href="/about-us">Career</Link>
+                                            <Link href="/about-us">About Us</Link>
                                         </li>
-                                        <li>
+                                        {/* <li>
                                             <Link href="/pricing">Plans & Pricing</Link>
                                         </li> */}
                                         <li>
-                                            <Link href="/contact-us">Contact</Link>
+                                            <Link href="/contact-us">Contact Us</Link>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                             <div className="col-lg-2 col-md-6 footer-item">
                                 <div className="f-item link">
-                                    <h4 className="widget-title">Our Services</h4>
+                                    {/* <h4 className="widget-title">Our Services</h4>
                                     <ul>
                                         <li>
                                             <Link href="/services-details/1">Manage investment</Link>
@@ -73,7 +73,7 @@ const FooterStyle1 = ({ shape, shapeClass, logo, formStyle }) => {
                                         <li>
                                             <Link href="/services-details/1">Insurance strategy</Link>
                                         </li>
-                                    </ul>
+                                    </ul> */}
                                 </div>
                             </div>
                             <div className="col-lg-4 col-md-6 footer-item">
