@@ -43,7 +43,7 @@ const FooterStyle1 = ({ shape, shapeClass, logo, formStyle }) => {
                                             <Link href="/contact-us">Help Center</Link>
                                         </li> */}
                                         <li>
-                                            <Link href="/about-us">About Us</Link>
+                                            <Link href="/services">Services</Link>
                                         </li>
                                         {/* <li>
                                             <Link href="/pricing">Plans & Pricing</Link>
@@ -95,7 +95,8 @@ const FooterStyle1 = ({ shape, shapeClass, logo, formStyle }) => {
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-6">
-                                <p>&copy; Copyright {(new Date().getFullYear())}. All Rights Reserved by <a href="https://themeforest.net/user/Tag-Rides/portfolio" target='_blank'>Tag-Rides</a></p>
+                            {/* https://themeforest.net/user/Tag-Rides/portfolio */}
+                                <p>&copy; Copyright {(new Date().getFullYear())}. All Rights Reserved by <a href="https://www.tagrider.com" target='_blank'>Tag-Rides</a></p>
                             </div>
                             <div className="col-lg-6 text-end">
                                 <ul>
