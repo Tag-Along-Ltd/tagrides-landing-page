@@ -33,8 +33,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${outfit.className} ${manrope.className}`}>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        // to prevent any warning that is caused by third party extensions that will affect the UI
+        suppressHydrationWarning
+        className={`${outfit.className} ${manrope.className}`}
+      >
         <ToastContainer />
         <Dependency />
         {children}

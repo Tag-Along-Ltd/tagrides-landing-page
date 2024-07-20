@@ -8,7 +8,7 @@ const SoftwareVideo = () => {
   return (
     <>
       <div className="software-video overflow-hidden">
-        <div className="container">
+        <div className="">
           <div className="row">
             <div className="col-lg-12">
               <div className="software-video-preview bg-cover">

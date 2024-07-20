@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@leenguyen/react-flip-clock-countdown": "^1.6.0",
     "bootstrap": "^5.3.3",
     "imagesloaded": "^5.0.0",
     "isotope-layout": "^3.0.6",
