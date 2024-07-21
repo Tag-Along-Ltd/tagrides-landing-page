@@ -1,36 +1,55 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
+import { timeSince } from "@/utils/dateFunction";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
 const SingleBlog1 = ({ blog }) => {
-    const { id, thumb, date, animationDelay, author, title, btnText } = blog
+  const { _id, title, thumbnail, createdAt } = blog;
 
-    return (
-        <>
-            <div className="col-xl-4 col-md-6 mb-30 wow fadeInUp" data-wow-delay={[animationDelay]}>
-                <div className="blog-style-one">
-                    <div className="thumb">
-                        <Link href={`/blog-single-with-sidebar/${id}`}><Image src={`/assets/img/blog/${thumb}`} alt="Thumb" width={800} height={600} /></Link>
-                    </div>
-                    <div className="info">
-                        <div className="blog-meta">
-                            <ul>
-                                <li>
-                                    <span>By </span>
-                                    <Link href="#" scroll={false}>{author}</Link>
-                                </li>
-                                <li>{date}</li>
-                            </ul>
-                        </div>
-                        <h4>
-                            <Link href={`/blog-single-with-sidebar/${id}`}>{title}</Link>
-                        </h4>
-                        <Link href={`/blog-single-with-sidebar/${id}`} className="btn-simple"><i className="fas fa-angle-right"></i>{btnText}</Link>
-                    </div>
-                </div>
+  return (
+    <>
+      <div
+        className="col-xl-4 col-md-6 mb-30 wow fadeInUp"
+        data-wow-delay={["300ms"]}
+      >
+        <div className="blog-style-one">
+          <div className="thumb">
+            <Link href={`${process.env.NEXT_PUBLIC_PUT_LINK}/blog/${_id}`}>
+              <Image
+                src={"/assets/img/blog/post_1_image.jpg"}
+                alt="Thumb"
+                width={800}
+                height={600}
+              />
+            </Link>
+          </div>
+          <div className="info">
+            <div className="blog-meta">
+              <ul>
+                <li>
+                  <span>By </span>
+                  <Link href={`${process.env.NEXT_PUBLIC_PUT_LINK}/blog/${_id}`} scroll={false}>
+                    TagRide
+                  </Link>
+                </li>
+                <li>{timeSince(createdAt)} ago</li>
+              </ul>
             </div>
-        </>
-    );
+            <h4>
+              <Link href={`${process.env.NEXT_PUBLIC_PUT_LINK}/blog/${_id}`}>{title}</Link>
+            </h4>
+            <Link
+              href={`${process.env.NEXT_PUBLIC_PUT_LINK}/blog/${_id}`}
+              className="btn-simple"
+            >
+              <i className="fas fa-angle-right"></i>
+              Read More
+            </Link>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default SingleBlog1;

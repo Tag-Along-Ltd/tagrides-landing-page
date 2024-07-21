@@ -9,8 +9,9 @@ export async function fetchPosts() {
   return allPosts;
 }
 
-export async function fetchSinglePost() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/posts`);
+
+export async function fetchSinglePost(id) {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/posts/${id}`);
   if (!response.ok) {
     throw new Error("Failed to fetch posts");
   }

@@ -6,7 +6,11 @@ export async function GET() {
   try {
     const client = await clientPromise;
     const db = client.db("myBlog");
-    const posts = await db.collection("posts").find({}).toArray();
+    const posts = await db.collection("posts")
+      .find({})
+      .sort({ createdAt: -1 })
+      .toArray();
+    
     return NextResponse.json(posts);
   } catch (e) {
     console.error(e);

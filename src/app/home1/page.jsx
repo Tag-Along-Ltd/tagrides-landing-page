@@ -19,15 +19,15 @@ import React, { useEffect, useState } from "react";
 const Home1 = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  console.log("Data: ", posts);
+  const [error, setError] = useState(null);  
 
   useEffect(() => {
     async function loadPosts() {
       try {
         const fetchedPosts = await fetchPosts();
-        setPosts(fetchedPosts);
+        // Use slice to get only the first 3 posts
+        const firstThreePosts = fetchedPosts.slice(0, 3);
+        setPosts(firstThreePosts);
         setLoading(false);
       } catch (err) {
         console.error("Failed to fetch posts:", err);
@@ -53,7 +53,7 @@ const Home1 = () => {
         <ProjectStyle1 />
         <RequestCallStyle1 />
         <TestimonialStyle1 />
-        <BlogStyle1 sectionClass="bg-gray" />
+        <BlogStyle1 posts={posts} loading={loading} error={error} sectionClass="bg-gray" />
       </LayoutStyle1>
     </>
   );

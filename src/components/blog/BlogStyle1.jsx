@@ -1,8 +1,8 @@
 import React from "react";
-import BlogData from "@/assets/jsonData/blog/BlogData.json";
 import SingleBlog1 from "./SingleBlog1";
 
-const BlogStyle1 = ({ sectionClass }) => {
+const BlogStyle1 = ({ posts, loading, error, sectionClass }) => {
+
   return (
     <>
       <div
@@ -23,8 +23,8 @@ const BlogStyle1 = ({ sectionClass }) => {
         </div>
         <div className="container">
           <div className="row">
-            {BlogData.slice(0, 3).map((blog) => (
-              <SingleBlog1 blog={blog} key={blog.id} />
+            {posts.map((blog) => (
+              <SingleBlog1 blog={blog} key={blog._id} />
             ))}
           </div>
         </div>
