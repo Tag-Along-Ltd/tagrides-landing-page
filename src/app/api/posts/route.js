@@ -21,11 +21,12 @@ export async function POST(request) {
   try {
     const client = await clientPromise;
     const db = client.db("myBlog");
-    const { title, content, thumbnail } = await request.json();
+    const { title, content, thumbnail, image } = await request.json();
     const result = await db.collection("posts").insertOne({
       title,
       content,
       thumbnail,
+      image,
       likes: 0,
       createdAt: new Date(),
     });
