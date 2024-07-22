@@ -1,22 +1,24 @@
 "use client";
 
 import LayoutStyle7 from "@/components/Layouts/LayoutStyle7";
+import BlogSingleContent from "@/components/blog/BlogSingleContent";
+import React, { useEffect, useState } from "react";
+import { fetchSinglePost } from "@/utils/api";
 import LottieAnimation from "@/components/LottieAnimation";
 import circleLoading from "@/lotties/loading-circles.json";
-import Blog3ColumnContent from "@/components/blog/Blog3ColumnContent";
-import { fetchPosts } from "@/utils/api";
-import React, { useEffect, useState } from "react";
 
-const Blog = () => {
-  const [posts, setPosts] = useState([]);
+const BlogSingle = ({ params }) => {
+  const { id } = params;
+
+  const [post, setPost] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    async function loadPosts() {
+    async function loadPost() {
       try {
-        const fetchedPosts = await fetchPosts();
-        setPosts(fetchedPosts);
+        const fetchedPost = await fetchSinglePost(id);
+        setPost(fetchedPost);
         setLoading(false);
       } catch (err) {
         console.error("Failed to fetch posts:", err);
@@ -25,7 +27,7 @@ const Blog = () => {
       }
     }
 
-    loadPosts();
+    loadPost();
   }, []);
 
   return (
@@ -38,12 +40,12 @@ const Blog = () => {
           />
         </div>
       ) : (
-        <LayoutStyle7 breadCrumb="blogs" title="Blogs">
-          <Blog3ColumnContent posts={posts} error={error} />
+        <LayoutStyle7 breadCrumb="Blog" title={post.title}>
+          <BlogSingleContent post={post} />
         </LayoutStyle7>
       )}
     </>
   );
 };
 
-export default Blog;
+export default BlogSingle;
