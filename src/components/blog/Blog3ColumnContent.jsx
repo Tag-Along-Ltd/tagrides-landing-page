@@ -1,6 +1,5 @@
 import React from "react";
 import Pagination from "../pagination/Pagination";
-import blogData from "@/assets/jsonData/blog/BlogData.json";
 import SingleBlog3Column from "./SingleBlog3Column";
 
 const Blog3ColumnContent = ({ posts, error }) => {

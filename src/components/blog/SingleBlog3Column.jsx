@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 
 const SingleBlog3Column = ({ blog }) => {
-  const { _id, title, thumbnail, createdAt } = blog;
+  const { _id, title, thumbnail, image, createdAt } = blog;
 
   return (
     <>
@@ -12,7 +12,7 @@ const SingleBlog3Column = ({ blog }) => {
         <div className="thumb">
           <Link href={`${process.env.NEXT_PUBLIC_PUT_LINK}/blog/${_id}`}>
             <Image
-              src={"/assets/img/blog/post_1_image.jpg"}
+              src={thumbnail}
               width={800}
               height={600}
               alt="Thumb"

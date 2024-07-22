@@ -33,6 +33,7 @@ export async function POST(request) {
       image,
       likes: 0,
       createdAt: new Date(),
+      updatedAt: new Date(),
     });
     return NextResponse.json(result);
   } catch (e) {
