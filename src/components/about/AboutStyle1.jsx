@@ -37,7 +37,7 @@ const AboutStyle1 = () => {
                         <div className="about-style-one col-xl-5 offset-xl-1 col-lg-6 offset-lg-1">
                             <div className="about-thumb">
                                 <Image className="wow fadeInRight" src={aboutThumb} alt="Image Not Found" />
-                                <About1Card />
+                                {/* <About1Card /> */}
                                 <div className="thumb-shape-bottom wow fadeInDown" data-wow-delay="300ms">
                                     <Image src={anim3Thumb} alt="Image Not Found" />
                                     <Image src={anim4Thumb} alt="Image Not Found" />

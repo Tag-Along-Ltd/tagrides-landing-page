@@ -22,7 +22,7 @@ const SoftwareVideo = () => {
                     channel="youtube"
                     autoplay
                     isOpen={isOpen}
-                    videoId="OSE1K12rm18"
+                    videoId="-zn7JRX2TAA"
                     onClose={() => setOpen(false)}
                   />
                   <Link

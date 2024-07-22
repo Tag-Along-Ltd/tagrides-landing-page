@@ -3,13 +3,13 @@ import Blog3ColumnContent from '@/components/blog/Blog3ColumnContent';
 import React from 'react';
 
 export const metadata = {
-    title: "Tag Rides - Ride-Sharing Service -   Blog 3 Column"
+    title: "Tag Rides - Ride-Sharing Service - Blog"
 }
 
 const Blog3Column = () => {
     return (
         <>
-            <LayoutStyle7 breadCrumb="blog-3-column" title="Blog 3 Column">
+            <LayoutStyle7 breadCrumb="Blogs and Updates" title="Blog">
                 <Blog3ColumnContent />
             </LayoutStyle7>
         </>
