@@ -1,24 +1,55 @@
-import LayoutStyle7 from '@/components/Layouts/LayoutStyle7';
-import BlogSingleContent from '@/components/blog/BlogSingleContent';
-import React from 'react';
-import blogData from '@/assets/jsonData/blog/BlogData.json';
+"use client";
 
-export const metadata = {
-    title: "Tag Rides - Ride-Sharing Service -  Blog Single"
-}
+import LayoutStyle7 from "@/components/Layouts/LayoutStyle7";
+import BlogSingleContent from "@/components/blog/BlogSingleContent";
+import React, { useEffect, useState } from "react";
+import blogData from "@/assets/jsonData/blog/BlogData.json";
+import { fetchSinglePost } from "@/utils/api";
+import LottieAnimation from "@/components/LottieAnimation";
+import circleLoading from "@/lotties/loading-circles.json";
 
 const BlogSingle = ({ params }) => {
+  const { id } = params;
+  const data = blogData.find((blog) => blog.id === parseInt(1));
 
-    const { id } = params
-    const data = blogData.find(blog => blog.id === parseInt(id))
+  const [post, setPost] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-    return (
-        <>
-            <LayoutStyle7 breadCrumb="Blog" title="Blog Single">
-                <BlogSingleContent blogInfo={data} />
-            </LayoutStyle7>
-        </>
-    );
+  console.log("Data: ", post);
+
+  useEffect(() => {
+    async function loadPost() {
+      try {
+        const fetchedPost = await fetchSinglePost(id);
+        setPost(fetchedPost);
+        setLoading(false);
+      } catch (err) {
+        console.error("Failed to fetch posts:", err);
+        setError("Failed to load posts. Please try again later.");
+        setLoading(false);
+      }
+    }
+
+    loadPost();
+  }, []);
+
+  return (
+    <>
+      {loading ? (
+        <div className="d-flex justify-content-center align-items-center vh-100 mt-5 mb-5">
+          <LottieAnimation
+            animationData={circleLoading}
+            style={{ width: 150, height: 150 }}
+          />
+        </div>
+      ) : (
+        <LayoutStyle7 breadCrumb="Blog" title={post.title}>
+          <BlogSingleContent blogInfo={data} post={post} />
+        </LayoutStyle7>
+      )}
+    </>
+  );
 };
 
 export default BlogSingle;
