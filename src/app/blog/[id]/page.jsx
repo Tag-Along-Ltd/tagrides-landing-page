@@ -3,20 +3,16 @@
 import LayoutStyle7 from "@/components/Layouts/LayoutStyle7";
 import BlogSingleContent from "@/components/blog/BlogSingleContent";
 import React, { useEffect, useState } from "react";
-import blogData from "@/assets/jsonData/blog/BlogData.json";
 import { fetchSinglePost } from "@/utils/api";
 import LottieAnimation from "@/components/LottieAnimation";
 import circleLoading from "@/lotties/loading-circles.json";
 
 const BlogSingle = ({ params }) => {
   const { id } = params;
-  const data = blogData.find((blog) => blog.id === parseInt(1));
 
   const [post, setPost] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
-  console.log("Data: ", post);
 
   useEffect(() => {
     async function loadPost() {
@@ -45,7 +41,7 @@ const BlogSingle = ({ params }) => {
         </div>
       ) : (
         <LayoutStyle7 breadCrumb="Blog" title={post.title}>
-          <BlogSingleContent blogInfo={data} post={post} />
+          <BlogSingleContent post={post} />
         </LayoutStyle7>
       )}
     </>
