@@ -48,7 +48,7 @@ const Home1 = () => {
         <ProcessStyle1 />
         <ChooseStyle1 />
         {/* <PartnerStyle1 sectionClass="default-padding" /> */}
-        <SoftwareVideo />
+        {/* <SoftwareVideo /> */}
         <TeamStyle1 sectionClass="bg-gray" teamTitle={true} />
         <ProjectStyle1 />
         <RequestCallStyle1 />
