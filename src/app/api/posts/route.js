@@ -48,12 +48,7 @@
 import { NextResponse } from "next/server";
 import clientPromise from "@/lib/mongodb";
 
-// Choose the appropriate environment variable
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
-const putUrl = process.env.NEXT_PUBLIC_PUT_URL;
-
-// Construct the allowed origin URL
-const allowedOrigin = `${siteUrl || putUrl}/posts`;
+const allowedOrigin = process.env.NEXT_PUBLIC_ALLOWED_ORIGIN;
 
 export async function GET() {
   try {
