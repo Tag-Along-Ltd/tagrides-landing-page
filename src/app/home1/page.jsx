@@ -47,9 +47,7 @@ const Home1 = () => {
         <ServicesStyle1 />
         <ProcessStyle1 />
         <ChooseStyle1 />
-        {/* <PartnerStyle1 sectionClass="default-padding" /> */}
-        {/* <SoftwareVideo /> */}
-        <TeamStyle1 sectionClass="bg-gray" teamTitle={true} />
+        {/* <PartnerStyle1 sectionClass="default-padding" /> */}        <TeamStyle1 sectionClass="bg-gray" teamTitle={true} />
         <ProjectStyle1 />
         <RequestCallStyle1 />
         <TestimonialStyle1 />
