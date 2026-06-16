@@ -7,9 +7,9 @@ export const metadata = {
     title: "Tag Rides - Ride-Sharing Service - vice - - Project Details"
 }
 
-const ProjectDetailsPage = ({ params }) => {
+const ProjectDetailsPage = async ({ params }) => {
 
-    const { id } = params
+    const { id } = await params
     const data = Project2Data.find(project => project.id === parseInt(id))
 
     return (

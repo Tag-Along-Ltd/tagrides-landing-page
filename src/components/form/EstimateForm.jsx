@@ -1,6 +1,5 @@
 "use client"
-import React, { useState } from 'react';
-import Slider from 'react-rangeslider';
+import { useState } from 'react';
 import { toast } from 'react-toastify';
 import CustomSelect from '../select/CustomSelect';
 
@@ -13,10 +12,6 @@ const EstimateForm = () => {
     }
 
     const [value, setValue] = useState(10);
-
-    const handleChange = newValue => {
-        setValue(newValue);
-    }
 
     const options = [
         { value: 'Life Insurance', label: 'Life Insurance' },
@@ -62,16 +57,16 @@ const EstimateForm = () => {
                         <div className="price-range-slider">
                             <p className="range-value">
                                 <span>Limits of Balance: </span>
-                                <input type="text" id="amount" placeholder={`$${value}`} readOnly />
+                                <input
+                                    type="range"
+                                    id="amount"
+                                    min={40}
+                                    max={100000}
+                                    value={value}
+                                    onChange={(e) => setValue(Number(e.target.value))}
+                                    className='range-bar'
+                                />
                             </p>
-                            <Slider
-                                tooltip={false}
-                                min={40}
-                                max={100000}
-                                value={value}
-                                onChange={handleChange}
-                                className='range-bar'
-                            />
                         </div>
                     </div>
                 </div>

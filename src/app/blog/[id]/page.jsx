@@ -2,13 +2,13 @@
 
 import LayoutStyle7 from "@/components/Layouts/LayoutStyle7";
 import BlogSingleContent from "@/components/blog/BlogSingleContent";
-import React, { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import { fetchSinglePost } from "@/utils/api";
 import LottieAnimation from "@/components/LottieAnimation";
 import circleLoading from "@/lotties/loading-circles.json";
 
 const BlogSingle = ({ params }) => {
-  const { id } = params;
+  const { id } = use(params);
 
   const [post, setPost] = useState([]);
   const [loading, setLoading] = useState(true);

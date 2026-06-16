@@ -59,9 +59,10 @@ const allowedOrigin = process.env.NEXT_PUBLIC_ALLOWED_ORIGIN;
 
 export async function GET(request, { params }) {
   try {
+    const { id } = await params;
     const client = await clientPromise;
     const db = client.db('myBlog');
-    const post = await db.collection('posts').findOne({ _id: new ObjectId(params.id) });
+    const post = await db.collection('posts').findOne({ _id: new ObjectId(id) });
     if (!post) {
       const response = NextResponse.json({ error: 'Post not found' }, { status: 404 });
       response.headers.set('Access-Control-Allow-Origin', allowedOrigin);
@@ -80,11 +81,12 @@ export async function GET(request, { params }) {
 
 export async function PUT(request, { params }) {
   try {
+    const { id } = await params;
     const client = await clientPromise;
     const db = client.db('myBlog');
     const { title, content, thumbnail, image } = await request.json();
     const result = await db.collection('posts').updateOne(
-      { _id: new ObjectId(params.id) },
+      { _id: new ObjectId(id) },
       { $set: { title, content, thumbnail, image, updatedAt: new Date() } }
     );
     if (result.matchedCount === 0) {
@@ -105,9 +107,10 @@ export async function PUT(request, { params }) {
 
 export async function DELETE(request, { params }) {
   try {
+    const { id } = await params;
     const client = await clientPromise;
     const db = client.db('myBlog');
-    const result = await db.collection('posts').deleteOne({ _id: new ObjectId(params.id) });
+    const result = await db.collection('posts').deleteOne({ _id: new ObjectId(id) });
     if (result.deletedCount === 0) {
       const response = NextResponse.json({ error: 'Post not found' }, { status: 404 });
       response.headers.set('Access-Control-Allow-Origin', allowedOrigin);

@@ -7,9 +7,9 @@ export const metadata = {
     title: "Tag Rides - Ride-Sharing Service - Services Details"
 }
 
-const ServiceDetailsPage = ({ params }) => {
+const ServiceDetailsPage = async ({ params }) => {
 
-    const { id } = params
+    const { id } = await params
     const data = Services2Data.find(service => service.id === parseInt(id))
 
     return (

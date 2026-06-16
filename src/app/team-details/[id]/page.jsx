@@ -7,9 +7,9 @@ export const metadata = {
     title: "Tag Rides - Ride-Sharing Service -   Team Details"
 }
 
-const TeamDetails = ({ params }) => {
+const TeamDetails = async ({ params }) => {
 
-    const { id } = params
+    const { id } = await params
     const data = TeamData.find(team => team.id === parseInt(id))
 
     return (
