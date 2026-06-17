@@ -1,6 +1,9 @@
 import { NextResponse } from 'next/server';
 
-const BREVO_ENDPOINT = 'https://api.brevo.com/v3/contacts';
+import clientPromise from '@/lib/mongodb';
+
+const DB_NAME = 'myBlog'; // matches the existing posts DB; rename together when we redo the blog
+const COLLECTION = 'waitlist';
 
 const allowedOrigin = process.env.NEXT_PUBLIC_ALLOWED_ORIGIN;
 
@@ -19,18 +22,6 @@ export async function OPTIONS() {
 }
 
 export async function POST(request) {
-  const apiKey = process.env.BREVO_API_KEY || process.env.NEXT_PUBLIC_BREVO_API_KEY;
-  const listIdRaw = process.env.BREVO_LIST_ID || process.env.NEXT_PUBLIC_BREVO_LIST_ID;
-
-  if (!apiKey || !listIdRaw) {
-    return withCors(
-      NextResponse.json(
-        { error: 'Waitlist is not configured. Missing BREVO_API_KEY or BREVO_LIST_ID.' },
-        { status: 500 },
-      ),
-    );
-  }
-
   let body;
   try {
     body = await request.json();
@@ -38,42 +29,35 @@ export async function POST(request) {
     return withCors(NextResponse.json({ error: 'Invalid JSON body.' }, { status: 400 }));
   }
 
-  const email = typeof body?.email === 'string' ? body.email.trim() : '';
+  const email = typeof body?.email === 'string' ? body.email.trim().toLowerCase() : '';
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return withCors(NextResponse.json({ error: 'A valid email is required.' }, { status: 400 }));
   }
 
+  const source = typeof body?.source === 'string' ? body.source.slice(0, 80) : 'landing-page-hero';
+
   try {
-    const upstream = await fetch(BREVO_ENDPOINT, {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-        'api-key': apiKey,
-      },
-      body: JSON.stringify({
-        email,
-        listIds: [parseInt(listIdRaw, 10)],
-        updateEnabled: false,
-      }),
+    const client = await clientPromise;
+    const collection = client.db(DB_NAME).collection(COLLECTION);
+
+    // Idempotent — Mongo no-ops if the index already matches.
+    await collection.createIndex({ email: 1 }, { unique: true });
+
+    await collection.insertOne({
+      email,
+      source,
+      createdAt: new Date(),
     });
 
-    if (upstream.ok) {
-      return withCors(NextResponse.json({ ok: true }));
-    }
-
-    const payload = await upstream.json().catch(() => null);
-    if (upstream.status === 400 && payload?.code === 'duplicate_parameter') {
+    return withCors(NextResponse.json({ ok: true }));
+  } catch (err) {
+    // Duplicate key: someone's already on the list under this email.
+    if (err?.code === 11000) {
       return withCors(NextResponse.json({ ok: true, alreadySubscribed: true }));
     }
-
-    // Surface upstream error to server logs so dev can debug; don't leak it to the client.
-    console.error('brevo error', upstream.status, payload);
+    console.error('waitlist insert failed', err);
     return withCors(
       NextResponse.json({ error: 'Could not add you to the list right now.' }, { status: 502 }),
     );
-  } catch (err) {
-    console.error('waitlist proxy failed', err);
-    return withCors(NextResponse.json({ error: 'Network error.' }, { status: 502 }));
   }
 }
