@@ -3,6 +3,7 @@
 import { HeroVideoDialog } from '@/components/magicui/hero-video-dialog';
 import { Globe } from '@/components/magicui/globe';
 import { RiderDemandChart } from '@/components/sections/RiderDemandChart';
+import { WaitlistForm } from '@/components/sections/WaitlistForm';
 
 // Bootstrap-era template sections — re-enable after each is replaced
 // with a Tailwind drop-in component.
@@ -29,6 +30,7 @@ const Home1 = () => {
               Tag Rides is the ride-hailing platform built for how Lagos actually moves —
               faster pickups, fairer fares, drivers who own the road.
             </p>
+            <WaitlistForm className="mt-8" />
           </div>
         </div>
 
