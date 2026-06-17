@@ -20,7 +20,7 @@ const GLOBE_CONFIG = {
   mapSamples: 16000,
   mapBrightness: 1.2,
   baseColor: [1, 1, 1],
-  markerColor: [251 / 255, 100 / 255, 21 / 255],
+  markerColor: [20 / 255, 184 / 255, 166 / 255],
   glowColor: [1, 1, 1],
   markers: [
     { location: [6.5244, 3.3792], size: 0.12 }, // Lagos — headline marker

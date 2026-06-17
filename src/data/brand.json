@@ -1,0 +1,22 @@
+{
+  "name": "Tag Rides",
+  "company": "Tag Along Ltd",
+  "color": {
+    "primary": "#14b8a6",
+    "primaryOklch": "oklch(0.72 0.13 192)",
+    "primaryRgb": [20, 184, 166]
+  },
+  "location": {
+    "city": "Lagos",
+    "state": "Lagos State",
+    "country": "Nigeria",
+    "shortAddress": "Owode-Ogombo, Lagos State, Nigeria",
+    "fullAddress": "6, Alh Memunatu Shelle Crescent, off Murphy Mudashiru Str., Rovers estate, Owode-Ogombo, Lagos State"
+  },
+  "socials": {
+    "instagram": "https://www.instagram.com/tagrides/",
+    "linkedin": "https://www.linkedin.com/company/104305162/",
+    "twitter": "https://x.com/tagrides_",
+    "facebook": "https://www.facebook.com/61566568220406/about"
+  }
+}

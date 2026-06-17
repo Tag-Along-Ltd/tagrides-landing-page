@@ -13,7 +13,7 @@ export function RiderDemandChart() {
       backgroundColor: 'transparent',
       tooltip: {
         backgroundColor: 'rgba(20,20,20,0.92)',
-        borderColor: 'rgba(251,100,21,0.4)',
+        borderColor: 'rgba(20,184,166,0.4)',
         textStyle: { color: '#fff', fontFamily: 'inherit' },
         formatter: (params) => {
           const f = factors[params.value[0]];
@@ -26,7 +26,7 @@ export function RiderDemandChart() {
         min: 0,
         max: 100,
         inRange: {
-          color: ['#7c1d0a', '#c83f12', '#fb6415', '#ffb066'],
+          color: ['#134e4a', '#0d9488', '#14b8a6', '#67e8f9'],
         },
       },
       xAxis3D: {
@@ -94,7 +94,7 @@ export function RiderDemandChart() {
           })),
           emphasis: {
             label: { show: false },
-            itemStyle: { color: '#ffb066' },
+            itemStyle: { color: '#67e8f9' },
           },
         },
       ],
@@ -104,7 +104,7 @@ export function RiderDemandChart() {
   return (
     <section className="relative mx-auto max-w-6xl px-6 py-24">
       <div className="mb-10 text-center">
-        <p className="text-sm font-medium uppercase tracking-[0.2em] text-[oklch(0.72_0.18_45)]">
+        <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">
           Built on what Lagos riders told us
         </p>
         <h2 className="mt-3 text-balance text-3xl font-semibold tracking-tight md:text-5xl">
