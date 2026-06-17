@@ -4,7 +4,10 @@
   "color": {
     "primary": "#14b8a6",
     "primaryOklch": "oklch(0.72 0.13 192)",
-    "primaryRgb": [20, 184, 166]
+    "primaryRgb": [20, 184, 166],
+    "secondary": "#f59e0b",
+    "secondaryOklch": "oklch(0.75 0.16 70)",
+    "secondaryRgb": [245, 158, 11]
   },
   "location": {
     "city": "Lagos",
