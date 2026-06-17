@@ -1,0 +1,13 @@
+{
+  "source": "Tag Rides — Lagos rider survey, fielded July–August 2023",
+  "totalResponses": 210,
+  "headline": "What 200+ Lagos riders said they want",
+  "demandFactors": [
+    { "label": "Pricing",             "count": 192, "percent": 91.4 },
+    { "label": "Convenience",         "count": 153, "percent": 72.9 },
+    { "label": "Safety",              "count": 147, "percent": 70.0 },
+    { "label": "Vehicle availability", "count": 117, "percent": 55.7 },
+    { "label": "Ease of booking",     "count": 73,  "percent": 34.8 },
+    { "label": "Coverage area",       "count": 70,  "percent": 33.3 }
+  ]
+}

@@ -2,6 +2,7 @@
 
 import { HeroVideoDialog } from '@/components/magicui/hero-video-dialog';
 import { Globe } from '@/components/magicui/globe';
+import { RiderDemandChart } from '@/components/sections/RiderDemandChart';
 
 // Bootstrap-era template sections — re-enable after each is replaced
 // with a Tailwind drop-in component.
@@ -40,6 +41,8 @@ const Home1 = () => {
           thumbnailAlt="Tag Rides demo video"
         />
       </section>
+
+      <RiderDemandChart />
     </main>
   );
 };
