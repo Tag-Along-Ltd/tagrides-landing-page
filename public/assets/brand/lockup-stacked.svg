@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 160" fill="none" role="img" aria-label="Tag Rides stacked lockup">
+  <title>Tag Rides — stacked lockup</title>
+  <defs>
+    <mask id="cut-ls"><rect width="200" height="160" fill="white"/><circle cx="115" cy="50" r="34" fill="black"/></mask>
+  </defs>
+  <!-- Mark, centered, larger -->
+  <circle cx="85" cy="50" r="34" stroke="#008080" stroke-width="9"/>
+  <g mask="url(#cut-ls)"><circle cx="115" cy="50" r="34" stroke="#F59E0B" stroke-width="9"/></g>
+  <path d="M 99 32 A 34 34 0 0 1 99 68" stroke="#008080" stroke-width="9" stroke-linecap="round"/>
+  <!-- Wordmark below, centered -->
+  <text x="100" y="135" text-anchor="middle" font-family="'Plus Jakarta Sans','Inter',system-ui,sans-serif" font-size="32" font-weight="800" fill="#0A0A0A" letter-spacing="-1">tag<tspan fill="#008080">rides</tspan></text>
+</svg>

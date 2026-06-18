@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 60" fill="none" role="img" aria-label="Tag Rides horizontal lockup">
+  <title>Tag Rides — horizontal lockup</title>
+  <defs>
+    <mask id="cut-teal-h">
+      <rect width="280" height="60" fill="white"/>
+      <circle cx="65" cy="30" r="22" fill="black"/>
+    </mask>
+  </defs>
+  <!-- Mark on the left -->
+  <circle cx="35" cy="30" r="22" stroke="#008080" stroke-width="6"/>
+  <g mask="url(#cut-teal-h)">
+    <circle cx="65" cy="30" r="22" stroke="#F59E0B" stroke-width="6"/>
+  </g>
+  <path d="M 56 17 A 22 22 0 0 1 56 43" stroke="#008080" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Wordmark — "tag" charcoal/foreground · "rides" teal -->
+  <text x="115" y="40" font-family="'Plus Jakarta Sans','Inter',system-ui,sans-serif" font-size="32" font-weight="800" fill="#0a0a0a" letter-spacing="-1">tag<tspan fill="#008080">rides</tspan></text>
+</svg>

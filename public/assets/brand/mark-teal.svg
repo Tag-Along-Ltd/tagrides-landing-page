@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60" fill="none" role="img" aria-label="Tag Rides mark — teal">
+  <title>Tag Rides — single-color teal mark</title>
+  <defs>
+    <mask id="cut-t"><rect width="100" height="60" fill="white"/><circle cx="65" cy="30" r="22" fill="black"/></mask>
+  </defs>
+  <circle cx="35" cy="30" r="22" stroke="#008080" stroke-width="6"/>
+  <g mask="url(#cut-t)"><circle cx="65" cy="30" r="22" stroke="#008080" stroke-width="6"/></g>
+  <path d="M 56 17 A 22 22 0 0 1 56 43" stroke="#008080" stroke-width="6" stroke-linecap="round"/>
+</svg>
