@@ -1,13 +1,25 @@
 {
-  "name": "Tag Rides",
-  "company": "Tag Along Ltd",
+  "name": "TagRides",
+  "company": "TAG-ALONG LTD",
+  "catchphrase": "Stronger and better together.",
   "color": {
-    "primary": "#14b8a6",
-    "primaryOklch": "oklch(0.72 0.13 192)",
-    "primaryRgb": [20, 184, 166],
-    "secondary": "#f59e0b",
-    "secondaryOklch": "oklch(0.75 0.16 70)",
-    "secondaryRgb": [245, 158, 11]
+    "primary": "#008080",
+    "primaryHover": "#006F6F",
+    "primaryActive": "#005C5C",
+    "primarySoft": "#BFE5E5",
+    "mutedTeal": "#5F8F8F",
+    "accent": "#F59E0B",
+    "accentStar": "#F0B429",
+    "accentWarning": "#D4960A",
+    "background": "#0A0A0A",
+    "surface": "#1A1A1A",
+    "elevated": "#262626",
+    "divider": "#333333",
+    "textPrimary": "#E5E5E5",
+    "textSecondary": "#B3B3B3",
+    "textDisabled": "#666666",
+    "success": "#2EAD8A",
+    "danger": "#D14343"
   },
   "location": {
     "city": "Lagos",

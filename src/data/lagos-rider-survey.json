@@ -3,11 +3,30 @@
   "totalResponses": 210,
   "headline": "What 200+ Lagos riders said they want",
   "demandFactors": [
-    { "label": "Pricing",             "count": 192, "percent": 91.4 },
-    { "label": "Convenience",         "count": 153, "percent": 72.9 },
-    { "label": "Safety",              "count": 147, "percent": 70.0 },
+    { "label": "Pricing", "count": 192, "percent": 91.4 },
+    { "label": "Convenience", "count": 153, "percent": 72.9 },
+    { "label": "Safety", "count": 147, "percent": 70.0 },
     { "label": "Vehicle availability", "count": 117, "percent": 55.7 },
-    { "label": "Ease of booking",     "count": 73,  "percent": 34.8 },
-    { "label": "Coverage area",       "count": 70,  "percent": 33.3 }
+    { "label": "Ease of booking", "count": 73, "percent": 34.8 },
+    { "label": "Coverage area", "count": 70, "percent": 33.3 }
+  ],
+  "improvementsWanted": [
+    { "label": "Lower wait times", "count": 149, "percent": 71.0 },
+    { "label": "Driver navigation", "count": 115, "percent": 54.8 },
+    { "label": "Customer support", "count": 110, "percent": 52.4 },
+    { "label": "More vehicle options", "count": 99, "percent": 47.1 }
+  ],
+  "mostPopularToday": [
+    { "label": "Danfo", "count": 140, "percent": 66.7 },
+    { "label": "Bolt", "count": 31, "percent": 14.8 },
+    { "label": "Uber", "count": 26, "percent": 12.4 },
+    { "label": "InDrive", "count": 6, "percent": 2.9 },
+    { "label": "Other", "count": 7, "percent": 3.3 }
+  ],
+  "interestInNewService": [
+    { "label": "Yes, very interested", "count": 155, "percent": 73.8 },
+    { "label": "Yes, but options exist", "count": 28, "percent": 13.3 },
+    { "label": "Current options fine", "count": 15, "percent": 7.1 },
+    { "label": "Don't need ride-share", "count": 12, "percent": 5.7 }
   ]
 }

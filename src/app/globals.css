@@ -1,37 +1,174 @@
 @import 'tailwindcss';
 
 @source '../**/*.{js,jsx}';
-@source '../../src/**/*.{js,jsx}';
 
-/* TagRides palette + shadcn-style tokens so drop-in components from
-   Magic UI / Aceternity / Reactbits that reference bg-primary etc.
-   resolve correctly. Dark by default — the landing page is dark. */
+/* TagRides design system — canonical values from tagrides-frontend/lib/core/theme/themes.dart.
+   Dark by default to match the app's primary surface. Teal primary, amber accent. */
+
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-elevated: var(--elevated);
   --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-foreground-disabled: var(--foreground-disabled);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-hover: var(--primary-hover);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-accent-star: var(--accent-star);
+  --color-secondary: var(--accent);
+  --color-secondary-foreground: var(--accent-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
+  --color-muted-teal: var(--muted-teal);
   --color-border: var(--border);
   --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+
+  --font-display: var(--font-display);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-mono);
+
+  /* Aurora keyframes used by AuroraText */
+  --animate-aurora: aurora 8s ease infinite;
+  @keyframes aurora {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+}
+
+@keyframes eg-twinkle {
+  0%, 100% { opacity: 0.25; }
+  50%      { opacity: 1; }
+}
+
+/* Parallax star-field drift — three layers, all timed in the same universe
+   as the globe's 180s rotation so the brain reads ambient, coherent
+   motion. Uses `alternate` so the field rocks back and forth without any
+   visible snap-back. */
+@keyframes star-drift-far {
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-2%, 0.8%, 0); }
+}
+@keyframes star-drift-mid {
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-3.5%, 1.4%, 0); }
+}
+@keyframes star-drift-near {
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-5.5%, 2%, 0); }
+}
+.star-drift-far  { animation: star-drift-far  240s linear infinite alternate; }
+.star-drift-mid  { animation: star-drift-mid  210s linear infinite alternate; }
+.star-drift-near { animation: star-drift-near 180s linear infinite alternate; }
+
+/* Pure-CSS spinning Earth — scrolls the Mercator texture horizontally
+   inside the circular mask. -4096px = the source texture's native width
+   so one cycle = one full rotation. Animates BOTH background-position
+   and mask-position so the keyframes work for either approach. */
+@keyframes earth-spin {
+  0% {
+    background-position-x: 0;
+    -webkit-mask-position-x: 0;
+    mask-position-x: 0;
+  }
+  100% {
+    background-position-x: -4096px;
+    -webkit-mask-position-x: -4096px;
+    mask-position-x: -4096px;
+  }
+}
+
+/* Meteor-shower streaks — small, quick, moderated.
+   White core + teal tail. Tiny enough to read as occasional meteors,
+   frequent enough that one fires every ~1.5s on average. */
+.shooting-star {
+  position: absolute;
+  width: 90px;
+  height: 1.2px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.9) 60%,
+    rgba(0, 255, 220, 0.6) 100%
+  );
+  border-radius: 999px;
+  filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.4));
+  opacity: 0;
+  transform: rotate(20deg);
+}
+.shooting-star-1 {
+  top: 18%;
+  left: -100px;
+  animation: shooting-star 24s ease-out 3s infinite;
+}
+.shooting-star-2 {
+  top: 56%;
+  left: -100px;
+  animation: shooting-star 28s ease-out 14s infinite;
+}
+/* Meteors are invisible most of the cycle, then quietly cross the field.
+   With 24s + 28s cycles staggered, you see roughly one streak every 12s —
+   same ambient-pace universe as the globe's 180s spin, never busy. */
+@keyframes shooting-star {
+  0%   { opacity: 0; transform: translate3d(0, 0, 0) rotate(20deg); }
+  78%  { opacity: 0; transform: translate3d(0, 0, 0) rotate(20deg); }
+  82%  { opacity: 1; }
+  100% { opacity: 0; transform: translate3d(110vw, 32vh, 0) rotate(20deg); }
 }
 
 :root {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --primary: oklch(0.72 0.13 192); /* Tag Rides teal — #14b8a6 */
-  --primary-foreground: oklch(0.145 0 0);
-  --secondary: oklch(0.75 0.16 70); /* Tag Rides amber — #f59e0b */
-  --secondary-foreground: oklch(0.145 0 0);
-  --accent: oklch(0.75 0.16 70); /* Alias for secondary so drop-ins resolve either */
-  --accent-foreground: oklch(0.145 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --border: oklch(0.269 0 0);
-  --ring: oklch(0.72 0.13 192);
+  --background: #0a0a0a;
+  --surface: #1a1a1a;
+  --elevated: #262626;
+  --foreground: #e5e5e5;
+  --foreground-muted: #b3b3b3;
+  --foreground-disabled: #666666;
+  --primary: #008080;
+  --primary-foreground: #0a0a0a;
+  --primary-soft: #bfe5e5;
+  --primary-hover: #006f6f;
+  --accent: #f59e0b;
+  --accent-foreground: #0a0a0a;
+  --accent-star: #f0b429;
+  --muted: #1a1a1a;
+  --muted-foreground: #b3b3b3;
+  --muted-teal: #5f8f8f;
+  --border: #333333;
+  --ring: #008080;
+  --success: #2ead8a;
+  --danger: #d14343;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground-muted);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--foreground);
+  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Layered light source for the hero — two warm-cool radial gradients
+   stacked to give depth without literal motion. */
+.hero-light {
+  background:
+    radial-gradient(circle at 15% 0%,  rgba(0, 128, 128, 0.18) 0,  transparent 45%),
+    radial-gradient(circle at 90% 100%, rgba(245, 158, 11, 0.08) 0, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(0, 128, 128, 0.04) 0, transparent 60%);
 }

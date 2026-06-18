@@ -1,0 +1,39 @@
+{
+  "eyebrow": "Built through",
+  "headline": "Backed by people who have seen this story before.",
+  "lead": "Tag Rides is a Tony Elumelu Foundation grantee and is being built inside the Google for Startups and Microsoft for Startups ecosystems. The founder is also an ALX Ventures program graduate.",
+  "programs": [
+    {
+      "name": "Tony Elumelu Foundation",
+      "shorthand": "TEF",
+      "role": "Grant recipient",
+      "note": "Selected and funded by TEF to build TagRides.",
+      "weight": "primary",
+      "logoSrc": null
+    },
+    {
+      "name": "Google for Startups",
+      "shorthand": "Google for Startups",
+      "role": "Ecosystem participant",
+      "note": "In the Google for Startups program.",
+      "weight": "primary",
+      "logoSrc": null
+    },
+    {
+      "name": "Microsoft for Startups",
+      "shorthand": "Microsoft for Startups",
+      "role": "Founders Hub",
+      "note": "Building on Azure as a Microsoft Founders Hub member.",
+      "weight": "standard",
+      "logoSrc": null
+    },
+    {
+      "name": "ALX Ventures",
+      "shorthand": "ALX Ventures",
+      "role": "Program graduate",
+      "note": "Founder-stage venture program.",
+      "weight": "standard",
+      "logoSrc": null
+    }
+  ]
+}
