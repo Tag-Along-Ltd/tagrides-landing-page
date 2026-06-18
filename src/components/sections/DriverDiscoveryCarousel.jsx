@@ -33,11 +33,6 @@ function DriverCard({ driver, isActive }) {
           : 'border-border bg-surface/70 opacity-60',
       )}
     >
-      {isActive && (
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-primary px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-primary-foreground">
-          Selected · Live
-        </div>
-      )}
       <div className="flex items-start gap-4">
         <div className="relative">
           {/* eslint-disable-next-line @next/next/no-img-element */}
