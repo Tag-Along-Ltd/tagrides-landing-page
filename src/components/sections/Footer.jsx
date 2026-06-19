@@ -86,7 +86,9 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-[1.4fr_repeat(3,1fr)]">
           {/* Brand block */}
           <div>
-            <Lockup size={36} />
+            <Link href="/" aria-label="Tag Rides — home" className="inline-block transition hover:opacity-80">
+              <Lockup size={36} />
+            </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-foreground-muted">
               {brand.catchphrase} Built in {brand.location.city}, for how the city actually moves.
             </p>

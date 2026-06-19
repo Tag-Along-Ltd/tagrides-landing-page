@@ -32,7 +32,7 @@ const mono = JetBrains_Mono({
 export const metadata = {
   title: 'TagRides — Share the ride. Share the fare. | TAG-ALONG LTD',
   description:
-    'TagRides connects Lagosians with drivers already heading their way. Agree the fare directly, pay only for your leg of the trip, and move safely across the city for what you would already pay for a danfo.',
+    'Their route. Your ride. Lagos route-share — drivers heading your way pick you up, you agree the fare directly, pay only for your leg of the trip.',
   icons: {
     icon: [
       { url: '/assets/brand/favicon.svg', type: 'image/svg+xml' },
@@ -40,8 +40,9 @@ export const metadata = {
     ],
   },
   openGraph: {
-    title: 'TagRides — Share the ride. Share the fare.',
-    description: 'Built in Lagos, for how Lagos actually moves. Stronger and better together.',
+    title: 'TagRides — Their route. Your ride.',
+    description:
+      'Lagos route-share. Drivers heading where you are. Agree the fare directly. Pay only for your leg of the trip.',
     images: [{ url: '/assets/brand/og-image.svg', width: 1200, height: 630 }],
   },
 };

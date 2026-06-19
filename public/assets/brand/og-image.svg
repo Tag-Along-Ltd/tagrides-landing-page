@@ -29,7 +29,7 @@
   <text x="80" y="490" font-family="'Plus Jakarta Sans','Inter',system-ui,sans-serif" font-size="110" font-weight="800" fill="#008080" letter-spacing="-3">Move together.</text>
 
   <!-- Tagline -->
-  <text x="80" y="570" font-family="'Plus Jakarta Sans','Inter',system-ui,sans-serif" font-size="28" font-weight="600" fill="#F59E0B" letter-spacing="0.5">Stronger and better together.</text>
+  <text x="80" y="570" font-family="'Plus Jakarta Sans','Inter',system-ui,sans-serif" font-size="28" font-weight="600" fill="#F59E0B" letter-spacing="0.5">Their route. Your ride.</text>
 
   <!-- Bottom-right Lagos pilot tag -->
   <text x="1120" y="588" text-anchor="end" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="20" font-weight="500" fill="#B3B3B3" letter-spacing="3">LAGOS · 2026</text>

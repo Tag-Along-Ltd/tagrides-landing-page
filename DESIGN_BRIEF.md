@@ -10,7 +10,7 @@ This is the **skeleton**. Implementation should bring its own design language; t
 - Legal entity: **TAG-ALONG LTD**
 - Consumer brand / product: **TagRides**
 - Signature mode within the product: **Tag-Along**
-- Catchphrase: **"Stronger and better together."**
+- Catchphrase: **"Their route. Your ride."**
 
 ### Mission
 

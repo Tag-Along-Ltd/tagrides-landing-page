@@ -26,7 +26,7 @@ This is the standard parent/product structure. Examples:
 | **Tag Along Ltd** | **Tag Rides** (and any future Tag-* products) |
 
 **Why this matters for branding:**
-- The catchphrase **"Stronger and better together"** lives at the **Tag Along** level — the family promise.
+- The catchphrase **"Their route. Your ride."** lives at the **Tag Along** level — the family promise.
 - The product mark (the interlocked rings) sits on **Tag Rides** but can extend cleanly to any future Tag-* product (Tag Eats / Tag Bus / Tag Pay) without rebranding the parent.
 - When signing legal docs, partnerships, MOUs → **TAG-ALONG LTD**. When marketing to riders → **Tag Rides**.
 
@@ -35,7 +35,7 @@ This is the standard parent/product structure. Examples:
 | Field | Value |
 | --- | --- |
 | Headquarters | Lagos, Nigeria |
-| Catchphrase | **Stronger and better together.** |
+| Catchphrase | **Their route. Your ride.** |
 | Mission | Organise the way Lagosians already move — making everyday shared rides safer, fairer, and more reliable. |
 | Vision | A Lagos where every commute carries someone else along — where moving across the city is affordable, dignified, and trusted. |
 
@@ -207,7 +207,7 @@ Source of truth: `src/data/brand.json`. CSS tokens: `src/app/globals.css`. Repro
 - Active voice. Second person (*you*).
 - Sentences short. Sometimes very short.
 
-**Catchphrase:** *Stronger and better together.* Tag Rides is the place that proves the line.
+**Catchphrase:** *Their route. Your ride.* Tag Rides is the place that proves the line — a driver's existing route becomes your trip.
 
 ---
 

@@ -78,9 +78,8 @@ const Home1 = () => {
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-foreground-muted md:text-xl">
-              {brand.name} connects you with drivers already heading your way. Agree the fare
-              directly. Pay only for your leg of the trip. Move safely across {brand.location.city}{' '}
-              for what you would already pay for a danfo.
+              Drivers heading where you are. Pick up nearby. Agree the fare directly. Pay only for
+              your leg of the trip — at danfo prices, on a private car.
             </p>
 
             <p className="mt-5 font-display text-sm font-semibold tracking-tight text-accent md:text-base">
