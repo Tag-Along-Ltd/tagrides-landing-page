@@ -5,6 +5,7 @@ import { ArrowRight } from 'lucide-react';
 
 import { DriverDiscoveryCarousel } from '@/components/sections/DriverDiscoveryCarousel';
 import { LagosResearchCarousel } from '@/components/sections/LagosResearchCarousel';
+import { TripFareForm } from '@/components/sections/TripFareForm';
 import { AuroraText } from '@/components/magicui/aurora-text';
 import { Header } from '@/components/sections/Header';
 import { Problem } from '@/components/sections/Problem';
@@ -122,6 +123,7 @@ const Home1 = () => {
       <PricingPhilosophy />
       <Safety />
       <LagosResearchCarousel />
+      <TripFareForm />
       <VisionNumbers />
       <WhyNow />
       <BackedBy />
