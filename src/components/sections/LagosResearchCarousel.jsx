@@ -172,7 +172,7 @@ export function LagosResearchCarousel() {
   );
 
   return (
-    <section className="relative mx-auto max-w-5xl px-6 py-24 md:py-32">
+    <section className="relative mx-auto max-w-5xl px-6 py-16 md:py-32">
       <div className="mb-12 text-center">
         <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">
           Built on what Lagos riders told us

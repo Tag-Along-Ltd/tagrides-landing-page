@@ -77,7 +77,7 @@ export function TripFareForm() {
 
   return (
     <section id="train" className="relative">
-      <div className="mx-auto max-w-5xl px-6 py-20 md:py-28">
+      <div className="mx-auto max-w-5xl px-6 py-14 md:py-28">
         <Reveal className="text-center md:max-w-3xl md:mx-auto">
           <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
             <Sparkles className="size-3" />

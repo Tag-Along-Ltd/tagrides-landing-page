@@ -287,7 +287,7 @@ function Visual({ visual }) {
 export function StoryLadder() {
   return (
     <section id="story" className="relative bg-background">
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-6 py-14 md:py-28">
         <Reveal className="max-w-3xl">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
             Why Tag Rides

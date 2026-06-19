@@ -57,7 +57,7 @@ const Home1 = () => {
 
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 pt-24 pb-20 md:grid-cols-2 md:gap-20 md:pt-32 md:pb-28">
           {/* Left: copy */}
-          <div className="max-w-2xl">
+          <div className="min-w-0 max-w-2xl">
             <p className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/70 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-foreground-muted backdrop-blur-sm">
               <span className="relative flex size-1.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/80" />
@@ -66,7 +66,7 @@ const Home1 = () => {
               {brand.name} · Lagos pilot · 2026
             </p>
 
-            <h1 className="mt-6 font-display text-5xl font-extrabold leading-[1.02] tracking-tight text-foreground md:text-7xl">
+            <h1 className="mt-6 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-7xl md:leading-[1.02]">
               Tag along.
               <br />
               <AuroraText
@@ -109,7 +109,7 @@ const Home1 = () => {
 
           {/* Right: driver discovery carousel — capped width so it reads as a contained
               wheel/coverflow instead of sprawling across the viewport. */}
-          <DriverDiscoveryCarousel className="mx-auto w-full max-w-[440px] md:mx-0 md:ml-auto" />
+          <DriverDiscoveryCarousel className="mx-auto min-w-0 w-full md:max-w-[440px] md:mx-0 md:ml-auto" />
         </div>
       </section>
 

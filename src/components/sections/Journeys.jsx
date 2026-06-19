@@ -70,7 +70,7 @@ function JourneyGrid({ steps, accent = 'primary' }) {
 export function RiderJourney() {
   return (
     <section id="rider-journey" className="relative">
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-6 py-14 md:py-28">
         <Reveal>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">For riders</p>
           <h2 className="mt-3 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
@@ -86,7 +86,7 @@ export function RiderJourney() {
 export function DriverJourney() {
   return (
     <section id="driver-journey" className="relative bg-surface/40">
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-6 py-14 md:py-28">
         <Reveal>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">For drivers</p>
           <h2 className="mt-3 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">

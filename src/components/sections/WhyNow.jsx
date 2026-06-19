@@ -23,7 +23,7 @@ const REASONS = [
 export function WhyNow() {
   return (
     <section id="why-now" className="relative">
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-6 py-14 md:py-28">
         <Reveal>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">The moment</p>
           <h2 className="mt-3 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">

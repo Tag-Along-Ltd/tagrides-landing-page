@@ -29,7 +29,7 @@ export function PricingPhilosophy() {
         }}
         aria-hidden="true"
       />
-      <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-32">
+      <div className="relative mx-auto max-w-6xl px-6 py-16 md:py-32">
         <Reveal>
           <h2 className="max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight md:text-5xl">
             Fairer than ride-hail.

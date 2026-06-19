@@ -28,7 +28,7 @@ const CARDS = [
 export function Problem() {
   return (
     <section id="problem" className="relative">
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-6 py-14 md:py-28">
         <Reveal>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
             Why we built {`TagRides`}

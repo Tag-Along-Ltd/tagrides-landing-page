@@ -88,7 +88,7 @@ export default function BrandPage() {
             key={concept.id}
             className={`relative ${idx % 2 === 1 ? 'bg-surface/40' : ''}`}
           >
-            <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+            <div className="mx-auto max-w-6xl px-6 py-14 md:py-28">
               {/* Header strip */}
               <Reveal>
                 <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
@@ -150,7 +150,7 @@ export default function BrandPage() {
 
       {/* Decision strip */}
       <section className="relative">
-        <div className="mx-auto max-w-5xl px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-5xl px-6 py-14 md:py-28">
           <Reveal>
             <div className="rounded-3xl border border-primary/30 bg-elevated p-10 text-center md:p-16">
               <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-accent">

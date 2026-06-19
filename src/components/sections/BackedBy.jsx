@@ -69,7 +69,7 @@ function ProgramCard({ program }) {
 export function BackedBy({ id = 'backed-by', className }) {
   return (
     <section id={id} className={cn('relative', className)}>
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-6 py-14 md:py-28">
         <Reveal className="flex flex-col gap-4 md:max-w-3xl">
           <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
             <Sparkles className="size-3" />

@@ -161,7 +161,7 @@ export default function AboutUsPage() {
 
       {/* Video */}
       <section className="relative bg-surface/40">
-        <div className="mx-auto max-w-5xl px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-5xl px-6 py-14 md:py-28">
           <Reveal>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">In motion</p>
             <h2 className="mt-3 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
@@ -182,7 +182,7 @@ export default function AboutUsPage() {
 
       {/* THE STORY — 3 richer blocks, each with eyebrow, icon, headline, body */}
       <section className="relative">
-        <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-6xl px-6 py-14 md:py-28">
           <Reveal className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">The story</p>
             <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
@@ -219,7 +219,7 @@ export default function AboutUsPage() {
 
       {/* MILESTONES — horizontal-feeling timeline (vertical stack on mobile) */}
       <section className="relative bg-surface/40">
-        <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-6xl px-6 py-14 md:py-28">
           <Reveal className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Milestones</p>
             <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
@@ -280,7 +280,7 @@ export default function AboutUsPage() {
 
       {/* Three priorities — the survey */}
       <section className="relative">
-        <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-6xl px-6 py-14 md:py-28">
           <Reveal>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
               What riders told us
@@ -317,7 +317,7 @@ export default function AboutUsPage() {
 
       {/* City roadmap */}
       <section className="relative bg-surface/40">
-        <div className="mx-auto max-w-5xl px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-5xl px-6 py-14 md:py-28">
           <Reveal>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
               Where we&rsquo;re headed

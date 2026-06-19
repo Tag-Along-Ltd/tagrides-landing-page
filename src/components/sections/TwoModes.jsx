@@ -30,7 +30,7 @@ const MODES = [
 export function TwoModes() {
   return (
     <section id="modes" className="relative">
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-6 py-14 md:py-28">
         <Reveal>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
             Choose your ride
