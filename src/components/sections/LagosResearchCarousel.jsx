@@ -237,7 +237,7 @@ export function LagosResearchCarousel() {
           href="/contribute"
           className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary transition hover:bg-primary/15"
         >
-          Help train the next dataset
+          Help us suggest fair prices on your route
           <span aria-hidden="true">→</span>
         </a>
       </div>

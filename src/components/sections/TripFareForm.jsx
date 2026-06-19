@@ -82,15 +82,15 @@ export function TripFareForm() {
         <Reveal className="text-center md:max-w-3xl md:mx-auto">
           <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
             <Sparkles className="size-3" />
-            Training Tag Rides
+            Fairer fares in Lagos
           </p>
           <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
-            Help us price Lagos.
+            What&rsquo;s fair on your route?
           </h2>
           <p className="mt-5 text-base leading-relaxed text-foreground-muted md:text-lg">
-            We&rsquo;re teaching the app to suggest fair fares and route patterns for every corner
-            of the city. Drop in a trip you actually take — the more we get from real riders, the
-            smarter the suggestions for someone who just landed in Lagos.
+            We&rsquo;re teaching the app to suggest prices that match what real Lagos riders
+            actually pay. Add a route you take — even one — and you help us draft fairer fares for
+            everyone heading the same way.
           </p>
         </Reveal>
 
