@@ -53,28 +53,26 @@ const COLUMNS = [
   {
     title: 'About',
     items: [
-      { label: 'Mission',       href: '#vision' },
-      { label: 'The team',      href: '/about-us' },
-      { label: 'Press',         href: '#press' },
-      { label: 'Careers',       href: '#careers' },
+      { label: 'Story',         href: '/about-us' },
+      { label: 'Field notes',   href: '/blog' },
+      { label: 'Brand',         href: '/brand' },
     ],
   },
   {
     title: 'Product',
     items: [
-      { label: 'How it works',  href: '#rider-journey' },
-      { label: 'Safety',        href: '#safety' },
-      { label: 'Pricing',       href: '#pricing' },
-      { label: 'FAQ',           href: '#faq' },
+      { label: 'How it works',  href: '/#rider-journey' },
+      { label: 'Safety',        href: '/#safety' },
+      { label: 'Pricing',       href: '/#pricing' },
+      { label: 'Train the AI',  href: '/contribute' },
     ],
   },
   {
     title: 'For Partners',
     items: [
-      { label: 'For drivers',   href: '#drive' },
-      { label: 'For employers', href: '#employers' },
       { label: 'Investors',     href: 'mailto:investors@tagrides.com' },
-      { label: 'Press kit',     href: '#press-kit' },
+      { label: 'Press',         href: 'mailto:press@tagrides.com' },
+      { label: 'Talk to us',    href: 'mailto:hello@tagrides.com' },
     ],
   },
 ];
@@ -145,9 +143,8 @@ export function Footer() {
             </p>
           </div>
           <div className="flex items-center gap-5">
-            <Link href="#privacy" className="hover:text-foreground">Privacy</Link>
-            <Link href="#terms"   className="hover:text-foreground">Terms</Link>
-            <Link href="#cookies" className="hover:text-foreground">Cookies</Link>
+            <Link href="/privacy" className="hover:text-foreground">Privacy</Link>
+            <Link href="/terms"   className="hover:text-foreground">Terms</Link>
           </div>
         </div>
       </div>

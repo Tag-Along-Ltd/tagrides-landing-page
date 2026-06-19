@@ -232,6 +232,15 @@ export function LagosResearchCarousel() {
       <p className="mt-12 text-center text-xs uppercase tracking-[0.2em] text-neutral-500">
         Auto-advancing every 7 seconds · grab to scrub
       </p>
+      <div className="mt-6 text-center">
+        <a
+          href="/contribute"
+          className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary transition hover:bg-primary/15"
+        >
+          Help train the next dataset
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
     </section>
   );
 }

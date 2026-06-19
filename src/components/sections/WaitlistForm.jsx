@@ -16,10 +16,11 @@ export function WaitlistForm({ className }) {
 
     setStatus('submitting');
     try {
+      const fd = new FormData(event.currentTarget);
       const res = await fetch('/api/waitlist', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, website: fd.get('website') || '' }),
       });
 
       if (res.ok) {
@@ -64,6 +65,15 @@ export function WaitlistForm({ className }) {
         onChange={(e) => setEmail(e.target.value)}
         disabled={status === 'submitting'}
         className="h-12 flex-1 rounded-full border border-white/15 bg-white/5 px-5 text-sm text-white placeholder:text-neutral-400 backdrop-blur-md transition focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/40 disabled:opacity-60"
+      />
+      {/* Honeypot — invisible to humans, irresistible to bots */}
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="hidden"
       />
       <button
         type="submit"

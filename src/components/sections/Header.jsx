@@ -7,10 +7,10 @@ import { Lockup } from '@/components/brand/Logo';
 import { cn } from '@/lib/utils';
 
 const NAV = [
-  { label: 'Story',     href: '/#story' },
   { label: 'How it works', href: '/#rider-journey' },
-  { label: 'Safety',    href: '/#safety' },
-  { label: 'About',     href: '/about-us' },
+  { label: 'Safety',       href: '/#safety' },
+  { label: 'Field notes',  href: '/blog' },
+  { label: 'About',        href: '/about-us' },
 ];
 
 // Floating, translucent header — sits over every page hero without

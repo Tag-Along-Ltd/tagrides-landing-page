@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 
 import clientPromise from '@/lib/mongodb';
+import { checkRateLimit } from '@/lib/rateLimit';
 
 const DB_NAME = 'myBlog'; // matches the existing posts DB; rename together when we redo the blog
 const COLLECTION = 'waitlist';
@@ -22,11 +23,23 @@ export async function OPTIONS() {
 }
 
 export async function POST(request) {
+  const rl = checkRateLimit(request);
+  if (!rl.ok) {
+    return withCors(
+      NextResponse.json({ error: 'Too many submissions. Try again in a minute.' }, { status: 429 }),
+    );
+  }
+
   let body;
   try {
     body = await request.json();
   } catch {
     return withCors(NextResponse.json({ error: 'Invalid JSON body.' }, { status: 400 }));
+  }
+
+  // Honeypot — real users never fill this hidden field. Bots fill every input.
+  if (typeof body?.website === 'string' && body.website.trim() !== '') {
+    return withCors(NextResponse.json({ ok: true })); // pretend success; drop silently
   }
 
   const email = typeof body?.email === 'string' ? body.email.trim().toLowerCase() : '';

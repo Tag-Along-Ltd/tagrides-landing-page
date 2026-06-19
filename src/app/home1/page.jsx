@@ -4,8 +4,13 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
 import { DriverDiscoveryCarousel } from '@/components/sections/DriverDiscoveryCarousel';
-import { LagosResearchCarousel } from '@/components/sections/LagosResearchCarousel';
-import { TripFareForm } from '@/components/sections/TripFareForm';
+import dynamic from 'next/dynamic';
+
+// Heavy: ECharts gl + Swiper cube effect. Skip on SSR; load after hydrate.
+const LagosResearchCarousel = dynamic(
+  () => import('@/components/sections/LagosResearchCarousel').then((m) => m.LagosResearchCarousel),
+  { ssr: false, loading: () => <div className="h-[500px]" /> },
+);
 import { AuroraText } from '@/components/magicui/aurora-text';
 import { Header } from '@/components/sections/Header';
 import { Problem } from '@/components/sections/Problem';
@@ -29,7 +34,7 @@ const HERO_VIDEO_URL =
 
 const Home1 = () => {
   return (
-    <main className="min-h-screen bg-background text-foreground-muted">
+    <main id="main-content" className="min-h-screen bg-background text-foreground-muted">
       <Header />
       {/* HERO */}
       <section className="relative isolate overflow-hidden">
@@ -91,19 +96,19 @@ const Home1 = () => {
                 href="#join"
                 className="group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition hover:bg-primary-hover"
               >
-                Ride with {brand.name}
+                Join the waitlist
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
               <Link
-                href="#drive"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-primary/60 bg-transparent px-6 text-sm font-semibold text-primary transition hover:bg-primary/10"
+                href="#rider-journey"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-primary/40 bg-transparent px-6 text-sm font-semibold text-primary transition hover:bg-primary/10"
               >
-                Drive with {brand.name}
+                See how it works
               </Link>
             </div>
 
             <div className="mt-6 text-xs uppercase tracking-[0.18em] text-foreground-disabled">
-              Native apps coming · for now ride from the web
+              One app · ride or drive · Lagos pilot 2026
             </div>
           </div>
 
@@ -114,18 +119,17 @@ const Home1 = () => {
       </section>
 
       <Problem />
-      <StoryLadder />
       <Solution />
+      <BackedBy />
+      <StoryLadder />
       <RiderJourney />
       <DriverJourney />
       <TwoModes />
       <PricingPhilosophy />
       <Safety />
       <LagosResearchCarousel />
-      <TripFareForm />
       <VisionNumbers />
       <WhyNow />
-      <BackedBy />
       <FinalCTA />
       <Footer />
     </main>

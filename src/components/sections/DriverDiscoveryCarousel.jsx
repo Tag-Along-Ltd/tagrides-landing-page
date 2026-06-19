@@ -123,7 +123,7 @@ export function DriverDiscoveryCarousel({ className }) {
       </Swiper>
 
       <p className="mt-6 text-center text-xs uppercase tracking-[0.18em] text-foreground-muted">
-        {DRIVERS.length} drivers heading your way
+        Live preview · illustrative drivers
       </p>
     </div>
   );

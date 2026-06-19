@@ -53,10 +53,11 @@ export function TripFareForm() {
     setStatus('submitting');
 
     try {
+      const fd = new FormData(event.currentTarget);
       const res = await fetch('/api/trip-fare', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, website: fd.get('website') || '' }),
       });
       const data = await res.json().catch(() => ({}));
       if (res.ok) {
@@ -218,6 +219,16 @@ export function TripFareForm() {
                 ))}
               </select>
             </label>
+
+            {/* Honeypot */}
+            <input
+              type="text"
+              name="website"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              className="hidden"
+            />
 
             <label className="block">
               <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.16em] text-foreground-muted">

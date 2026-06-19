@@ -68,7 +68,7 @@ const HERO_VIDEO_URL = 'https://www.youtube.com/embed/qh3NGpYRG3I';
 
 export default function AboutUsPage() {
   return (
-    <main className="min-h-screen bg-background text-foreground-muted">
+    <main id="main-content" className="min-h-screen bg-background text-foreground-muted">
       <Header />
       {/* HERO — two-column: copy left, Globe right (matches home page composition).
           Starfield video fills the entire hero, then fades into the page bg at the
@@ -286,7 +286,7 @@ export default function AboutUsPage() {
               What riders told us
             </p>
             <h2 className="mt-3 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
-              Three priorities, ranked by 200+ riders.
+              Three priorities, ranked by 210 riders.
             </h2>
           </Reveal>
           <RevealStagger className="mt-12 grid gap-5 md:grid-cols-3">

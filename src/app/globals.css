@@ -47,6 +47,20 @@
   50%      { opacity: 1; }
 }
 
+/* Respect prefers-reduced-motion — kill all animations + transitions for users
+   who set the OS-level preference. Some users get motion sickness from
+   auto-rotating charts, parallax stars, and aurora gradients. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* Parallax star-field drift — three layers, all timed in the same universe
    as the globe's 180s rotation so the brain reads ambient, coherent
    motion. Uses `alternate` so the field rocks back and forth without any
@@ -162,6 +176,77 @@ h3,
 h4 {
   color: var(--foreground);
   font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Tag Rides prose — for /blog/[slug] content rendered from markdown.
+   Hand-rolled because @tailwindcss/typography is yet another dep. */
+.prose-tag {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--foreground-muted);
+}
+.prose-tag h2, .prose-tag h3, .prose-tag h4 {
+  font-family: var(--font-display), system-ui, sans-serif;
+  color: var(--foreground);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin-top: 2.5em;
+  margin-bottom: 0.75em;
+}
+.prose-tag h2 { font-size: 1.75rem; line-height: 1.2; }
+.prose-tag h3 { font-size: 1.35rem; line-height: 1.3; }
+.prose-tag h4 { font-size: 1.1rem;  line-height: 1.4; }
+.prose-tag p { margin-block: 1.1em; }
+.prose-tag a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: color 120ms ease;
+}
+.prose-tag a:hover { color: var(--primary-hover); }
+.prose-tag strong { color: var(--foreground); font-weight: 600; }
+.prose-tag em { font-style: italic; }
+.prose-tag ul, .prose-tag ol { margin-block: 1.1em; padding-left: 1.5em; }
+.prose-tag ul { list-style: disc; }
+.prose-tag ol { list-style: decimal; }
+.prose-tag li { margin-block: 0.4em; }
+.prose-tag blockquote {
+  border-left: 3px solid var(--primary);
+  padding-left: 1.2em;
+  margin-block: 1.5em;
+  font-style: italic;
+  color: var(--foreground);
+}
+.prose-tag code {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.9em;
+  background: var(--elevated);
+  border: 1px solid var(--border);
+  padding: 0.15em 0.4em;
+  border-radius: 6px;
+}
+.prose-tag pre {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  background: var(--elevated);
+  border: 1px solid var(--border);
+  padding: 1em 1.2em;
+  border-radius: 12px;
+  overflow-x: auto;
+  margin-block: 1.5em;
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+.prose-tag pre code { background: transparent; border: 0; padding: 0; }
+.prose-tag hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin-block: 2.5em;
+}
+.prose-tag img {
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  margin-block: 1.5em;
 }
 
 /* Layered light source for the hero — two warm-cool radial gradients
