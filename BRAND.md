@@ -245,7 +245,7 @@ Source of truth: `src/data/brand.json`. CSS tokens: `src/app/globals.css`. Repro
 
 ## 8. Application
 
-### 8.1 Landing page (`tag_rides_landing_page`)
+### 8.1 Landing page (`tagrides-landing-page`)
 
 | Surface | Status |
 | --- | --- |

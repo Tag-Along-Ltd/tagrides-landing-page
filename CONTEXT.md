@@ -11,11 +11,11 @@ The marketing landing page for **Tag Along Ltd** — the company behind **TagRid
 - `../tagrides-backend/` — Go services (orchestrator, analytics, simulator, etc.)
 - `../tagrides-frontend/` — the rider/driver client
 
-This repo lives at `/home/ubuntu/TagRides/tag_rides_landing_page/` so the three sibling repos sit together.
+This repo lives at `/home/ubuntu/TagRides/tagrides-landing-page/` so the three sibling repos sit together.
 
-Repo origin: `git@github.com:Tag-Along-Ltd/tag_rides_landing_page.git`
+Repo origin: `git@github.com:Tag-Along-Ltd/tagrides-landing-page.git`
 
-The codebase was bootstrapped from a Next.js template called **`consua-nextjs`** (template's name still in `package.json`'s `name` field — rename when ready).
+The codebase was bootstrapped from a Next.js template called **`consua-nextjs`** (the `package.json` `name` field has since been renamed to `tagrides-landing-page`; some internal CSS class names like `consua-preloader` still linger but are cosmetic).
 
 ---
 
@@ -146,7 +146,7 @@ Tell the operator to dissect these in DevTools — the patterns repeat:
 ## Repo layout
 
 ```
-tag_rides_landing_page/
+tagrides-landing-page/
 ├── .eslintrc.json        ← existing ESLint config (will extend "prettier" later)
 ├── CONTEXT.md            ← you are here
 ├── CREATEBLOG.md         ← earlier notes from the operator

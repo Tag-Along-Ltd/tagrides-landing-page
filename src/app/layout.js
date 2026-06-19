@@ -34,12 +34,6 @@ export const metadata = {
   title: 'TagRides — Share the ride. Share the fare. | TAG-ALONG LTD',
   description:
     'Their route. Your ride. Lagos route-share — drivers heading your way pick you up, you agree the fare directly, pay only for your leg of the trip.',
-  icons: {
-    icon: [
-      { url: '/assets/brand/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon.ico' },
-    ],
-  },
   openGraph: {
     title: 'TagRides — Their route. Your ride.',
     description:
