@@ -77,10 +77,10 @@ export default function PrivacyPage() {
             <p>
               Email{' '}
               <a
-                href="mailto:privacy@tagrides.com"
+                href="mailto:privacy@tagrider.com"
                 className="text-primary underline-offset-4 hover:underline"
               >
-                privacy@tagrides.com
+                privacy@tagrider.com
               </a>{' '}
               and we'll respond inside 5 business days. You can ask us to:
             </p>
@@ -97,10 +97,10 @@ export default function PrivacyPage() {
               TagRides is not designed for under-13s. We don't knowingly collect their information.
               If you believe we have, email{' '}
               <a
-                href="mailto:privacy@tagrides.com"
+                href="mailto:privacy@tagrider.com"
                 className="text-primary underline-offset-4 hover:underline"
               >
-                privacy@tagrides.com
+                privacy@tagrider.com
               </a>{' '}
               and we'll delete it immediately.
             </p>

@@ -176,7 +176,7 @@ export function BusinessCardMock({ MarkComp, accent = false }) {
               Founder · Tag Along Ltd
             </p>
             <p className="mt-2 font-mono text-[10px] text-foreground-muted">
-              hello@tagrides.com · Lagos
+              hello@tagrider.com · Lagos
             </p>
           </div>
         </div>

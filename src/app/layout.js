@@ -54,8 +54,8 @@ const jsonLd = {
   '@type': 'Organization',
   name: 'Tag Rides',
   legalName: 'TAG-ALONG LTD',
-  url: 'https://tagrides.com',
-  logo: 'https://tagrides.com/assets/brand/mark.svg',
+  url: 'https://tagrider.com',
+  logo: 'https://tagrider.com/assets/brand/mark.svg',
   description:
     'Lagos route-share. Drivers heading your way pick you up, agree the fare directly, and only charge for your leg of the trip.',
   sameAs: [

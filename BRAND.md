@@ -318,7 +318,7 @@ Until that runs, the existing splash PNGs remain in place. The SVG is in `web/sp
 
 ## 10. Open questions
 
-- Domain: `tagrides.com` registration status?
+- Domain: `tagrider.com` registration status?
 - Trademark filing for the mark (Nigeria + relevant ECOWAS markets)?
 - Press kit endpoint (`/press`) — when do we ship?
 - Will we need a sub-brand mark for **Tag-Along** (the route-shared mode) and a separate one for **Direct** (the dedicated mode)? Round 2 design exercise.

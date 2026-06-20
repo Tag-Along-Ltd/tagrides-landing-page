@@ -70,9 +70,9 @@ const COLUMNS = [
   {
     title: 'For Partners',
     items: [
-      { label: 'Investors',     href: 'mailto:investors@tagrides.com' },
-      { label: 'Press',         href: 'mailto:press@tagrides.com' },
-      { label: 'Talk to us',    href: 'mailto:hello@tagrides.com' },
+      { label: 'Investors',     href: 'mailto:investors@tagrider.com' },
+      { label: 'Press',         href: 'mailto:press@tagrider.com' },
+      { label: 'Talk to us',    href: 'mailto:hello@tagrider.com' },
     ],
   },
 ];

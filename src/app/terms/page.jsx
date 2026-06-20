@@ -78,10 +78,10 @@ export default function TermsPage() {
             <p>
               If you ask us to delete your submission ({' '}
               <a
-                href="mailto:privacy@tagrides.com"
+                href="mailto:privacy@tagrider.com"
                 className="text-primary underline-offset-4 hover:underline"
               >
-                privacy@tagrides.com
+                privacy@tagrider.com
               </a>
               ), we will and we'll exclude that data from future model training.
             </p>
@@ -125,17 +125,17 @@ export default function TermsPage() {
           <Block heading="Contact">
             <p>
               <a
-                href="mailto:hello@tagrides.com"
+                href="mailto:hello@tagrider.com"
                 className="text-primary underline-offset-4 hover:underline"
               >
-                hello@tagrides.com
+                hello@tagrider.com
               </a>
               {' '}for anything that isn't urgent.{' '}
               <a
-                href="mailto:legal@tagrides.com"
+                href="mailto:legal@tagrider.com"
                 className="text-primary underline-offset-4 hover:underline"
               >
-                legal@tagrides.com
+                legal@tagrider.com
               </a>
               {' '}for anything that is.
             </p>
