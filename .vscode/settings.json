@@ -1,0 +1,35 @@
+{
+  "// purpose": "Stop VSCode from inflating the Source Control badge with gitignored build artifacts. None of these are tracked by git; this just hides them from the Explorer + watchers too.",
+
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/node_modules": true,
+    "**/.next": true,
+    "**/.netlify": true,
+    "**/.swc": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/.turbo": true
+  },
+
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/node_modules/**": true,
+    "**/.next/**": true,
+    "**/.netlify/**": true,
+    "**/.swc/**": true
+  },
+
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.next": true,
+    "**/.netlify": true,
+    "**/dist": true,
+    "**/build": true,
+    "package-lock.json": true
+  },
+
+  "git.untrackedChanges": "separate",
+  "git.decorations.enabled": true
+}
