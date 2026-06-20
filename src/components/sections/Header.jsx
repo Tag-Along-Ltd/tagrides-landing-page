@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
 import { Lockup } from '@/components/brand/Logo';
+import brand from '@/data/brand.json';
 import { cn } from '@/lib/utils';
 
 const NAV = [
@@ -41,13 +42,17 @@ export function Header({ className }) {
           ))}
         </nav>
 
-        <Link
-          href="/#join"
+        {/* Sticky CTA is driver-first — supply-side acquisition is the
+          * pre-launch priority. Riders find the waitlist via the hero +
+          * the FinalCTA section.
+          */}
+        <a
+          href={brand.app.signin}
           className="group inline-flex h-9 items-center gap-1.5 rounded-full bg-primary px-4 text-xs font-semibold text-primary-foreground transition hover:bg-primary-hover"
         >
-          Ride
+          Drive
           <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
-        </Link>
+        </a>
       </div>
     </header>
   );

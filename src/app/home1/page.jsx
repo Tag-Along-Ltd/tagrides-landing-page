@@ -91,19 +91,27 @@ const Home1 = () => {
               {brand.catchphrase}
             </p>
 
+            {/* CTA pair — driver-first acquisition.
+              *
+              * Two-sided marketplace: drivers convert *today* — sign
+              * up, complete verification, and they're ready when launch
+              * traffic arrives. Riders go on the waitlist for activation
+              * at launch. One app, role-switch after sign-in, but the
+              * conversion split is supply-first / demand-later.
+              */}
             <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Link
-                href="#join"
+              <a
+                href={brand.app.signin}
                 className="group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition hover:bg-primary-hover"
               >
-                Join the waitlist
+                Start driving
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-              </Link>
+              </a>
               <Link
-                href="#rider-journey"
+                href="#join"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-primary/40 bg-transparent px-6 text-sm font-semibold text-primary transition hover:bg-primary/10"
               >
-                See how it works
+                Join the rider waitlist
               </Link>
             </div>
 

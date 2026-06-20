@@ -8,9 +8,18 @@ import { ArrowRight, Apple, Smartphone } from 'lucide-react';
 import { Reveal } from './Reveal';
 import brand from '@/data/brand.json';
 
-// Pre-launch CTA. Pre-launch reality: there is no app to download yet. The
-// honest action is the waitlist. Once App Store + Play Store URLs land,
-// swap the dormant badges to live links.
+// Pre-launch CTA — two-bucket conversion split:
+//   1. RIDERS: email-collect for waitlist. Activated when the Lagos pilot
+//      goes live, by which time we'll have driver supply on the platform.
+//   2. DRIVERS: direct link to the web app's phone-OTP sign-up at
+//      app.tagrider.com/signin. Drivers can sign up + complete
+//      verification today; they'll be ready when launch traffic arrives.
+// One app, role-switch after sign-in, but the conversion intent is split
+// at this surface.
+//
+// App Store + Play Store badges stay dormant until the iOS / Android
+// builds are published. The web app at app.tagrider.com covers the
+// pre-store gap.
 const APP_STORE_URL = process.env.NEXT_PUBLIC_APP_STORE_URL || '';
 const PLAY_STORE_URL = process.env.NEXT_PUBLIC_PLAY_STORE_URL || '';
 
@@ -115,10 +124,24 @@ export function FinalCTA() {
             <StoreBadge href={PLAY_STORE_URL} Icon={Smartphone} label="Google Play" sub="Coming soon" />
           </div>
 
+          {/* Driver pathway. Sits below the rider waitlist on purpose —
+            * any visitor here for a driver intent has already scrolled
+            * past the hero's primary CTA without converting, so this is
+            * a second nudge with the same destination. */}
+          <p className="mt-10 text-sm text-white/85">
+            Driving with us?{' '}
+            <a
+              href={brand.app.signin}
+              className="font-semibold text-white underline-offset-4 hover:underline"
+            >
+              Onboard now →
+            </a>
+          </p>
+
           <p className="mt-8 text-xs uppercase tracking-[0.18em] text-white/65">
             Or{' '}
             <Link
-              href="mailto:hello@tagrides.com"
+              href="mailto:hello@tagrider.com"
               className="text-white underline-offset-4 hover:underline"
             >
               talk to us
