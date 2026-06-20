@@ -30,7 +30,14 @@ const mono = JetBrains_Mono({
   display: 'swap',
 });
 
+// metadataBase tells Next.js what host to resolve relative URLs against
+// when generating Open Graph / Twitter card image URLs. Without it,
+// production builds emit `http://localhost:3000/...` for og:image —
+// which silently breaks every Twitter / Slack / LinkedIn share preview.
+// Reads NEXT_PUBLIC_SITE_URL so preview-branch deploys resolve to their
+// own URL; falls back to the production domain.
 export const metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://tagrider.com'),
   title: 'TagRides — Share the ride. Share the fare. | TAG-ALONG LTD',
   description:
     'Their route. Your ride. Lagos route-share — drivers heading your way pick you up, you agree the fare directly, pay only for your leg of the trip.',
