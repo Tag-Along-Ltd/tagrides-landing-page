@@ -131,7 +131,7 @@ export function FinalCTA() {
           <p className="mt-10 text-sm text-white/85">
             Driving with us?{' '}
             <a
-              href={brand.app.signin}
+              href={brand.app.signinDriver}
               className="font-semibold text-white underline-offset-4 hover:underline"
             >
               Onboard now →

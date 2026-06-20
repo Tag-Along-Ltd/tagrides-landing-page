@@ -47,7 +47,7 @@ export function Header({ className }) {
           * the FinalCTA section.
           */}
         <a
-          href={brand.app.signin}
+          href={brand.app.signinDriver}
           className="group inline-flex h-9 items-center gap-1.5 rounded-full bg-primary px-4 text-xs font-semibold text-primary-foreground transition hover:bg-primary-hover"
         >
           Drive

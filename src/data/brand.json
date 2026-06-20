@@ -36,6 +36,7 @@
   },
   "app": {
     "url": "https://app.tagrider.com",
-    "signin": "https://app.tagrider.com/signin"
+    "signin": "https://app.tagrider.com/signin",
+    "signinDriver": "https://app.tagrider.com/signin?intent=drive"
   }
 }
