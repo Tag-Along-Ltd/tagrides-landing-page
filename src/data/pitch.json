@@ -5,7 +5,7 @@
     "investor": {
       "label": "Investor",
       "tagline": "For investors evaluating TagRides as a Lagos-mobility opportunity.",
-      "sections": ["cover", "problem", "lagosCost", "solution", "product", "market", "model", "competitive", "traction", "team", "financials", "ask"],
+      "sections": ["cover", "problem", "lagosCost", "solution", "product", "market", "model", "gtm", "competitive", "traction", "team", "financials", "milestones", "ask"],
       "ask": {
         "amount": 350000,
         "currency": "USD",
@@ -22,25 +22,26 @@
     },
     "judge": {
       "label": "Competition Judge",
-      "tagline": "For pitch-competition juries — emphasis on impact, traction, and the team.",
-      "sections": ["cover", "problem", "lagosCost", "solution", "product", "traction", "team", "competitive", "milestones", "impact", "ask"],
+      "tagline": "For pitch-competition juries — emphasis on impact, traction, the team, and the rubric.",
+      "_rubric": "ALX rubric: 1 Problem, 2 Solution, 3 Market, 4 Model, 5 GTM, 6 Competition, 7 Team, 8 Financials, 9 Milestones, 10 Story.",
+      "sections": ["cover", "problem", "lagosCost", "solution", "product", "market", "model", "gtm", "competitive", "team", "financials", "milestones", "traction", "impact", "ask"],
       "ask": {
         "amount": 350000,
         "currency": "USD",
         "stage": "Pre-seed",
         "runway": "18 months",
         "use": [
-          { "label": "Product completion",       "pct": 40 },
-          { "label": "Lagos market entry",       "pct": 30 },
-          { "label": "Driver community building","pct": 20 },
-          { "label": "Regulatory + insurance",   "pct": 10 }
+          { "label": "Product completion",        "pct": 40, "detail": "Engineering hires, dispatch infra, MQTT real-time hardening" },
+          { "label": "Lagos market entry",        "pct": 30, "detail": "Lekki-Epe corridor launch, marketing blitz, referral economy" },
+          { "label": "Driver community building", "pct": 20, "detail": "Onboarding, training, retention incentives, community ops" },
+          { "label": "Regulatory + insurance",    "pct": 10, "detail": "LASRRA, LASDRI, vehicle inspections, insurance partner" }
         ]
       }
     },
     "customer": {
       "label": "Customer",
       "tagline": "For Lagosians who want to know what TagRides actually does for them.",
-      "sections": ["cover", "problemPersonal", "solution", "product", "modes", "safety", "pricingFair", "appCTA"]
+      "sections": ["cover", "problemPersonal", "howItWorks", "modes", "safety", "pricingFair", "appCTA"]
     }
   },
 
@@ -162,6 +163,142 @@
       { "label": "Time-of-day modifier","detail": "Higher during rush — but capped at the driver's accepted offer, never algorithmic surge." },
       { "label": "Rider–driver negotiation", "detail": "The fare is a conversation, not a verdict. Riders can counter; drivers can accept or decline." }
     ]
+  },
+
+  "gtm": {
+    "eyebrow": "GO-TO-MARKET",
+    "title": "Win one Lagos corridor first. Then scale the template.",
+    "subtitle": "We don't try to be everywhere on day one. We pick the highest-density commute in Lagos, saturate it, prove unit economics, then unlock the next corridor.",
+    "lanes": [
+      {
+        "title": "Wedge",
+        "timeframe": "Months 0–3",
+        "icon": "wedge",
+        "detail": "Own the Lekki-Epe Expressway — the densest, most painful commute in Lagos.",
+        "tactics": [
+          "Geo-fenced launch (Ajah ↔ VI ↔ Lekki Phase 1)",
+          "Field marketing at Ajah, Sangotedo, Ikate bus stops",
+          "Driver-first onboarding from existing ride-hail churners"
+        ]
+      },
+      {
+        "title": "Supply",
+        "timeframe": "Months 3–6",
+        "icon": "supply",
+        "detail": "300 verified drivers committed to daily Lekki-Epe routes.",
+        "tactics": [
+          "Onboarding incentive: ₦15K signup + first-50-rides bonus",
+          "Driver community ops (WhatsApp groups, weekly meetups)",
+          "Partner with vehicle inspection + insurance providers"
+        ]
+      },
+      {
+        "title": "Demand",
+        "timeframe": "Months 6–12",
+        "icon": "demand",
+        "detail": "20,000 monthly active riders along the wedge corridor.",
+        "tactics": [
+          "Referral economy (₦500 credit per converted invite)",
+          "Influencer partnerships with Lagos lifestyle creators",
+          "Content SEO targeting commute queries (Yaba → VI etc)"
+        ]
+      },
+      {
+        "title": "Expansion",
+        "timeframe": "Year 2+",
+        "icon": "expansion",
+        "detail": "Lagos-wide → Abuja → Accra / Nairobi / Kigali.",
+        "tactics": [
+          "Playbook-replicable corridor strategy per city",
+          "Local co-founders / city leads in each new market",
+          "API partnerships with delivery + fintech players"
+        ]
+      }
+    ],
+    "partners": ["LASRRA", "LASDRI", "Tony Elumelu Foundation", "ALX Ventures", "AWS Activate", "Microsoft for Startups", "Google for Startups"]
+  },
+
+  "problemPersonal": {
+    "eyebrow": "WHAT YOU ALREADY KNOW",
+    "title": "Lagos isn't the problem. The way we move in it is.",
+    "subtitle": "These are the things you've already lived. Tag Rides exists because nobody else has fixed them.",
+    "complaints": [
+      { "quote": "I'm paying ₦5,000 to Bolt every morning so I don't have to sit in a danfo. That's ₦100,000 a month I don't have to lose.", "persona": "Banker, 27, VI" },
+      { "quote": "I wait 20 minutes for a danfo to fill, then 90 minutes in traffic. By the time I get to work I'm already tired.", "persona": "NYSC corper, 23, Ikeja" },
+      { "quote": "Surge pricing during rain. Surge pricing during traffic. Surge pricing because… reasons. There has to be a better way.", "persona": "Designer, 30, Lekki" },
+      { "quote": "I drive to work every day with three empty seats. Three people on the road I'd happily pick up if I could trust them.", "persona": "Lecturer & driver, 38, Mainland" }
+    ]
+  },
+
+  "howItWorks": {
+    "eyebrow": "HOW IT WORKS",
+    "title": "Three taps. One ride. Real savings.",
+    "subtitle": "We took everything you already do — find a driver going your way, agree a fair price, hop in — and put it inside one app.",
+    "steps": [
+      { "title": "Tell us where you're going",  "detail": "Type your destination. Tag Rides finds drivers already heading that way.", "hint": "Average match time: under 90 seconds." },
+      { "title": "Agree the fare in the app",   "detail": "See an honest offer. Accept it, or send a counter-offer. No surge. No mystery math.", "hint": "Average savings vs Bolt: 60–70%." },
+      { "title": "Get in. Get there. Get on with it.", "detail": "Verified driver. Trip tracked. Rate them when you arrive. Move on with your day.", "hint": "Both sides rate each other; bad actors leave the network." }
+    ]
+  },
+
+  "modes": {
+    "eyebrow": "TWO MODES, ONE APP",
+    "title": "Share the trip, or have it to yourself.",
+    "subtitle": "The signature mode is Tag-Along — share the ride, share the fare. When you need it private, Direct gives you the full car.",
+    "modes": [
+      {
+        "name": "Tag-Along",
+        "tagline": "Share a ride with up to 3 others going your way. Pay only for your leg.",
+        "features": [
+          "Lowest cost — drivers already going that direction",
+          "Driver picks the route, riders board along it",
+          "Negotiable fare, fully transparent up-front",
+          "No detours — you go a known path"
+        ]
+      },
+      {
+        "name": "Direct",
+        "tagline": "The whole car. Door-to-door. When the trip is yours alone.",
+        "features": [
+          "Standard ride-hail comfort",
+          "Driver routes to your destination directly",
+          "Distance + time pricing",
+          "Same verified drivers; same rating system"
+        ]
+      }
+    ]
+  },
+
+  "safety": {
+    "eyebrow": "SAFETY",
+    "title": "Six things that have to be true before you tap Request.",
+    "subtitle": "Lagos is safe when the system is safe. Every layer below has to hold for the next one to matter.",
+    "signals": [
+      { "icon": "badge",  "title": "Verified drivers",       "detail": "Government ID + LASDRI badge + vehicle inspection on file before any ride is accepted." },
+      { "icon": "shield", "title": "Two-sided ratings",      "detail": "Both riders and drivers rate every trip. One-star patterns lose access to the network." },
+      { "icon": "pin",    "title": "Live trip tracking",     "detail": "Share your live location with up to three trusted contacts during every ride." },
+      { "icon": "sos",    "title": "In-app emergency",       "detail": "One tap sends your live coordinates and trip details to Tag Rides safety ops + your emergency contact." },
+      { "icon": "star",   "title": "Match by track record",  "detail": "Riders see driver rating, completed trips, and verified-since date before accepting an offer." },
+      { "icon": "log",    "title": "Tamper-proof trip log",  "detail": "Every ride is logged: route, fare, riders, driver, time. Available to law-enforcement on request." }
+    ]
+  },
+
+  "pricingFair": {
+    "eyebrow": "WHAT YOU'LL ACTUALLY PAY",
+    "title": "The honest math, on real Lagos routes.",
+    "subtitle": "We ran the numbers on 30 actual journeys. Here's a sample. The full set is in the deck PDF.",
+    "examples": [
+      { "from": "Mushin",               "to": "Iju Road",         "boltNaira": 5000, "tagAlongNaira":  800 },
+      { "from": "Charley Boy, Gbagada", "to": "Marwa, Lekki",     "boltNaira": 6100, "tagAlongNaira": 1000 },
+      { "from": "Iyanaworo",            "to": "Victoria Island",  "boltNaira": 4200, "tagAlongNaira":  700 },
+      { "from": "Sangotedo",            "to": "Lekki",            "boltNaira": 6400, "tagAlongNaira": 3000 }
+    ]
+  },
+
+  "appCTA": {
+    "eyebrow": "READY WHEN YOU ARE",
+    "title": "Lagos, on your side for once.",
+    "subtitle": "We're rolling out the app in waves along the Lekki-Epe corridor. Join the waitlist to be one of the first riders — or start driving if your route is already there."
   },
 
   "competitive": {

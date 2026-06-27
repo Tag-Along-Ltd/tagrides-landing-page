@@ -257,3 +257,87 @@ h4 {
     radial-gradient(circle at 90% 100%, rgba(245, 158, 11, 0.08) 0, transparent 50%),
     radial-gradient(circle at 50% 50%, rgba(0, 128, 128, 0.04) 0, transparent 60%);
 }
+
+/* ------------------------------------------------------------------
+ * Pitch deck — Present mode + Print
+ * ------------------------------------------------------------------
+ * Present mode hides the sticky header chrome so the active slide owns
+ * the viewport. The body locks scroll-snap so wheel/swipe travels one
+ * slide at a time. On-screen controls render in PitchShell.
+ */
+
+.pitch-present .pitch-chrome { display: none !important; }
+
+.pitch-present-main {
+  scroll-snap-type: y mandatory;
+}
+.pitch-present-main > section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  min-height: 100svh;
+}
+
+/* Hidden in normal browsing — only visible when printing */
+.pitch-print-only { display: none; }
+
+@media print {
+  :root {
+    color-scheme: dark;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .pitch-chrome,
+  .pitch-present-controls {
+    display: none !important;
+  }
+
+  /* Every pitch section becomes its own printed page */
+  main > section {
+    page-break-after: always;
+    break-after: page;
+    min-height: auto !important;
+    height: auto !important;
+    padding: 1.5cm 1.8cm !important;
+  }
+  main > section:last-child {
+    page-break-after: auto;
+    break-after: auto;
+  }
+
+  .pitch-print-only {
+    display: block;
+    font-family: var(--font-mono), ui-monospace, monospace;
+  }
+  .pitch-print-only .print-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9pt;
+    color: #888;
+    border-bottom: 1px solid #333;
+    padding: 0.4cm 1.8cm;
+    margin-bottom: 0.4cm;
+  }
+
+  /* Disable animations — counters / reveals would otherwise capture
+     mid-animation frames. */
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  @page {
+    size: A4 landscape;
+    margin: 0;
+  }
+
+  .sticky { position: static !important; }
+
+  body {
+    background: var(--background) !important;
+    color: var(--foreground) !important;
+  }
+}

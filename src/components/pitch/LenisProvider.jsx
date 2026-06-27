@@ -3,12 +3,15 @@
 import { useEffect } from 'react';
 import Lenis from 'lenis';
 
-// Lenis smooth-scroll across the pitch page. We mount it once at the
-// outer shell. Anchors (#problem etc) keep working — Lenis just makes the
-// scroll feel premium and lets us animate scroll progress smoothly.
-export function LenisProvider({ children }) {
+// Lenis smooth-scroll across the pitch page. Mounted once at the outer
+// shell. `paused` disables Lenis (e.g. for Present mode, where we want
+// native programmatic scroll to actually jump between slides).
+// Anchors keep working in both modes — Lenis just makes idle scrolling
+// feel premium and lets us animate scroll progress smoothly.
+export function LenisProvider({ children, paused = false }) {
   useEffect(() => {
     if (typeof window === 'undefined') return;
+    if (paused) return;
     if (window.matchMedia?.('(prefers-reduced-motion: reduce)').matches) return;
 
     const lenis = new Lenis({
@@ -30,7 +33,7 @@ export function LenisProvider({ children }) {
       cancelAnimationFrame(rafId);
       lenis.destroy();
     };
-  }, []);
+  }, [paused]);
 
   return children;
 }
