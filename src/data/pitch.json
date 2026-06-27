@@ -1,0 +1,282 @@
+{
+  "_": "Canonical content for /pitch. Edit here, not in components. Per-audience overrides under `audiences.{key}.overrides`. Numbers verified against tagrides-pitch-deck.pdf + survey CSVs (210 responses) + Lagos route research (Nov-2024).",
+
+  "audiences": {
+    "investor": {
+      "label": "Investor",
+      "tagline": "For investors evaluating TagRides as a Lagos-mobility opportunity.",
+      "sections": ["cover", "problem", "lagosCost", "solution", "product", "market", "model", "competitive", "traction", "team", "financials", "ask"],
+      "ask": {
+        "amount": 350000,
+        "currency": "USD",
+        "stage": "Pre-seed",
+        "runway": "18 months",
+        "use": [
+          { "label": "Product & engineering",   "pct": 38, "detail": "Two engineers, app polish, driver dispatch + matching infra" },
+          { "label": "Driver acquisition",      "pct": 25, "detail": "Onboarding incentives, training, vehicle inspections across Lekki-Epe + Mainland corridors" },
+          { "label": "Marketing & growth",      "pct": 18, "detail": "Lagos awareness campaign, referral economy, influencer partnerships" },
+          { "label": "Lagos regulatory + ops",  "pct": 12, "detail": "LASRRA, LASDRI, insurance, legal counsel, Owode-Ogombo HQ" },
+          { "label": "Contingency",             "pct":  7, "detail": "FX volatility buffer, hiring contingencies" }
+        ]
+      }
+    },
+    "judge": {
+      "label": "Competition Judge",
+      "tagline": "For pitch-competition juries — emphasis on impact, traction, and the team.",
+      "sections": ["cover", "problem", "lagosCost", "solution", "product", "traction", "team", "competitive", "milestones", "impact", "ask"],
+      "ask": {
+        "amount": 350000,
+        "currency": "USD",
+        "stage": "Pre-seed",
+        "runway": "18 months",
+        "use": [
+          { "label": "Product completion",       "pct": 40 },
+          { "label": "Lagos market entry",       "pct": 30 },
+          { "label": "Driver community building","pct": 20 },
+          { "label": "Regulatory + insurance",   "pct": 10 }
+        ]
+      }
+    },
+    "customer": {
+      "label": "Customer",
+      "tagline": "For Lagosians who want to know what TagRides actually does for them.",
+      "sections": ["cover", "problemPersonal", "solution", "product", "modes", "safety", "pricingFair", "appCTA"]
+    }
+  },
+
+  "cover": {
+    "eyebrow": "TAG-ALONG LTD · LAGOS",
+    "title": "Their route. Your ride.",
+    "subtitle": "Lagos route-share — drivers heading your way pick you up, you agree the fare directly, and you pay only for your leg of the trip.",
+    "presenter": "Oniya Olaiya, Founder & CEO",
+    "version": "v1.0 · 2026"
+  },
+
+  "problem": {
+    "eyebrow": "THE PROBLEM",
+    "title": "Lagos commutes punish everyone — and reward no one.",
+    "subtitle": "Riders overpay or suffer. Drivers waste empty seats. Nothing in between exists.",
+    "personas": [
+      {
+        "name": "Fatima",
+        "role": "Banker, 32",
+        "location": "Lagos Island → VI",
+        "image": "/assets/pitch/persona-fatima.png",
+        "pain": [
+          "Pays ₦4,500–₦7,400 daily for Bolt to feel safe — 6–10× what a danfo costs.",
+          "Loses 30+ hours a week to traffic and stop-and-go pickups.",
+          "Doesn't trust danfos: no records, no accountability, no comfort."
+        ]
+      },
+      {
+        "name": "Emeka",
+        "role": "Lecturer & freelance driver, 38",
+        "location": "Mainland → Lagos Island",
+        "image": "/assets/pitch/persona-emeka.png",
+        "pain": [
+          "Drives Lagos roads daily — 3 empty seats every trip.",
+          "Bolt detours kill his schedule and his fuel margin.",
+          "No way to earn from the route he's already taking."
+        ]
+      }
+    ]
+  },
+
+  "lagosCost": {
+    "eyebrow": "WHAT IT COSTS TO MOVE IN LAGOS",
+    "title": "Ride-hailing is 3–10× more expensive than the alternative.",
+    "subtitle": "30 routes researched, Nov 2024. Same start. Same destination. Same time of day. The gap is the market.",
+    "stats": [
+      { "value": 30,        "suffix": " hrs/wk", "label": "Average time a Lagosian spends in traffic"},
+      { "value": 264,       "suffix": " /km",    "label": "Cars per kilometer in Lagos (global avg: 11)"},
+      { "value": 8.32,      "prefix": "$",       "suffix": "M",    "label": "Annual economic loss from Lagos congestion"},
+      { "value": 80,        "suffix": "%",       "label": "Of the world can't afford ride-hailing as daily transport"}
+    ],
+    "routes": [
+      { "from": "Mushin",                "to": "Iju Road",          "minNaira":  500, "maxNaira":  900, "boltNaira": 5000 },
+      { "from": "Charley Boy, Gbagada",  "to": "Marwa, Lekki",      "minNaira":  800, "maxNaira": 1000, "boltNaira": 6100 },
+      { "from": "Agege",                 "to": "Computer Village",  "minNaira":  200, "maxNaira":  400, "boltNaira": 1800 },
+      { "from": "Iyanaworo",             "to": "Victoria Island",   "minNaira":  400, "maxNaira":  700, "boltNaira": 4200 },
+      { "from": "Iyanaworo",             "to": "Ajah",              "minNaira":  900, "maxNaira": 1500, "boltNaira": 7400 },
+      { "from": "Sangotedo",             "to": "Lekki",             "minNaira": 2600, "maxNaira": 3000, "boltNaira": 6400 },
+      { "from": "Ogudu",                 "to": "Ago Palace Way",    "minNaira":  900, "maxNaira": 1200, "boltNaira": 5100 },
+      { "from": "Bariga",                "to": "Yaba",              "minNaira":  500, "maxNaira":  700, "boltNaira": 2200 },
+      { "from": "Adeniran Ogunsanya",    "to": "Marina",            "minNaira":  500, "maxNaira":  700, "boltNaira": 2400 },
+      { "from": "Ajah",                  "to": "Lekki",             "minNaira": 1000, "maxNaira": 1500, "boltNaira": 5700 }
+    ],
+    "source": "TagRides field research — 30 Lagos routes, n=30 respondents, Nov 2024."
+  },
+
+  "solution": {
+    "eyebrow": "THE SOLUTION",
+    "title": "Tag along the routes drivers already drive.",
+    "subtitle": "We don't pay drivers to detour. We don't reroute riders. We match riders to drivers already heading where they're going — and they share the leg of the trip they overlap on.",
+    "mechanics": [
+      { "step": "1", "title": "Driver sets their route",     "detail": "Mainland → Island, 7:30am. The system understands it as a path through the city, not a guess." },
+      { "step": "2", "title": "Riders request a leg of it",  "detail": "Anyone on or near that line can tag along — pickup, drop-off, fare-share, all in-app." },
+      { "step": "3", "title": "Fare is agreed, not metered", "detail": "Driver offers. Rider accepts or negotiates. No surge. No commission games. Just two people splitting a real cost." }
+    ]
+  },
+
+  "product": {
+    "eyebrow": "THE PRODUCT",
+    "title": "Built in Flutter. Live on AWS. Already running.",
+    "subtitle": "Four core flows shipped, 200+ Lagosians on the inside loop, signing up weekly.",
+    "flows": [
+      { "title": "Set your route",           "image": "/assets/pitch/screen-route.png" },
+      { "title": "Match riders on your line", "image": "/assets/pitch/screen-match.png" },
+      { "title": "Agree the fare in-app",     "image": "/assets/pitch/screen-fare.png" },
+      { "title": "Track + arrive + rate",     "image": "/assets/pitch/screen-track.png" }
+    ]
+  },
+
+  "market": {
+    "eyebrow": "THE MARKET",
+    "title": "A $2B informal market, ready for digitisation.",
+    "subtitle": "African ride-sharing is forecast to grow $2.1B → $3.4B by 2029 (Statista). Nigeria alone has 36M daily road users with smartphones — a market value of $2B mostly untouched by ride-hailing pricing.",
+    "tam": [
+      { "year": 2024, "value": 2.10 },
+      { "year": 2025, "value": 2.35 },
+      { "year": 2026, "value": 2.62 },
+      { "year": 2027, "value": 2.90 },
+      { "year": 2028, "value": 3.18 },
+      { "year": 2029, "value": 3.45 }
+    ],
+    "facts": [
+      { "value": "12M",  "label": "Daily road users in Lagos" },
+      { "value": "118M", "label": "Daily road users across Africa" },
+      { "value": "43%",  "label": "African smartphone adoption (climbing)" }
+    ]
+  },
+
+  "model": {
+    "eyebrow": "BUSINESS MODEL",
+    "title": "Earn from the trips that already happen.",
+    "subtitle": "Two clean revenue lines, both compounding with usage. No surge games, no driver-poaching wars.",
+    "streams": [
+      { "label": "Commission on rider fares", "share": "10–15%", "detail": "Charged on every confirmed tag-along ride. Driver and rider both see the cut up-front." },
+      { "label": "Online services & APIs",    "share": "B2B",    "detail": "Route data, driver verification, and fare-estimate APIs licensed to logistics + fintech partners." }
+    ],
+    "pricing": [
+      { "label": "Distance-based base", "detail": "Per-km tariff visible before the rider taps Request." },
+      { "label": "Time-of-day modifier","detail": "Higher during rush — but capped at the driver's accepted offer, never algorithmic surge." },
+      { "label": "Rider–driver negotiation", "detail": "The fare is a conversation, not a verdict. Riders can counter; drivers can accept or decline." }
+    ]
+  },
+
+  "competitive": {
+    "eyebrow": "COMPETITION",
+    "title": "Nothing in the market does what we do.",
+    "subtitle": "Ride-hail democratised the taxi. Tag Rides democratises the commute itself.",
+    "matrix": {
+      "rows": ["Shared route, shared cost", "Instant matching", "Inclusive (any car)", "Negotiable pricing", "Comfort", "Verified safety"],
+      "cols": [
+        { "name": "TagRides",   "us": true,  "values": ["yes","yes","yes","yes","high","high"] },
+        { "name": "Uber / Bolt","us": false, "values": ["no","yes","no","no","high","high"] },
+        { "name": "LagRide",    "us": false, "values": ["partial","no","no","no","high","high"] },
+        { "name": "Shuttlers",  "us": false, "values": ["yes","no","no","no","med","high"] },
+        { "name": "Danfo",      "us": false, "values": ["yes","no","yes","yes","low","med"] },
+        { "name": "InDrive",    "us": false, "values": ["partial","no","yes","yes","med","high"] }
+      ]
+    },
+    "differentiation": [
+      { "vs": "UberX",     "line": "TagRides democratises ride-hailing. UberX monetises it." },
+      { "vs": "LagRide",   "line": "TagRides scales through the crowd, not through state-owned fleets." },
+      { "vs": "Shuttlers", "line": "TagRides is shared mobility on demand — not shared transport on a schedule." }
+    ]
+  },
+
+  "traction": {
+    "eyebrow": "WHERE WE ARE",
+    "title": "Backed, built, and quietly accumulating users.",
+    "subtitle": "Live MVP. Real surveys. Capital and credits already secured.",
+    "proof": [
+      { "value": "210", "label": "Lagosians surveyed",        "context": "92% in the 18–34 working-age core" },
+      { "value": "90",  "label": "Waitlist signups",           "context": "From Lekki-Epe + Mainland corridors" },
+      { "value": "$52K","label": "Cloud credits secured",      "context": "AWS $25K + Microsoft $25K + Google $2K" },
+      { "value": "1",   "label": "Live MVP on AWS",            "context": "Flutter app, Go services, MQTT real-time" }
+    ],
+    "backers": [
+      { "name": "Tony Elumelu Foundation", "note": "Seed grant, Feb 2024" },
+      { "name": "ALX Ventures",            "note": "Programme alumni" },
+      { "name": "Ugwumba Enterprise Challenge", "note": "2024 winner" },
+      { "name": "AWS Activate",            "note": "$25,000 in credits" }
+    ]
+  },
+
+  "team": {
+    "eyebrow": "THE TEAM",
+    "title": "Operators who've shipped.",
+    "subtitle": "Mobile, backend, and Lagos network — built in.",
+    "members": [
+      { "name": "Oniya Olaiya",     "role": "Founder & CEO · Mobile",     "image": "/assets/pitch/team-olaiya.jpg", "bio": "Ships the Flutter rider+driver app. ALX Ventures alum. Lagos-born; relocating from EC2-development to in-market lead." },
+      { "name": "Oniya Adesubomi",  "role": "Senior Backend Engineer",    "image": "/assets/pitch/team-subomi.jpg", "bio": "Go services, geolocation pipeline, MQTT real-time, MongoDB infrastructure." },
+      { "name": "Efemena Abraham",  "role": "Adviser · CEO, Apex Network","image": "/assets/pitch/adviser-efemena.jpg","bio": "Lagos tech-ecosystem operator. Apex Network introductions across logistics + payments." },
+      { "name": "Pst. Wale Olasoji","role": "Adviser · Manager, Total Energies","image": "/assets/pitch/adviser-wale.jpg","bio": "Corporate operations + Lagos community gateway. Fuel-economics + driver-network access." }
+    ]
+  },
+
+  "financials": {
+    "eyebrow": "FINANCIALS",
+    "title": "Profitable from year two on a 5-year run.",
+    "subtitle": "Conservative — driver supply is the rate-limit, not demand. Cohort retention modeled at 35% by month 3.",
+    "projection": [
+      { "year": 1, "revenue": 100000, "expenses": 106000 },
+      { "year": 2, "revenue": 180000, "expenses": 112500 },
+      { "year": 3, "revenue": 300000, "expenses": 135000 },
+      { "year": 4, "revenue": 525000, "expenses": 168750 },
+      { "year": 5, "revenue": 750000, "expenses": 202500 }
+    ],
+    "unitEcon": [
+      { "label": "Avg ride fare",       "value": "₦1,200" },
+      { "label": "Avg tag-along share", "value": "₦300 / leg" },
+      { "label": "Take rate",           "value": "12%" },
+      { "label": "Contribution per ride","value": "₦144" }
+    ]
+  },
+
+  "milestones": {
+    "eyebrow": "MILESTONES",
+    "title": "Built quietly. Scaled deliberately.",
+    "items": [
+      { "when": "2024 Q1", "label": "Founded TAG-ALONG LTD", "status": "done" },
+      { "when": "2024 Q2", "label": "200+ Lagosian survey complete", "status": "done" },
+      { "when": "2024 Q4", "label": "Tony Elumelu Foundation grant", "status": "done" },
+      { "when": "2025 Q2", "label": "MVP live on AWS — Flutter + Go", "status": "done" },
+      { "when": "2025 Q4", "label": "Won Ugwumba Enterprise Challenge", "status": "done" },
+      { "when": "2026 Q3", "label": "Pre-seed close ($350K target)", "status": "now" },
+      { "when": "2026 Q4", "label": "Public Lagos launch — Lekki-Epe corridor", "status": "next" },
+      { "when": "2027",    "label": "Mainland expansion + Abuja pilot", "status": "next" },
+      { "when": "2028+",   "label": "Nigeria-wide → Accra / Nairobi / Kigali", "status": "future" }
+    ]
+  },
+
+  "impact": {
+    "eyebrow": "ECONOMIC IMPACT",
+    "title": "Formalising the informal — and making cities work.",
+    "subtitle": "Tag Rides turns everyday drivers into verified entrepreneurs, digitising a $2B informal transport market.",
+    "outcomes": [
+      { "value": "180K–540K", "label": "New income opportunities unlocked across 5 years" },
+      { "value": "$2B",        "label": "Informal transport market digitised" },
+      { "value": "−18%",       "label": "Empty-seat-miles per partner driver" }
+    ],
+    "sdgs": [
+      { "code": "SDG 8",  "title": "Decent Work & Economic Growth" },
+      { "code": "SDG 9",  "title": "Industry, Innovation & Infrastructure" },
+      { "code": "SDG 11", "title": "Sustainable Cities & Communities" }
+    ]
+  },
+
+  "ask": {
+    "eyebrow": "THE ASK",
+    "title": "We're raising $350K to make Lagos the proof.",
+    "subtitle": "Pre-seed. Eighteen months of runway. Build the Lekki-Epe corridor into a self-sustaining tag-along economy — then take the template Africa-wide.",
+    "contact": {
+      "name": "Oniya Olaiya",
+      "role": "Founder & CEO",
+      "email": "oniya.olaiya@tagrider.com",
+      "phone": "+234 9064 520 743",
+      "site": "https://tagrider.com"
+    }
+  }
+}
