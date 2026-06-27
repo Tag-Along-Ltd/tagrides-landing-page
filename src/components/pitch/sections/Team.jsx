@@ -14,7 +14,7 @@ export function Team() {
     <PitchSection id="team" tone="surface">
       <SectionHeading eyebrow={data.eyebrow} title={data.title} subtitle={data.subtitle} />
 
-      <div className="mt-16 grid gap-6 md:mt-20 md:grid-cols-2 md:gap-8 lg:grid-cols-4">
+      <div className="mt-16 grid gap-6 md:mt-20 md:grid-cols-3 md:gap-8">
         {data.members.map((m, i) => {
           const isAdviser = m.role.toLowerCase().includes('adviser');
           return (

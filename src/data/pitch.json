@@ -142,12 +142,12 @@
   "product": {
     "eyebrow": "THE PRODUCT",
     "title": "Built in Flutter. Live on AWS. Already running.",
-    "subtitle": "Four core flows shipped, 200+ Lagosians on the inside loop, signing up weekly.",
+    "subtitle": "The full rider flow, end to end, in one app — already in the hands of internal testers across Lagos.",
     "flows": [
-      { "title": "Set your route",           "image": "/assets/pitch/screen-route.png" },
-      { "title": "Match riders on your line", "image": "/assets/pitch/screen-match.png" },
-      { "title": "Agree the fare in-app",     "image": "/assets/pitch/screen-fare.png" },
-      { "title": "Track + arrive + rate",     "image": "/assets/pitch/screen-track.png" }
+      { "title": "Search your destination",   "image": "/assets/pitch/screen-search.png" },
+      { "title": "Along or Direct?",          "image": "/assets/pitch/screen-confirm.png" },
+      { "title": "Negotiate the fare",        "image": "/assets/pitch/screen-fare.png" },
+      { "title": "Track. Arrive. Rate.",      "image": "/assets/pitch/screen-track.png" }
     ]
   },
 
@@ -363,13 +363,12 @@
 
   "team": {
     "eyebrow": "THE TEAM",
-    "title": "Operators who've shipped.",
-    "subtitle": "Mobile, backend, and Lagos network — built in.",
+    "title": "A solo operator who ships, backed by Lagos veterans.",
+    "subtitle": "Full-stack execution from one founder. Advisory weight from people who actually move things in Lagos.",
     "members": [
-      { "name": "Oniya Olaiya",     "role": "Founder & CEO · Mobile",     "image": "/assets/pitch/team-olaiya.jpg", "bio": "Ships the Flutter rider+driver app. ALX Ventures alum. Lagos-born; relocating from EC2-development to in-market lead." },
-      { "name": "Oniya Adesubomi",  "role": "Senior Backend Engineer",    "image": "/assets/pitch/team-subomi.jpg", "bio": "Go services, geolocation pipeline, MQTT real-time, MongoDB infrastructure." },
-      { "name": "Efemena Abraham",  "role": "Adviser · CEO, Apex Network","image": "/assets/pitch/adviser-efemena.jpg","bio": "Lagos tech-ecosystem operator. Apex Network introductions across logistics + payments." },
-      { "name": "Pst. Wale Olasoji","role": "Adviser · Manager, Total Energies","image": "/assets/pitch/adviser-wale.jpg","bio": "Corporate operations + Lagos community gateway. Fuel-economics + driver-network access." }
+      { "name": "Oniya Olaiya",     "role": "Founder & CEO · Engineering Lead", "image": "/assets/pitch/team-olaiya.jpg",     "bio": "Ships the full stack — Flutter rider + driver app, Go backend services, MQTT real-time geolocation pipeline, AWS infra. Built the production system independently. ALX Ventures alum; relocating from EC2 development to in-market Lagos lead." },
+      { "name": "Efemena Abraham",  "role": "Adviser · CEO, Apex Network",      "image": "/assets/pitch/adviser-efemena.jpg", "bio": "Lagos tech-ecosystem operator. Apex Network introductions across logistics + payments + Lagos State partnerships." },
+      { "name": "Pst. Wale Olasoji","role": "Adviser · Manager, Total Energies","image": "/assets/pitch/adviser-wale.jpg",    "bio": "Corporate operations + Lagos community gateway. Fuel-economics + driver-network access at scale." }
     ]
   },
 
