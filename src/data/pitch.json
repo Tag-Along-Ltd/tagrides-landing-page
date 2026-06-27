@@ -7,16 +7,26 @@
       "tagline": "For investors evaluating TagRides as a Lagos-mobility opportunity.",
       "sections": ["cover", "problem", "lagosCost", "solution", "product", "market", "model", "gtm", "competitive", "traction", "team", "financials", "milestones", "ask"],
       "ask": {
-        "amount": 350000,
+        "amount": 750000,
         "currency": "USD",
         "stage": "Pre-seed",
         "runway": "18 months",
+        "instrument": "SAFE (post-money) — valuation deferred to Seed round",
+        "committed": [
+          { "label": "Tony Elumelu Foundation grant", "detail": "Non-dilutive seed capital, Feb 2024" },
+          { "label": "Ugwumba Enterprise Challenge",  "detail": "2024 winner — non-dilutive prize capital" },
+          { "label": "$52K cloud credits",            "detail": "AWS Activate $25K + Microsoft for Startups $25K + Google $2K" }
+        ],
         "use": [
-          { "label": "Product & engineering",   "pct": 38, "detail": "Two engineers, app polish, driver dispatch + matching infra" },
-          { "label": "Driver acquisition",      "pct": 25, "detail": "Onboarding incentives, training, vehicle inspections across Lekki-Epe + Mainland corridors" },
-          { "label": "Marketing & growth",      "pct": 18, "detail": "Lagos awareness campaign, referral economy, influencer partnerships" },
-          { "label": "Lagos regulatory + ops",  "pct": 12, "detail": "LASRRA, LASDRI, insurance, legal counsel, Owode-Ogombo HQ" },
-          { "label": "Contingency",             "pct":  7, "detail": "FX volatility buffer, hiring contingencies" }
+          { "label": "Product & engineering", "pct": 50, "detail": "Two senior engineers, MVP hardening, dispatch + matching infra, MQTT real-time, security + compliance audit" },
+          { "label": "Local operations & pilot", "pct": 30, "detail": "Lekki-Epe corridor launch, two operations leads, LASRRA + LASDRI compliance, driver-onboarding ops, insurance + inspection partners" },
+          { "label": "Customer acquisition",  "pct": 20, "detail": "Lagos awareness campaign, ₦500 referral economy, influencer partnerships, field marketing at high-density bus stops" }
+        ],
+        "milestones": [
+          "Lekki-Epe corridor live with 300 verified drivers (Q4 2026)",
+          "20,000 monthly active riders along the wedge corridor (Q2 2027)",
+          "$15K MRR — unit economics validated, ready for Seed (Q4 2027)",
+          "Lagos-wide expansion playbook proven, Abuja pilot scoped (Q1 2028)"
         ]
       }
     },
@@ -26,15 +36,25 @@
       "_rubric": "ALX rubric: 1 Problem, 2 Solution, 3 Market, 4 Model, 5 GTM, 6 Competition, 7 Team, 8 Financials, 9 Milestones, 10 Story.",
       "sections": ["cover", "problem", "lagosCost", "solution", "product", "market", "model", "gtm", "competitive", "team", "financials", "milestones", "traction", "impact", "ask"],
       "ask": {
-        "amount": 350000,
+        "amount": 750000,
         "currency": "USD",
         "stage": "Pre-seed",
         "runway": "18 months",
+        "instrument": "SAFE (post-money) — valuation deferred to Seed round",
+        "committed": [
+          { "label": "Tony Elumelu Foundation grant", "detail": "Non-dilutive seed capital, Feb 2024" },
+          { "label": "Ugwumba Enterprise Challenge",  "detail": "2024 winner — non-dilutive prize capital" },
+          { "label": "$52K cloud credits",            "detail": "AWS Activate + Microsoft for Startups + Google for Startups" }
+        ],
         "use": [
-          { "label": "Product completion",        "pct": 40, "detail": "Engineering hires, dispatch infra, MQTT real-time hardening" },
-          { "label": "Lagos market entry",        "pct": 30, "detail": "Lekki-Epe corridor launch, marketing blitz, referral economy" },
-          { "label": "Driver community building", "pct": 20, "detail": "Onboarding, training, retention incentives, community ops" },
-          { "label": "Regulatory + insurance",    "pct": 10, "detail": "LASRRA, LASDRI, vehicle inspections, insurance partner" }
+          { "label": "Product & engineering",    "pct": 50, "detail": "Senior engineers, MVP hardening, dispatch + matching infra" },
+          { "label": "Local operations & pilot", "pct": 30, "detail": "Lekki-Epe corridor launch, operations leads, LASRRA + LASDRI compliance" },
+          { "label": "Customer acquisition",     "pct": 20, "detail": "Lagos awareness campaign, referral economy, field marketing" }
+        ],
+        "milestones": [
+          "Lekki-Epe corridor live with 300 verified drivers (Q4 2026)",
+          "20,000 monthly active riders along the wedge corridor (Q2 2027)",
+          "$15K MRR — unit economics validated, ready for Seed (Q4 2027)"
         ]
       }
     },
@@ -406,8 +426,8 @@
 
   "ask": {
     "eyebrow": "THE ASK",
-    "title": "We're raising $350K to make Lagos the proof.",
-    "subtitle": "Pre-seed. Eighteen months of runway. Build the Lekki-Epe corridor into a self-sustaining tag-along economy — then take the template Africa-wide.",
+    "title": "Seeking $750K to make Lagos the proof.",
+    "subtitle": "Pre-seed on a SAFE. Eighteen months of runway. Non-dilutive backing already secured from Tony Elumelu Foundation, Ugwumba Enterprise Challenge, and $52K in cloud credits. We're now raising priced capital to launch the Lekki-Epe corridor and reach Seed-ready unit economics.",
     "contact": {
       "name": "Oniya Olaiya",
       "role": "Founder & CEO",

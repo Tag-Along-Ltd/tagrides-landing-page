@@ -1,14 +1,19 @@
 'use client';
 
 import { motion } from 'motion/react';
-import { Mail, Phone, Globe, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, Globe, ArrowUpRight, ShieldCheck, Target } from 'lucide-react';
 
 import { PitchSection } from '../motion/Section';
 import pitch from '@/data/pitch.json';
 
 // Ask — the close. Teal background to break visual rhythm and signal
-// "this is the moment". Big number, use-of-funds pie via inline %
-// bars, contact card on the right.
+// "this is the moment". Four blocks tell the whole story without an
+// investor having to ask follow-ups:
+//   1. The ask snapshot (round / amount / runway / instrument)
+//   2. Non-dilutive capital already committed (urgency builder)
+//   3. Use-of-funds breakdown — 50/30/20 standard
+//   4. 18-month milestones the cash unlocks (the "what does this buy?")
+// Contact card on the right.
 export function Ask({ audience = 'investor' }) {
   const data = pitch.ask;
   const audienceCfg = pitch.audiences[audience] ?? pitch.audiences.investor;
@@ -55,32 +60,75 @@ export function Ask({ audience = 'investor' }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-10 grid grid-cols-3 gap-4 rounded-2xl bg-background/15 p-6 ring-1 ring-primary-foreground/15 backdrop-blur md:gap-6"
+            className="mt-10 rounded-2xl bg-background/15 p-6 ring-1 ring-primary-foreground/15 backdrop-blur md:p-7"
           >
-            <div>
-              <div className="font-mono text-[10px] tracking-[0.2em] text-primary-foreground/70 md:text-xs">
-                ROUND
+            <div className="grid grid-cols-3 gap-4 md:gap-6">
+              <div>
+                <div className="font-mono text-[10px] tracking-[0.2em] text-primary-foreground/70 md:text-xs">
+                  ROUND
+                </div>
+                <div className="mt-2 font-display text-lg font-bold md:text-2xl">{ask.stage}</div>
               </div>
-              <div className="mt-2 font-display text-lg font-bold md:text-2xl">{ask.stage}</div>
+              <div>
+                <div className="font-mono text-[10px] tracking-[0.2em] text-primary-foreground/70 md:text-xs">
+                  ASK
+                </div>
+                <div className="mt-2 font-display text-lg font-bold md:text-2xl">
+                  ${(ask.amount / 1000).toFixed(0)}K
+                </div>
+              </div>
+              <div>
+                <div className="font-mono text-[10px] tracking-[0.2em] text-primary-foreground/70 md:text-xs">
+                  RUNWAY
+                </div>
+                <div className="mt-2 font-display text-lg font-bold md:text-2xl">{ask.runway}</div>
+              </div>
             </div>
-            <div>
-              <div className="font-mono text-[10px] tracking-[0.2em] text-primary-foreground/70 md:text-xs">
-                ASK
+            {ask.instrument && (
+              <div className="mt-4 border-t border-primary-foreground/15 pt-3 font-mono text-[10px] tracking-wide text-primary-foreground/70 md:text-xs">
+                INSTRUMENT · {ask.instrument}
               </div>
-              <div className="mt-2 font-display text-lg font-bold md:text-2xl">
-                ${(ask.amount / 1000).toFixed(0)}K
-              </div>
-            </div>
-            <div>
-              <div className="font-mono text-[10px] tracking-[0.2em] text-primary-foreground/70 md:text-xs">
-                RUNWAY
-              </div>
-              <div className="mt-2 font-display text-lg font-bold md:text-2xl">{ask.runway}</div>
-            </div>
+            )}
           </motion.div>
 
+          {/* Already committed (non-dilutive) */}
+          {ask.committed?.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="mt-10"
+            >
+              <div className="flex items-center gap-2 font-mono text-xs tracking-[0.24em] text-primary-foreground/80 md:text-sm">
+                <ShieldCheck className="size-4" />
+                ALREADY NON-DILUTIVELY COMMITTED
+              </div>
+              <ul className="mt-4 space-y-2">
+                {ask.committed.map((c, i) => (
+                  <motion.li
+                    key={c.label}
+                    initial={{ opacity: 0, x: -12 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: '-60px' }}
+                    transition={{ duration: 0.45, delay: 0.55 + i * 0.07 }}
+                    className="flex gap-3 rounded-xl border border-primary-foreground/15 bg-background/10 p-3.5"
+                  >
+                    <span aria-hidden className="mt-1.5 size-1.5 shrink-0 rotate-45 bg-accent" />
+                    <div className="min-w-0 flex-1">
+                      <div className="font-display text-sm font-bold md:text-base">{c.label}</div>
+                      <div className="text-xs leading-snug text-primary-foreground/70 md:text-sm">
+                        {c.detail}
+                      </div>
+                    </div>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+          )}
+
           {/* Use of funds */}
-          <div className="mt-12 md:mt-16">
+          <div className="mt-10 md:mt-12">
             <div className="font-mono text-xs tracking-[0.24em] text-primary-foreground/80 md:text-sm">
               USE OF FUNDS
             </div>
@@ -91,7 +139,7 @@ export function Ask({ audience = 'investor' }) {
                   initial={{ opacity: 0, x: -16 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: '-60px' }}
-                  transition={{ duration: 0.5, delay: 0.5 + i * 0.08 }}
+                  transition={{ duration: 0.5, delay: 0.6 + i * 0.08 }}
                 >
                   <div className="flex items-baseline justify-between">
                     <span className="font-display text-sm font-bold md:text-base">{u.label}</span>
@@ -102,7 +150,7 @@ export function Ask({ audience = 'investor' }) {
                       initial={{ width: 0 }}
                       whileInView={{ width: `${u.pct}%` }}
                       viewport={{ once: true, margin: '-60px' }}
-                      transition={{ duration: 0.9, delay: 0.6 + i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                      transition={{ duration: 0.9, delay: 0.7 + i * 0.08, ease: [0.22, 1, 0.36, 1] }}
                       className="h-full bg-accent"
                     />
                   </div>
@@ -115,6 +163,41 @@ export function Ask({ audience = 'investor' }) {
               ))}
             </div>
           </div>
+
+          {/* 18-month milestones — what this money buys */}
+          {ask.milestones?.length > 0 && (
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-80px' }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              className="mt-10 md:mt-12"
+            >
+              <div className="flex items-center gap-2 font-mono text-xs tracking-[0.24em] text-primary-foreground/80 md:text-sm">
+                <Target className="size-4" />
+                WHAT THIS UNLOCKS · 18 MONTHS
+              </div>
+              <ol className="mt-4 space-y-2.5">
+                {ask.milestones.map((m, i) => (
+                  <motion.li
+                    key={i}
+                    initial={{ opacity: 0, x: -12 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: '-60px' }}
+                    transition={{ duration: 0.45, delay: 0.75 + i * 0.07 }}
+                    className="flex gap-4"
+                  >
+                    <span className="mt-0.5 font-mono text-xs font-bold tabular-nums text-accent md:text-sm">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    <span className="font-display text-sm leading-snug text-primary-foreground md:text-base">
+                      {m}
+                    </span>
+                  </motion.li>
+                ))}
+              </ol>
+            </motion.div>
+          )}
         </div>
 
         {/* Contact */}
