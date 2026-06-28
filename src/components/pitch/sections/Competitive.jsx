@@ -72,7 +72,7 @@ export function Competitive() {
       </div>
 
       {/* Differentiators */}
-      <div className="mt-16 grid gap-4 md:mt-20 md:grid-cols-3 md:gap-6">
+      <div className="mt-16 grid gap-4 md:mt-20 md:grid-cols-2 md:gap-6">
         {data.differentiation.map((d, i) => (
           <motion.blockquote
             key={d.vs}

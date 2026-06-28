@@ -231,6 +231,16 @@ export function PitchShell({
         {children}
       </main>
 
+      {/* Right-edge section dot-rail. Desktop-only. Hides in present
+          mode (the bottom bar covers nav already) and in print. */}
+      {!presentMode && (
+        <SectionDotRail
+          sectionKeys={sectionKeys}
+          currentSlide={currentSlide}
+          onJump={goToSlide}
+        />
+      )}
+
       {/* Present-mode overlay UI */}
       <AnimatePresence>
         {presentMode && (
@@ -328,4 +338,76 @@ function sectionIdFor(key) {
     appCTA:          'app',
   };
   return aliases[key] ?? key;
+}
+
+// Short navigator labels per section key. Kept terse so the right-edge
+// tooltips read at a glance.
+const NAV_LABELS = {
+  cover: 'Cover',
+  problem: 'Problem',
+  problemPersonal: 'Why',
+  lagosCost: 'Cost',
+  solution: 'Solution',
+  product: 'Product',
+  market: 'Market',
+  model: 'Model',
+  gtm: 'GTM',
+  competitive: 'Competition',
+  traction: 'Traction',
+  team: 'Team',
+  financials: 'Financials',
+  milestones: 'Milestones',
+  impact: 'Impact',
+  ask: 'Ask',
+  howItWorks: 'How',
+  modes: 'Modes',
+  safety: 'Safety',
+  pricingFair: 'Pricing',
+  appCTA: 'Join',
+};
+
+// Right-edge dot rail. Pure-CSS hover reveals the section label as a
+// pill that slides in from the right. The active dot is filled teal +
+// scaled; idle dots are border-only and muted. Click anywhere on a dot
+// scrolls to that section.
+function SectionDotRail({ sectionKeys, currentSlide, onJump }) {
+  return (
+    <nav
+      aria-label="Section navigator"
+      className="pitch-chrome pointer-events-none fixed top-1/2 right-4 z-40 hidden -translate-y-1/2 lg:block"
+    >
+      <ul className="flex flex-col items-end gap-2.5">
+        {sectionKeys.map((key, i) => {
+          const active = i === currentSlide;
+          const label = NAV_LABELS[key] ?? key;
+          return (
+            <li key={key} className="pointer-events-auto group flex items-center gap-3">
+              {/* Label pill — slides in from the right on hover */}
+              <span
+                className={cn(
+                  'origin-right rounded-full bg-elevated/95 px-3 py-1 font-mono text-xs font-semibold text-foreground opacity-0 ring-1 ring-border/40 backdrop-blur transition duration-200',
+                  'translate-x-2 group-hover:translate-x-0 group-hover:opacity-100',
+                  active && 'opacity-100 translate-x-0 text-primary',
+                )}
+              >
+                {label}
+              </span>
+              <button
+                type="button"
+                onClick={() => onJump(i)}
+                aria-label={`Jump to ${label}`}
+                aria-current={active ? 'true' : undefined}
+                className={cn(
+                  'flex size-3 items-center justify-center rounded-full transition-all duration-300',
+                  active
+                    ? 'bg-primary ring-2 ring-primary/30 ring-offset-2 ring-offset-background scale-110'
+                    : 'bg-foreground/20 hover:bg-foreground/60 hover:scale-110',
+                )}
+              />
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+  );
 }

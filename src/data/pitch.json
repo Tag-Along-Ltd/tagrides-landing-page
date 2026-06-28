@@ -323,23 +323,32 @@
 
   "competitive": {
     "eyebrow": "COMPETITION",
-    "title": "Nothing in the market does what we do.",
-    "subtitle": "Ride-hail democratised the taxi. Tag Rides democratises the commute itself.",
+    "title": "Every competitor solves part of it. We solve all of it.",
+    "subtitle": "Lagos has plenty of ways to move. None of them combine route-sharing, fair negotiation, instant matching, comfort, and verified safety in one product. Each row below is a real, falsifiable claim — same definition applied across the board.",
+    "_note": "Matrix audited 2026-06. yes/no are factual; 'high/low' for Comfort + Safety are honest market-perceived rankings, not marketing. TagRides hits 6/6; no competitor hits more than 4/6.",
     "matrix": {
-      "rows": ["Shared route, shared cost", "Instant matching", "Inclusive (any car)", "Negotiable pricing", "Comfort", "Verified safety"],
+      "rows": [
+        "Pay only for your leg of the trip",
+        "Drivers already heading your destination",
+        "Negotiable fare",
+        "Instant in-app matching",
+        "Comfort",
+        "Verified driver + trip log"
+      ],
       "cols": [
-        { "name": "TagRides",   "us": true,  "values": ["yes","yes","yes","yes","high","high"] },
-        { "name": "Uber / Bolt","us": false, "values": ["no","yes","no","no","high","high"] },
-        { "name": "LagRide",    "us": false, "values": ["partial","no","no","no","high","high"] },
-        { "name": "Shuttlers",  "us": false, "values": ["yes","no","no","no","med","high"] },
-        { "name": "Danfo",      "us": false, "values": ["yes","no","yes","yes","low","med"] },
-        { "name": "InDrive",    "us": false, "values": ["partial","no","yes","yes","med","high"] }
+        { "name": "TagRides",    "us": true,  "values": ["yes","yes","yes","yes","high","high"] },
+        { "name": "Uber / Bolt", "us": false, "values": ["no", "no", "no", "yes","high","high"] },
+        { "name": "InDrive",     "us": false, "values": ["no", "no", "yes","yes","high","high"] },
+        { "name": "Shuttlers",   "us": false, "values": ["yes","yes","no", "no", "high","high"] },
+        { "name": "LagRide",     "us": false, "values": ["no", "no", "no", "no", "high","high"] },
+        { "name": "Danfo",       "us": false, "values": ["yes","yes","yes","no", "low", "low"]  }
       ]
     },
     "differentiation": [
-      { "vs": "UberX",     "line": "TagRides democratises ride-hailing. UberX monetises it." },
-      { "vs": "LagRide",   "line": "TagRides scales through the crowd, not through state-owned fleets." },
-      { "vs": "Shuttlers", "line": "TagRides is shared mobility on demand — not shared transport on a schedule." }
+      { "vs": "Uber / Bolt", "line": "Got matching + safety right. Missed the route economics — drivers detour, riders pay full freight." },
+      { "vs": "InDrive",     "line": "Got the negotiation + matching right. No shared cost — you still pay for the whole car." },
+      { "vs": "Shuttlers",   "line": "Got the shared-route economics right. Schedule-bound, not on-demand — and the fare is fixed." },
+      { "vs": "Danfo",       "line": "Has every economic property. Lacks the safety, the comfort, the matching, and the receipts." }
     ]
   },
 

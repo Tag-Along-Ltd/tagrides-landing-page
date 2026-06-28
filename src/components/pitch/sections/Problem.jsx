@@ -3,6 +3,7 @@
 import { motion } from 'motion/react';
 
 import { PitchSection, SectionHeading } from '../motion/Section';
+import { PersonaIllustration } from '../PersonaIllustration';
 import pitch from '@/data/pitch.json';
 
 // Problem — Fatima (rider) + Emeka (driver). Two-sided pain, presented
@@ -41,25 +42,19 @@ function PersonaCard({ persona, index }) {
       />
 
       <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center">
-        {/* Diamond-cropped photo. Use rotation + overflow:hidden on a
-            square parent. We rotate the inner image back to upright. */}
+        {/* Diamond-framed persona illustration. Outer rotated 45° to
+            make a diamond, inner illustration rotated back upright and
+            scaled to fill so the diamond crops nicely.  These are
+            designed composites, not photos — honest representation of
+            a persona archetype, not a fake real customer. */}
         <div className="shrink-0">
           <div className="relative size-28 rotate-45 overflow-hidden rounded-2xl ring-2 ring-border/60 md:size-32">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={persona.image}
-              alt={persona.name}
-              className="size-full -rotate-45 scale-150 object-cover"
-              onError={(e) => {
-                // Graceful fallback: gradient placeholder if asset missing
-                e.currentTarget.style.display = 'none';
-              }}
-            />
-            <div
-              className={accent === 'primary'
-                ? 'absolute inset-0 -z-10 -rotate-45 scale-150 bg-gradient-to-br from-primary/40 to-primary/10'
-                : 'absolute inset-0 -z-10 -rotate-45 scale-150 bg-gradient-to-br from-accent/40 to-accent/10'}
-            />
+            <div className="absolute inset-0 -rotate-45 scale-150">
+              <PersonaIllustration
+                kind={index === 0 ? 'rider' : 'driver'}
+                className="size-full"
+              />
+            </div>
           </div>
         </div>
 
