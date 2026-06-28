@@ -119,7 +119,7 @@
       { "from": "Agege",                 "to": "Computer Village",  "minNaira":  200, "maxNaira":  400, "boltNaira": 1800 },
       { "from": "Iyanaworo",             "to": "Victoria Island",   "minNaira":  400, "maxNaira":  700, "boltNaira": 4200 },
       { "from": "Iyanaworo",             "to": "Ajah",              "minNaira":  900, "maxNaira": 1500, "boltNaira": 7400 },
-      { "from": "Sangotedo",             "to": "Lekki",             "minNaira": 2600, "maxNaira": 3000, "boltNaira": 6400 },
+      { "from": "Sangotedo",             "to": "Lekki",             "minNaira": 1200, "maxNaira": 1800, "boltNaira": 6400 },
       { "from": "Ogudu",                 "to": "Ago Palace Way",    "minNaira":  900, "maxNaira": 1200, "boltNaira": 5100 },
       { "from": "Bariga",                "to": "Yaba",              "minNaira":  500, "maxNaira":  700, "boltNaira": 2200 },
       { "from": "Adeniran Ogunsanya",    "to": "Marina",            "minNaira":  500, "maxNaira":  700, "boltNaira": 2400 },
