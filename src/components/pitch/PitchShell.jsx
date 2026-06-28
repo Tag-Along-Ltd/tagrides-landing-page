@@ -116,16 +116,13 @@ export function PitchShell({
     return () => window.removeEventListener('keydown', onKey);
   }, [presentMode, onPresentToggle, goToSlide, currentSlide]);
 
-  // Download = browser print. The print stylesheet (in globals.css)
-  // hides chrome and forces section breaks. Users get a real PDF via
-  // the Save-as-PDF browser feature; no Lambda needed.
+  // Download = navigate to the dedicated print route, which renders a
+  // proper slide deck (landscape A4 per slide, designed for paper) and
+  // auto-triggers window.print() via ?auto=1.  No more retrofitting
+  // the web layout onto paper — the print surface is its own thing.
   const handleDownload = useCallback(() => {
-    setToast({
-      msg: `Use your browser's "Save as PDF" in the print dialog. The deck is print-styled per audience.`,
-    });
-    // Slight delay so the toast can render before the print dialog steals focus
-    setTimeout(() => window.print(), 280);
-  }, []);
+    window.open(`/pitch/print?audience=${audience}&auto=1`, '_blank', 'noopener');
+  }, [audience]);
 
   useEffect(() => {
     if (!toast) return;

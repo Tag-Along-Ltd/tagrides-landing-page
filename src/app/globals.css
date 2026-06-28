@@ -281,26 +281,71 @@ h4 {
 .pitch-print-only { display: none; }
 
 /* ------------------------------------------------------------------
- * Print rules — the paper version of /pitch
+ * Print deck — /pitch/print
  * ------------------------------------------------------------------
- * Strategy:
- *   • A4 landscape with breathing margins (browser handles the
- *     printable area; we don't fight it).
- *   • Each section starts on a new page (page-break-before: always).
- *   • Each section is free to flow onto additional pages if dense,
- *     BUT no card / row / heading is ever split across a page —
- *     break-inside: avoid on every grouped element.
- *   • Print typography is aggressively compacted from screen sizes
- *     so most sections fit on a single landscape page naturally.
- *   • The video backdrop, audience nav, dot-rail, scroll progress
- *     and present-mode chrome are all hidden.
+ * The /pitch/print route renders proper landscape A4 slides (one idea
+ * per slide, designed for paper, not retrofitted from web). These
+ * rules handle:
+ *
+ *   ON SCREEN
+ *     • The deck shows as a scrollable column of slides, each scaled
+ *       to fit the viewport via transform: scale().
+ *     • The on-screen chrome (Back / Print buttons) is visible.
+ *
+ *   IN PRINT
+ *     • Each .pitch-print-slide is a full A4-landscape page.
+ *     • The on-screen chrome (.pitch-screen-only) is hidden.
+ *     • page-break-after: always between slides.
+ *     • Dark backgrounds preserved via print-color-adjust: exact.
+ *
+ * The /pitch route itself is NOT meant to be printed — if someone
+ * hits Cmd+P on it directly, we hide the entire main content and
+ * tell them to use /pitch/print instead.
+ * ------------------------------------------------------------------ */
+
+/* On-screen preview of the print deck — stack slides vertically,
+   centered, scaled-down with a card shadow. */
+.pitch-print-stage {
+  background: #050505;
+  padding: 24px 16px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+.pitch-print-deck {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+.pitch-print-slide {
+  flex-shrink: 0;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+  border-radius: 4px;
+  /* On large screens the slide is bigger than the viewport — scale to
+     fit ~85% of the viewport width.  297mm ≈ 1123px at 96dpi. */
+  transform-origin: top center;
+}
+@media screen and (max-width: 1280px) {
+  .pitch-print-slide { transform: scale(0.7); margin-bottom: -64mm; }
+}
+@media screen and (max-width: 900px) {
+  .pitch-print-slide { transform: scale(0.45); margin-bottom: -116mm; }
+}
+@media screen and (max-width: 640px) {
+  .pitch-print-slide { transform: scale(0.3); margin-bottom: -148mm; }
+}
+
+/* ------------------------------------------------------------------
+ * Print rules — the actual PDF / paper output
  * ------------------------------------------------------------------ */
 @media print {
-  /* A4 landscape with usable margins. 13mm × 16mm is a comfortable
-     reading area; tighter than this and content kisses page edges. */
+  /* A4 landscape with zero margins — each slide owns its full page.
+     Slides handle their own internal padding via the Slide component. */
   @page {
     size: A4 landscape;
-    margin: 13mm 16mm;
+    margin: 0;
   }
 
   :root {
@@ -309,12 +354,16 @@ h4 {
     -webkit-print-color-adjust: exact;
   }
 
-  body {
-    background: var(--background) !important;
-    color: var(--foreground) !important;
+  html, body {
+    background: #0a0a0a !important;
+    color: #E5E5E5 !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  /* Hide everything that's interactive / decorative-only */
+  /* Hide screen-only chrome (the Back / Print buttons header on
+     /pitch/print, and any chrome from the legacy /pitch route). */
+  .pitch-screen-only,
   .pitch-chrome,
   .pitch-present-controls,
   video,
@@ -331,211 +380,51 @@ h4 {
   /* Sticky → static so it doesn't generate a phantom blank page */
   .sticky { position: static !important; }
 
-  /* Section-level paging.
-     • page-break-before: always — every section starts fresh.
-     • break-inside: auto on the section itself (allow flow), but
-       avoid on cards (see below) so internal elements aren't split.
-     • Strip the on-screen padding (1.5–2cm) — the @page margin
-       handles outer breathing room; section padding would double it.
-     • min-height: 0 prevents the 100svh from creating huge empty
-       printed pages. */
-  main > section {
-    page-break-before: always;
-    break-before: page;
-    page-break-after: auto;
-    break-after: auto;
-    page-break-inside: auto;
-    break-inside: auto;
-    min-height: 0 !important;
-    height: auto !important;
-    max-height: none !important;
+  /* On the print stage, strip the on-screen scale + shadow + gaps */
+  .pitch-print-stage {
+    background: transparent !important;
     padding: 0 !important;
-    margin: 0 0 6pt 0 !important;
-    overflow: visible !important;
+    gap: 0 !important;
   }
-  main > section:first-of-type {
-    page-break-before: avoid;
-    break-before: avoid;
+  .pitch-print-deck {
+    gap: 0 !important;
   }
 
-  /* Keep semantic groupings (cards, list items, chart panels, table
-     rows, blockquotes) intact across a page break. If a card doesn't
-     fit at the bottom of a page, it moves to the next one whole. */
-  main > section article,
-  main > section figure,
-  main > section blockquote,
-  main > section table,
-  main > section thead,
-  main > section tbody,
-  main > section tr,
-  main > section li,
-  main > section [class*="rounded-2xl"],
-  main > section [class*="rounded-xl"],
-  main > section [class*="rounded-3xl"],
-  main > section .grid > * {
+  /* THE slide rule: each is its own A4 landscape page */
+  .pitch-print-slide {
+    width: 297mm !important;
+    height: 210mm !important;
+    transform: none !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    page-break-after: always;
+    break-after: page;
     page-break-inside: avoid;
     break-inside: avoid;
+    overflow: hidden !important;
+  }
+  .pitch-print-slide:last-of-type {
+    page-break-after: auto;
+    break-after: auto;
   }
 
-  /* Don't split a heading from the first paragraph that follows it */
-  h1, h2, h3, h4 {
-    page-break-after: avoid;
-    break-after: avoid;
+  /* ------------------------------------------------------------------
+   * Legacy /pitch web route — guard against direct print attempts.
+   * If a user hits Cmd+P on /pitch instead of using the Download
+   * button, the result would be unreadable.  Hide it and surface a
+   * note telling them to use /pitch/print.
+   * ------------------------------------------------------------------ */
+  body:not(:has(.pitch-print-slide)) main {
+    display: none !important;
   }
-
-  /* ----- Print typography — compacted from screen ----- */
-
-  /* Eyebrows (font-mono micro-caps) — small but legible */
-  .font-mono {
-    font-size: 8.5pt !important;
-    line-height: 1.3 !important;
-  }
-
-  /* Section headlines (the big display titles) */
-  h1,
-  main > section h2 {
-    font-size: 22pt !important;
-    line-height: 1.05 !important;
-    margin: 0 0 6pt 0 !important;
-  }
-
-  /* Card titles + sub-headings */
-  h3 {
-    font-size: 12.5pt !important;
-    line-height: 1.2 !important;
-    margin: 0 0 4pt 0 !important;
-  }
-
-  /* Body copy + bullets */
-  p, li {
-    font-size: 10pt !important;
-    line-height: 1.4 !important;
-    margin: 0 0 4pt 0 !important;
-  }
-
-  /* Big display numbers (counters, financials, traction proofs) */
-  [class*="text-4xl"],
-  [class*="text-5xl"],
-  [class*="text-6xl"],
-  [class*="text-7xl"] {
-    font-size: 22pt !important;
-    line-height: 1.05 !important;
-  }
-
-  /* Smaller display tier (use-of-funds amounts, route prices, etc.) */
-  [class*="text-3xl"] {
-    font-size: 16pt !important;
-    line-height: 1.1 !important;
-  }
-  [class*="text-2xl"] {
-    font-size: 14pt !important;
-    line-height: 1.15 !important;
-  }
-  [class*="text-xl"] {
-    font-size: 12pt !important;
-    line-height: 1.2 !important;
-  }
-  [class*="text-lg"] {
-    font-size: 11pt !important;
-    line-height: 1.3 !important;
-  }
-  [class*="text-base"] {
-    font-size: 10pt !important;
-    line-height: 1.35 !important;
-  }
-  [class*="text-sm"] {
-    font-size: 9pt !important;
-    line-height: 1.35 !important;
-  }
-  [class*="text-xs"] {
-    font-size: 8pt !important;
-    line-height: 1.3 !important;
-  }
-
-  /* ----- Spacing — strip the screen-only generous padding ----- */
-
-  /* Top margins between section-heading and content */
-  [class*="mt-24"], [class*="mt-20"], [class*="mt-16"] {
-    margin-top: 12pt !important;
-  }
-  [class*="mt-12"], [class*="mt-10"], [class*="mt-8"] {
-    margin-top: 8pt !important;
-  }
-  [class*="mt-6"], [class*="mt-5"], [class*="mt-4"] {
-    margin-top: 5pt !important;
-  }
-
-  /* Grid + flex gaps */
-  [class*="gap-10"], [class*="gap-8"] {
-    gap: 10pt !important;
-  }
-  [class*="gap-6"], [class*="gap-5"], [class*="gap-4"] {
-    gap: 6pt !important;
-  }
-  [class*="gap-3"], [class*="gap-2"] {
-    gap: 4pt !important;
-  }
-
-  /* Card padding */
-  [class*="p-10"], [class*="p-8"] {
-    padding: 10pt !important;
-  }
-  [class*="p-7"], [class*="p-6"] {
-    padding: 8pt !important;
-  }
-  [class*="p-5"], [class*="p-4"] {
-    padding: 6pt !important;
-  }
-
-  /* Stack space inside lists */
-  [class*="space-y-6"] > * + * {
-    margin-top: 6pt !important;
-  }
-  [class*="space-y-4"] > * + * {
-    margin-top: 4pt !important;
-  }
-  [class*="space-y-3"] > * + *,
-  [class*="space-y-2"] > * + * {
-    margin-top: 3pt !important;
-  }
-
-  /* ----- Chart + media sizing ----- */
-
-  /* ECharts containers — cap height so charts don't dominate a page */
-  [class*="h-\[280px\]"],
-  [class*="h-\[300px\]"],
-  [class*="h-\[340px\]"],
-  [class*="h-\[360px\]"],
-  [class*="h-\[400px\]"] {
-    height: 160pt !important;
-    max-height: 160pt !important;
-  }
-
-  /* Phone mockups in Product section — cap height */
-  .pitch-section [class*="aspect-\[9\/19\]"] {
-    max-height: 220pt !important;
-  }
-
-  /* Diamond persona / team frames — slightly smaller in print */
-  .pitch-section [class*="size-28"],
-  .pitch-section [class*="size-32"] {
-    width: 72pt !important;
-    height: 72pt !important;
-  }
-
-  /* ----- Print-only attribution header (top of first page) ----- */
-  .pitch-print-only {
+  body:not(:has(.pitch-print-slide))::before {
+    content: "Use the Download button (or visit /pitch/print) to save the PDF.  This is the live deck page, not the print surface.";
     display: block;
+    padding: 40mm 30mm;
     font-family: var(--font-mono), ui-monospace, monospace;
-  }
-  .pitch-print-only .print-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 8pt;
+    font-size: 11pt;
+    line-height: 1.5;
     color: #888;
-    border-bottom: 1px solid #333;
-    padding: 0 0 5pt 0;
-    margin: 0 0 8pt 0;
   }
 }
