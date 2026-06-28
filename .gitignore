@@ -38,6 +38,10 @@ yarn-error.log*
 # claude code (local agent state — settings, transcripts, project memory)
 .claude/
 
+# Pre-crop originals for pitch headshots — kept locally so we can
+# re-frame later if a face crop needs adjusting, but not shipped.
+public/assets/pitch/*-orig.*
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
