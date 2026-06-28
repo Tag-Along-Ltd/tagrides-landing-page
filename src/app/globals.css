@@ -280,31 +280,250 @@ h4 {
 /* Hidden in normal browsing — only visible when printing */
 .pitch-print-only { display: none; }
 
+/* ------------------------------------------------------------------
+ * Print rules — the paper version of /pitch
+ * ------------------------------------------------------------------
+ * Strategy:
+ *   • A4 landscape with breathing margins (browser handles the
+ *     printable area; we don't fight it).
+ *   • Each section starts on a new page (page-break-before: always).
+ *   • Each section is free to flow onto additional pages if dense,
+ *     BUT no card / row / heading is ever split across a page —
+ *     break-inside: avoid on every grouped element.
+ *   • Print typography is aggressively compacted from screen sizes
+ *     so most sections fit on a single landscape page naturally.
+ *   • The video backdrop, audience nav, dot-rail, scroll progress
+ *     and present-mode chrome are all hidden.
+ * ------------------------------------------------------------------ */
 @media print {
+  /* A4 landscape with usable margins. 13mm × 16mm is a comfortable
+     reading area; tighter than this and content kisses page edges. */
+  @page {
+    size: A4 landscape;
+    margin: 13mm 16mm;
+  }
+
   :root {
     color-scheme: dark;
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
   }
 
+  body {
+    background: var(--background) !important;
+    color: var(--foreground) !important;
+  }
+
+  /* Hide everything that's interactive / decorative-only */
   .pitch-chrome,
-  .pitch-present-controls {
+  .pitch-present-controls,
+  video,
+  audio {
     display: none !important;
   }
 
-  /* Every pitch section becomes its own printed page */
-  main > section {
-    page-break-after: always;
-    break-after: page;
-    min-height: auto !important;
-    height: auto !important;
-    padding: 1.5cm 1.8cm !important;
-  }
-  main > section:last-child {
-    page-break-after: auto;
-    break-after: auto;
+  /* Kill animations + transitions so we don't snapshot mid-frame */
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
   }
 
+  /* Sticky → static so it doesn't generate a phantom blank page */
+  .sticky { position: static !important; }
+
+  /* Section-level paging.
+     • page-break-before: always — every section starts fresh.
+     • break-inside: auto on the section itself (allow flow), but
+       avoid on cards (see below) so internal elements aren't split.
+     • Strip the on-screen padding (1.5–2cm) — the @page margin
+       handles outer breathing room; section padding would double it.
+     • min-height: 0 prevents the 100svh from creating huge empty
+       printed pages. */
+  main > section {
+    page-break-before: always;
+    break-before: page;
+    page-break-after: auto;
+    break-after: auto;
+    page-break-inside: auto;
+    break-inside: auto;
+    min-height: 0 !important;
+    height: auto !important;
+    max-height: none !important;
+    padding: 0 !important;
+    margin: 0 0 6pt 0 !important;
+    overflow: visible !important;
+  }
+  main > section:first-of-type {
+    page-break-before: avoid;
+    break-before: avoid;
+  }
+
+  /* Keep semantic groupings (cards, list items, chart panels, table
+     rows, blockquotes) intact across a page break. If a card doesn't
+     fit at the bottom of a page, it moves to the next one whole. */
+  main > section article,
+  main > section figure,
+  main > section blockquote,
+  main > section table,
+  main > section thead,
+  main > section tbody,
+  main > section tr,
+  main > section li,
+  main > section [class*="rounded-2xl"],
+  main > section [class*="rounded-xl"],
+  main > section [class*="rounded-3xl"],
+  main > section .grid > * {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Don't split a heading from the first paragraph that follows it */
+  h1, h2, h3, h4 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* ----- Print typography — compacted from screen ----- */
+
+  /* Eyebrows (font-mono micro-caps) — small but legible */
+  .font-mono {
+    font-size: 8.5pt !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Section headlines (the big display titles) */
+  h1,
+  main > section h2 {
+    font-size: 22pt !important;
+    line-height: 1.05 !important;
+    margin: 0 0 6pt 0 !important;
+  }
+
+  /* Card titles + sub-headings */
+  h3 {
+    font-size: 12.5pt !important;
+    line-height: 1.2 !important;
+    margin: 0 0 4pt 0 !important;
+  }
+
+  /* Body copy + bullets */
+  p, li {
+    font-size: 10pt !important;
+    line-height: 1.4 !important;
+    margin: 0 0 4pt 0 !important;
+  }
+
+  /* Big display numbers (counters, financials, traction proofs) */
+  [class*="text-4xl"],
+  [class*="text-5xl"],
+  [class*="text-6xl"],
+  [class*="text-7xl"] {
+    font-size: 22pt !important;
+    line-height: 1.05 !important;
+  }
+
+  /* Smaller display tier (use-of-funds amounts, route prices, etc.) */
+  [class*="text-3xl"] {
+    font-size: 16pt !important;
+    line-height: 1.1 !important;
+  }
+  [class*="text-2xl"] {
+    font-size: 14pt !important;
+    line-height: 1.15 !important;
+  }
+  [class*="text-xl"] {
+    font-size: 12pt !important;
+    line-height: 1.2 !important;
+  }
+  [class*="text-lg"] {
+    font-size: 11pt !important;
+    line-height: 1.3 !important;
+  }
+  [class*="text-base"] {
+    font-size: 10pt !important;
+    line-height: 1.35 !important;
+  }
+  [class*="text-sm"] {
+    font-size: 9pt !important;
+    line-height: 1.35 !important;
+  }
+  [class*="text-xs"] {
+    font-size: 8pt !important;
+    line-height: 1.3 !important;
+  }
+
+  /* ----- Spacing — strip the screen-only generous padding ----- */
+
+  /* Top margins between section-heading and content */
+  [class*="mt-24"], [class*="mt-20"], [class*="mt-16"] {
+    margin-top: 12pt !important;
+  }
+  [class*="mt-12"], [class*="mt-10"], [class*="mt-8"] {
+    margin-top: 8pt !important;
+  }
+  [class*="mt-6"], [class*="mt-5"], [class*="mt-4"] {
+    margin-top: 5pt !important;
+  }
+
+  /* Grid + flex gaps */
+  [class*="gap-10"], [class*="gap-8"] {
+    gap: 10pt !important;
+  }
+  [class*="gap-6"], [class*="gap-5"], [class*="gap-4"] {
+    gap: 6pt !important;
+  }
+  [class*="gap-3"], [class*="gap-2"] {
+    gap: 4pt !important;
+  }
+
+  /* Card padding */
+  [class*="p-10"], [class*="p-8"] {
+    padding: 10pt !important;
+  }
+  [class*="p-7"], [class*="p-6"] {
+    padding: 8pt !important;
+  }
+  [class*="p-5"], [class*="p-4"] {
+    padding: 6pt !important;
+  }
+
+  /* Stack space inside lists */
+  [class*="space-y-6"] > * + * {
+    margin-top: 6pt !important;
+  }
+  [class*="space-y-4"] > * + * {
+    margin-top: 4pt !important;
+  }
+  [class*="space-y-3"] > * + *,
+  [class*="space-y-2"] > * + * {
+    margin-top: 3pt !important;
+  }
+
+  /* ----- Chart + media sizing ----- */
+
+  /* ECharts containers — cap height so charts don't dominate a page */
+  [class*="h-\[280px\]"],
+  [class*="h-\[300px\]"],
+  [class*="h-\[340px\]"],
+  [class*="h-\[360px\]"],
+  [class*="h-\[400px\]"] {
+    height: 160pt !important;
+    max-height: 160pt !important;
+  }
+
+  /* Phone mockups in Product section — cap height */
+  .pitch-section [class*="aspect-\[9\/19\]"] {
+    max-height: 220pt !important;
+  }
+
+  /* Diamond persona / team frames — slightly smaller in print */
+  .pitch-section [class*="size-28"],
+  .pitch-section [class*="size-32"] {
+    width: 72pt !important;
+    height: 72pt !important;
+  }
+
+  /* ----- Print-only attribution header (top of first page) ----- */
   .pitch-print-only {
     display: block;
     font-family: var(--font-mono), ui-monospace, monospace;
@@ -313,31 +532,10 @@ h4 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 9pt;
+    font-size: 8pt;
     color: #888;
     border-bottom: 1px solid #333;
-    padding: 0.4cm 1.8cm;
-    margin-bottom: 0.4cm;
-  }
-
-  /* Disable animations — counters / reveals would otherwise capture
-     mid-animation frames. */
-  *, *::before, *::after {
-    animation: none !important;
-    transition: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
-  @page {
-    size: A4 landscape;
-    margin: 0;
-  }
-
-  .sticky { position: static !important; }
-
-  body {
-    background: var(--background) !important;
-    color: var(--foreground) !important;
+    padding: 0 0 5pt 0;
+    margin: 0 0 8pt 0;
   }
 }
