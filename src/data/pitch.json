@@ -19,12 +19,12 @@
         ],
         "use": [
           { "label": "Product & engineering", "pct": 50, "detail": "Two senior engineers, MVP hardening, dispatch + matching infra, MQTT real-time, security + compliance audit" },
-          { "label": "Local operations & pilot", "pct": 30, "detail": "Lekki-Epe corridor launch, two operations leads, LASRRA + LASDRI compliance, driver-onboarding ops, insurance + inspection partners" },
-          { "label": "Customer acquisition",  "pct": 20, "detail": "Lagos awareness campaign, ₦500 referral economy, influencer partnerships, field marketing at high-density bus stops" }
+          { "label": "Local operations & pilot", "pct": 30, "detail": "Yaba ↔ Lagos Island corridor launch, two operations leads, LASRRA + LASDRI compliance, driver-onboarding ops, insurance + inspection partners" },
+          { "label": "Customer acquisition",  "pct": 20, "detail": "Lagos awareness campaign, ₦500 referral economy, UNILAG + YabaTech campus partnerships, field marketing at Sabo / Jibowu / Adekunle / Marina bus stops" }
         ],
         "milestones": [
-          "Lekki-Epe corridor live with 300 verified drivers (Q4 2026)",
-          "20,000 monthly active riders along the wedge corridor (Q2 2027)",
+          "Yaba ↔ Lagos Island corridor live with 300 verified drivers (Q4 2026)",
+          "20,000 monthly active riders along the Yaba commute belt (Q2 2027)",
           "$15K MRR — unit economics validated, ready for Seed (Q4 2027)",
           "Lagos-wide expansion playbook proven, Abuja pilot scoped (Q1 2028)"
         ]
@@ -48,12 +48,12 @@
         ],
         "use": [
           { "label": "Product & engineering",    "pct": 50, "detail": "Senior engineers, MVP hardening, dispatch + matching infra" },
-          { "label": "Local operations & pilot", "pct": 30, "detail": "Lekki-Epe corridor launch, operations leads, LASRRA + LASDRI compliance" },
-          { "label": "Customer acquisition",     "pct": 20, "detail": "Lagos awareness campaign, referral economy, field marketing" }
+          { "label": "Local operations & pilot", "pct": 30, "detail": "Yaba ↔ Lagos Island corridor launch, operations leads, LASRRA + LASDRI compliance" },
+          { "label": "Customer acquisition",     "pct": 20, "detail": "Lagos awareness campaign, UNILAG + YabaTech partnerships, field marketing" }
         ],
         "milestones": [
-          "Lekki-Epe corridor live with 300 verified drivers (Q4 2026)",
-          "20,000 monthly active riders along the wedge corridor (Q2 2027)",
+          "Yaba ↔ Lagos Island corridor live with 300 verified drivers (Q4 2026)",
+          "20,000 monthly active riders along the Yaba commute belt (Q2 2027)",
           "$15K MRR — unit economics validated, ready for Seed (Q4 2027)"
         ]
       }
@@ -194,20 +194,21 @@
         "title": "Wedge",
         "timeframe": "Months 0–3",
         "icon": "wedge",
-        "detail": "Own the Lekki-Epe Expressway — the densest, most painful commute in Lagos.",
+        "detail": "Own the Yaba ↔ Lagos Island corridor — the iconic Mainland-to-Island commute. UNILAG, YabaTech, Computer Village, Sabo, Adekunle, Onike all feed into Marina across Eko Bridge.",
         "tactics": [
-          "Geo-fenced launch (Ajah ↔ VI ↔ Lekki Phase 1)",
-          "Field marketing at Ajah, Sangotedo, Ikate bus stops",
-          "Driver-first onboarding from existing ride-hail churners"
+          "Geo-fenced launch (Sabo ↔ Adekunle ↔ Onike ↔ Marina)",
+          "Field marketing at UNILAG main gate, Sabo, Jibowu, Adekunle, Iddo, Marina",
+          "Campus partnerships with UNILAG + YabaTech student bodies"
         ]
       },
       {
         "title": "Supply",
         "timeframe": "Months 3–6",
         "icon": "supply",
-        "detail": "300 verified drivers committed to daily Lekki-Epe routes.",
+        "detail": "300 verified drivers committed to daily Yaba ↔ Island routes.",
         "tactics": [
           "Onboarding incentive: ₦15K signup + first-50-rides bonus",
+          "Recruit from existing ride-hail churners on the Mainland-Island axis",
           "Driver community ops (WhatsApp groups, weekly meetups)",
           "Partner with vehicle inspection + insurance providers"
         ]
@@ -216,11 +217,11 @@
         "title": "Demand",
         "timeframe": "Months 6–12",
         "icon": "demand",
-        "detail": "20,000 monthly active riders along the wedge corridor.",
+        "detail": "20,000 monthly active riders along the Yaba commute belt.",
         "tactics": [
           "Referral economy (₦500 credit per converted invite)",
-          "Influencer partnerships with Lagos lifestyle creators",
-          "Content SEO targeting commute queries (Yaba → VI etc)"
+          "UNILAG + YabaTech campus brand ambassadors",
+          "Content SEO targeting Lagos commute queries (Yaba → CMS, Sabo → Marina etc)"
         ]
       },
       {
@@ -311,14 +312,14 @@
       { "from": "Mushin",               "to": "Iju Road",         "boltNaira": 5000, "tagAlongNaira":  800 },
       { "from": "Charley Boy, Gbagada", "to": "Marwa, Lekki",     "boltNaira": 6100, "tagAlongNaira": 1000 },
       { "from": "Iyanaworo",            "to": "Victoria Island",  "boltNaira": 4200, "tagAlongNaira":  700 },
-      { "from": "Sangotedo",            "to": "Lekki",            "boltNaira": 6400, "tagAlongNaira": 3000 }
+      { "from": "Sangotedo",            "to": "Lekki",            "boltNaira": 6400, "tagAlongNaira": 1500 }
     ]
   },
 
   "appCTA": {
     "eyebrow": "READY WHEN YOU ARE",
     "title": "Lagos, on your side for once.",
-    "subtitle": "We're rolling out the app in waves along the Lekki-Epe corridor. Join the waitlist to be one of the first riders — or start driving if your route is already there."
+    "subtitle": "We're starting at the heart of the Lagos commute — the Yaba ↔ Lagos Island corridor. Join the waitlist to be one of the first riders, or start driving if your daily route is already on the line."
   },
 
   "competitive": {
@@ -358,7 +359,7 @@
     "subtitle": "Live MVP. Real surveys. Capital and credits already secured.",
     "proof": [
       { "value": "210", "label": "Lagosians surveyed",        "context": "92% in the 18–34 working-age core" },
-      { "value": "90",  "label": "Waitlist signups",           "context": "From Lekki-Epe + Mainland corridors" },
+      { "value": "90",  "label": "Waitlist signups",           "context": "Mostly along the Yaba commute belt" },
       { "value": "$52K","label": "Cloud credits secured",      "context": "AWS $25K + Microsoft $25K + Google $2K" },
       { "value": "1",   "label": "Live MVP on AWS",            "context": "Flutter app, Go services, MQTT real-time" }
     ],
@@ -410,8 +411,8 @@
       { "when": "2025 Q2", "label": "MVP live on AWS — Flutter + Go", "status": "done" },
       { "when": "2025 Q4", "label": "Won Ugwumba Enterprise Challenge", "status": "done" },
       { "when": "2026 Q3", "label": "Pre-seed close ($350K target)", "status": "now" },
-      { "when": "2026 Q4", "label": "Public Lagos launch — Lekki-Epe corridor", "status": "next" },
-      { "when": "2027",    "label": "Mainland expansion + Abuja pilot", "status": "next" },
+      { "when": "2026 Q4", "label": "Public Lagos launch — Yaba ↔ Lagos Island corridor", "status": "next" },
+      { "when": "2027",    "label": "Lagos-wide expansion + Abuja pilot", "status": "next" },
       { "when": "2028+",   "label": "Nigeria-wide → Accra / Nairobi / Kigali", "status": "future" }
     ]
   },
@@ -435,7 +436,7 @@
   "ask": {
     "eyebrow": "THE ASK",
     "title": "Seeking $750K to make Lagos the proof.",
-    "subtitle": "Pre-seed on a SAFE. Eighteen months of runway. Non-dilutive backing already secured from Tony Elumelu Foundation, Ugwumba Enterprise Challenge, and $52K in cloud credits. We're now raising priced capital to launch the Lekki-Epe corridor and reach Seed-ready unit economics.",
+    "subtitle": "Pre-seed on a SAFE. Eighteen months of runway. Non-dilutive backing already secured from Tony Elumelu Foundation, Ugwumba Enterprise Challenge, and $52K in cloud credits. We're now raising priced capital to launch the Yaba ↔ Lagos Island corridor and reach Seed-ready unit economics.",
     "contact": {
       "name": "Oniya Olaiya",
       "role": "Founder & CEO",

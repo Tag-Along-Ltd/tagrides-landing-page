@@ -9,8 +9,8 @@ import pitch from '@/data/pitch.json';
 const ICONS = { wedge: Megaphone, supply: Handshake, demand: Users, expansion: Globe2 };
 
 // GTM — four phased lanes (Wedge → Supply → Demand → Expansion) that
-// map to the operator's actual sequence: own the Lekki-Epe corridor
-// first, build driver supply, ignite demand, then expand.
+// map to the operator's actual sequence: own the Yaba ↔ Lagos Island
+// corridor first, build driver supply, ignite demand, then expand.
 // ALX rubric item #5 — covered here.
 export function GTM() {
   const data = pitch.gtm;
