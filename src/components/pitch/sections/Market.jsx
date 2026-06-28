@@ -4,14 +4,15 @@ import dynamic from 'next/dynamic';
 import { motion } from 'motion/react';
 
 import { PitchSection, SectionHeading } from '../motion/Section';
+import { AfricaMap } from '../AfricaMap';
 import pitch from '@/data/pitch.json';
 
-// ECharts is heavy + SSR-unfriendly. Defer.
 const ReactECharts = dynamic(() => import('echarts-for-react'), { ssr: false });
 
-// Market — Africa ride-sharing TAM curve 2024→2029, plus three context
-// facts to right-size the prize. Chart uses brand-teal line over a soft
-// gradient fill so it reads as "growth toward us".
+// Market — three blocks tell the size + the shape of the opportunity:
+//   1. TAM growth chart (Africa ride-sharing 2024 → 2029)
+//   2. Africa map with Lagos pulse + planned expansion arcs
+//   3. Three context facts in a row at the bottom
 export function Market() {
   const data = pitch.market;
 
@@ -72,12 +73,13 @@ export function Market() {
     <PitchSection id="market" tone="surface">
       <SectionHeading eyebrow={data.eyebrow} title={data.title} subtitle={data.subtitle} />
 
-      <div className="mt-16 grid items-start gap-10 md:mt-20 md:grid-cols-[1.4fr_1fr] md:gap-16">
+      {/* TAM chart + Africa map side by side */}
+      <div className="mt-16 grid items-stretch gap-6 md:mt-20 md:grid-cols-2 md:gap-8">
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
           className="rounded-2xl bg-elevated/60 p-4 ring-1 ring-border/30 md:p-6"
         >
           <div className="mb-4 flex items-center justify-between">
@@ -86,7 +88,7 @@ export function Market() {
             </div>
             <div className="font-mono text-xs text-foreground-muted">Source: Statista</div>
           </div>
-          <div className="h-[280px] md:h-[360px]">
+          <div className="h-[280px] md:h-[340px]">
             <ReactECharts
               option={option}
               style={{ height: '100%', width: '100%' }}
@@ -95,23 +97,47 @@ export function Market() {
           </div>
         </motion.div>
 
-        <div className="space-y-6">
-          {data.facts.map((f, i) => (
-            <motion.div
-              key={f.label}
-              initial={{ opacity: 0, x: 24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.6, delay: i * 0.12 }}
-              className="border-l-2 border-primary pl-5"
-            >
-              <div className="font-display text-4xl font-extrabold text-foreground tabular-nums md:text-5xl">
-                {f.value}
-              </div>
-              <div className="mt-2 text-sm text-foreground-muted md:text-base">{f.label}</div>
-            </motion.div>
-          ))}
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.7, delay: 0.15 }}
+          className="relative overflow-hidden rounded-2xl bg-elevated/60 p-4 ring-1 ring-border/30 md:p-6"
+        >
+          <div className="mb-4 flex items-center justify-between">
+            <div className="font-mono text-xs text-foreground-muted">Expansion path</div>
+            <div className="flex items-center gap-3 font-mono text-xs text-foreground-muted/80">
+              <span className="flex items-center gap-1.5">
+                <span className="size-1.5 rounded-full bg-primary" /> Now
+              </span>
+              <span className="flex items-center gap-1.5">
+                <span className="size-1.5 rounded-full bg-accent" /> Next
+              </span>
+            </div>
+          </div>
+          <div className="h-[280px] md:h-[340px]">
+            <AfricaMap className="size-full" />
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Context facts row */}
+      <div className="mt-10 grid gap-3 md:grid-cols-3 md:gap-6">
+        {data.facts.map((f, i) => (
+          <motion.div
+            key={f.label}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
+            className="rounded-xl border-l-2 border-primary bg-elevated/40 px-5 py-4 md:px-6"
+          >
+            <div className="font-display text-3xl font-extrabold text-foreground tabular-nums md:text-4xl">
+              {f.value}
+            </div>
+            <div className="mt-1.5 text-xs text-foreground-muted md:text-sm">{f.label}</div>
+          </motion.div>
+        ))}
       </div>
     </PitchSection>
   );

@@ -1,23 +1,69 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
 
 import { Logo } from '@/components/brand/Logo';
 import pitch from '@/data/pitch.json';
 
-// Cover slide — first impression. Cinematic: brand mark centerstage,
-// catchphrase as title, supporting subtitle. A subtle parallax field of
-// route dots in the background gives motion without screaming.
+// Pexels stock — free, no attribution required for commercial use.
+// Same clip the homepage uses so the two surfaces feel like one product.
+// Acts as a low-opacity backdrop; the dot-field + radial glow + text
+// layer on top.
+const HERO_VIDEO_URL =
+  'https://videos.pexels.com/video-files/2103099/2103099-uhd_2560_1440_30fps.mp4';
+
+// Cover slide — first impression. Cinematic: video backdrop at low
+// opacity, brand mark centerstage, catchphrase as title. Route-dot
+// field + radial glow layer over the video to keep text readable
+// even on busy frames.
 export function Cover() {
   const data = pitch.cover;
+  const videoRef = useRef(null);
+
+  // Honor prefers-reduced-motion — pause the loop for users who don't
+  // want autoplay backgrounds. Better than yanking the element entirely
+  // (poster frame still shows).
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    if (reduced && videoRef.current) {
+      videoRef.current.pause();
+    }
+  }, []);
+
   return (
     <section
       id="cover"
       className="relative isolate flex min-h-[100svh] snap-start items-center overflow-hidden bg-background px-6 py-24 md:px-12 md:py-32 lg:px-20"
     >
+      {/* Video backdrop — muted, looping, behind everything else */}
+      <video
+        ref={videoRef}
+        autoPlay
+        muted
+        playsInline
+        loop
+        preload="metadata"
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 size-full object-cover opacity-25 [filter:saturate(0.7)_contrast(1.1)]"
+      >
+        <source src={HERO_VIDEO_URL} type="video/mp4" />
+      </video>
+
+      {/* Darkening + tint scrim so text reads cleanly over any video frame */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            'linear-gradient(to bottom, rgba(10,10,10,0.7), rgba(10,10,10,0.5), rgba(10,10,10,0.85))',
+        }}
+      />
+
       {/* Ambient route-dot field — purely decorative */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 opacity-60">
+      <div aria-hidden className="pointer-events-none absolute inset-0 opacity-50">
         <RouteDots />
       </div>
 
