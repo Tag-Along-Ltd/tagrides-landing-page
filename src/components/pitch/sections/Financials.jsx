@@ -68,7 +68,7 @@ export function Financials() {
   };
 
   return (
-    <PitchSection id="financials" tone="background">
+    <PitchSection id="financials" tone="background" watermark="word-diag">
       <SectionHeading eyebrow={data.eyebrow} title={data.title} subtitle={data.subtitle} />
 
       <div className="mt-16 grid items-start gap-10 md:mt-20 md:grid-cols-[1.5fr_1fr] md:gap-16">

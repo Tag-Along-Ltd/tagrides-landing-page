@@ -5,11 +5,11 @@ import pitch from '@/data/pitch.json';
 
 // Competitive — the 6×6 honesty matrix. Differentiation quotes go on
 // the next slide rather than crammed underneath.
-export function PrintCompetitive({ page, total, audience }) {
+export function PrintCompetitive({ page, total, audience, watermark }) {
   const d = pitch.competitive;
   const { rows, cols } = d.matrix;
   return (
-    <Slide page={page} total={total} audience={audience} section="Competition">
+    <Slide page={page} total={total} audience={audience} watermark={watermark} section="Competition">
       <SlideHeading eyebrow={d.eyebrow} title={d.title} />
 
       <div

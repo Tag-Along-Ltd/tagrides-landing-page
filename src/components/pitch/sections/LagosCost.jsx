@@ -17,7 +17,7 @@ export function LagosCost() {
   const maxNaira = Math.max(...data.routes.map((r) => r.boltNaira));
 
   return (
-    <PitchSection id="cost" tone="background">
+    <PitchSection id="cost" tone="background" watermark="diamonds">
       <SectionHeading eyebrow={data.eyebrow} title={data.title} subtitle={data.subtitle} />
 
       {/* Headline counters */}

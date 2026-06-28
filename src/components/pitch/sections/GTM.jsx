@@ -15,7 +15,7 @@ const ICONS = { wedge: Megaphone, supply: Handshake, demand: Users, expansion: G
 export function GTM() {
   const data = pitch.gtm;
   return (
-    <PitchSection id="gtm" tone="background">
+    <PitchSection id="gtm" tone="background" watermark="mark-tl">
       <SectionHeading eyebrow={data.eyebrow} title={data.title} subtitle={data.subtitle} />
 
       <div className="mt-16 grid gap-6 md:mt-20 md:grid-cols-2 md:gap-8 xl:grid-cols-4">

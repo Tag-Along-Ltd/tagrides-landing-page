@@ -66,9 +66,9 @@
   },
 
   "cover": {
-    "eyebrow": "TAG-ALONG LTD · LAGOS",
+    "eyebrow": "TAG-ALONG LTD · LAGOS FIRST",
     "title": "Their route. Your ride.",
-    "subtitle": "Lagos route-share — drivers heading your way pick you up, you agree the fare directly, and you pay only for your leg of the trip.",
+    "subtitle": "Built in Lagos. For the 85% the daily Uber leaves behind. Drivers heading your way pick you up, you agree the fare directly, and you pay only for your leg of the trip.",
     "presenter": "Oniya Olaiya, Founder & CEO",
     "version": "v1.0 · 2026"
   },
@@ -76,7 +76,7 @@
   "problem": {
     "eyebrow": "THE PROBLEM",
     "title": "Lagos commutes punish everyone — and reward no one.",
-    "subtitle": "Riders overpay or suffer. Drivers waste empty seats. Nothing in between exists.",
+    "subtitle": "Riders overpay or suffer. Drivers waste empty seats. The same math punishes every emerging-market megacity. We're starting in Lagos because we know its streets.",
     "personas": [
       {
         "name": "Fatima",
@@ -111,7 +111,7 @@
       { "value": 30,        "suffix": " hrs/wk", "label": "Average time a Lagosian spends in traffic"},
       { "value": 264,       "suffix": " /km",    "label": "Cars per kilometer in Lagos (global avg: 11)"},
       { "value": 8.32,      "prefix": "$",       "suffix": "M",    "label": "Annual economic loss from Lagos congestion"},
-      { "value": 80,        "suffix": "%",       "label": "Of the world can't afford ride-hailing as daily transport"}
+      { "value": 85,        "suffix": "%",       "label": "Of the world can't afford a daily Uber"}
     ],
     "routes": [
       { "from": "Mushin",                "to": "Iju Road",          "minNaira":  500, "maxNaira":  900, "boltNaira": 5000 },
@@ -153,8 +153,8 @@
 
   "market": {
     "eyebrow": "THE MARKET",
-    "title": "A $2B informal market, ready for digitisation.",
-    "subtitle": "African ride-sharing is forecast to grow $2.1B → $3.4B by 2029 (Statista). Nigeria alone has 36M daily road users with smartphones — a market value of $2B mostly untouched by ride-hailing pricing.",
+    "title": "A $216B prize. Starting in Lagos.",
+    "subtitle": "Global ride-share grows $166B → $216B by 2029 (Statista). Africa grows $2.1B → $3.45B in the same window. Lagos has 36M daily road users on smartphones — most can't afford a daily Uber. We own the city we know first.",
     "tam": [
       { "year": 2024, "value": 2.10 },
       { "year": 2025, "value": 2.35 },
@@ -164,9 +164,9 @@
       { "year": 2029, "value": 3.45 }
     ],
     "facts": [
-      { "value": "12M",  "label": "Daily road users in Lagos" },
-      { "value": "118M", "label": "Daily road users across Africa" },
-      { "value": "43%",  "label": "African smartphone adoption (climbing)" }
+      { "value": "12M",    "label": "Daily road users in Lagos — the wedge" },
+      { "value": "$3.45B", "label": "African ride-share TAM by 2029 — the corridor" },
+      { "value": "$216B",  "label": "Global ride-share TAM by 2029 — the prize" }
     ]
   },
 
@@ -228,11 +228,11 @@
         "title": "Expansion",
         "timeframe": "Year 2+",
         "icon": "expansion",
-        "detail": "Lagos-wide → Abuja → Accra / Nairobi / Kigali.",
+        "detail": "Lagos-wide → Abuja → Accra / Nairobi / Kigali. Then every city where the daily Uber leaves the working class behind — SE Asia, LATAM, the same playbook ports.",
         "tactics": [
           "Playbook-replicable corridor strategy per city",
           "Local co-founders / city leads in each new market",
-          "API partnerships with delivery + fintech players"
+          "Open APIs for delivery + fintech partners worldwide"
         ]
       }
     ],
@@ -413,7 +413,8 @@
       { "when": "2026 Q3", "label": "Pre-seed close ($750K target)", "status": "now" },
       { "when": "2026 Q4", "label": "Public Lagos launch — Yaba ↔ Lagos Island corridor", "status": "next" },
       { "when": "2027",    "label": "Lagos-wide expansion + Abuja pilot", "status": "next" },
-      { "when": "2028+",   "label": "Nigeria-wide → Accra / Nairobi / Kigali", "status": "future" }
+      { "when": "2028+",   "label": "Nigeria-wide → Accra / Nairobi / Kigali", "status": "future" },
+      { "when": "2030+",   "label": "First non-African market — SE Asia / LATAM pilot", "status": "future" }
     ]
   },
 
@@ -436,7 +437,7 @@
   "ask": {
     "eyebrow": "THE ASK",
     "title": "Seeking $750K to make Lagos the proof.",
-    "subtitle": "Pre-seed on a SAFE. Eighteen months of runway. Non-dilutive backing already secured from Tony Elumelu Foundation, Ugwumba Enterprise Challenge, and $52K in cloud credits. We're now raising priced capital to launch the Yaba ↔ Lagos Island corridor and reach Seed-ready unit economics.",
+    "subtitle": "Pre-seed on a SAFE. Eighteen months of runway. Non-dilutive backing already secured from Tony Elumelu Foundation, Ugwumba Enterprise Challenge, and $52K in cloud credits. We're now raising priced capital to launch the Yaba ↔ Lagos Island corridor, reach Seed-ready unit economics, and earn the right to do this in every city the math fails.",
     "contact": {
       "name": "Oniya Olaiya",
       "role": "Founder & CEO",

@@ -20,7 +20,7 @@ export function Ask({ audience = 'investor' }) {
   const ask = audienceCfg.ask ?? pitch.audiences.investor.ask;
 
   return (
-    <PitchSection id="ask" tone="primary" className="text-primary-foreground">
+    <PitchSection id="ask" tone="primary" watermark="diamonds" className="text-primary-foreground">
       <div className="grid gap-16 md:grid-cols-[1.4fr_1fr] md:gap-24">
         {/* Headline + use of funds */}
         <div>

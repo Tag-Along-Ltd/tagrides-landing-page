@@ -49,3 +49,8 @@ next-env.d.ts
 # playwright mcp screenshots/snapshots
 .playwright-mcp/
 
+
+# Playwright visual-iteration screenshots (kept locally as design artifacts)
+slide-*.png
+v[0-9]*.png
+web-*.png

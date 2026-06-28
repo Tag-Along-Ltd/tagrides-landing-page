@@ -14,7 +14,7 @@ export function Competitive() {
   const { rows, cols } = data.matrix;
 
   return (
-    <PitchSection id="competitive" tone="elevated">
+    <PitchSection id="competitive" tone="elevated" watermark="diamonds">
       <SectionHeading eyebrow={data.eyebrow} title={data.title} subtitle={data.subtitle} />
 
       {/* Matrix */}

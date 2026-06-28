@@ -6,7 +6,7 @@ import pitch from '@/data/pitch.json';
 // Cost — the cost-of-Lagos slide. Stripped from 10 routes to 6, the
 // 4 headline stats become a single mega-callout ("up to 7.6× more
 // expensive"). Twin bars per route, label inline, tabular numerals.
-export function PrintCost({ page, total, audience }) {
+export function PrintCost({ page, total, audience, watermark }) {
   const d = pitch.lagosCost;
   const routes = d.routes.slice(0, 6);
   const maxBolt = Math.max(...routes.map((r) => r.boltNaira));
@@ -15,7 +15,7 @@ export function PrintCost({ page, total, audience }) {
   ).toFixed(1);
 
   return (
-    <Slide page={page} total={total} audience={audience} section="Cost">
+    <Slide page={page} total={total} audience={audience} watermark={watermark} section="Cost">
       <SlideHeading eyebrow={d.eyebrow} title={d.title} />
 
       {/* Headline multiplier callout */}
@@ -65,8 +65,19 @@ export function PrintCost({ page, total, audience }) {
         </div>
       </div>
 
-      {/* Route comparison rows */}
-      <div style={{ display: 'flex', flexDirection: 'column', gap: '2mm' }}>
+      {/* Route comparison rows — flex:1 stretches to fill the slide's
+          remaining vertical space, even gaps distribute the rows */}
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-evenly',
+          flex: 1,
+          padding: '4mm 0',
+          borderTop: '1px solid #1f1f1f',
+          borderBottom: '1px solid #1f1f1f',
+        }}
+      >
         {routes.map((r) => {
           const localPct = (r.maxNaira / maxBolt) * 100;
           const boltPct = (r.boltNaira / maxBolt) * 100;
@@ -119,7 +130,7 @@ export function PrintCost({ page, total, audience }) {
       {/* Legend at bottom */}
       <div
         style={{
-          marginTop: 'auto',
+          marginTop: '4mm',
           display: 'flex',
           gap: '8mm',
           fontFamily: 'var(--font-mono)',

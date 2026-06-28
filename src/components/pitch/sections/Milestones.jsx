@@ -11,7 +11,7 @@ import pitch from '@/data/pitch.json';
 export function Milestones() {
   const data = pitch.milestones;
   return (
-    <PitchSection id="milestones" tone="elevated">
+    <PitchSection id="milestones" tone="elevated" watermark="mark-tl">
       <SectionHeading eyebrow={data.eyebrow} title={data.title} />
 
       <div className="relative mt-16 md:mt-20">

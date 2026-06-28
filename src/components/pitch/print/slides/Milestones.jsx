@@ -6,10 +6,10 @@ import pitch from '@/data/pitch.json';
 // Milestones — compact horizontal timeline. Past items have a filled
 // dot; "now" is solid amber + glow; future items are outline-only.
 // Showing all 9 items on one slide via a vertical list (date | label).
-export function PrintMilestones({ page, total, audience }) {
+export function PrintMilestones({ page, total, audience, watermark }) {
   const d = pitch.milestones;
   return (
-    <Slide page={page} total={total} audience={audience} section="Milestones">
+    <Slide page={page} total={total} audience={audience} watermark={watermark} section="Milestones">
       <SlideHeading eyebrow={d.eyebrow} title={d.title} />
 
       <div
@@ -17,7 +17,8 @@ export function PrintMilestones({ page, total, audience }) {
           display: 'flex',
           flexDirection: 'column',
           flex: 1,
-          gap: '3mm',
+          justifyContent: 'space-evenly',
+          padding: '2mm 0',
         }}
       >
         {d.items.map((item) => {
@@ -38,7 +39,6 @@ export function PrintMilestones({ page, total, audience }) {
                 gap: '4mm',
                 borderLeft: '2px solid #222',
                 paddingLeft: '6mm',
-                paddingBottom: '2mm',
               }}
             >
               <div
@@ -65,7 +65,7 @@ export function PrintMilestones({ page, total, audience }) {
               <div
                 style={{
                   fontFamily: 'var(--font-display)',
-                  fontSize: '11pt',
+                  fontSize: '12pt',
                   fontWeight: item.status === 'now' ? 700 : 500,
                   color: item.status === 'future' ? '#888' : '#E5E5E5',
                   lineHeight: 1.25,

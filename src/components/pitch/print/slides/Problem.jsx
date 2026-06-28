@@ -8,10 +8,10 @@ import pitch from '@/data/pitch.json';
 // print density). Photo not embedded — too risky in print + adds
 // visual noise. The persona role badge (RIDER / DRIVER) carries the
 // archetype signal.
-export function PrintProblem({ page, total, audience }) {
+export function PrintProblem({ page, total, audience, watermark }) {
   const d = pitch.problem;
   return (
-    <Slide page={page} total={total} audience={audience} section="Problem">
+    <Slide page={page} total={total} audience={audience} watermark={watermark} section="Problem">
       <SlideHeading eyebrow={d.eyebrow} title={d.title} subtitle={d.subtitle} />
 
       <div
@@ -20,6 +20,7 @@ export function PrintProblem({ page, total, audience }) {
           gridTemplateColumns: '1fr 1fr',
           gap: '10mm',
           flex: 1,
+          alignItems: 'stretch',
         }}
       >
         {d.personas.slice(0, 2).map((p, i) => (
@@ -36,10 +37,10 @@ function PersonaCard({ persona, kind }) {
     <article
       style={{
         border: `1px solid ${accent}40`,
-        borderLeft: `3px solid ${accent}`,
+        borderTop: `3px solid ${accent}`,
         borderRadius: '4mm',
-        padding: '7mm 8mm',
-        backgroundColor: '#1A1A1A',
+        padding: '10mm 10mm 8mm 10mm',
+        backgroundColor: 'rgba(26,26,26,0.8)',
         display: 'flex',
         flexDirection: 'column',
       }}
@@ -60,7 +61,7 @@ function PersonaCard({ persona, kind }) {
       <h3
         style={{
           fontFamily: 'var(--font-display)',
-          fontSize: '18pt',
+          fontSize: '20pt',
           fontWeight: 700,
           lineHeight: 1.1,
           color: '#E5E5E5',
@@ -72,9 +73,9 @@ function PersonaCard({ persona, kind }) {
 
       <div
         style={{
-          fontSize: '10pt',
+          fontSize: '11pt',
           color: '#B3B3B3',
-          marginTop: '1mm',
+          marginTop: '1.5mm',
         }}
       >
         {persona.role}
@@ -83,7 +84,7 @@ function PersonaCard({ persona, kind }) {
       <div
         style={{
           fontFamily: 'var(--font-mono)',
-          fontSize: '8.5pt',
+          fontSize: '9pt',
           color: '#888',
           letterSpacing: '0.06em',
           marginTop: '1mm',
@@ -92,17 +93,26 @@ function PersonaCard({ persona, kind }) {
         {persona.location}
       </div>
 
-      <ul style={{ listStyle: 'none', padding: 0, margin: '6mm 0 0 0' }}>
-        {persona.pain.slice(0, 2).map((point, i) => (
+      {/* Divider — visual separator */}
+      <div
+        style={{
+          marginTop: '7mm',
+          height: '0.4mm',
+          background: `linear-gradient(90deg, ${accent}, transparent)`,
+          width: '40%',
+        }}
+      />
+
+      <ul style={{ listStyle: 'none', padding: 0, margin: '7mm 0 0 0', display: 'flex', flexDirection: 'column', gap: '5mm', flex: 1 }}>
+        {persona.pain.map((point, i) => (
           <li
             key={i}
             style={{
               display: 'flex',
               gap: '3mm',
-              fontSize: '10pt',
-              lineHeight: 1.45,
+              fontSize: '11pt',
+              lineHeight: 1.5,
               color: '#D0D0D0',
-              marginBottom: '3mm',
             }}
           >
             <span

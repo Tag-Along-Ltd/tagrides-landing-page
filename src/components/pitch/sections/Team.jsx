@@ -11,7 +11,7 @@ import pitch from '@/data/pitch.json';
 export function Team() {
   const data = pitch.team;
   return (
-    <PitchSection id="team" tone="surface">
+    <PitchSection id="team" tone="surface" watermark="mark-tr">
       <SectionHeading eyebrow={data.eyebrow} title={data.title} subtitle={data.subtitle} />
 
       <div className="mt-16 grid gap-6 md:mt-20 md:grid-cols-3 md:gap-8">

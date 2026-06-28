@@ -12,7 +12,7 @@ import pitch from '@/data/pitch.json';
 export function Problem() {
   const data = pitch.problem;
   return (
-    <PitchSection id="problem" tone="surface">
+    <PitchSection id="problem" tone="surface" watermark="mark-br">
       <SectionHeading eyebrow={data.eyebrow} title={data.title} subtitle={data.subtitle} />
 
       <div className="mt-16 grid gap-8 md:mt-24 md:grid-cols-2 md:gap-10">

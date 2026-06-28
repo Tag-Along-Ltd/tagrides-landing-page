@@ -5,10 +5,10 @@ import pitch from '@/data/pitch.json';
 
 // GTM — 4 phase cards in a 2x2 grid. Each card carries phase title +
 // timeframe + 1-line detail + top 2 tactics (web shows 3-4).
-export function PrintGTM({ page, total, audience }) {
+export function PrintGTM({ page, total, audience, watermark }) {
   const d = pitch.gtm;
   return (
-    <Slide page={page} total={total} audience={audience} section="Go-To-Market">
+    <Slide page={page} total={total} audience={audience} watermark={watermark} section="Go-To-Market">
       <SlideHeading eyebrow={d.eyebrow} title={d.title} subtitle={d.subtitle} />
 
       <div

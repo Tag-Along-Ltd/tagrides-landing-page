@@ -327,7 +327,8 @@ export default function AboutUsPage() {
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground-muted md:text-lg">
               Lagos came first because Lagos taught us how. We expand into cities where the
-              rider-and-driver experience is shaped by the same informal-transit DNA.
+              rider-and-driver experience is shaped by the same informal-transit DNA — from Mumbai
+              to Manila, the math is the same.
             </p>
           </Reveal>
           <RevealStagger className="mt-12 divide-y divide-border overflow-hidden rounded-3xl border border-border bg-background/40">

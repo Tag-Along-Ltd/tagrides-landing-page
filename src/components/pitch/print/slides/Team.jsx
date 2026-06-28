@@ -4,10 +4,10 @@ import { Slide, SlideHeading } from '../Slide';
 import pitch from '@/data/pitch.json';
 
 // Team — 3 portrait cards. Diamond-cropped photo + name + role + bio.
-export function PrintTeam({ page, total, audience }) {
+export function PrintTeam({ page, total, audience, watermark }) {
   const d = pitch.team;
   return (
-    <Slide page={page} total={total} audience={audience} section="Team">
+    <Slide page={page} total={total} audience={audience} watermark={watermark} section="Team">
       <SlideHeading eyebrow={d.eyebrow} title={d.title} subtitle={d.subtitle} />
 
       <div
@@ -26,24 +26,27 @@ export function PrintTeam({ page, total, audience }) {
               key={m.name}
               style={{
                 border: '1px solid #333',
-                backgroundColor: isAdviser ? '#141414' : '#1A1A1A',
+                borderTop: `3px solid ${isAdviser ? '#F59E0B' : '#008080'}`,
+                backgroundColor: isAdviser ? 'rgba(20,20,20,0.7)' : 'rgba(26,26,26,0.85)',
                 borderRadius: '4mm',
-                padding: '7mm',
+                padding: '10mm 8mm',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
+                justifyContent: 'flex-start',
                 textAlign: 'center',
               }}
             >
               {/* Diamond photo */}
               <div
                 style={{
-                  width: '34mm',
-                  height: '34mm',
+                  width: '44mm',
+                  height: '44mm',
                   transform: 'rotate(45deg)',
                   overflow: 'hidden',
-                  borderRadius: '4mm',
+                  borderRadius: '5mm',
                   border: '1px solid #444',
+                  flexShrink: 0,
                 }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -61,10 +64,10 @@ export function PrintTeam({ page, total, audience }) {
               <h3
                 style={{
                   fontFamily: 'var(--font-display)',
-                  fontSize: '13pt',
+                  fontSize: '14pt',
                   fontWeight: 700,
                   color: '#E5E5E5',
-                  marginTop: '8mm',
+                  marginTop: '10mm',
                   marginBottom: '1.5mm',
                 }}
               >

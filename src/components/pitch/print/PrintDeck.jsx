@@ -20,72 +20,77 @@ import { PrintContact } from './slides/Contact';
 
 import pitch from '@/data/pitch.json';
 
-// Per-audience slide ordering. Each entry maps to a slide component.
-// Investor: standard 15-slide arc.
-// Judge:    same as investor + Impact slide before close (ALX rubric).
-// Customer: shorter sales-pitch arc.
-const SLIDES_BY_AUDIENCE = {
+// Watermark assignments per slide. Cycles through positions
+// (br → bl → tr → tl → br...) with content-aware overrides so the deck
+// reads as a designed system, not a stamped repeat. Slides with strong
+// visual identity (Cover, Market with its Africa map, Contact's centered
+// brand mark) opt out of the watermark entirely.
+const SLIDE_DEFS = {
   investor: [
-    PrintCover,
-    PrintProblem,
-    PrintCost,
-    PrintSolution,
-    PrintProduct,
-    PrintMarket,
-    PrintModel,
-    PrintGTM,
-    PrintCompetitive,
-    PrintDifferentiation,
-    PrintTraction,
-    PrintTeam,
-    PrintFinancials,
-    PrintMilestones,
-    PrintAsk,
-    PrintContact,
+    { c: PrintCover,          wm: 'none' },
+    { c: PrintProblem,        wm: 'mark-br' },
+    { c: PrintCost,           wm: 'diamonds' },
+    { c: PrintSolution,       wm: 'mark-bl' },
+    { c: PrintProduct,        wm: 'mark-tr' },
+    { c: PrintMarket,         wm: 'none' },
+    { c: PrintModel,          wm: 'word-diag' },
+    { c: PrintGTM,            wm: 'mark-tl' },
+    { c: PrintCompetitive,    wm: 'diamonds' },
+    { c: PrintDifferentiation,wm: 'mark-br' },
+    { c: PrintTraction,       wm: 'mark-bl' },
+    { c: PrintTeam,           wm: 'mark-tr' },
+    { c: PrintFinancials,     wm: 'word-diag' },
+    { c: PrintMilestones,     wm: 'mark-tl' },
+    { c: PrintAsk,            wm: 'mark-br' },
+    { c: PrintContact,        wm: 'none' },
   ],
   judge: [
-    PrintCover,
-    PrintProblem,
-    PrintCost,
-    PrintSolution,
-    PrintProduct,
-    PrintMarket,
-    PrintModel,
-    PrintGTM,
-    PrintCompetitive,
-    PrintDifferentiation,
-    PrintTeam,
-    PrintFinancials,
-    PrintMilestones,
-    PrintTraction,
-    PrintImpact,
-    PrintAsk,
-    PrintContact,
+    { c: PrintCover,          wm: 'none' },
+    { c: PrintProblem,        wm: 'mark-br' },
+    { c: PrintCost,           wm: 'diamonds' },
+    { c: PrintSolution,       wm: 'mark-bl' },
+    { c: PrintProduct,        wm: 'mark-tr' },
+    { c: PrintMarket,         wm: 'none' },
+    { c: PrintModel,          wm: 'word-diag' },
+    { c: PrintGTM,            wm: 'mark-tl' },
+    { c: PrintCompetitive,    wm: 'diamonds' },
+    { c: PrintDifferentiation,wm: 'mark-br' },
+    { c: PrintTeam,           wm: 'mark-tr' },
+    { c: PrintFinancials,     wm: 'word-diag' },
+    { c: PrintMilestones,     wm: 'mark-tl' },
+    { c: PrintTraction,       wm: 'mark-bl' },
+    { c: PrintImpact,         wm: 'mark-br' },
+    { c: PrintAsk,            wm: 'diamonds' },
+    { c: PrintContact,        wm: 'none' },
   ],
-  // Customer's web narrative is light enough that for v1 we reuse the
-  // investor's narrative-deck slides — the operator can request a
-  // bespoke customer deck if needed. (Avoids shipping half-finished
-  // customer slides.)
+  // Customer's web narrative is light — reusing investor slides for
+  // v1; the operator can request a bespoke customer deck if needed.
   customer: [
-    PrintCover,
-    PrintProblem,
-    PrintSolution,
-    PrintProduct,
-    PrintCost,
-    PrintTeam,
-    PrintContact,
+    { c: PrintCover,    wm: 'none' },
+    { c: PrintProblem,  wm: 'mark-br' },
+    { c: PrintSolution, wm: 'mark-bl' },
+    { c: PrintProduct,  wm: 'mark-tr' },
+    { c: PrintCost,     wm: 'diamonds' },
+    { c: PrintTeam,     wm: 'mark-tl' },
+    { c: PrintContact,  wm: 'none' },
   ],
 };
 
 export function PrintDeck({ audience = 'investor' }) {
   const cfg = pitch.audiences[audience] ?? pitch.audiences.investor;
-  const slides = SLIDES_BY_AUDIENCE[audience] ?? SLIDES_BY_AUDIENCE.investor;
+  const slides = SLIDE_DEFS[audience] ?? SLIDE_DEFS.investor;
   const total = slides.length;
 
   return (
     <div className="pitch-print-deck">
-      {slides.map((Slide, i) => (
-        <Slide key={i} page={i + 1} total={total} audience={cfg.label} />
+      {slides.map(({ c: SlideComponent, wm }, i) => (
+        <SlideComponent
+          key={i}
+          page={i + 1}
+          total={total}
+          audience={cfg.label}
+          watermark={wm}
+        />
       ))}
     </div>
   );

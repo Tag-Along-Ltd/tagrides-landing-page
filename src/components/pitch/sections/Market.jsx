@@ -70,7 +70,7 @@ export function Market() {
   };
 
   return (
-    <PitchSection id="market" tone="surface">
+    <PitchSection id="market" tone="surface" watermark="none">
       <SectionHeading eyebrow={data.eyebrow} title={data.title} subtitle={data.subtitle} />
 
       {/* TAM chart + Africa map side by side */}

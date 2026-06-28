@@ -13,7 +13,7 @@ export function BusinessModel() {
   const data = pitch.model;
 
   return (
-    <PitchSection id="model" tone="background">
+    <PitchSection id="model" tone="background" watermark="word-diag">
       <SectionHeading eyebrow={data.eyebrow} title={data.title} subtitle={data.subtitle} />
 
       {/* Revenue streams */}

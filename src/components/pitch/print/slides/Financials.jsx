@@ -5,13 +5,13 @@ import pitch from '@/data/pitch.json';
 
 // Financials — static SVG twin-bar chart (no ECharts in print to
 // avoid JS-execution dependency) + unit economics column on the right.
-export function PrintFinancials({ page, total, audience }) {
+export function PrintFinancials({ page, total, audience, watermark }) {
   const d = pitch.financials;
   const maxRev = Math.max(...d.projection.map((p) => p.revenue));
   const maxAny = Math.max(maxRev, ...d.projection.map((p) => p.expenses));
 
   return (
-    <Slide page={page} total={total} audience={audience} section="Financials">
+    <Slide page={page} total={total} audience={audience} watermark={watermark} section="Financials">
       <SlideHeading eyebrow={d.eyebrow} title={d.title} subtitle={d.subtitle} />
 
       <div

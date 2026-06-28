@@ -6,10 +6,10 @@ import pitch from '@/data/pitch.json';
 
 // Contact — the closing slide. Centered: thank-you, brand mark, contact
 // card. Mirrors the cover for compositional bookend.
-export function PrintContact({ page, total, audience }) {
+export function PrintContact({ page, total, audience, watermark }) {
   const d = pitch.ask.contact;
   return (
-    <Slide page={page} total={total} audience={audience} section="Contact">
+    <Slide page={page} total={total} audience={audience} watermark={watermark} section="Contact">
       <div className="flex flex-1 flex-col items-center justify-center text-center" style={{ gap: '6mm' }}>
         <Logo size={48} variant="color" />
 

@@ -13,7 +13,7 @@ import pitch from '@/data/pitch.json';
 export function Traction() {
   const data = pitch.traction;
   return (
-    <PitchSection id="traction" tone="background">
+    <PitchSection id="traction" tone="background" watermark="mark-bl">
       <SectionHeading eyebrow={data.eyebrow} title={data.title} subtitle={data.subtitle} />
 
       {/* Proof points */}

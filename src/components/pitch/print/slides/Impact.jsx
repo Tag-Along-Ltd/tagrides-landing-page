@@ -5,10 +5,10 @@ import pitch from '@/data/pitch.json';
 
 // Impact — judge-only slide. 3 outcome cards in a row + SDG chips
 // across the bottom.
-export function PrintImpact({ page, total, audience }) {
+export function PrintImpact({ page, total, audience, watermark }) {
   const d = pitch.impact;
   return (
-    <Slide page={page} total={total} audience={audience} section="Economic Impact">
+    <Slide page={page} total={total} audience={audience} watermark={watermark} section="Economic Impact">
       <SlideHeading eyebrow={d.eyebrow} title={d.title} subtitle={d.subtitle} />
 
       <div

@@ -5,10 +5,10 @@ import pitch from '@/data/pitch.json';
 
 // Traction — 4 proof cards + backer rail. Bigger numbers, fewer
 // supporting words. The story: backed, built, accumulating users.
-export function PrintTraction({ page, total, audience }) {
+export function PrintTraction({ page, total, audience, watermark }) {
   const d = pitch.traction;
   return (
-    <Slide page={page} total={total} audience={audience} section="Traction">
+    <Slide page={page} total={total} audience={audience} watermark={watermark} section="Traction">
       <SlideHeading eyebrow={d.eyebrow} title={d.title} subtitle={d.subtitle} />
 
       {/* 4 proof stat cards */}

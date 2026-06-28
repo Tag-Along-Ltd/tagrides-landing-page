@@ -6,10 +6,10 @@ import pitch from '@/data/pitch.json';
 // Business Model — 2 revenue streams + 3 pricing levers. Same content
 // as web but flatter layout: streams across the top, pricing across
 // the bottom.
-export function PrintModel({ page, total, audience }) {
+export function PrintModel({ page, total, audience, watermark }) {
   const d = pitch.model;
   return (
-    <Slide page={page} total={total} audience={audience} section="Business Model">
+    <Slide page={page} total={total} audience={audience} watermark={watermark} section="Business Model">
       <SlideHeading eyebrow={d.eyebrow} title={d.title} subtitle={d.subtitle} />
 
       {/* Revenue streams */}

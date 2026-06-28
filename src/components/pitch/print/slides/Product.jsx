@@ -5,32 +5,33 @@ import pitch from '@/data/pitch.json';
 
 // Product — 4 phone screenshots in a single horizontal row, each in
 // a thin dark frame. Caption monospace beneath each.
-export function PrintProduct({ page, total, audience }) {
+export function PrintProduct({ page, total, audience, watermark }) {
   const d = pitch.product;
   return (
-    <Slide page={page} total={total} audience={audience} section="Product">
+    <Slide page={page} total={total} audience={audience} watermark={watermark} section="Product">
       <SlideHeading eyebrow={d.eyebrow} title={d.title} subtitle={d.subtitle} />
 
       <div
         style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(4, 1fr)',
-          gap: '8mm',
+          gap: '6mm',
           flex: 1,
-          alignItems: 'start',
+          alignItems: 'center',
         }}
       >
         {d.flows.map((flow, i) => (
-          <figure key={flow.title} style={{ margin: 0, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <figure key={flow.title} style={{ margin: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4mm' }}>
             <div
               style={{
-                width: '42mm',
-                height: '88mm',
-                borderRadius: '6mm',
+                width: '52mm',
+                height: '108mm',
+                borderRadius: '7mm',
                 backgroundColor: '#1A1A1A',
                 border: '1px solid #333',
                 overflow: 'hidden',
                 position: 'relative',
+                boxShadow: '0 4mm 12mm rgba(0,0,0,0.5)',
               }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -42,16 +43,17 @@ export function PrintProduct({ page, total, audience }) {
             </div>
             <figcaption
               style={{
-                marginTop: '4mm',
                 fontFamily: 'var(--font-mono)',
-                fontSize: '8pt',
-                letterSpacing: '0.12em',
-                color: '#B3B3B3',
+                fontSize: '9pt',
+                letterSpacing: '0.14em',
+                color: '#E5E5E5',
                 textTransform: 'uppercase',
                 textAlign: 'center',
+                fontWeight: 600,
               }}
             >
-              <span style={{ color: '#008080' }}>0{i + 1}</span> · {flow.title}
+              <span style={{ color: '#008080', marginRight: '2mm' }}>0{i + 1}</span>
+              {flow.title}
             </figcaption>
           </figure>
         ))}
