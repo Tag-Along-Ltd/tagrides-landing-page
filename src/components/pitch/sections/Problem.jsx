@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'motion/react';
 
 import { PitchSection, SectionHeading } from '../motion/Section';
@@ -27,6 +28,15 @@ function PersonaCard({ persona, index }) {
   // Rider gets primary teal accent; driver gets amber. Visual coding of
   // the two-sided market — keep it consistent across the deck.
   const accent = index === 0 ? 'primary' : 'accent';
+  const kind = index === 0 ? 'rider' : 'driver';
+
+  // Prefer a stock photo if persona.image loads; fall back to the
+  // designed SVG illustration if the image is missing or fails. The
+  // SVG is brand-coherent and never breaks, so the page is always
+  // visually complete.
+  const [photoFailed, setPhotoFailed] = useState(false);
+  const showPhoto = !!persona.image && !photoFailed;
+
   return (
     <motion.article
       initial={{ opacity: 0, y: 40 }}
@@ -42,18 +52,24 @@ function PersonaCard({ persona, index }) {
       />
 
       <div className="flex flex-col items-start gap-6 sm:flex-row sm:items-center">
-        {/* Diamond-framed persona illustration. Outer rotated 45° to
-            make a diamond, inner illustration rotated back upright and
-            scaled to fill so the diamond crops nicely.  These are
-            designed composites, not photos — honest representation of
-            a persona archetype, not a fake real customer. */}
+        {/* Diamond-framed persona portrait. Outer rotated 45° to make a
+            diamond, inner content rotated back upright + scaled to fill
+            so the diamond crops nicely. Photos preferred; designed SVG
+            illustration is the never-fail fallback. */}
         <div className="shrink-0">
           <div className="relative size-28 rotate-45 overflow-hidden rounded-2xl ring-2 ring-border/60 md:size-32">
             <div className="absolute inset-0 -rotate-45 scale-150">
-              <PersonaIllustration
-                kind={index === 0 ? 'rider' : 'driver'}
-                className="size-full"
-              />
+              {showPhoto ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={persona.image}
+                  alt={`${persona.name} — persona composite`}
+                  className="size-full object-cover"
+                  onError={() => setPhotoFailed(true)}
+                />
+              ) : (
+                <PersonaIllustration kind={kind} className="size-full" />
+              )}
             </div>
           </div>
         </div>
@@ -68,6 +84,9 @@ function PersonaCard({ persona, index }) {
           <div className="mt-1 text-sm text-foreground-muted">{persona.role}</div>
           <div className="mt-1 text-xs font-mono tracking-wide text-foreground-muted/70">
             {persona.location}
+          </div>
+          <div className="mt-2 font-mono text-[10px] tracking-[0.18em] text-foreground-muted/50 italic md:text-xs">
+            Persona · composite
           </div>
         </div>
       </div>

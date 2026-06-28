@@ -82,7 +82,7 @@
         "name": "Fatima",
         "role": "Banker, 32",
         "location": "Lagos Island → VI",
-        "image": "/assets/pitch/persona-fatima.png",
+        "image": "/assets/pitch/persona-fatima.jpg",
         "pain": [
           "Pays ₦4,500–₦7,400 daily for Bolt to feel safe — 6–10× what a danfo costs.",
           "Loses 30+ hours a week to traffic and stop-and-go pickups.",
@@ -93,7 +93,7 @@
         "name": "Emeka",
         "role": "Lecturer & freelance driver, 38",
         "location": "Mainland → Lagos Island",
-        "image": "/assets/pitch/persona-emeka.png",
+        "image": "/assets/pitch/persona-emeka.jpg",
         "pain": [
           "Drives Lagos roads daily — 3 empty seats every trip.",
           "Bolt detours kill his schedule and his fuel margin.",
@@ -410,7 +410,7 @@
       { "when": "2024 Q4", "label": "Tony Elumelu Foundation grant", "status": "done" },
       { "when": "2025 Q2", "label": "MVP live on AWS — Flutter + Go", "status": "done" },
       { "when": "2025 Q4", "label": "Won Ugwumba Enterprise Challenge", "status": "done" },
-      { "when": "2026 Q3", "label": "Pre-seed close ($350K target)", "status": "now" },
+      { "when": "2026 Q3", "label": "Pre-seed close ($750K target)", "status": "now" },
       { "when": "2026 Q4", "label": "Public Lagos launch — Yaba ↔ Lagos Island corridor", "status": "next" },
       { "when": "2027",    "label": "Lagos-wide expansion + Abuja pilot", "status": "next" },
       { "when": "2028+",   "label": "Nigeria-wide → Accra / Nairobi / Kigali", "status": "future" }
