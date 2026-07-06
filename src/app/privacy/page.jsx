@@ -4,7 +4,7 @@ import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
 
 export const metadata = {
-  title: 'Privacy Policy — Tag Rides',
+  title: 'Privacy Policy — TagRides',
   description:
     'How Tag Along Ltd collects, uses, and protects information about people who use TagRides — riders, drivers, and everyone in between.',
 };
@@ -23,11 +23,11 @@ export default function PrivacyPage() {
         <div className="prose-tag mt-12 space-y-10">
           <Block heading="The short version">
             <p>
-              Tag Along Ltd operates TagRides — a ride-sharing platform serving Lagos and, soon,
-              other Nigerian cities. We collect only the information we need to match riders with
-              drivers, process payments, keep everyone safe, and comply with Nigerian law. We
-              never sell your data. We never share it with advertisers. We delete it when you ask
-              us to — through the app or by email.
+              Tag Along Ltd operates TagRides — a Lagos-first route-share platform for riders and
+              drivers. We collect only the information we need to match riders with drivers, process
+              payments, support accountable trips, and comply with Nigerian law. We never sell your
+              data. We never share it with advertisers. We delete it when you ask us to — through
+              the app or by email.
             </p>
           </Block>
 

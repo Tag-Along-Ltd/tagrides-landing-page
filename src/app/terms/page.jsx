@@ -4,7 +4,7 @@ import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
 
 export const metadata = {
-  title: 'Terms of Service — Tag Rides',
+  title: 'Terms of Service — TagRides',
   description:
     'The plain-language agreement between Tag Along Ltd and people who use TagRides.',
 };
@@ -44,7 +44,7 @@ export default function TermsPage() {
               <li>Not submit fake routes, repeated junk, or bot traffic</li>
               <li>Not attempt to compromise our servers, exfiltrate data, or interfere with other users</li>
               <li>Not claim to represent Tag Along Ltd or its founders without permission</li>
-              <li>Be honest about whether you live in or know Lagos when contributing trip data</li>
+              <li>Be honest about whether you know the route when contributing trip data</li>
             </ul>
             <p>
               We reserve the right to remove or block any account or submission that violates the
@@ -62,7 +62,7 @@ export default function TermsPage() {
               >
                 /brand
               </Link>{' '}
-              is provided for press, partners, and contractors to use Tag Rides assets accurately;
+              is provided for press, partners, and contractors to use TagRides assets accurately;
               it is not a transfer of ownership.
             </p>
           </Block>

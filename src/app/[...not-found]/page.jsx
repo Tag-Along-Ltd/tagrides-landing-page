@@ -2,6 +2,10 @@ import LayoutStyle7 from '@/components/Layouts/LayoutStyle7';
 import NotFoundContent from '@/components/NotFound/NotFoundContent';
 import React from 'react';
 
+export function generateStaticParams() {
+    return [{ 'not-found': ['404'] }];
+}
+
 const NotFoundPage = () => {
     return (
         <>

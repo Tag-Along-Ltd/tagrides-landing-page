@@ -3,7 +3,7 @@ import ProjectStyle2 from '@/components/project/ProjectStyle2';
 import React from 'react';
 
 export const metadata = {
-    title: "Tag Rides - Ride-Sharing Serviceroject"
+    title: "Projects — TagRides"
 }
 
 const ProjectPage = () => {

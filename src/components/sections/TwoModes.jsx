@@ -12,7 +12,7 @@ const MODES = [
     icon: Users,
     accent: 'primary',
     body:
-      'Hop on with a driver heading your way. Share the route, share the cost. Pay public-transport prices for a private-car ride.',
+      'The wedge. A rider joins a driver already heading that way, shares the route, and pays only for the leg they use — closer to danfo logic than private-car pricing.',
     best: ['Daily commutes', 'Regular trips', 'Anyone who’d rather pay less than have the car to themselves'],
   },
   {
@@ -22,7 +22,7 @@ const MODES = [
     icon: User,
     accent: 'accent',
     body:
-      'Hire the whole car. No other riders. Driver picks you up, takes you straight there, no stops along the way.',
+      'The fallback. Hire the whole car when route-sharing does not fit — late nights, sensitive trips, or private errands.',
     best: ['Hospital trips', 'Late nights', 'Sensitive meetings', 'Anything you want to do privately'],
   },
 ];
@@ -33,10 +33,10 @@ export function TwoModes() {
       <div className="mx-auto max-w-6xl px-6 py-14 md:py-28">
         <Reveal>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-            Choose your ride
+            Two modes, one wedge
           </p>
           <h2 className="mt-3 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
-            One app. Two ways to move.
+            Tag-Along first. Direct when you need the whole car.
           </h2>
         </Reveal>
 

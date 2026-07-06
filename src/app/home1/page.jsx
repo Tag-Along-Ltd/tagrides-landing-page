@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react';
 import { DriverDiscoveryCarousel } from '@/components/sections/DriverDiscoveryCarousel';
 import dynamic from 'next/dynamic';
 
-// Heavy: ECharts gl + Swiper cube effect. Skip on SSR; load after hydrate.
+// Charting is below the fold. Skip on SSR; load after hydrate.
 const LagosResearchCarousel = dynamic(
   () => import('@/components/sections/LagosResearchCarousel').then((m) => m.LagosResearchCarousel),
   { ssr: false, loading: () => <div className="h-[500px]" /> },
@@ -27,10 +27,11 @@ import { FinalCTA } from '@/components/sections/FinalCTA';
 import { Footer } from '@/components/sections/Footer';
 import brand from '@/data/brand.json';
 
-// TODO: swap for the real Tag Rides 3D / Lagos street-life clip when it lands.
-// Pexels stock — free, no attribution required for commercial use:
-const HERO_VIDEO_URL =
-  'https://videos.pexels.com/video-files/2103099/2103099-uhd_2560_1440_30fps.mp4';
+// Optimized from the Pexels source clip. Keep this local and compressed;
+// remote UHD autoplay video was the biggest landing-page performance hit.
+const HERO_VIDEO_MP4 = '/assets/video/lagos-traffic-hero.mp4';
+const HERO_VIDEO_WEBM = '/assets/video/lagos-traffic-hero.webm';
+const HERO_VIDEO_POSTER = '/assets/video/lagos-traffic-hero-poster.jpg';
 
 const Home1 = () => {
   return (
@@ -41,14 +42,17 @@ const Home1 = () => {
         {/* Video backdrop — flowing in from the right behind the carousel */}
         <div className="pointer-events-none absolute inset-y-0 right-0 -z-10 w-full md:w-3/5">
           <video
-            src={HERO_VIDEO_URL}
             autoPlay
             muted
             playsInline
             loop
             preload="metadata"
+            poster={HERO_VIDEO_POSTER}
             className="size-full object-cover opacity-[0.18]"
-          />
+          >
+            <source src={HERO_VIDEO_MP4} type="video/mp4" />
+            <source src={HERO_VIDEO_WEBM} type="video/webm" />
+          </video>
           {/* Left-to-transparent gradient mask so the video fades into the dark background under the headline */}
           <div
             className="absolute inset-0"
@@ -68,23 +72,24 @@ const Home1 = () => {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/80" />
                 <span className="relative inline-flex size-1.5 rounded-full bg-primary" />
               </span>
-              {brand.name} · Lagos pilot · 2026
+              {brand.name} · Lagos first · built where routes are already shared
             </p>
 
             <h1 className="mt-6 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-7xl md:leading-[1.02]">
-              Tag along.
+              Turn your everyday route
               <br />
               <AuroraText
                 speed={0.8}
                 colors={['#008080', '#5F8F8F', '#F59E0B', '#BFE5E5', '#008080']}
               >
-                Move together.
+                into shared income.
               </AuroraText>
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-foreground-muted md:text-xl">
-              Drivers heading where you are. Pick up nearby. Agree the fare directly. Pay only for
-              your leg of the trip — at danfo prices, on a private car.
+              You are already burning the fuel. Let the empty seats pay their part. Pick up riders
+              along your route, agree the fare before pickup, and keep moving. Lagos is the first
+              proof market for a model built wherever routes are already shared.
             </p>
 
             <p className="mt-5 font-display text-sm font-semibold tracking-tight text-accent md:text-base">
@@ -116,7 +121,7 @@ const Home1 = () => {
             </div>
 
             <div className="mt-6 text-xs uppercase tracking-[0.18em] text-foreground-disabled">
-              One app · ride or drive · Lagos pilot 2026
+              For daily commuters · private-car owners · verified city drivers
             </div>
           </div>
 
@@ -128,14 +133,14 @@ const Home1 = () => {
 
       <Problem />
       <Solution />
-      <BackedBy />
-      <StoryLadder />
-      <RiderJourney />
       <DriverJourney />
-      <TwoModes />
+      <RiderJourney />
       <PricingPhilosophy />
       <Safety />
+      <TwoModes />
+      <StoryLadder />
       <LagosResearchCarousel />
+      <BackedBy />
       <VisionNumbers />
       <WhyNow />
       <FinalCTA />

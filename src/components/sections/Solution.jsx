@@ -19,13 +19,13 @@ export function Solution() {
             How we fix it
           </p>
           <h2 className="mt-3 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
-            What if your commute <span className="text-primary">was</span> the ride?
+            Post your route. Pick your riders. Agree the fare.
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-foreground-muted md:text-lg">
-            Tag-Along is the headline mode in TagRides. A driver heading to work, school, or the
-            market tells the app where they&rsquo;re going. Riders heading the same way hop on,
-            share the cost, and hop off at their stop. Everyone pays less. The driver earns from a
-            trip they were making anyway.
+            Tag-Along is the route-share mode in TagRides. You tell the app where you are already
+            going. Riders heading the same way request seats, agree fares with you before pickup,
+            and hop off along your route. Same road you were taking anyway. More paid seats. No
+            blind detours.
           </p>
         </Reveal>
 

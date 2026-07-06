@@ -4,7 +4,11 @@ import TeamData from '@/assets/jsonData/team/TeamData.json';
 import LayoutStyle7 from '@/components/Layouts/LayoutStyle7';
 
 export const metadata = {
-    title: "Tag Rides - Ride-Sharing Service -   Team Details"
+    title: "Team Details — TagRides"
+}
+
+export function generateStaticParams() {
+    return TeamData.map((team) => ({ id: String(team.id) }));
 }
 
 const TeamDetails = async ({ params }) => {

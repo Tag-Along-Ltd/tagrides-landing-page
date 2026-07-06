@@ -1,5 +1,7 @@
 const BASE = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') || 'https://tagrider.com';
 
+export const dynamic = 'force-static';
+
 export default function sitemap() {
   const now = new Date();
   return [

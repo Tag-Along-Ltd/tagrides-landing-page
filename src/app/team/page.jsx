@@ -3,7 +3,7 @@ import TeamStyle1 from '@/components/team/TeamStyle1';
 import React from 'react';
 
 export const metadata = {
-    title: "Tag Rides - Ride-Sharing Service - Team"
+    title: "Team — TagRides"
 }
 
 const TeamPage = () => {

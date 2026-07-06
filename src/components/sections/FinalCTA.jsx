@@ -3,10 +3,11 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { toast } from 'react-toastify';
-import { ArrowRight, Apple, Smartphone } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 import { Reveal } from './Reveal';
 import brand from '@/data/brand.json';
+import { landingApiPath } from '@/lib/landingApi';
 
 // Pre-launch CTA — two-bucket conversion split:
 //   1. RIDERS: email-collect for waitlist. Activated when the Lagos pilot
@@ -17,12 +18,6 @@ import brand from '@/data/brand.json';
 // One app, role-switch after sign-in, but the conversion intent is split
 // at this surface.
 //
-// App Store + Play Store badges stay dormant until the iOS / Android
-// builds are published. The web app at app.tagrider.com covers the
-// pre-store gap.
-const APP_STORE_URL = process.env.NEXT_PUBLIC_APP_STORE_URL || '';
-const PLAY_STORE_URL = process.env.NEXT_PUBLIC_PLAY_STORE_URL || '';
-
 export function FinalCTA() {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState('idle');
@@ -33,7 +28,7 @@ export function FinalCTA() {
     setStatus('submitting');
     try {
       const fd = new FormData(event.currentTarget);
-      const res = await fetch('/api/waitlist', {
+      const res = await fetch(landingApiPath('/api/waitlist'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, website: fd.get('website') || '' }),
@@ -43,7 +38,7 @@ export function FinalCTA() {
         toast.success(
           data?.alreadySubscribed
             ? "You're already on the list — see you at launch."
-            : "On the list. We'll email when Tag Rides goes live in Lagos.",
+            : "On the list. We'll email when Tag Rides opens the first pilot corridor.",
           { theme: 'dark' },
         );
         setEmail('');
@@ -73,17 +68,31 @@ export function FinalCTA() {
       <div className="relative mx-auto max-w-3xl px-6 py-20 text-center md:py-28">
         <Reveal>
           <h2 className="font-display text-4xl font-extrabold leading-[1.05] tracking-tight md:text-6xl">
-            Be first in line.
+            Start before the first corridor opens.
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/85 md:text-lg">
-            One app — ride or drive, your choice after install. When Tag Rides ships in {brand.location.city}, you&rsquo;ll
-            know first.
+            Onboard now, complete verification, and be ready when riders start booking along the
+            first live routes.
           </p>
 
-          {/* Inline waitlist email — the primary conversion */}
+          <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a
+              href={brand.app.signinDriver}
+              className="group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-white px-6 text-sm font-semibold text-primary transition hover:bg-accent hover:text-accent-foreground"
+            >
+              Start driving
+              <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+            </a>
+          </div>
+
+          <p className="mt-12 text-sm font-semibold text-white/85">
+            Riding instead? Join the first riders we notify when your corridor opens.
+          </p>
+
+          {/* Inline waitlist email — secondary conversion for rider demand */}
           <form
             onSubmit={handleSubmit}
-            className="mx-auto mt-10 flex w-full max-w-md flex-col gap-3 sm:flex-row sm:items-center"
+            className="mx-auto mt-4 flex w-full max-w-md flex-col gap-3 sm:flex-row sm:items-center"
           >
             <label htmlFor="final-waitlist-email" className="sr-only">
               Email address
@@ -94,7 +103,7 @@ export function FinalCTA() {
               type="email"
               required
               autoComplete="email"
-              placeholder="you@lagos.example"
+              placeholder="you@city.example"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               disabled={status === 'submitting'}
@@ -118,57 +127,17 @@ export function FinalCTA() {
             </button>
           </form>
 
-          {/* Dormant app-store badges */}
-          <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-            <StoreBadge href={APP_STORE_URL} Icon={Apple} label="App Store" sub="Coming soon" />
-            <StoreBadge href={PLAY_STORE_URL} Icon={Smartphone} label="Google Play" sub="Coming soon" />
-          </div>
-
-          {/* Driver pathway. Sits below the rider waitlist on purpose —
-            * any visitor here for a driver intent has already scrolled
-            * past the hero's primary CTA without converting, so this is
-            * a second nudge with the same destination. */}
-          <p className="mt-10 text-sm text-white/85">
-            Driving with us?{' '}
-            <a
-              href={brand.app.signinDriver}
-              className="font-semibold text-white underline-offset-4 hover:underline"
-            >
-              Onboard now →
-            </a>
-          </p>
-
           <p className="mt-8 text-xs uppercase tracking-[0.18em] text-white/65">
-            Or{' '}
+            Partners, press, investors:{' '}
             <Link
               href="mailto:hello@tagrider.com"
               className="text-white underline-offset-4 hover:underline"
             >
               talk to us
             </Link>
-            {' '}— founders, journalists, partners.
           </p>
         </Reveal>
       </div>
     </section>
-  );
-}
-
-function StoreBadge({ href, Icon, label, sub }) {
-  const Wrapper = href ? Link : 'div';
-  const wrapperProps = href ? { href, target: '_blank', rel: 'noopener noreferrer' } : {};
-  return (
-    <Wrapper
-      {...wrapperProps}
-      className={`group inline-flex items-center gap-3 rounded-2xl border border-white/25 bg-black/30 px-4 py-2.5 backdrop-blur-sm transition ${
-        href ? 'hover:border-white/45 hover:bg-black/40' : 'opacity-75'
-      }`}
-    >
-      <Icon className="size-6 text-white" />
-      <div className="text-left">
-        <p className="text-[10px] uppercase tracking-[0.18em] text-white/65">{sub}</p>
-        <p className="font-display text-sm font-semibold leading-tight text-white">{label}</p>
-      </div>
-    </Wrapper>
   );
 }

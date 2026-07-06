@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
 import { Reveal } from './Reveal';
+import { landingApiPath } from '@/lib/landingApi';
 
 const TIMES = [
   { value: 'morning-rush', label: 'Morning rush (6–10am)' },
@@ -54,7 +55,7 @@ export function TripFareForm() {
 
     try {
       const fd = new FormData(event.currentTarget);
-      const res = await fetch('/api/trip-fare', {
+      const res = await fetch(landingApiPath('/api/trip-fare'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...form, website: fd.get('website') || '' }),
@@ -82,15 +83,15 @@ export function TripFareForm() {
         <Reveal className="text-center md:max-w-3xl md:mx-auto">
           <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
             <Sparkles className="size-3" />
-            Fairer fares in Lagos
+            Danfo-level fare logic
           </p>
           <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
             What&rsquo;s fair on your route?
           </h2>
           <p className="mt-5 text-base leading-relaxed text-foreground-muted md:text-lg">
-            We&rsquo;re teaching the app to suggest prices that match what real Lagos riders
-            actually pay. Add a route you take — even one — and you help us draft fairer fares for
-            everyone heading the same way.
+            We&rsquo;re teaching the app to suggest prices around what real riders already pay for shared
+            transport — danfo in Lagos, the local equivalent elsewhere. Add a route you take and you
+            help us draft fairer fares for everyone heading the same way.
           </p>
         </Reveal>
 
@@ -133,7 +134,7 @@ export function TripFareForm() {
             <div className="grid gap-5 md:grid-cols-2">
               <label className="block">
                 <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.16em] text-foreground-muted">
-                  Lowest fare you'd pay (₦)
+                  Lowest fare you&rsquo;d pay (₦)
                 </span>
                 <input
                   type="number"
@@ -149,7 +150,7 @@ export function TripFareForm() {
               </label>
               <label className="block">
                 <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.16em] text-foreground-muted">
-                  Highest fare you'd pay (₦)
+                  Highest fare you&rsquo;d pay (₦)
                 </span>
                 <input
                   type="number"

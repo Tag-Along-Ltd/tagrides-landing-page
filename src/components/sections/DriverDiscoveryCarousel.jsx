@@ -48,7 +48,7 @@ function DriverCard({ driver, isActive }) {
         </div>
         <div className="min-w-0 flex-1">
           <p className="truncate text-base font-semibold text-foreground">{driver.name}</p>
-          <p className="text-[10px] uppercase tracking-[0.14em] text-foreground-muted">Tag-Along</p>
+          <p className="text-[10px] uppercase tracking-[0.14em] text-foreground-muted">Rider request</p>
           <p className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-foreground">
             <MapPin className="size-3.5 text-primary" />
             {driver.from} <span className="text-foreground-muted">→</span> {driver.to}
@@ -58,7 +58,7 @@ function DriverCard({ driver, isActive }) {
 
       <div className="mt-5 grid grid-cols-3 gap-2 rounded-xl border border-border bg-background/50 p-3 text-center">
         <div>
-          <p className="text-[10px] uppercase tracking-[0.12em] text-foreground-muted">ETA</p>
+          <p className="text-[10px] uppercase tracking-[0.12em] text-foreground-muted">Pickup</p>
           <p className="mt-1 font-mono text-sm font-medium text-foreground">{driver.eta}m</p>
         </div>
         <div className="border-x border-border">
@@ -66,7 +66,7 @@ function DriverCard({ driver, isActive }) {
           <p className="mt-1 font-mono text-sm font-medium text-foreground">{driver.seats}</p>
         </div>
         <div>
-          <p className="text-[10px] uppercase tracking-[0.12em] text-foreground-muted">Fare</p>
+          <p className="text-[10px] uppercase tracking-[0.12em] text-foreground-muted">Offer</p>
           <p className="mt-1 font-mono text-sm font-semibold text-primary">
             ₦{driver.fare.toLocaleString()}
           </p>
@@ -76,11 +76,11 @@ function DriverCard({ driver, isActive }) {
       <div className="mt-4 flex items-center justify-between text-xs text-foreground-muted">
         <span className="inline-flex items-center gap-1">
           <Clock className="size-3.5" />
-          Pickup in {driver.eta} min
+          Along your route
         </span>
         <span className="inline-flex items-center gap-1">
           <Users className="size-3.5" />
-          {driver.seats} · {driver.car}
+          {driver.seats} seat{driver.seats > 1 ? 's' : ''} open
         </span>
       </div>
     </div>
@@ -123,7 +123,7 @@ export function DriverDiscoveryCarousel({ className }) {
       </Swiper>
 
       <p className="mt-6 text-center text-xs uppercase tracking-[0.18em] text-foreground-muted">
-        Live preview · illustrative drivers
+        Driver view · illustrative rider demand
       </p>
     </div>
   );

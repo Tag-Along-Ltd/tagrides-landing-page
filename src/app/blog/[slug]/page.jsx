@@ -7,7 +7,11 @@ import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
 import clientPromise from '@/lib/mongodb';
 
-export const revalidate = 300;
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return [];
+}
 
 async function getPost(slug) {
   try {

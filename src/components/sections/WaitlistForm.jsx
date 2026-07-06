@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import { ArrowRight } from 'lucide-react';
 
 import { cn } from '@/lib/utils';
+import { landingApiPath } from '@/lib/landingApi';
 
 export function WaitlistForm({ className }) {
   const [email, setEmail] = useState('');
@@ -17,7 +18,7 @@ export function WaitlistForm({ className }) {
     setStatus('submitting');
     try {
       const fd = new FormData(event.currentTarget);
-      const res = await fetch('/api/waitlist', {
+      const res = await fetch(landingApiPath('/api/waitlist'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, website: fd.get('website') || '' }),

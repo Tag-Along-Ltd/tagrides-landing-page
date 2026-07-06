@@ -1,0 +1,7 @@
+name = "tagrides-landing-page"
+pages_build_output_dir = "out"
+compatibility_date = "2026-07-06"
+
+[vars]
+NEXT_PUBLIC_SITE_URL = "https://tagrider.com"
+NEXT_PUBLIC_ALLOWED_ORIGIN = "https://tagrider.com"

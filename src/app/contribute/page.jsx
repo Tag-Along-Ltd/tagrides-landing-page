@@ -3,9 +3,9 @@ import { Footer } from '@/components/sections/Footer';
 import { TripFareForm } from '@/components/sections/TripFareForm';
 
 export const metadata = {
-  title: 'Help train Tag Rides — Tag Rides',
+  title: 'Help train TagRides fares — TagRides',
   description:
-    'Drop in a trip you actually take. We use it to train fair fare and route-pattern suggestions for the app.',
+    'Drop in a route you actually take. We use it to tune danfo-level fare logic and route-pattern suggestions for TagRides.',
 };
 
 export default function ContributePage() {

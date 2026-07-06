@@ -4,7 +4,11 @@ import React from 'react';
 import Project2Data from '@/assets/jsonData/project/Project2Data.json'
 
 export const metadata = {
-    title: "Tag Rides - Ride-Sharing Service - vice - - Project Details"
+    title: "Project Details — TagRides"
+}
+
+export function generateStaticParams() {
+    return Project2Data.map((project) => ({ id: String(project.id) }));
 }
 
 const ProjectDetailsPage = async ({ params }) => {

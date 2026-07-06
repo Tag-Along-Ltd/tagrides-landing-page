@@ -5,18 +5,18 @@ import { Reveal, RevealStagger, RevealItem } from './Reveal';
 const REASONS = [
   {
     badge: '01',
-    title: 'The okada ban changed everything.',
-    body: 'Millions of commuters were pushed back into shared four-wheel transport. The demand is here, the supply is informal.',
+    title: 'Informal transit already carries the city.',
+    body: 'From Lagos to other high-density cities, people already share routes because the economics force it. The demand is here; the supply is just unstructured.',
   },
   {
     badge: '02',
     title: 'Fuel prices broke dedicated ride-hail.',
-    body: 'Uber and Bolt are now out of reach for everyday use. People need an everyday option.',
+    body: 'When fuel and traffic rise, one person paying for one whole car becomes a luxury. People need an everyday option.',
   },
   {
     badge: '03',
-    title: 'Mobile money finally works.',
-    body: 'Bank transfers and wallets are fast enough to settle small fares instantly. Five years ago the tech wasn’t ready. Now it is.',
+    title: 'The trust layer is finally possible.',
+    body: 'Smartphones, wallets, live location, and identity checks are now common enough to make small shared fares and traceable trips work at city scale.',
   },
 ];
 
@@ -27,7 +27,7 @@ export function WhyNow() {
         <Reveal>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">The moment</p>
           <h2 className="mt-3 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
-            Lagos has changed. Mobility hasn&rsquo;t kept up.
+            Cities changed. Mobility hasn&rsquo;t kept up.
           </h2>
         </Reveal>
 

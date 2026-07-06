@@ -4,7 +4,11 @@ import React from 'react';
 import Services2Data from '@/assets/jsonData/services/Services2Data.json'
 
 export const metadata = {
-    title: "Tag Rides - Ride-Sharing Service - Services Details"
+    title: "Service Details — TagRides"
+}
+
+export function generateStaticParams() {
+    return Services2Data.map((service) => ({ id: String(service.id) }));
 }
 
 const ServiceDetailsPage = async ({ params }) => {

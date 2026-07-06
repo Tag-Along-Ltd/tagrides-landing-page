@@ -3,7 +3,7 @@ import FaqStyle2 from '@/components/faq/FaqStyle2';
 import React from 'react';
 
 export const metadata = {
-    title: "Tag Rides - Ride-Sharing Service - vice - - Faq"
+    title: "FAQ — TagRides"
 }
 
 const FaqPage = () => {

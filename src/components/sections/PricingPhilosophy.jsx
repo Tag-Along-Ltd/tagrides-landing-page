@@ -32,15 +32,15 @@ export function PricingPhilosophy() {
       <div className="relative mx-auto max-w-6xl px-6 py-16 md:py-32">
         <Reveal>
           <h2 className="max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight md:text-5xl">
-            Fairer than ride-hail.
+            Danfo-level fares.
             <br />
-            <span className="text-accent">Safer than danfo.</span>
+            <span className="text-accent">Ride-hailing-level accountability.</span>
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/85 md:text-lg">
-            TagRides fares aren&rsquo;t set by an algorithm. The draft offer starts at the current
-            public-transport price — the same fare you&rsquo;d pay a danfo on that route. The
-            driver accepts, counters, or goes lower. Often lower, because a driver heading there
-            anyway has near-zero marginal cost on the empty seat. Public transport is the ceiling,
+            TagRides fares aren&rsquo;t handed down by an algorithm. The draft offer starts around the
+            public-transport price for that route — danfo in Lagos, the local equivalent elsewhere.
+            The rider can offer. The driver can accept, counter, or go lower because a seat on a
+            route already being driven has near-zero marginal cost. Shared transport is the ceiling,
             not the floor.
           </p>
         </Reveal>

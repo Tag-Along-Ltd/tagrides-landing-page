@@ -6,22 +6,22 @@ import { Reveal, RevealStagger, RevealItem } from './Reveal';
 
 const CARDS = [
   {
-    icon: Wallet,
-    title: 'Ride-hail is too expensive for daily life.',
+    icon: CarFront,
+    title: 'The car is already moving.',
     body:
-      'Uber and Bolt fares assume one rider paying for the whole car. Most of us can’t afford that twice a day, five days a week.',
+      'You still buy the fuel. You still sit in traffic. The route still has to happen — but the empty seats earn nothing.',
+  },
+  {
+    icon: Wallet,
+    title: 'Daily ride-hail leaves most people behind.',
+    body:
+      'Uber and Bolt fares assume one rider paying for the whole car. That works for occasional trips, not for the daily commute most people cannot avoid.',
   },
   {
     icon: ShieldAlert,
-    title: 'Danfo and kabu-kabu are affordable, but chaotic.',
+    title: 'Informal sharing needs structure.',
     body:
-      'No booking. No record of the fare. No way to know who you’re getting in with. No one to call if something goes wrong.',
-  },
-  {
-    icon: CarFront,
-    title: 'Drivers waste empty seats every day.',
-    body:
-      'Every commute is a car with three empty seats heading exactly where someone else wants to go. The match doesn’t happen because nothing connects them.',
+      'People already share routes: danfo, keke, kabu-kabu, and friend-of-a-friend lifts. What is missing is the profile, fare record, trip log, and accountability.',
   },
 ];
 
@@ -34,7 +34,7 @@ export function Problem() {
             Why we built {`TagRides`}
           </p>
           <h2 className="mt-3 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
-            Getting around Lagos shouldn&rsquo;t be this hard.
+            The route already exists. The match does not.
           </h2>
         </Reveal>
 

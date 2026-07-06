@@ -28,32 +28,32 @@ const STORY_BLOCKS = [
   {
     eyebrow: 'Why',
     icon: Compass,
-    title: 'Lagos already shares rides.',
+    title: 'Cities already share rides.',
     body:
-      'From danfo to keke to the friend-of-a-friend driving past your junction, communal travel is how the city has always moved. What it never had was structure — booking, verification, fare records, accountability. Tag Rides starts there.',
+      'From danfo to keke to kabu-kabu and the friend-of-a-friend driving past your junction, communal travel is how Lagos has always moved. Other cities have their own versions. What they lack is structure — matching, verification, fare records, and accountability. Tag Rides starts there.',
   },
   {
     eyebrow: 'How we listened',
     icon: Ear,
     title: `${survey.totalResponses} riders. One brief.`,
     body:
-      'Before writing a single line of product code, we surveyed Lagos riders about what they actually use, what it costs them, what they wish was different. 91% told us price was the deciding factor. 70% ride Danfo daily. The brief wrote itself.',
+      'Before writing a single line of product code, we surveyed Lagos riders about what they actually use, what it costs them, and what they wish was different. Price led the brief. Convenience and safety followed. Lagos gave us the first proof market.',
   },
   {
     eyebrow: 'What we’re building',
     icon: Scale,
-    title: 'Marginal-zero economics, made into a product.',
+    title: 'Danfo-level fare logic, made into a product.',
     body:
-      'Fares default to public-transport price. They often land below, because a driver heading there anyway has near-zero marginal cost on the empty seat. Any positive fare is profit on a seat that would otherwise be empty. That is the principle. The product is the structure around it: verified drivers, two-way ratings, fares logged before pickup, trip-share.',
+      'Fares start around the public-transport price for that route — danfo in Lagos, the local equivalent elsewhere. A driver already heading that way has near-zero marginal cost on the empty seat. The product adds the structure around it: verified profiles, two-way ratings, fares logged before pickup, and trip visibility.',
   },
 ];
 
 const MILESTONES = [
-  { year: '2023', icon: ClipboardList, title: 'Listening',  body: `Surveyed ${survey.totalResponses} Lagos riders. The brief came directly from what they said.` },
+  { year: '2023', icon: ClipboardList, title: 'Listening',  body: `Surveyed ${survey.totalResponses} Lagos riders. The first brief came directly from what they said.` },
   { year: '2024', icon: HandCoins,     title: 'Funded',     body: 'Selected for the Tony Elumelu Foundation grant. The first cheque that took TagRides from idea to plan.' },
   { year: '2025', icon: Wrench,        title: 'Built',      body: 'Product development inside the Google for Startups and Microsoft for Startups (Founders Hub) ecosystems.' },
-  { year: '2026', icon: Rocket,        title: 'Launching',  body: `Lagos pilot — the corridor where the model was designed.` },
-  { year: 'Next', icon: Globe2,        title: 'Expanding',  body: 'Abuja next. Accra and Nairobi on the roadmap — cities that move the same way.' },
+  { year: '2026', icon: Rocket,        title: 'Launching',  body: `First Lagos corridor — the proof market for the model.` },
+  { year: 'Next', icon: Globe2,        title: 'Expanding',  body: 'Abuja next. Accra and Nairobi on the roadmap — cities where shared-route behavior already exists.' },
 ];
 
 const CITIES = [
@@ -63,7 +63,7 @@ const CITIES = [
   { city: 'Nairobi', sub: 'Nairobi County, Kenya', status: 'On the roadmap' },
 ];
 
-const HERO_VIDEO_THUMB = '/assets/img/banner/1.jpg';
+const HERO_VIDEO_THUMB = '/assets/video/lagos-traffic-hero-poster.jpg';
 const HERO_VIDEO_URL = 'https://www.youtube.com/embed/qh3NGpYRG3I';
 
 export default function AboutUsPage() {
@@ -96,19 +96,18 @@ export default function AboutUsPage() {
               About {brand.name}
             </p>
             <h1 className="mt-6 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-foreground md:text-6xl">
-              We built {brand.name} for how {brand.location.city}{' '}
+              We built {brand.name} for cities where people{' '}
               <AuroraText
                 speed={0.8}
                 colors={['#008080', '#5F8F8F', '#F59E0B', '#BFE5E5', '#008080']}
               >
-                actually moves.
+                already share routes.
               </AuroraText>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-foreground-muted md:text-xl">
-              {brand.name} is a route-shared mobility platform built around what{' '}
-              {survey.totalResponses}+ {brand.location.city} riders told us they wanted, designed to
-              meet them at public-transport prices and bring real structure to a thing the city was
-              already doing informally.
+              {brand.name} is a route-share platform built around what {survey.totalResponses}+{' '}
+              Lagos riders told us they wanted: danfo-level fare logic, private-car comfort, and the
+              accountability layer informal sharing never had.
             </p>
             <p className="mt-4 font-display text-sm font-semibold tracking-tight text-accent md:text-base">
               {brand.catchphrase}
@@ -144,11 +143,11 @@ export default function AboutUsPage() {
                   Founding principle
                 </p>
                 <blockquote className="mt-5 font-display text-2xl font-bold leading-snug tracking-tight md:text-4xl">
-                  &ldquo;We didn&rsquo;t invent communal travel in Lagos. The city had been sharing
-                  rides for generations before any app existed. What we did was give that natural
-                  way of moving the structure it always lacked — booking, verification, fare
-                  records, accountability — without taking away the part that makes it work, which
-                  is that drivers and riders agree directly.&rdquo;
+                  &ldquo;We didn&rsquo;t invent communal travel. Lagos had been sharing rides for
+                  generations before any app existed. What we did was give that natural way of
+                  moving the structure it always lacked — matching, verification, fare records, and
+                  accountability — without taking away the part that makes it work: drivers and
+                  riders agreeing directly.&rdquo;
                 </blockquote>
                 <p className="mt-8 font-mono text-xs uppercase tracking-[0.2em] text-white/85">
                   — {brand.company}
@@ -186,7 +185,7 @@ export default function AboutUsPage() {
           <Reveal className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">The story</p>
             <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
-              Built in Lagos, for the way Lagos was already moving.
+              Built first in Lagos, for the way many cities already move.
             </h2>
           </Reveal>
           <RevealStagger className="mt-14 grid gap-6 md:grid-cols-3">
@@ -312,7 +311,7 @@ export default function AboutUsPage() {
         </div>
       </section>
 
-      {/* Research carousel — full 3D charts */}
+      {/* Research carousel — proof-market charts */}
       <LagosResearchCarousel />
 
       {/* City roadmap */}
@@ -326,9 +325,9 @@ export default function AboutUsPage() {
               Lagos first. Then the cities that move the same way.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground-muted md:text-lg">
-              Lagos came first because Lagos taught us how. We expand into cities where the
-              rider-and-driver experience is shaped by the same informal-transit DNA — from Mumbai
-              to Manila, the math is the same.
+              Lagos came first because Lagos taught us how. We expand into cities where daily
+              private ride-hail prices out the working class and shared-route behavior already
+              exists — from Accra to Nairobi, then beyond Africa.
             </p>
           </Reveal>
           <RevealStagger className="mt-12 divide-y divide-border overflow-hidden rounded-3xl border border-border bg-background/40">

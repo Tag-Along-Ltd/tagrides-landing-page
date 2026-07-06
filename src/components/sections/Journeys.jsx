@@ -74,8 +74,13 @@ export function RiderJourney() {
         <Reveal>
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">For riders</p>
           <h2 className="mt-3 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
-            Five steps. Less than a minute to book.
+            Riders are already looking for this.
           </h2>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground-muted md:text-lg">
+            They want a private-car seat priced closer to the shared transport they already use —
+            danfo-level fare logic, without the guesswork. Lagos gives us the first real demand
+            signal.
+          </p>
         </Reveal>
         <JourneyGrid steps={RIDER_STEPS} accent="primary" />
       </div>
@@ -92,6 +97,10 @@ export function DriverJourney() {
           <h2 className="mt-3 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
             Turn your daily commute into daily income.
           </h2>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground-muted md:text-lg">
+            You stay in control: your route, your seats, your fare, your pickup choices. TagRides
+            adds the demand, records, and accountability layer around the trip.
+          </p>
         </Reveal>
         <JourneyGrid steps={DRIVER_STEPS} accent="accent" />
       </div>

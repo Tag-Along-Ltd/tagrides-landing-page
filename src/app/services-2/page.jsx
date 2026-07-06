@@ -9,7 +9,7 @@ import TestimonialStyle1 from '@/components/testimonial/TestimonialStyle1';
 import React from 'react';
 
 export const metadata = {
-    title: "Tag Rides - Ride-Sharing Service - Services"
+    title: "Services — TagRides"
 }
 
 const Service2Page = () => {

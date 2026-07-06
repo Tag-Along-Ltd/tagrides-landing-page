@@ -88,7 +88,8 @@ export function Footer() {
               <Lockup size={36} />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-foreground-muted">
-              {brand.catchphrase} Built in {brand.location.city}, for how the city actually moves.
+              {brand.catchphrase} Built first in {brand.location.city}, for cities where routes are
+              already shared.
             </p>
 
             {/* Social icons — circular, line-icon, hover scales + flips accent */}

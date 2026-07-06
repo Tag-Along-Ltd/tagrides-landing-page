@@ -38,20 +38,20 @@ const mono = JetBrains_Mono({
 // own URL; falls back to the production domain.
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://tagrider.com'),
-  title: 'TagRides — Share the ride. Share the fare. | TAG-ALONG LTD',
+  title: 'TagRides — Their route. Your ride. | TAG-ALONG LTD',
   description:
-    'Their route. Your ride. Lagos route-share — drivers heading your way pick you up, you agree the fare directly, pay only for your leg of the trip.',
+    'Their route. Your ride. Lagos-first route-share for dense cities — drivers already heading your way pick you up, you agree the fare directly, and you pay only for your leg.',
   openGraph: {
     title: 'TagRides — Their route. Your ride.',
     description:
-      'Lagos route-share. Drivers heading where you are. Agree the fare directly. Pay only for your leg of the trip.',
+      'Lagos-first route-share for cities where daily ride-hail is too expensive and shared routes already exist.',
     images: [{ url: '/assets/brand/og-image.png', width: 1200, height: 630, type: 'image/png' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'TagRides — Their route. Your ride.',
     description:
-      'Lagos route-share. Drivers heading where you are. Agree the fare directly. Pay only for your leg of the trip.',
+      'Lagos-first route-share for cities where daily ride-hail is too expensive and shared routes already exist.',
     images: ['/assets/brand/og-image.png'],
   },
 };
@@ -64,7 +64,7 @@ const jsonLd = {
   url: 'https://tagrider.com',
   logo: 'https://tagrider.com/assets/brand/mark.svg',
   description:
-    'Lagos route-share. Drivers heading your way pick you up, agree the fare directly, and only charge for your leg of the trip.',
+    'Lagos-first route-share for dense cities. Drivers heading your way pick you up, agree the fare directly, and only charge for your leg of the trip.',
   sameAs: [
     'https://www.instagram.com/tagrides/',
     'https://x.com/tagrides_',

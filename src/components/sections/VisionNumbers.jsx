@@ -4,8 +4,8 @@ import { Reveal, RevealStagger, RevealItem } from './Reveal';
 
 const STATS = [
   { number: '2,000',  label: 'Active drivers earning supplementary income from daily commutes' },
-  { number: '50,000', label: 'Lagosians moving across the city safely, at prices they already pay' },
-  { number: '6',      label: 'African cities with the same informal-transport DNA where this model fits next' },
+  { number: '50,000', label: 'Daily riders moving safely, at prices closer to what they already pay' },
+  { number: '6',      label: 'First expansion cities with the same route-share economics' },
 ];
 
 export function VisionNumbers() {
@@ -17,10 +17,12 @@ export function VisionNumbers() {
             What we&rsquo;re building
           </p>
           <h2 className="mt-3 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
-            A new shape for urban mobility in Africa.
+            A new shape for daily urban mobility.
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-foreground-muted md:text-lg">
-            We started with Lagos because Lagos taught us how. Our three-year goal is concrete:
+            Lagos is the wedge because it makes the problem impossible to ignore: high demand,
+            informal sharing, expensive ride-hail, and drivers already moving with empty seats. The
+            same route economics travel to many cities after the first corridor works.
           </p>
         </Reveal>
 
@@ -40,7 +42,7 @@ export function VisionNumbers() {
         </RevealStagger>
         <Reveal delay={0.2}>
           <p className="mt-8 text-xs uppercase tracking-[0.18em] text-foreground-disabled">
-            3-year targets, starting with Lagos pilot in 2026.
+            3-year targets, starting with the Lagos pilot corridor in 2026.
           </p>
         </Reveal>
       </div>

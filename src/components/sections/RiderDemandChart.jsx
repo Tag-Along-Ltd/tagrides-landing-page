@@ -2,9 +2,10 @@
 
 import { useMemo } from 'react';
 import ReactECharts from 'echarts-for-react';
-import 'echarts-gl';
 
 import survey from '@/data/lagos-rider-survey.json';
+
+const BAR_PALETTE = ['#14b8a6', '#0d9488', '#67e8f9', '#f59e0b', '#fbbf24'];
 
 export function RiderDemandChart() {
   const option = useMemo(() => {
@@ -12,89 +13,61 @@ export function RiderDemandChart() {
     return {
       backgroundColor: 'transparent',
       tooltip: {
+        trigger: 'axis',
+        axisPointer: { type: 'shadow' },
         backgroundColor: 'rgba(20,20,20,0.92)',
         borderColor: 'rgba(20,184,166,0.4)',
         textStyle: { color: '#fff', fontFamily: 'inherit' },
         formatter: (params) => {
-          const f = factors[params.value[0]];
+          const point = Array.isArray(params) ? params[0] : params;
+          const f = factors[point.dataIndex];
           return `<div style="font-weight:600;margin-bottom:4px">${f.label}</div>
                   <div style="opacity:0.85">${f.percent}% of riders · ${f.count} responses</div>`;
         },
       },
-      visualMap: {
-        show: false,
-        min: 0,
-        max: 100,
-        inRange: {
-          color: ['#134e4a', '#0d9488', '#14b8a6', '#67e8f9'],
-        },
-      },
-      xAxis3D: {
-        type: 'category',
-        data: factors.map((f) => f.label),
-        axisLabel: {
-          color: '#cfcfcf',
-          fontSize: 12,
-          interval: 0,
-          rotate: 0,
-          margin: 14,
-        },
-        axisLine: { lineStyle: { color: '#3f3f3f' } },
-      },
-      yAxis3D: {
-        type: 'category',
-        data: ['Demand'],
-        axisLabel: { show: false },
-        axisLine: { lineStyle: { color: '#3f3f3f' } },
-      },
-      zAxis3D: {
+      grid: { left: 12, right: 58, top: 18, bottom: 10, containLabel: true },
+      xAxis: {
         type: 'value',
         min: 0,
         max: 100,
-        axisLabel: {
-          color: '#8a8a8a',
-          fontSize: 11,
-          formatter: '{value}%',
-        },
-        axisLine: { lineStyle: { color: '#3f3f3f' } },
-        splitLine: { lineStyle: { color: 'rgba(80,80,80,0.3)' } },
+        axisLabel: { color: '#8a8a8a', fontSize: 11, formatter: '{value}%' },
+        axisLine: { show: false },
+        axisTick: { show: false },
+        splitLine: { lineStyle: { color: 'rgba(80,80,80,0.22)' } },
       },
-      grid3D: {
-        boxWidth: 200,
-        boxDepth: 40,
-        boxHeight: 90,
-        environment: '#0a0a0a',
-        light: {
-          main: { intensity: 1.4, shadow: true, alpha: 35, beta: 30 },
-          ambient: { intensity: 0.4 },
-        },
-        postEffect: {
-          enable: true,
-          bloom: { enable: true, intensity: 0.15 },
-          SSAO: { enable: true, radius: 2, intensity: 1.2 },
-        },
-        viewControl: {
-          autoRotate: true,
-          autoRotateSpeed: 6,
-          alpha: 18,
-          beta: 30,
-          distance: 240,
-        },
+      yAxis: {
+        type: 'category',
+        data: factors.map((f) => f.label),
+        inverse: true,
+        axisLabel: { color: '#cfcfcf', fontSize: 12, lineHeight: 16, width: 150, overflow: 'break' },
+        axisLine: { show: false },
+        axisTick: { show: false },
       },
       series: [
         {
-          type: 'bar3D',
-          shading: 'realistic',
-          realisticMaterial: { roughness: 0.4, metalness: 0.2 },
-          bevelSize: 0.2,
-          bevelSmoothness: 4,
+          type: 'bar',
+          barWidth: 24,
+          barMaxWidth: 30,
           data: factors.map((f, i) => ({
-            value: [i, 0, f.percent],
-            itemStyle: { opacity: 1 },
+            value: f.percent,
+            itemStyle: {
+              color: BAR_PALETTE[i % BAR_PALETTE.length],
+              borderRadius: [0, 999, 999, 0],
+            },
           })),
+          label: {
+            show: true,
+            position: 'right',
+            color: '#e5e5e5',
+            fontFamily: 'var(--font-mono)',
+            fontSize: 12,
+            formatter: '{c}%',
+          },
+          backgroundStyle: { color: 'rgba(255,255,255,0.04)', borderRadius: 999 },
+          showBackground: true,
           emphasis: {
-            label: { show: false },
-            itemStyle: { color: '#67e8f9' },
+            focus: 'series',
+            itemStyle: { shadowBlur: 18, shadowColor: 'rgba(20,184,166,0.28)' },
           },
         },
       ],
@@ -120,7 +93,7 @@ export function RiderDemandChart() {
         <ReactECharts
           option={option}
           style={{ height: '100%', width: '100%' }}
-          opts={{ renderer: 'canvas' }}
+          opts={{ renderer: 'svg' }}
         />
       </div>
     </section>

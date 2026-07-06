@@ -8,7 +8,7 @@ import TeamStyle1 from '@/components/team/TeamStyle1';
 import React from 'react';
 
 export const metadata = {
-    title: "Tag Rides - Ride-Sharing Serviceices"
+    title: "Services — TagRides"
 }
 
 const ServicesPage = () => {

@@ -14,11 +14,11 @@ import { cn } from '@/lib/utils';
 export function InlineVideoShowcase({
   className,
   // MP4 source for the inline muted auto-preview. Operator can swap with a
-  // real TagRides demo clip when it's recorded. Pexels stock placeholder for now.
-  previewSrc = 'https://videos.pexels.com/video-files/2103099/2103099-uhd_2560_1440_30fps.mp4',
+  // real TagRides demo clip when it's recorded. Optimized Pexels placeholder for now.
+  previewSrc = '/assets/video/lagos-traffic-hero.mp4',
   // Full-fidelity source — usually YouTube — that plays in the modal with sound.
   youtubeSrc = 'https://www.youtube.com/embed/qh3NGpYRG3I',
-  poster = '/assets/img/banner/1.jpg',
+  poster = '/assets/video/lagos-traffic-hero-poster.jpg',
   duration = '0:45',
   label = 'TagRides Demo',
   caption,
@@ -69,7 +69,7 @@ export function InlineVideoShowcase({
         <div
           role="button"
           tabIndex={0}
-          aria-label="Watch the Tag Rides demo with sound"
+          aria-label="Watch the TagRides demo with sound"
           onClick={() => setIsOpen(true)}
           onKeyDown={(e) => {
             if (e.key === 'Enter' || e.key === ' ') {
@@ -177,7 +177,7 @@ export function InlineVideoShowcase({
               <div className="relative size-full overflow-hidden rounded-2xl border border-border bg-background">
                 <iframe
                   src={`${youtubeSrc}${youtubeSrc.includes('?') ? '&' : '?'}autoplay=1`}
-                  title="Tag Rides demo"
+                  title="TagRides demo"
                   className="size-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen

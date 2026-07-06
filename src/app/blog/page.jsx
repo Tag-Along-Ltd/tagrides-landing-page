@@ -7,12 +7,12 @@ import { Reveal, RevealStagger, RevealItem } from '@/components/sections/Reveal'
 import clientPromise from '@/lib/mongodb';
 
 export const metadata = {
-  title: 'Field notes — Tag Rides',
+  title: 'Field notes — TagRides',
   description:
-    'Lagos mobility, route-share economics, and the work of building Tag Rides — in plain language.',
+    'Lagos-first route-share, danfo-level fare logic, and the work of building TagRides for dense cities — in plain language.',
 };
 
-export const revalidate = 300;
+export const dynamic = 'force-static';
 
 async function getPosts() {
   try {
@@ -53,10 +53,11 @@ export default async function BlogIndexPage() {
               Field notes
             </p>
             <h1 className="mt-3 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-foreground md:text-6xl">
-              How Lagos moves — and how Tag Rides moves with it.
+              How Lagos moves — and what that teaches every dense city.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-foreground-muted md:text-lg">
-              Short essays on the route-share thesis, the city, and the build. Plain language. No filler.
+              Short essays on route-share economics, danfo-level fare logic, accountable shared
+              mobility, and the work of building TagRides. Plain language. No filler.
             </p>
           </Reveal>
         </div>
@@ -142,9 +143,8 @@ function EmptyState() {
           First essays land this quarter.
         </h2>
         <p className="mt-4 text-sm leading-relaxed text-foreground-muted">
-          We&rsquo;re writing about the marginal-zero economics thesis, the Lagos pilot, and what we
-          learned from 210 rider responses. Drop your email on the home page to be the first to read
-          them.
+          We&rsquo;re writing about route-share economics, the first Lagos corridor, and what we learned
+          from 210 rider responses. Drop your email on the home page to be the first to read them.
         </p>
         <Link
           href="/#join"
