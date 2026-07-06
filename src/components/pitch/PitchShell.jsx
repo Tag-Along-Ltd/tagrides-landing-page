@@ -48,20 +48,24 @@ export function PitchShell({
       const nextProgress = Math.min(1, Math.max(0, ratio));
       setProgress(nextProgress);
 
-      // Find which section we're inside — pick the section whose top
-      // is closest to (but not past) the viewport's vertical center
+      // Scroll-spy rule: switch to a section once its top is within the
+      // lower quarter of the viewport. This matches the pitch deck behavior:
+      // as soon as the next slide is meaningfully entering, the rail should
+      // advance. Use document offsets instead of viewport rect heuristics so
+      // the final Ask slide is not stuck behind Milestones.
       const sections = sectionKeys
         .map((k) => document.getElementById(sectionIdFor(k)))
         .filter(Boolean);
-      const centerY = window.innerHeight / 2;
+      const activationY = window.scrollY + window.innerHeight * 0.75;
       let active = 0;
       for (let i = 0; i < sections.length; i++) {
-        const rect = sections[i].getBoundingClientRect();
-        if (rect.top <= centerY) active = i;
+        if (sections[i].offsetTop <= activationY) {
+          active = i;
+        }
       }
-      // The final slide's top may never cross viewport center if the document
-      // has no extra scroll room after it. At bottom, force the rail/counter to
-      // the last rendered section so Ask can become active.
+
+      // At exact bottom, force the final rendered section active even if the
+      // browser reports fractional scroll positions during smooth scrolling.
       if (nextProgress >= 0.995 && sections.length > 0) {
         active = sections.length - 1;
       }
@@ -336,6 +340,7 @@ export function PitchShell({
 // table in sync with the id={...} attribute on each section component.
 function sectionIdFor(key) {
   const aliases = {
+    lagosCost: 'cost',
     problemPersonal: 'problem',
     howItWorks:      'how',
     pricingFair:     'pricing',
