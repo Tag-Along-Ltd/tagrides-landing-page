@@ -4,6 +4,7 @@ import { motion } from 'motion/react';
 
 import { PitchSection, SectionHeading } from '../motion/Section';
 import pitch from '@/data/pitch.json';
+import { resolvePitchProductScreen } from '@/data/pitchProductScreens';
 
 // Product — four core flows shown as device-framed mockups. Each tile
 // has a diamond-clipped photo that lifts on hover; sequence fades in
@@ -28,9 +29,9 @@ export function Product() {
             <PhoneFrame index={i}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={flow.image}
+                src={resolvePitchProductScreen(flow)}
                 alt={flow.title}
-                className="size-full object-cover"
+                className="size-full rounded-[1.35rem] object-cover"
                 onError={(e) => { e.currentTarget.style.display = 'none'; }}
               />
             </PhoneFrame>
@@ -56,14 +57,15 @@ function PhoneFrame({ index, children }) {
     'from-accent/30 via-background to-primary/40',
   ];
   return (
-    <div className="relative mx-auto aspect-[9/19] w-full max-w-[200px] overflow-hidden rounded-[2rem] bg-elevated ring-1 ring-border/40 transition group-hover:ring-primary/40 group-hover:-translate-y-1">
-      {/* Status-bar notch */}
-      <div className="absolute top-3 left-1/2 z-10 h-4 w-16 -translate-x-1/2 rounded-full bg-background/80" />
-      {/* Content / fallback gradient */}
-      <div className={`absolute inset-0 bg-gradient-to-br ${gradients[index % gradients.length]}`} />
-      <div className="relative z-0 size-full">{children}</div>
-      {/* Frame highlight */}
-      <div className="pointer-events-none absolute inset-0 rounded-[2rem] ring-1 ring-inset ring-foreground/10" />
+    <div className="relative mx-auto aspect-[9/19] w-full max-w-[200px] rounded-[2.35rem] bg-black p-2.5 shadow-[0_26px_80px_-46px_rgba(0,128,128,0.8)] ring-1 ring-white/10 transition group-hover:-translate-y-1 group-hover:ring-primary/40">
+      {/* Content / fallback gradient lives inside the glass, not under the bezel. */}
+      <div className="relative size-full overflow-hidden rounded-[1.55rem] bg-background ring-1 ring-white/10">
+        <div className={`absolute inset-0 bg-gradient-to-br ${gradients[index % gradients.length]}`} />
+        <div className="relative z-0 size-full p-1">{children}</div>
+      </div>
+      {/* Device highlight + speaker notch sit on the shell, not on the screenshot. */}
+      <div className="pointer-events-none absolute inset-0 rounded-[2.35rem] ring-1 ring-inset ring-white/12" />
+      <div className="absolute left-1/2 top-2.5 z-10 h-1.5 w-12 -translate-x-1/2 rounded-full bg-white/14" />
     </div>
   );
 }

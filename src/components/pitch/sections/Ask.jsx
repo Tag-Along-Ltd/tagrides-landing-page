@@ -236,6 +236,15 @@ export function Ask({ audience = 'investor' }) {
               href={data.contact.site}
               external
             />
+            {data.contact.portfolio && (
+              <ContactRow
+                icon={Globe}
+                label="Founder portfolio"
+                value={data.contact.portfolio.replace(/^https?:\/\//, '')}
+                href={data.contact.portfolio}
+                external
+              />
+            )}
           </div>
         </motion.aside>
       </div>

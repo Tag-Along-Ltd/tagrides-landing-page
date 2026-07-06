@@ -4,7 +4,7 @@
   "audiences": {
     "investor": {
       "label": "Investor",
-      "tagline": "For investors evaluating TagRides as a Lagos-mobility opportunity.",
+      "tagline": "For investors evaluating TagRides as a Lagos-first route-share opportunity for dense cities.",
       "sections": ["cover", "problem", "lagosCost", "solution", "product", "market", "model", "gtm", "competitive", "traction", "team", "financials", "milestones", "ask"],
       "ask": {
         "amount": 750000,
@@ -60,7 +60,7 @@
     },
     "customer": {
       "label": "Customer",
-      "tagline": "For Lagosians who want to know what TagRides actually does for them.",
+      "tagline": "For riders and drivers who want to know what TagRides actually does for them.",
       "sections": ["cover", "problemPersonal", "howItWorks", "modes", "safety", "pricingFair", "appCTA"]
     }
   },
@@ -68,7 +68,7 @@
   "cover": {
     "eyebrow": "TAG-ALONG LTD · LAGOS FIRST",
     "title": "Their route. Your ride.",
-    "subtitle": "Built in Lagos. For the 85% the daily Uber leaves behind. Drivers heading your way pick you up, you agree the fare directly, and you pay only for your leg of the trip.",
+    "subtitle": "Built first in Lagos for everyone daily ride-hail leaves behind. Drivers heading your way pick you up, you agree the fare directly, and you pay only for your leg of the trip.",
     "presenter": "Oniya Olaiya, Founder & CEO",
     "version": "v1.0 · 2026"
   },
@@ -110,8 +110,8 @@
     "stats": [
       { "value": 30,        "suffix": " hrs/wk", "label": "Average time a Lagosian spends in traffic"},
       { "value": 264,       "suffix": " /km",    "label": "Cars per kilometer in Lagos (global avg: 11)"},
-      { "value": 8.32,      "prefix": "$",       "suffix": "M",    "label": "Annual economic loss from Lagos congestion"},
-      { "value": 85,        "suffix": "%",       "label": "Of the world can't afford a daily Uber"}
+      { "value": 8,         "prefix": "$",       "suffix": "B+",   "label": "Estimated annual productivity loss from Lagos congestion"},
+      { "value": 85,        "suffix": "%",       "label": "Approx. share of the world priced out of daily private ride-hail"}
     ],
     "routes": [
       { "from": "Mushin",                "to": "Iju Road",          "minNaira":  500, "maxNaira":  900, "boltNaira": 5000 },
@@ -144,17 +144,17 @@
     "title": "Built in Flutter. Live on AWS. Already running.",
     "subtitle": "The full rider flow, end to end, in one app — already in the hands of internal testers across Lagos.",
     "flows": [
-      { "title": "Search your destination",   "image": "/assets/pitch/screen-search.png" },
-      { "title": "Along or Direct?",          "image": "/assets/pitch/screen-confirm.png" },
-      { "title": "Negotiate the fare",        "image": "/assets/pitch/screen-fare.png" },
-      { "title": "Track. Arrive. Rate.",      "image": "/assets/pitch/screen-track.png" }
+      { "screen": "searchDestination", "title": "Search your destination",   "image": "/assets/pitch/screen-search.png" },
+      { "screen": "confirmRide",       "title": "Along or Direct?",          "image": "/assets/pitch/screen-confirm.png" },
+      { "screen": "negotiateFare",     "title": "Negotiate the fare",        "image": "/assets/pitch/screen-negotiate-real.png" },
+      { "screen": "trackRide",         "title": "Track. Arrive. Rate.",      "image": "/assets/pitch/screen-track-real.png" }
     ]
   },
 
   "market": {
     "eyebrow": "THE MARKET",
-    "title": "A $216B prize. Starting in Lagos.",
-    "subtitle": "Global ride-share grows $166B → $216B by 2029 (Statista). Africa grows $2.1B → $3.45B in the same window. Lagos has 36M daily road users on smartphones — most can't afford a daily Uber. We own the city we know first.",
+    "title": "A $216B global category. Lagos is the wedge.",
+    "subtitle": "Global ride-share grows $166B → $216B by 2029 (Statista). Africa grows $2.1B → $3.45B in the same window. Lagos has 12M+ daily road users, deep informal sharing behavior, and enough smartphone penetration to make route matching practical. We own the city we know first.",
     "tam": [
       { "year": 2024, "value": 2.10 },
       { "year": 2025, "value": 2.35 },
@@ -164,7 +164,7 @@
       { "year": 2029, "value": 3.45 }
     ],
     "facts": [
-      { "value": "12M",    "label": "Daily road users in Lagos — the wedge" },
+      { "value": "12M+",   "label": "Daily road users in Lagos — the wedge" },
       { "value": "$3.45B", "label": "African ride-share TAM by 2029 — the corridor" },
       { "value": "$216B",  "label": "Global ride-share TAM by 2029 — the prize" }
     ]
@@ -176,7 +176,7 @@
     "subtitle": "Two clean revenue lines, both compounding with usage. No surge games, no driver-poaching wars.",
     "streams": [
       { "label": "Commission on rider fares", "share": "10–15%", "detail": "Charged on every confirmed tag-along ride. Driver and rider both see the cut up-front." },
-      { "label": "Online services & APIs",    "share": "B2B",    "detail": "Route data, driver verification, and fare-estimate APIs licensed to logistics + fintech partners." }
+      { "label": "Platform services",         "share": "B2B",    "detail": "Route intelligence, driver verification, and fare-estimate tools for logistics, fintech, and mobility partners under TAG-ALONG LTD." }
     ],
     "pricing": [
       { "label": "Distance-based base", "detail": "Per-km tariff visible before the rider taps Request." },
@@ -228,7 +228,7 @@
         "title": "Expansion",
         "timeframe": "Year 2+",
         "icon": "expansion",
-        "detail": "Lagos-wide → Abuja → Accra / Nairobi / Kigali. Then every city where the daily Uber leaves the working class behind — SE Asia, LATAM, the same playbook ports.",
+        "detail": "Lagos-wide → Abuja → Accra / Nairobi / Kigali. Then cities where daily private ride-hail prices out the working class — SE Asia, LATAM, the same corridor playbook ports.",
         "tactics": [
           "Playbook-replicable corridor strategy per city",
           "Local co-founders / city leads in each new market",
@@ -241,8 +241,8 @@
 
   "problemPersonal": {
     "eyebrow": "WHAT YOU ALREADY KNOW",
-    "title": "Lagos isn't the problem. The way we move in it is.",
-    "subtitle": "These are the things you've already lived. Tag Rides exists because nobody else has fixed them.",
+    "title": "Your city is already sharing rides. The system just has not caught up.",
+    "subtitle": "These are the things riders and drivers already live with. Tag Rides starts in Lagos because Lagos makes the problem impossible to ignore.",
     "complaints": [
       { "quote": "I'm paying ₦5,000 to Bolt every morning so I don't have to sit in a danfo. That's ₦100,000 a month I don't have to lose.", "persona": "Banker, 27, VI" },
       { "quote": "I wait 20 minutes for a danfo to fill, then 90 minutes in traffic. By the time I get to work I'm already tired.", "persona": "NYSC corper, 23, Ikeja" },
@@ -254,24 +254,24 @@
   "howItWorks": {
     "eyebrow": "HOW IT WORKS",
     "title": "Three taps. One ride. Real savings.",
-    "subtitle": "We took everything you already do — find a driver going your way, agree a fair price, hop in — and put it inside one app.",
+    "subtitle": "We took everything you already do — find a driver going your way, agree a fair price, hop in — and added the records, ratings, and trip visibility around it.",
     "steps": [
       { "title": "Tell us where you're going",  "detail": "Type your destination. Tag Rides finds drivers already heading that way.", "hint": "Average match time: under 90 seconds." },
-      { "title": "Agree the fare in the app",   "detail": "See an honest offer. Accept it, or send a counter-offer. No surge. No mystery math.", "hint": "Average savings vs Bolt: 60–70%." },
+      { "title": "Agree the fare in the app",   "detail": "See an honest offer. Accept it, or send a counter-offer. No surge. No mystery math.", "hint": "Danfo-level fare logic, with a trip record." },
       { "title": "Get in. Get there. Get on with it.", "detail": "Verified driver. Trip tracked. Rate them when you arrive. Move on with your day.", "hint": "Both sides rate each other; bad actors leave the network." }
     ]
   },
 
   "modes": {
     "eyebrow": "TWO MODES, ONE APP",
-    "title": "Share the trip, or have it to yourself.",
-    "subtitle": "The signature mode is Tag-Along — share the ride, share the fare. When you need it private, Direct gives you the full car.",
+    "title": "Tag-Along first. Direct when you need the whole car.",
+    "subtitle": "The signature mode is Tag-Along — share the route, share the fare. Direct is there when privacy matters more than price.",
     "modes": [
       {
         "name": "Tag-Along",
         "tagline": "Share a ride with up to 3 others going your way. Pay only for your leg.",
         "features": [
-          "Lowest cost — drivers already going that direction",
+          "Danfo-level fare logic — drivers already going that direction",
           "Driver picks the route, riders board along it",
           "Negotiable fare, fully transparent up-front",
           "No detours — you go a known path"
@@ -293,21 +293,21 @@
   "safety": {
     "eyebrow": "SAFETY",
     "title": "Six things that have to be true before you tap Request.",
-    "subtitle": "Lagos is safe when the system is safe. Every layer below has to hold for the next one to matter.",
+    "subtitle": "Shared rides become safer when the system is accountable. Every layer below has to hold for the next one to matter.",
     "signals": [
-      { "icon": "badge",  "title": "Verified drivers",       "detail": "Government ID + LASDRI badge + vehicle inspection on file before any ride is accepted." },
+      { "icon": "badge",  "title": "Verified drivers",       "detail": "Government ID, vehicle details, and launch-market checks on file before activation." },
       { "icon": "shield", "title": "Two-sided ratings",      "detail": "Both riders and drivers rate every trip. One-star patterns lose access to the network." },
       { "icon": "pin",    "title": "Live trip tracking",     "detail": "Share your live location with up to three trusted contacts during every ride." },
-      { "icon": "sos",    "title": "In-app emergency",       "detail": "One tap sends your live coordinates and trip details to Tag Rides safety ops + your emergency contact." },
+      { "icon": "sos",    "title": "In-app emergency",       "detail": "One tap shares your live coordinates and trip details with the right safety contacts for that market." },
       { "icon": "star",   "title": "Match by track record",  "detail": "Riders see driver rating, completed trips, and verified-since date before accepting an offer." },
-      { "icon": "log",    "title": "Tamper-proof trip log",  "detail": "Every ride is logged: route, fare, riders, driver, time. Available to law-enforcement on request." }
+      { "icon": "log",    "title": "Trip log",               "detail": "Every ride is logged: route, fare, riders, driver, and time, so disputes have a record." }
     ]
   },
 
   "pricingFair": {
     "eyebrow": "WHAT YOU'LL ACTUALLY PAY",
-    "title": "The honest math, on real Lagos routes.",
-    "subtitle": "We ran the numbers on 30 actual journeys. Here's a sample. The full set is in the deck PDF.",
+    "title": "Danfo-level fares. Ride-hailing-level accountability.",
+    "subtitle": "We ran the numbers on 30 actual Lagos journeys. The local fares are the proof; the route-share logic travels to other cities.",
     "examples": [
       { "from": "Mushin",               "to": "Iju Road",         "boltNaira": 5000, "tagAlongNaira":  800 },
       { "from": "Charley Boy, Gbagada", "to": "Marwa, Lekki",     "boltNaira": 6100, "tagAlongNaira": 1000 },
@@ -318,8 +318,8 @@
 
   "appCTA": {
     "eyebrow": "READY WHEN YOU ARE",
-    "title": "Lagos, on your side for once.",
-    "subtitle": "We're starting at the heart of the Lagos commute — the Yaba ↔ Lagos Island corridor. Join the waitlist to be one of the first riders, or start driving if your daily route is already on the line."
+    "title": "Start with the first corridor.",
+    "subtitle": "We're starting at the heart of the Lagos commute — the Yaba ↔ Lagos Island corridor. Join the rider waitlist, or start driving if your daily route is already on the line."
   },
 
   "competitive": {
@@ -358,7 +358,7 @@
     "title": "Backed, built, and quietly accumulating users.",
     "subtitle": "Live MVP. Real surveys. Capital and credits already secured.",
     "proof": [
-      { "value": "210", "label": "Lagosians surveyed",        "context": "92% in the 18–34 working-age core" },
+      { "value": "210", "label": "Lagos riders surveyed",     "context": "92% in the 18–34 working-age core" },
       { "value": "90",  "label": "Waitlist signups",           "context": "Mostly along the Yaba commute belt" },
       { "value": "$52K","label": "Cloud credits secured",      "context": "AWS $25K + Microsoft $25K + Google $2K" },
       { "value": "1",   "label": "Live MVP on AWS",            "context": "Flutter app, Go services, MQTT real-time" }
@@ -423,9 +423,9 @@
     "title": "Formalising the informal — and making cities work.",
     "subtitle": "Tag Rides turns everyday drivers into verified entrepreneurs, digitising a $2B informal transport market.",
     "outcomes": [
-      { "value": "180K–540K", "label": "New income opportunities unlocked across 5 years" },
-      { "value": "$2B",        "label": "Informal transport market digitised" },
-      { "value": "−18%",       "label": "Empty-seat-miles per partner driver" }
+      { "value": "5-city",     "label": "Replicable corridor playbook after Lagos proof" },
+      { "value": "$2B+",       "label": "Informal transport category ready for digitisation" },
+      { "value": "Fewer",      "label": "Empty-seat miles per participating driver" }
     ],
     "sdgs": [
       { "code": "SDG 8",  "title": "Decent Work & Economic Growth" },
@@ -443,7 +443,8 @@
       "role": "Founder & CEO",
       "email": "oniya.olaiya@tagrider.com",
       "phone": "+234 9064 520 743",
-      "site": "https://tagrider.com"
+      "site": "https://tagrider.com",
+      "portfolio": "https://oniya.tagrider.com"
     }
   }
 }

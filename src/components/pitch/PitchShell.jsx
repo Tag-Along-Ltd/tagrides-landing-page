@@ -45,7 +45,8 @@ export function PitchShell({
     function update() {
       const max = document.documentElement.scrollHeight - window.innerHeight;
       const ratio = max > 0 ? window.scrollY / max : 0;
-      setProgress(Math.min(1, Math.max(0, ratio)));
+      const nextProgress = Math.min(1, Math.max(0, ratio));
+      setProgress(nextProgress);
 
       // Find which section we're inside — pick the section whose top
       // is closest to (but not past) the viewport's vertical center
@@ -57,6 +58,12 @@ export function PitchShell({
       for (let i = 0; i < sections.length; i++) {
         const rect = sections[i].getBoundingClientRect();
         if (rect.top <= centerY) active = i;
+      }
+      // The final slide's top may never cross viewport center if the document
+      // has no extra scroll room after it. At bottom, force the rail/counter to
+      // the last rendered section so Ask can become active.
+      if (nextProgress >= 0.995 && sections.length > 0) {
+        active = sections.length - 1;
       }
       setCurrentSlide(active);
     }

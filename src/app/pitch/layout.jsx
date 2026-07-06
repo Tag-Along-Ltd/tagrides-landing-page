@@ -5,11 +5,11 @@
 export const metadata = {
   title: 'TagRides — Pitch Deck',
   description:
-    'Lagos route-share. The full TagRides story for investors, judges, and customers — scroll-through deck, downloadable per audience.',
+    'Lagos-first route-share for dense cities. The full TagRides story for investors, judges, and customers — scroll-through deck, downloadable per audience.',
   openGraph: {
     title: 'TagRides — Pitch Deck',
     description:
-      'Lagos route-share. Drivers heading where you are. Pay only for your leg. Read the full story.',
+      'Lagos-first route-share for cities where daily ride-hail is too expensive and shared routes already exist. Read the full story.',
     images: [{ url: '/assets/brand/og-image.png', width: 1200, height: 630, type: 'image/png' }],
   },
   twitter: {

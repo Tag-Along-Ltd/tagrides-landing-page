@@ -1,55 +1,38 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
 import { ChevronDown } from 'lucide-react';
 
 import { Logo } from '@/components/brand/Logo';
 import pitch from '@/data/pitch.json';
 
-// Pexels stock — free, no attribution required for commercial use.
-// Same clip the homepage uses so the two surfaces feel like one product.
-// Acts as a low-opacity backdrop; the dot-field + radial glow + text
-// layer on top.
-const HERO_VIDEO_URL =
-  'https://videos.pexels.com/video-files/2103099/2103099-uhd_2560_1440_30fps.mp4';
+const HERO_VIDEO_POSTER = '/assets/video/lagos-traffic-hero-poster.jpg';
+const HERO_VIDEO_MP4 = '/assets/video/lagos-traffic-hero.mp4';
+const HERO_VIDEO_WEBM = '/assets/video/lagos-traffic-hero.webm';
 
-// Cover slide — first impression. Cinematic: video backdrop at low
-// opacity, brand mark centerstage, catchphrase as title. Route-dot
-// field + radial glow layer over the video to keep text readable
-// even on busy frames.
+// Cover slide — first impression. Uses the same optimized local encode as
+// the homepage, not the original remote UHD source that made the deck heavy.
 export function Cover() {
   const data = pitch.cover;
-  const videoRef = useRef(null);
-
-  // Honor prefers-reduced-motion — pause the loop for users who don't
-  // want autoplay backgrounds. Better than yanking the element entirely
-  // (poster frame still shows).
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    const reduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-    if (reduced && videoRef.current) {
-      videoRef.current.pause();
-    }
-  }, []);
 
   return (
     <section
       id="cover"
       className="relative isolate flex min-h-[100svh] snap-start items-center overflow-hidden bg-background px-6 py-24 md:px-12 md:py-32 lg:px-20"
     >
-      {/* Video backdrop — muted, looping, behind everything else */}
+      {/* Local video backdrop — same compressed asset family as the homepage. */}
       <video
-        ref={videoRef}
         autoPlay
         muted
         playsInline
         loop
         preload="metadata"
+        poster={HERO_VIDEO_POSTER}
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 size-full object-cover opacity-25 [filter:saturate(0.7)_contrast(1.1)]"
+        className="pointer-events-none absolute inset-0 size-full object-cover opacity-[0.18] [filter:saturate(0.72)_contrast(1.08)]"
       >
-        <source src={HERO_VIDEO_URL} type="video/mp4" />
+        <source src={HERO_VIDEO_MP4} type="video/mp4" />
+        <source src={HERO_VIDEO_WEBM} type="video/webm" />
       </video>
 
       {/* Darkening + tint scrim so text reads cleanly over any video frame */}
@@ -150,8 +133,8 @@ export function Cover() {
 }
 
 // Background dot-field, layout-stable across screen sizes via percentage
-// positioning. Each dot pulses softly on a randomized phase so the field
-// reads as ambient, not metronomic.
+// positioning. Static on purpose: the pitch page should feel polished without
+// stacking animation work on top of the scroll-snap deck.
 function RouteDots() {
   const dots = [
     { x: 8,  y: 18, d: 1.4 }, { x: 24, y: 32, d: 0.9 }, { x: 38, y: 12, d: 1.1 },
@@ -169,15 +152,7 @@ function RouteDots() {
           r={d.d * 0.18}
           fill="currentColor"
           className="text-primary"
-        >
-          <animate
-            attributeName="opacity"
-            values="0.2;0.7;0.2"
-            dur={`${3 + (i % 4)}s`}
-            begin={`${i * 0.3}s`}
-            repeatCount="indefinite"
-          />
-        </circle>
+        />
       ))}
       {/* Diagonal route lines connecting dots — subtle */}
       <path

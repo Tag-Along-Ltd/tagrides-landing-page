@@ -2,6 +2,7 @@
 
 import { Slide, SlideHeading } from '../Slide';
 import pitch from '@/data/pitch.json';
+import { resolvePitchProductScreen } from '@/data/pitchProductScreens';
 
 // Product — 4 phone screenshots in a single horizontal row, each in
 // a thin dark frame. Caption monospace beneath each.
@@ -26,19 +27,43 @@ export function PrintProduct({ page, total, audience, watermark }) {
               style={{
                 width: '52mm',
                 height: '108mm',
-                borderRadius: '7mm',
-                backgroundColor: '#1A1A1A',
-                border: '1px solid #333',
-                overflow: 'hidden',
+                borderRadius: '8mm',
+                backgroundColor: '#020202',
+                border: '0.25mm solid rgba(255,255,255,0.12)',
+                padding: '2.4mm',
                 position: 'relative',
                 boxShadow: '0 4mm 12mm rgba(0,0,0,0.5)',
               }}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={flow.image}
-                alt={flow.title}
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              <div
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  overflow: 'hidden',
+                  borderRadius: '5mm',
+                  backgroundColor: '#0A0A0A',
+                  border: '0.2mm solid rgba(255,255,255,0.10)',
+                  padding: '0.8mm',
+                }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={resolvePitchProductScreen(flow)}
+                  alt={flow.title}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '4mm' }}
+                />
+              </div>
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '1.1mm',
+                  left: '50%',
+                  width: '12mm',
+                  height: '1.2mm',
+                  borderRadius: '999px',
+                  backgroundColor: 'rgba(255,255,255,0.16)',
+                  transform: 'translateX(-50%)',
+                }}
               />
             </div>
             <figcaption
