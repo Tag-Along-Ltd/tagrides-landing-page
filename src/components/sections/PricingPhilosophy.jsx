@@ -5,9 +5,16 @@ import { Check, X, Minus } from 'lucide-react';
 import { Reveal } from './Reveal';
 
 const ROWS = [
-  { service: 'Uber / Bolt',       cost: '₦₦₦', safety: 'check', negotiable: 'x',     cashless: 'Required' },
-  { service: 'Danfo / Kabu-kabu', cost: '₦',   safety: 'x',     negotiable: 'limit', cashless: 'No'      },
-  { service: 'TagRides',          cost: '₦ or below', safety: 'check', negotiable: 'check', cashless: 'Optional', highlight: true },
+  { service: 'Uber / Bolt', cost: '₦₦₦', safety: 'check', negotiable: 'x', cashless: 'Required' },
+  { service: 'Danfo / Kabu-kabu', cost: '₦', safety: 'x', negotiable: 'limit', cashless: 'No' },
+  {
+    service: 'TagRides',
+    cost: '₦ or below',
+    safety: 'check',
+    negotiable: 'check',
+    cashless: 'Optional',
+    highlight: true,
+  },
 ];
 
 function Glyph({ kind }) {
@@ -37,11 +44,9 @@ export function PricingPhilosophy() {
             <span className="text-accent">Ride-hailing-level accountability.</span>
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/85 md:text-lg">
-            TagRides fares aren&rsquo;t handed down by an algorithm. The draft offer starts around the
-            public-transport price for that route — danfo in Lagos, the local equivalent elsewhere.
-            The rider can offer. The driver can accept, counter, or go lower because a seat on a
-            route already being driven has near-zero marginal cost. Shared transport is the ceiling,
-            not the floor.
+            Each matching driver gets a separate fare for the road they share with the rider. The
+            rider can edit each offer; the driver accepts or counters once. No repeated bidding or
+            hidden surge pricing.
           </p>
         </Reveal>
 

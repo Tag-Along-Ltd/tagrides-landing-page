@@ -5,7 +5,22 @@
     "investor": {
       "label": "Investor",
       "tagline": "For investors evaluating TagRides as a Lagos-first route-share opportunity for dense cities.",
-      "sections": ["cover", "problem", "lagosCost", "solution", "product", "market", "model", "gtm", "competitive", "traction", "team", "financials", "milestones", "ask"],
+      "sections": [
+        "cover",
+        "problem",
+        "lagosCost",
+        "solution",
+        "product",
+        "market",
+        "model",
+        "gtm",
+        "competitive",
+        "traction",
+        "team",
+        "financials",
+        "milestones",
+        "ask"
+      ],
       "ask": {
         "amount": 750000,
         "currency": "USD",
@@ -13,14 +28,35 @@
         "runway": "18 months",
         "instrument": "SAFE (post-money) — valuation deferred to Seed round",
         "committed": [
-          { "label": "Tony Elumelu Foundation grant", "detail": "Non-dilutive seed capital, Feb 2024" },
-          { "label": "Ugwumba Enterprise Challenge",  "detail": "2024 winner — non-dilutive prize capital" },
-          { "label": "$52K cloud credits",            "detail": "AWS Activate $25K + Microsoft for Startups $25K + Google $2K" }
+          {
+            "label": "Tony Elumelu Foundation grant",
+            "detail": "Non-dilutive seed capital, Feb 2024"
+          },
+          {
+            "label": "Ugwumba Enterprise Challenge",
+            "detail": "2024 winner — non-dilutive prize capital"
+          },
+          {
+            "label": "$52K cloud credits",
+            "detail": "AWS Activate $25K + Microsoft for Startups $25K + Google $2K"
+          }
         ],
         "use": [
-          { "label": "Product & engineering", "pct": 50, "detail": "Two senior engineers, MVP hardening, dispatch + matching infra, MQTT real-time, security + compliance audit" },
-          { "label": "Local operations & pilot", "pct": 30, "detail": "Yaba ↔ Lagos Island corridor launch, two operations leads, LASRRA + LASDRI compliance, driver-onboarding ops, insurance + inspection partners" },
-          { "label": "Customer acquisition",  "pct": 20, "detail": "Lagos awareness campaign, ₦500 referral economy, UNILAG + YabaTech campus partnerships, field marketing at Sabo / Jibowu / Adekunle / Marina bus stops" }
+          {
+            "label": "Product & engineering",
+            "pct": 50,
+            "detail": "Two senior engineers, MVP hardening, dispatch + matching infra, MQTT real-time, security + compliance audit"
+          },
+          {
+            "label": "Local operations & pilot",
+            "pct": 30,
+            "detail": "Yaba ↔ Lagos Island corridor launch, two operations leads, LASRRA + LASDRI compliance, driver-onboarding ops, insurance + inspection partners"
+          },
+          {
+            "label": "Customer acquisition",
+            "pct": 20,
+            "detail": "Lagos awareness campaign, ₦500 referral economy, UNILAG + YabaTech campus partnerships, field marketing at Sabo / Jibowu / Adekunle / Marina bus stops"
+          }
         ],
         "milestones": [
           "Yaba ↔ Lagos Island corridor live with 300 verified drivers (Q4 2026)",
@@ -34,7 +70,23 @@
       "label": "Competition Judge",
       "tagline": "For pitch-competition juries — emphasis on impact, traction, the team, and the rubric.",
       "_rubric": "ALX rubric: 1 Problem, 2 Solution, 3 Market, 4 Model, 5 GTM, 6 Competition, 7 Team, 8 Financials, 9 Milestones, 10 Story.",
-      "sections": ["cover", "problem", "lagosCost", "solution", "product", "market", "model", "gtm", "competitive", "team", "financials", "milestones", "traction", "impact", "ask"],
+      "sections": [
+        "cover",
+        "problem",
+        "lagosCost",
+        "solution",
+        "product",
+        "market",
+        "model",
+        "gtm",
+        "competitive",
+        "team",
+        "financials",
+        "milestones",
+        "traction",
+        "impact",
+        "ask"
+      ],
       "ask": {
         "amount": 750000,
         "currency": "USD",
@@ -42,14 +94,35 @@
         "runway": "18 months",
         "instrument": "SAFE (post-money) — valuation deferred to Seed round",
         "committed": [
-          { "label": "Tony Elumelu Foundation grant", "detail": "Non-dilutive seed capital, Feb 2024" },
-          { "label": "Ugwumba Enterprise Challenge",  "detail": "2024 winner — non-dilutive prize capital" },
-          { "label": "$52K cloud credits",            "detail": "AWS Activate + Microsoft for Startups + Google for Startups" }
+          {
+            "label": "Tony Elumelu Foundation grant",
+            "detail": "Non-dilutive seed capital, Feb 2024"
+          },
+          {
+            "label": "Ugwumba Enterprise Challenge",
+            "detail": "2024 winner — non-dilutive prize capital"
+          },
+          {
+            "label": "$52K cloud credits",
+            "detail": "AWS Activate + Microsoft for Startups + Google for Startups"
+          }
         ],
         "use": [
-          { "label": "Product & engineering",    "pct": 50, "detail": "Senior engineers, MVP hardening, dispatch + matching infra" },
-          { "label": "Local operations & pilot", "pct": 30, "detail": "Yaba ↔ Lagos Island corridor launch, operations leads, LASRRA + LASDRI compliance" },
-          { "label": "Customer acquisition",     "pct": 20, "detail": "Lagos awareness campaign, UNILAG + YabaTech partnerships, field marketing" }
+          {
+            "label": "Product & engineering",
+            "pct": 50,
+            "detail": "Senior engineers, MVP hardening, dispatch + matching infra"
+          },
+          {
+            "label": "Local operations & pilot",
+            "pct": 30,
+            "detail": "Yaba ↔ Lagos Island corridor launch, operations leads, LASRRA + LASDRI compliance"
+          },
+          {
+            "label": "Customer acquisition",
+            "pct": 20,
+            "detail": "Lagos awareness campaign, UNILAG + YabaTech partnerships, field marketing"
+          }
         ],
         "milestones": [
           "Yaba ↔ Lagos Island corridor live with 300 verified drivers (Q4 2026)",
@@ -61,7 +134,15 @@
     "customer": {
       "label": "Customer",
       "tagline": "For riders and drivers who want to know what TagRides actually does for them.",
-      "sections": ["cover", "problemPersonal", "howItWorks", "modes", "safety", "pricingFair", "appCTA"]
+      "sections": [
+        "cover",
+        "problemPersonal",
+        "howItWorks",
+        "modes",
+        "safety",
+        "pricingFair",
+        "appCTA"
+      ]
     }
   },
 
@@ -108,22 +189,61 @@
     "title": "Ride-hailing is 3–10× more expensive than the alternative.",
     "subtitle": "30 routes researched, Nov 2024. Same start. Same destination. Same time of day. The gap is the market.",
     "stats": [
-      { "value": 30,        "suffix": " hrs/wk", "label": "Average time a Lagosian spends in traffic"},
-      { "value": 264,       "suffix": " /km",    "label": "Cars per kilometer in Lagos (global avg: 11)"},
-      { "value": 8,         "prefix": "$",       "suffix": "B+",   "label": "Estimated annual productivity loss from Lagos congestion"},
-      { "value": 85,        "suffix": "%",       "label": "Approx. share of the world priced out of daily private ride-hail"}
+      { "value": 30, "suffix": " hrs/wk", "label": "Average time a Lagosian spends in traffic" },
+      { "value": 264, "suffix": " /km", "label": "Cars per kilometer in Lagos (global avg: 11)" },
+      {
+        "value": 8,
+        "prefix": "$",
+        "suffix": "B+",
+        "label": "Estimated annual productivity loss from Lagos congestion"
+      },
+      {
+        "value": 85,
+        "suffix": "%",
+        "label": "Approx. share of the world priced out of daily private ride-hail"
+      }
     ],
     "routes": [
-      { "from": "Mushin",                "to": "Iju Road",          "minNaira":  500, "maxNaira":  900, "boltNaira": 5000 },
-      { "from": "Charley Boy, Gbagada",  "to": "Marwa, Lekki",      "minNaira":  800, "maxNaira": 1000, "boltNaira": 6100 },
-      { "from": "Agege",                 "to": "Computer Village",  "minNaira":  200, "maxNaira":  400, "boltNaira": 1800 },
-      { "from": "Iyanaworo",             "to": "Victoria Island",   "minNaira":  400, "maxNaira":  700, "boltNaira": 4200 },
-      { "from": "Iyanaworo",             "to": "Ajah",              "minNaira":  900, "maxNaira": 1500, "boltNaira": 7400 },
-      { "from": "Sangotedo",             "to": "Lekki",             "minNaira": 1200, "maxNaira": 1800, "boltNaira": 6400 },
-      { "from": "Ogudu",                 "to": "Ago Palace Way",    "minNaira":  900, "maxNaira": 1200, "boltNaira": 5100 },
-      { "from": "Bariga",                "to": "Yaba",              "minNaira":  500, "maxNaira":  700, "boltNaira": 2200 },
-      { "from": "Adeniran Ogunsanya",    "to": "Marina",            "minNaira":  500, "maxNaira":  700, "boltNaira": 2400 },
-      { "from": "Ajah",                  "to": "Lekki",             "minNaira": 1000, "maxNaira": 1500, "boltNaira": 5700 }
+      { "from": "Mushin", "to": "Iju Road", "minNaira": 500, "maxNaira": 900, "boltNaira": 5000 },
+      {
+        "from": "Charley Boy, Gbagada",
+        "to": "Marwa, Lekki",
+        "minNaira": 800,
+        "maxNaira": 1000,
+        "boltNaira": 6100
+      },
+      {
+        "from": "Agege",
+        "to": "Computer Village",
+        "minNaira": 200,
+        "maxNaira": 400,
+        "boltNaira": 1800
+      },
+      {
+        "from": "Iyanaworo",
+        "to": "Victoria Island",
+        "minNaira": 400,
+        "maxNaira": 700,
+        "boltNaira": 4200
+      },
+      { "from": "Iyanaworo", "to": "Ajah", "minNaira": 900, "maxNaira": 1500, "boltNaira": 7400 },
+      { "from": "Sangotedo", "to": "Lekki", "minNaira": 1200, "maxNaira": 1800, "boltNaira": 6400 },
+      {
+        "from": "Ogudu",
+        "to": "Ago Palace Way",
+        "minNaira": 900,
+        "maxNaira": 1200,
+        "boltNaira": 5100
+      },
+      { "from": "Bariga", "to": "Yaba", "minNaira": 500, "maxNaira": 700, "boltNaira": 2200 },
+      {
+        "from": "Adeniran Ogunsanya",
+        "to": "Marina",
+        "minNaira": 500,
+        "maxNaira": 700,
+        "boltNaira": 2400
+      },
+      { "from": "Ajah", "to": "Lekki", "minNaira": 1000, "maxNaira": 1500, "boltNaira": 5700 }
     ],
     "source": "TagRides field research — 30 Lagos routes, n=30 respondents, Nov 2024."
   },
@@ -131,11 +251,23 @@
   "solution": {
     "eyebrow": "THE SOLUTION",
     "title": "Tag along the routes drivers already drive.",
-    "subtitle": "We don't pay drivers to detour. We don't reroute riders. We match riders to drivers already heading where they're going — and they share the leg of the trip they overlap on.",
+    "subtitle": "Drivers stay on their route. Riders walk to a parked driver or to a pickup point on a moving driver's route.",
     "mechanics": [
-      { "step": "1", "title": "Driver sets their route",     "detail": "Mainland → Island, 7:30am. The system understands it as a path through the city, not a guess." },
-      { "step": "2", "title": "Riders request a leg of it",  "detail": "Anyone on or near that line can tag along — pickup, drop-off, fare-share, all in-app." },
-      { "step": "3", "title": "Fare is agreed, not metered", "detail": "Driver offers. Rider accepts or negotiates. No surge. No commission games. Just two people splitting a real cost." }
+      {
+        "step": "1",
+        "title": "Share the trip",
+        "detail": "An Along driver enters a destination and available seats. TagRides maps the route and works out the pickup."
+      },
+      {
+        "step": "2",
+        "title": "Send separate offers",
+        "detail": "TagRides drafts a fare for the road shared with each driver. The rider can edit and send several offers; each driver accepts or counters once."
+      },
+      {
+        "step": "3",
+        "title": "Start with the first match",
+        "detail": "TagRides makes the first agreed match the pickup automatically. The rider can switch to another accepted driver until boarding confirms the seat and payment."
+      }
     ]
   },
 
@@ -144,44 +276,99 @@
     "title": "Built in Flutter. Live on AWS. Already running.",
     "subtitle": "The full rider flow, end to end, in one app — already in the hands of internal testers across Lagos.",
     "flows": [
-      { "screen": "searchDestination", "title": "Search your destination",   "image": "/assets/pitch/screen-search.png" },
-      { "screen": "confirmRide",       "title": "Along or Direct?",          "image": "/assets/pitch/screen-confirm.png" },
-      { "screen": "negotiateFare",     "title": "Negotiate the fare",        "image": "/assets/pitch/screen-negotiate-real.png" },
-      { "screen": "trackRide",         "title": "Track. Arrive. Rate.",      "image": "/assets/pitch/screen-track-real.png" }
+      {
+        "screen": "searchDestination",
+        "title": "Search your destination",
+        "image": "/assets/pitch/screen-search.png"
+      },
+      {
+        "screen": "confirmRide",
+        "title": "Along or Direct?",
+        "image": "/assets/pitch/screen-confirm.png"
+      },
+      {
+        "screen": "negotiateFare",
+        "title": "Review the fare offer",
+        "image": "/assets/pitch/screen-negotiate-real.png"
+      },
+      {
+        "screen": "trackRide",
+        "title": "Track. Arrive. Rate.",
+        "image": "/assets/pitch/screen-track-real.png"
+      }
     ]
   },
 
   "market": {
     "eyebrow": "THE MARKET",
-    "title": "A $216B global category. Lagos is the wedge.",
-    "subtitle": "Global ride-share grows $166B → $216B by 2029 (Statista). Africa grows $2.1B → $3.45B in the same window. Lagos has 12M+ daily road users, deep informal sharing behavior, and enough smartphone penetration to make route matching practical. We own the city we know first.",
-    "tam": [
-      { "year": 2024, "value": 2.10 },
-      { "year": 2025, "value": 2.35 },
-      { "year": 2026, "value": 2.62 },
-      { "year": 2027, "value": 2.90 },
-      { "year": 2028, "value": 3.18 },
-      { "year": 2029, "value": 3.45 }
+    "title": "A global market hidden in journeys already happening.",
+    "subtitle": "TagRides fills empty seats in cars, taxis, vans, minibuses, tricycles, and motorcycles where lawful, without creating a new driver trip. Lagos is the first launch market, not the limit.",
+    "scale": [
+      {
+        "label": "5 cities",
+        "value": 0.0219,
+        "display": "$21.9M",
+        "detail": "3,000 rides/day/city · $4 average fare"
+      },
+      {
+        "label": "10 cities",
+        "value": 0.1825,
+        "display": "$182.5M",
+        "detail": "10,000 rides/day/city · $5 average fare"
+      },
+      {
+        "label": "20 cities",
+        "value": 1.095,
+        "display": "$1.10B",
+        "detail": "25,000 rides/day/city · $6 average fare"
+      }
     ],
     "facts": [
-      { "value": "12M+",   "label": "Daily road users in Lagos — the wedge" },
-      { "value": "$3.45B", "label": "African ride-share TAM by 2029 — the corridor" },
-      { "value": "$216B",  "label": "Global ride-share TAM by 2029 — the prize" }
-    ]
+      {
+        "value": "5",
+        "label": "Launch-city operating case"
+      },
+      {
+        "value": "15,000",
+        "label": "Illustrative daily rides across five cities"
+      },
+      {
+        "value": "$4",
+        "label": "Assumed average rider fare in the five-city case"
+      }
+    ],
+    "source": "TagRides scenario model. Planning assumptions, not a third-party market forecast."
   },
 
   "model": {
     "eyebrow": "BUSINESS MODEL",
-    "title": "Earn from the trips that already happen.",
-    "subtitle": "Two clean revenue lines, both compounding with usage. No surge games, no driver-poaching wars.",
+    "title": "Earn when a rider fills an empty seat.",
+    "subtitle": "Along does not pay drivers to approach. If a pickup fails, the driver stays on the original route. TagRides earns only when the rider boards.",
     "streams": [
-      { "label": "Commission on rider fares", "share": "10–15%", "detail": "Charged on every confirmed tag-along ride. Driver and rider both see the cut up-front." },
-      { "label": "Platform services",         "share": "B2B",    "detail": "Route intelligence, driver verification, and fare-estimate tools for logistics, fintech, and mobility partners under TAG-ALONG LTD." }
+      {
+        "label": "Commission on rider fares",
+        "share": "10–15%",
+        "detail": "Charged only when the rider boards. Driver and rider both see the fee up-front."
+      },
+      {
+        "label": "Platform services",
+        "share": "B2B",
+        "detail": "Route intelligence, driver verification, and fare-estimate tools for logistics, fintech, and mobility partners under TAG-ALONG LTD."
+      }
     ],
     "pricing": [
-      { "label": "Distance-based base", "detail": "Per-km tariff visible before the rider taps Request." },
-      { "label": "Time-of-day modifier","detail": "Higher during rush — but capped at the driver's accepted offer, never algorithmic surge." },
-      { "label": "Rider–driver negotiation", "detail": "The fare is a conversation, not a verdict. Riders can counter; drivers can accept or decline." }
+      {
+        "label": "Distance-based base",
+        "detail": "Per-km tariff visible before the rider taps Request."
+      },
+      {
+        "label": "Time-of-day modifier",
+        "detail": "Higher during rush — but capped at the driver's accepted offer, never algorithmic surge."
+      },
+      {
+        "label": "One-round fare decision",
+        "detail": "The rider sends the system's draft. The driver accepts or counters once. The rider accepts, declines, or leaves the response open."
+      }
     ]
   },
 
@@ -205,10 +392,10 @@
         "title": "Supply",
         "timeframe": "Months 3–6",
         "icon": "supply",
-        "detail": "300 verified drivers committed to daily Yaba ↔ Island routes.",
+        "detail": "300 verified drivers and route operators already travelling daily Yaba ↔ Island routes.",
         "tactics": [
           "Onboarding incentive: ₦15K signup + first-50-rides bonus",
-          "Recruit from existing ride-hail churners on the Mainland-Island axis",
+          "Recruit commuters, taxis, vans, and existing route operators on the Mainland-Island axis",
           "Driver community ops (WhatsApp groups, weekly meetups)",
           "Partner with vehicle inspection + insurance providers"
         ]
@@ -236,7 +423,15 @@
         ]
       }
     ],
-    "partners": ["LASRRA", "LASDRI", "Tony Elumelu Foundation", "ALX Ventures", "AWS Activate", "Microsoft for Startups", "Google for Startups"]
+    "partners": [
+      "LASRRA",
+      "LASDRI",
+      "Tony Elumelu Foundation",
+      "ALX Ventures",
+      "AWS Activate",
+      "Microsoft for Startups",
+      "Google for Startups"
+    ]
   },
 
   "problemPersonal": {
@@ -244,10 +439,22 @@
     "title": "Your city is already sharing rides. The system just has not caught up.",
     "subtitle": "These are the things riders and drivers already live with. Tag Rides starts in Lagos because Lagos makes the problem impossible to ignore.",
     "complaints": [
-      { "quote": "I'm paying ₦5,000 to Bolt every morning so I don't have to sit in a danfo. That's ₦100,000 a month I don't have to lose.", "persona": "Banker, 27, VI" },
-      { "quote": "I wait 20 minutes for a danfo to fill, then 90 minutes in traffic. By the time I get to work I'm already tired.", "persona": "NYSC corper, 23, Ikeja" },
-      { "quote": "Surge pricing during rain. Surge pricing during traffic. Surge pricing because… reasons. There has to be a better way.", "persona": "Designer, 30, Lekki" },
-      { "quote": "I drive to work every day with three empty seats. Three people on the road I'd happily pick up if I could trust them.", "persona": "Lecturer & driver, 38, Mainland" }
+      {
+        "quote": "I'm paying ₦5,000 to Bolt every morning so I don't have to sit in a danfo. That's ₦100,000 a month I don't have to lose.",
+        "persona": "Banker, 27, VI"
+      },
+      {
+        "quote": "I wait 20 minutes for a danfo to fill, then 90 minutes in traffic. By the time I get to work I'm already tired.",
+        "persona": "NYSC corper, 23, Ikeja"
+      },
+      {
+        "quote": "Surge pricing during rain. Surge pricing during traffic. Surge pricing because… reasons. There has to be a better way.",
+        "persona": "Designer, 30, Lekki"
+      },
+      {
+        "quote": "I drive to work every day with three empty seats. Three people on the road I'd happily pick up if I could trust them.",
+        "persona": "Lecturer & driver, 38, Mainland"
+      }
     ]
   },
 
@@ -256,9 +463,21 @@
     "title": "Three taps. One ride. Real savings.",
     "subtitle": "We took everything you already do — find a driver going your way, agree a fair price, hop in — and added the records, ratings, and trip visibility around it.",
     "steps": [
-      { "title": "Tell us where you're going",  "detail": "Type your destination. Tag Rides finds drivers already heading that way.", "hint": "Average match time: under 90 seconds." },
-      { "title": "Agree the fare in the app",   "detail": "See an honest offer. Accept it, or send a counter-offer. No surge. No mystery math.", "hint": "Danfo-level fare logic, with a trip record." },
-      { "title": "Get in. Get there. Get on with it.", "detail": "Verified driver. Trip tracked. Rate them when you arrive. Move on with your day.", "hint": "Both sides rate each other; bad actors leave the network." }
+      {
+        "title": "Tell us where you're going",
+        "detail": "Type your destination. Tag Rides finds drivers already heading that way.",
+        "hint": "Average match time: under 90 seconds."
+      },
+      {
+        "title": "Send the fare offer",
+        "detail": "Start with the system's draft. The driver accepts or counters once; you accept, decline, or leave the response open.",
+        "hint": "Danfo-level fare logic, with a trip record."
+      },
+      {
+        "title": "Get in. Get there. Get on with it.",
+        "detail": "Verified driver. Trip tracked. Rate them when you arrive. Move on with your day.",
+        "hint": "Both sides rate each other; bad actors leave the network."
+      }
     ]
   },
 
@@ -273,7 +492,7 @@
         "features": [
           "Danfo-level fare logic — drivers already going that direction",
           "Driver picks the route, riders board along it",
-          "Negotiable fare, fully transparent up-front",
+          "Driver accepts or counters once; rider chooses what stays open",
           "No detours — you go a known path"
         ]
       },
@@ -295,12 +514,36 @@
     "title": "Six things that have to be true before you tap Request.",
     "subtitle": "Shared rides become safer when the system is accountable. Every layer below has to hold for the next one to matter.",
     "signals": [
-      { "icon": "badge",  "title": "Verified drivers",       "detail": "Government ID, vehicle details, and launch-market checks on file before activation." },
-      { "icon": "shield", "title": "Two-sided ratings",      "detail": "Both riders and drivers rate every trip. One-star patterns lose access to the network." },
-      { "icon": "pin",    "title": "Live trip tracking",     "detail": "Share your live location with up to three trusted contacts during every ride." },
-      { "icon": "sos",    "title": "In-app emergency",       "detail": "One tap shares your live coordinates and trip details with the right safety contacts for that market." },
-      { "icon": "star",   "title": "Match by track record",  "detail": "Riders see driver rating, completed trips, and verified-since date before accepting an offer." },
-      { "icon": "log",    "title": "Trip log",               "detail": "Every ride is logged: route, fare, riders, driver, and time, so disputes have a record." }
+      {
+        "icon": "badge",
+        "title": "Verified drivers",
+        "detail": "Government ID, vehicle details, and launch-market checks on file before activation."
+      },
+      {
+        "icon": "shield",
+        "title": "Two-sided ratings",
+        "detail": "Both riders and drivers rate every trip. One-star patterns lose access to the network."
+      },
+      {
+        "icon": "pin",
+        "title": "Live trip tracking",
+        "detail": "Share your live location with up to three trusted contacts during every ride."
+      },
+      {
+        "icon": "sos",
+        "title": "In-app emergency",
+        "detail": "One tap shares your live coordinates and trip details with the right safety contacts for that market."
+      },
+      {
+        "icon": "star",
+        "title": "Match by track record",
+        "detail": "Riders see driver rating, completed trips, and verified-since date before accepting an offer."
+      },
+      {
+        "icon": "log",
+        "title": "Trip log",
+        "detail": "Every ride is logged: route, fare, riders, driver, and time, so disputes have a record."
+      }
     ]
   },
 
@@ -309,10 +552,15 @@
     "title": "Danfo-level fares. Ride-hailing-level accountability.",
     "subtitle": "We ran the numbers on 30 actual Lagos journeys. The local fares are the proof; the route-share logic travels to other cities.",
     "examples": [
-      { "from": "Mushin",               "to": "Iju Road",         "boltNaira": 5000, "tagAlongNaira":  800 },
-      { "from": "Charley Boy, Gbagada", "to": "Marwa, Lekki",     "boltNaira": 6100, "tagAlongNaira": 1000 },
-      { "from": "Iyanaworo",            "to": "Victoria Island",  "boltNaira": 4200, "tagAlongNaira":  700 },
-      { "from": "Sangotedo",            "to": "Lekki",            "boltNaira": 6400, "tagAlongNaira": 1500 }
+      { "from": "Mushin", "to": "Iju Road", "boltNaira": 5000, "tagAlongNaira": 800 },
+      {
+        "from": "Charley Boy, Gbagada",
+        "to": "Marwa, Lekki",
+        "boltNaira": 6100,
+        "tagAlongNaira": 1000
+      },
+      { "from": "Iyanaworo", "to": "Victoria Island", "boltNaira": 4200, "tagAlongNaira": 700 },
+      { "from": "Sangotedo", "to": "Lekki", "boltNaira": 6400, "tagAlongNaira": 1500 }
     ]
   },
 
@@ -324,32 +572,44 @@
 
   "competitive": {
     "eyebrow": "COMPETITION",
-    "title": "Every competitor solves part of it. We solve all of it.",
-    "subtitle": "Lagos has plenty of ways to move. None of them combine route-sharing, fair negotiation, instant matching, comfort, and verified safety in one product. Each row below is a real, falsifiable claim — same definition applied across the board.",
-    "_note": "Matrix audited 2026-06. yes/no are factual; 'high/low' for Comfort + Safety are honest market-perceived rankings, not marketing. TagRides hits 6/6; no competitor hits more than 4/6.",
+    "title": "Why TagRides works differently.",
+    "subtitle": "Other services assign one car or sell one seat. Along lets riders send offers to several route-matched drivers, keep backups open, and confirm a seat only when they board.",
+    "_note": "This compares how each service handles a ride, not its overall quality. 'Partial' means the behavior is possible but not guaranteed.",
     "matrix": {
       "rows": [
-        "Pay only for your leg of the trip",
-        "Drivers already heading your destination",
-        "Negotiable fare",
-        "Instant in-app matching",
-        "Comfort",
-        "Verified driver + trip log"
+        "Supply journey exists without rider",
+        "No driver detour for Along pickup",
+        "Offers sent to several matched drivers",
+        "Multiple accepted options",
+        "Backups survive primary selection",
+        "Seat is confirmed when the rider boards"
       ],
       "cols": [
-        { "name": "TagRides",    "us": true,  "values": ["yes","yes","yes","yes","high","high"] },
-        { "name": "Uber / Bolt", "us": false, "values": ["no", "no", "no", "yes","high","high"] },
-        { "name": "InDrive",     "us": false, "values": ["no", "no", "yes","yes","high","high"] },
-        { "name": "Shuttlers",   "us": false, "values": ["yes","yes","no", "no", "high","high"] },
-        { "name": "LagRide",     "us": false, "values": ["no", "no", "no", "no", "high","high"] },
-        { "name": "Danfo",       "us": false, "values": ["yes","yes","yes","no", "low", "low"]  }
+        { "name": "TagRides", "us": true, "values": ["yes", "yes", "yes", "yes", "yes", "yes"] },
+        { "name": "Uber / Bolt", "us": false, "values": ["no", "no", "no", "no", "no", "no"] },
+        { "name": "InDrive", "us": false, "values": ["no", "no", "yes", "no", "no", "no"] },
+        { "name": "BlaBlaCar", "us": false, "values": ["yes", "partial", "no", "no", "no", "no"] },
+        { "name": "Shuttlers", "us": false, "values": ["yes", "yes", "no", "no", "no", "no"] },
+        { "name": "Danfo", "us": false, "values": ["yes", "yes", "partial", "no", "no", "yes"] }
       ]
     },
     "differentiation": [
-      { "vs": "Uber / Bolt", "line": "Got matching + safety right. Missed the route economics — drivers detour, riders pay full freight." },
-      { "vs": "InDrive",     "line": "Got the negotiation + matching right. No shared cost — you still pay for the whole car." },
-      { "vs": "Shuttlers",   "line": "Got the shared-route economics right. Schedule-bound, not on-demand — and the fare is fixed." },
-      { "vs": "Danfo",       "line": "Has every economic property. Lacks the safety, the comfort, the matching, and the receipts." }
+      {
+        "vs": "Uber / Bolt",
+        "line": "Strong dispatch, but the driver makes a new pickup trip and the rider is tied to one driver before pickup."
+      },
+      {
+        "vs": "InDrive",
+        "line": "Several driver prices help riders compare options, but choosing one closes every other option and sends a whole car to the pickup."
+      },
+      {
+        "vs": "BlaBlaCar",
+        "line": "Monetises route-aligned seats, but booking removes inventory before physical pickup and alternatives do not remain live."
+      },
+      {
+        "vs": "Danfo",
+        "line": "The closest offline comparison: fixed routes, shared seats, and payment on boarding. TagRides adds digital offers, backup options, identity, and trip records."
+      }
     ]
   },
 
@@ -358,16 +618,32 @@
     "title": "Backed, built, and quietly accumulating users.",
     "subtitle": "Live MVP. Real surveys. Capital and credits already secured.",
     "proof": [
-      { "value": "210", "label": "Lagos riders surveyed",     "context": "92% in the 18–34 working-age core" },
-      { "value": "90",  "label": "Waitlist signups",           "context": "Mostly along the Yaba commute belt" },
-      { "value": "$52K","label": "Cloud credits secured",      "context": "AWS $25K + Microsoft $25K + Google $2K" },
-      { "value": "1",   "label": "Live MVP on AWS",            "context": "Flutter app, Go services, MQTT real-time" }
+      {
+        "value": "210",
+        "label": "Lagos riders surveyed",
+        "context": "92% in the 18–34 working-age core"
+      },
+      {
+        "value": "90",
+        "label": "Waitlist signups",
+        "context": "Mostly along the Yaba commute belt"
+      },
+      {
+        "value": "$52K",
+        "label": "Cloud credits secured",
+        "context": "AWS $25K + Microsoft $25K + Google $2K"
+      },
+      {
+        "value": "1",
+        "label": "Live MVP on AWS",
+        "context": "Flutter app, Go services, MQTT real-time"
+      }
     ],
     "backers": [
       { "name": "Tony Elumelu Foundation", "note": "Seed grant, Feb 2024" },
-      { "name": "ALX Ventures",            "note": "Programme alumni" },
+      { "name": "ALX Ventures", "note": "Programme alumni" },
       { "name": "Ugwumba Enterprise Challenge", "note": "2024 winner" },
-      { "name": "AWS Activate",            "note": "$25,000 in credits" }
+      { "name": "AWS Activate", "note": "$25,000 in credits" }
     ]
   },
 
@@ -376,9 +652,24 @@
     "title": "A solo operator who ships, backed by Lagos veterans.",
     "subtitle": "Full-stack execution from one founder. Advisory weight from people who actually move things in Lagos.",
     "members": [
-      { "name": "Oniya Olaiya",     "role": "Founder & CEO · Engineering Lead", "image": "/assets/pitch/team-olaiya.jpg",     "bio": "Ships the full stack — Flutter rider + driver app, Go backend services, MQTT real-time geolocation pipeline, AWS infra. Built the production system independently. ALX Ventures alum; relocating from EC2 development to in-market Lagos lead." },
-      { "name": "Efemena Abraham",  "role": "Adviser · CEO, Apex Network",      "image": "/assets/pitch/adviser-efemena.jpg", "bio": "Lagos tech-ecosystem operator. Apex Network introductions across logistics + payments + Lagos State partnerships." },
-      { "name": "Pst. Wale Olasoji","role": "Adviser · Manager, Total Energies","image": "/assets/pitch/adviser-wale.jpg",    "bio": "Corporate operations + Lagos community gateway. Fuel-economics + driver-network access at scale." }
+      {
+        "name": "Oniya Olaiya",
+        "role": "Founder & CEO · Engineering Lead",
+        "image": "/assets/pitch/team-olaiya.jpg",
+        "bio": "Ships the full stack — Flutter rider + driver app, Go backend services, MQTT real-time geolocation pipeline, AWS infra. Built the production system independently. ALX Ventures alum; relocating from EC2 development to in-market Lagos lead."
+      },
+      {
+        "name": "Efemena Abraham",
+        "role": "Adviser · CEO, Apex Network",
+        "image": "/assets/pitch/adviser-efemena.jpg",
+        "bio": "Lagos tech-ecosystem operator. Apex Network introductions across logistics + payments + Lagos State partnerships."
+      },
+      {
+        "name": "Pst. Wale Olasoji",
+        "role": "Adviser · Manager, Total Energies",
+        "image": "/assets/pitch/adviser-wale.jpg",
+        "bio": "Corporate operations + Lagos community gateway. Fuel-economics + driver-network access at scale."
+      }
     ]
   },
 
@@ -394,10 +685,10 @@
       { "year": 5, "revenue": 750000, "expenses": 202500 }
     ],
     "unitEcon": [
-      { "label": "Avg ride fare",       "value": "₦1,200" },
+      { "label": "Avg ride fare", "value": "₦1,200" },
       { "label": "Avg tag-along share", "value": "₦300 / leg" },
-      { "label": "Take rate",           "value": "12%" },
-      { "label": "Contribution per ride","value": "₦144" }
+      { "label": "Take rate", "value": "12%" },
+      { "label": "Contribution per ride", "value": "₦144" }
     ]
   },
 
@@ -411,10 +702,18 @@
       { "when": "2025 Q2", "label": "MVP live on AWS — Flutter + Go", "status": "done" },
       { "when": "2025 Q4", "label": "Won Ugwumba Enterprise Challenge", "status": "done" },
       { "when": "2026 Q3", "label": "Pre-seed close ($750K target)", "status": "now" },
-      { "when": "2026 Q4", "label": "Public Lagos launch — Yaba ↔ Lagos Island corridor", "status": "next" },
-      { "when": "2027",    "label": "Lagos-wide expansion + Abuja pilot", "status": "next" },
-      { "when": "2028+",   "label": "Nigeria-wide → Accra / Nairobi / Kigali", "status": "future" },
-      { "when": "2030+",   "label": "First non-African market — SE Asia / LATAM pilot", "status": "future" }
+      {
+        "when": "2026 Q4",
+        "label": "Public Lagos launch — Yaba ↔ Lagos Island corridor",
+        "status": "next"
+      },
+      { "when": "2027", "label": "Lagos-wide expansion + Abuja pilot", "status": "next" },
+      { "when": "2028+", "label": "Nigeria-wide → Accra / Nairobi / Kigali", "status": "future" },
+      {
+        "when": "2030+",
+        "label": "First non-African market — SE Asia / LATAM pilot",
+        "status": "future"
+      }
     ]
   },
 
@@ -423,13 +722,13 @@
     "title": "Formalising the informal — and making cities work.",
     "subtitle": "Tag Rides turns everyday drivers into verified entrepreneurs, digitising a $2B informal transport market.",
     "outcomes": [
-      { "value": "5-city",     "label": "Replicable corridor playbook after Lagos proof" },
-      { "value": "$2B+",       "label": "Informal transport category ready for digitisation" },
-      { "value": "Fewer",      "label": "Empty-seat miles per participating driver" }
+      { "value": "5-city", "label": "Replicable corridor playbook after Lagos proof" },
+      { "value": "$2B+", "label": "Informal transport category ready for digitisation" },
+      { "value": "More", "label": "Empty seats earning without extra pickup detours" }
     ],
     "sdgs": [
-      { "code": "SDG 8",  "title": "Decent Work & Economic Growth" },
-      { "code": "SDG 9",  "title": "Industry, Innovation & Infrastructure" },
+      { "code": "SDG 8", "title": "Decent Work & Economic Growth" },
+      { "code": "SDG 9", "title": "Industry, Innovation & Infrastructure" },
       { "code": "SDG 11", "title": "Sustainable Cities & Communities" }
     ]
   },

@@ -6,8 +6,8 @@ import { PitchSection, SectionHeading } from '../motion/Section';
 import pitch from '@/data/pitch.json';
 
 // Solution — animated route line draws itself across the section, with
-// three labeled stops representing the mechanic: 1. driver sets route,
-// 2. riders request a leg, 3. fare agreed (not metered).
+// three labeled stops representing the mechanic: publish existing supply,
+// send one-round offers to several drivers, then commit capacity at pickup.
 export function Solution() {
   const data = pitch.solution;
   return (
@@ -65,7 +65,10 @@ function RouteDiagram({ steps }) {
         aria-hidden
       >
         <motion.line
-          x1="1" y1="0" x2="1" y2="600"
+          x1="1"
+          y1="0"
+          x2="1"
+          y2="600"
           stroke="currentColor"
           strokeWidth="2"
           strokeDasharray="4 6"

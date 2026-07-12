@@ -4,22 +4,17 @@ import { Slide, SlideHeading } from '../Slide';
 import { AfricaMap } from '../../AfricaMap';
 import pitch from '@/data/pitch.json';
 
-// Market — Africa map on the left (we already have a great SVG), TAM
-// numbers + 3 facts on the right. Skip the ECharts curve in print
-// because it requires JS execution and adds nothing the numeric range
-// can't say. The map carries the geographic story; the figures carry
-// the size story.
+// Market — geographic wedge on the left, bottom-up operating case and
+// opportunity layers on the right. The print slide uses the same scenario
+// data as the adaptive chart without depending on client-side rendering.
 export function PrintMarket({ page, total, audience, watermark }) {
   const d = pitch.market;
-  const startYear = d.tam[0];
-  const endYear   = d.tam[d.tam.length - 1];
+  const firstCase = d.scale[0];
 
   return (
     <Slide page={page} total={total} audience={audience} watermark={watermark} section="Market">
-      {/* Subtitle deliberately dropped — the TAM box on the right
-          already shows "$2.1B → $3.45B / Statista", which IS the
-          subtitle's payload. Repeating it wastes ~25mm of vertical
-          space the right column needs to fit cleanly. */}
+      {/* The compact right column carries the assumptions, so repeating
+          the full subtitle would crowd the fixed-height print slide. */}
       <SlideHeading eyebrow={d.eyebrow} title={d.title} />
 
       {/* Grid container — explicit minHeight:0 + overflow:hidden so
@@ -69,19 +64,35 @@ export function PrintMarket({ page, total, audience, watermark }) {
           >
             Expansion path
           </div>
-          <div style={{ flex: 1, minHeight: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div
+            style={{
+              flex: 1,
+              minHeight: 0,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
             <AfricaMap className="size-full" staticMode />
           </div>
         </div>
 
-        {/* Right — TAM headline + 3 facts. Compacted so the column's
+        {/* Right — five-city case + 3 facts. Compacted so the column's
             natural height fits within the available grid height.
             minHeight:0 + overflow:hidden ensure the column can't push
             the grid taller than its allotted space. No
             justify-content:space-between — items stack naturally with
             consistent 4mm gaps, leaving honest whitespace below if any. */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '4mm', minHeight: 0, overflow: 'hidden' }}>
-          {/* TAM growth headline */}
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '4mm',
+            minHeight: 0,
+            overflow: 'hidden',
+          }}
+        >
+          {/* Obtainable operating case */}
           <div
             style={{
               border: '1px solid #333',
@@ -100,7 +111,7 @@ export function PrintMarket({ page, total, audience, watermark }) {
                 marginBottom: '2mm',
               }}
             >
-              Ride-sharing TAM, Africa
+              Bottom-up five-city case
             </div>
             <div
               style={{
@@ -112,7 +123,7 @@ export function PrintMarket({ page, total, audience, watermark }) {
                 fontVariantNumeric: 'tabular-nums',
               }}
             >
-              ${startYear.value}B <span style={{ color: '#666' }}>→</span> ${endYear.value}B
+              {firstCase.display}
             </div>
             <div
               style={{
@@ -121,7 +132,7 @@ export function PrintMarket({ page, total, audience, watermark }) {
                 marginTop: '1.5mm',
               }}
             >
-              between {startYear.year} and {endYear.year} (Statista)
+              annual rider fares · {firstCase.detail}
             </div>
           </div>
 
@@ -158,11 +169,8 @@ export function PrintMarket({ page, total, audience, watermark }) {
             </div>
           ))}
 
-          {/* Footer — global TAM trajectory in plain sentence form.
-              No card chrome (the African TAM box above already uses
-              that template, repeating it reads as duplicated structure).
-              Just one sentence that anchors the $216B fact above with
-              its 2024 baseline. */}
+          {/* Assumption note keeps modeled opportunity distinct from
+              reported third-party market forecasts. */}
           <div
             style={{
               marginTop: '2mm',
@@ -173,18 +181,20 @@ export function PrintMarket({ page, total, audience, watermark }) {
               color: '#B3B3B3',
             }}
           >
-            That <span style={{ color: '#E5E5E5', fontWeight: 600 }}>$216B</span> is the global ride-share market by 2029 — up from{' '}
-            <span style={{ color: '#E5E5E5', fontWeight: 600 }}>$166B today</span>.
-            <span style={{
-              display: 'block',
-              marginTop: '2mm',
-              fontFamily: 'var(--font-mono)',
-              fontSize: '7.5pt',
-              letterSpacing: '0.14em',
-              textTransform: 'uppercase',
-              color: '#666',
-            }}>
-              Source: Statista · 2024–2029 forecast
+            Broad route opportunity, realistic filtered demand, and the five-city case are shown
+            separately.
+            <span
+              style={{
+                display: 'block',
+                marginTop: '2mm',
+                fontFamily: 'var(--font-mono)',
+                fontSize: '7.5pt',
+                letterSpacing: '0.14em',
+                textTransform: 'uppercase',
+                color: '#666',
+              }}
+            >
+              {d.source}
             </span>
           </div>
         </div>

@@ -10,9 +10,9 @@ import pitch from '@/data/pitch.json';
 const ReactECharts = dynamic(() => import('echarts-for-react'), { ssr: false });
 
 // Market — three blocks tell the size + the shape of the opportunity:
-//   1. TAM growth chart (Africa ride-sharing 2024 → 2029)
+//   1. Bottom-up operating scale rather than a generic category forecast
 //   2. Africa map with Lagos pulse + planned expansion arcs
-//   3. Three context facts in a row at the bottom
+//   3. Broad route opportunity, filtered demand, and a five-city case
 export function Market() {
   const data = pitch.market;
 
@@ -23,45 +23,44 @@ export function Market() {
       backgroundColor: 'rgba(26,26,26,0.95)',
       borderColor: '#333',
       textStyle: { color: '#E5E5E5', fontFamily: 'var(--font-mono)' },
-      valueFormatter: (v) => `$${v}B`,
+      formatter: ([point]) => {
+        const item = data.scale[point.dataIndex];
+        return `<strong>${item.display}</strong><br/>${item.detail}`;
+      },
     },
     xAxis: {
       type: 'category',
-      data: data.tam.map((d) => d.year),
+      data: data.scale.map((d) => d.label),
       axisLine: { lineStyle: { color: '#333' } },
       axisLabel: { color: '#B3B3B3', fontFamily: 'var(--font-mono)', fontSize: 12 },
     },
     yAxis: {
       type: 'value',
-      min: 1.8,
-      max: 3.7,
+      min: 0,
       axisLine: { show: false },
       splitLine: { lineStyle: { color: '#1f1f1f' } },
       axisLabel: {
         color: '#B3B3B3',
         fontFamily: 'var(--font-mono)',
         fontSize: 12,
-        formatter: '${value}B',
+        formatter: (value) => (value < 1 ? `$${Math.round(value * 1000)}M` : `$${value}B`),
       },
     },
     series: [
       {
-        data: data.tam.map((d) => d.value),
-        type: 'line',
-        smooth: true,
-        symbol: 'circle',
-        symbolSize: 8,
-        lineStyle: { color: '#008080', width: 3 },
-        itemStyle: { color: '#008080', borderColor: '#0A0A0A', borderWidth: 2 },
-        areaStyle: {
-          color: {
-            type: 'linear',
-            x: 0, y: 0, x2: 0, y2: 1,
-            colorStops: [
-              { offset: 0, color: 'rgba(0,128,128,0.45)' },
-              { offset: 1, color: 'rgba(0,128,128,0.00)' },
-            ],
-          },
+        data: data.scale.map((d) => d.value),
+        type: 'bar',
+        barMaxWidth: 72,
+        itemStyle: {
+          color: '#008080',
+          borderRadius: [8, 8, 0, 0],
+        },
+        label: {
+          show: true,
+          position: 'top',
+          color: '#E5E5E5',
+          fontFamily: 'var(--font-mono)',
+          formatter: ({ dataIndex }) => data.scale[dataIndex].display,
         },
         animationDuration: 1800,
         animationEasing: 'cubicOut',
@@ -84,9 +83,9 @@ export function Market() {
         >
           <div className="mb-4 flex items-center justify-between">
             <div className="font-mono text-xs text-foreground-muted">
-              African ride-sharing TAM, USD billions
+              Illustrative annual rider fares by operating scale
             </div>
-            <div className="font-mono text-xs text-foreground-muted">Source: Statista</div>
+            <div className="font-mono text-xs text-foreground-muted">Scenario model</div>
           </div>
           <div className="h-[280px] md:h-[340px]">
             <ReactECharts
@@ -139,6 +138,9 @@ export function Market() {
           </motion.div>
         ))}
       </div>
+      <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.14em] text-foreground-muted/60 md:text-xs">
+        {data.source}
+      </p>
     </PitchSection>
   );
 }

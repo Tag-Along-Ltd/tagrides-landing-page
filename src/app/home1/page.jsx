@@ -67,29 +67,28 @@ const Home1 = () => {
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 pt-24 pb-20 md:grid-cols-2 md:gap-20 md:pt-32 md:pb-28">
           {/* Left: copy */}
           <div className="min-w-0 max-w-2xl">
-            <p className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/70 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-foreground-muted backdrop-blur-sm">
-              <span className="relative flex size-1.5">
+            <p className="inline-flex max-w-full items-center gap-2 rounded-full border border-border bg-surface/70 py-1.5 pr-4 pl-3 text-[10px] font-semibold uppercase tracking-[0.12em] text-foreground-muted backdrop-blur-sm sm:text-xs sm:tracking-[0.16em] md:whitespace-nowrap md:tracking-[0.12em]">
+              <span className="relative flex size-1.5 shrink-0">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/80" />
                 <span className="relative inline-flex size-1.5 rounded-full bg-primary" />
               </span>
-              {brand.name} · Lagos first · built where routes are already shared
+              <span>{brand.name} · Lagos first · built where routes are already shared</span>
             </p>
 
             <h1 className="mt-6 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-foreground sm:text-5xl md:text-7xl md:leading-[1.02]">
-              Turn your everyday route
+              Drive your normal route.
               <br />
               <AuroraText
                 speed={0.8}
                 colors={['#008080', '#5F8F8F', '#F59E0B', '#BFE5E5', '#008080']}
               >
-                into shared income.
+                Earn from empty seats.
               </AuroraText>
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-foreground-muted md:text-xl">
-              You are already burning the fuel. Let the empty seats pay their part. Pick up riders
-              along your route, agree the fare before pickup, and keep moving. Lagos is the first
-              proof market for a model built wherever routes are already shared.
+              Pick up riders already heading your way. Agree the fare before pickup, keep your
+              route, and let your empty seats pay their part.
             </p>
 
             <p className="mt-5 font-display text-sm font-semibold tracking-tight text-accent md:text-base">
@@ -97,13 +96,13 @@ const Home1 = () => {
             </p>
 
             {/* CTA pair — driver-first acquisition.
-              *
-              * Two-sided marketplace: drivers convert *today* — sign
-              * up, complete verification, and they're ready when launch
-              * traffic arrives. Riders go on the waitlist for activation
-              * at launch. One app, role-switch after sign-in, but the
-              * conversion split is supply-first / demand-later.
-              */}
+             *
+             * Two-sided marketplace: drivers convert *today* — sign
+             * up, complete verification, and they're ready when launch
+             * traffic arrives. Riders go on the waitlist for activation
+             * at launch. One app, role-switch after sign-in, but the
+             * conversion split is supply-first / demand-later.
+             */}
             <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a
                 href={brand.app.signinDriver}

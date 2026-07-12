@@ -36,15 +36,26 @@
   /* Aurora keyframes used by AuroraText */
   --animate-aurora: aurora 8s ease infinite;
   @keyframes aurora {
-    0%   { background-position: 0% 50%; }
-    50%  { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 }
 
 @keyframes eg-twinkle {
-  0%, 100% { opacity: 0.25; }
-  50%      { opacity: 1; }
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 /* Respect prefers-reduced-motion — kill all animations + transitions for users
@@ -66,20 +77,38 @@
    motion. Uses `alternate` so the field rocks back and forth without any
    visible snap-back. */
 @keyframes star-drift-far {
-  0%   { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(-2%, 0.8%, 0); }
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-2%, 0.8%, 0);
+  }
 }
 @keyframes star-drift-mid {
-  0%   { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(-3.5%, 1.4%, 0); }
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-3.5%, 1.4%, 0);
+  }
 }
 @keyframes star-drift-near {
-  0%   { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(-5.5%, 2%, 0); }
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-5.5%, 2%, 0);
+  }
 }
-.star-drift-far  { animation: star-drift-far  240s linear infinite alternate; }
-.star-drift-mid  { animation: star-drift-mid  210s linear infinite alternate; }
-.star-drift-near { animation: star-drift-near 180s linear infinite alternate; }
+.star-drift-far {
+  animation: star-drift-far 240s linear infinite alternate;
+}
+.star-drift-mid {
+  animation: star-drift-mid 210s linear infinite alternate;
+}
+.star-drift-near {
+  animation: star-drift-near 180s linear infinite alternate;
+}
 
 /* Pure-CSS spinning Earth — scrolls the Mercator texture horizontally
    inside the circular mask. -4096px = the source texture's native width
@@ -130,10 +159,21 @@
    With 24s + 28s cycles staggered, you see roughly one streak every 12s —
    same ambient-pace universe as the globe's 180s spin, never busy. */
 @keyframes shooting-star {
-  0%   { opacity: 0; transform: translate3d(0, 0, 0) rotate(20deg); }
-  78%  { opacity: 0; transform: translate3d(0, 0, 0) rotate(20deg); }
-  82%  { opacity: 1; }
-  100% { opacity: 0; transform: translate3d(110vw, 32vh, 0) rotate(20deg); }
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) rotate(20deg);
+  }
+  78% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) rotate(20deg);
+  }
+  82% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(110vw, 32vh, 0) rotate(20deg);
+  }
 }
 
 :root {
@@ -185,7 +225,9 @@ h4 {
   line-height: 1.75;
   color: var(--foreground-muted);
 }
-.prose-tag h2, .prose-tag h3, .prose-tag h4 {
+.prose-tag h2,
+.prose-tag h3,
+.prose-tag h4 {
   font-family: var(--font-display), system-ui, sans-serif;
   color: var(--foreground);
   font-weight: 700;
@@ -193,10 +235,21 @@ h4 {
   margin-top: 2.5em;
   margin-bottom: 0.75em;
 }
-.prose-tag h2 { font-size: 1.75rem; line-height: 1.2; }
-.prose-tag h3 { font-size: 1.35rem; line-height: 1.3; }
-.prose-tag h4 { font-size: 1.1rem;  line-height: 1.4; }
-.prose-tag p { margin-block: 1.1em; }
+.prose-tag h2 {
+  font-size: 1.75rem;
+  line-height: 1.2;
+}
+.prose-tag h3 {
+  font-size: 1.35rem;
+  line-height: 1.3;
+}
+.prose-tag h4 {
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+.prose-tag p {
+  margin-block: 1.1em;
+}
 .prose-tag a {
   color: var(--primary);
   text-decoration: underline;
@@ -204,13 +257,30 @@ h4 {
   text-underline-offset: 4px;
   transition: color 120ms ease;
 }
-.prose-tag a:hover { color: var(--primary-hover); }
-.prose-tag strong { color: var(--foreground); font-weight: 600; }
-.prose-tag em { font-style: italic; }
-.prose-tag ul, .prose-tag ol { margin-block: 1.1em; padding-left: 1.5em; }
-.prose-tag ul { list-style: disc; }
-.prose-tag ol { list-style: decimal; }
-.prose-tag li { margin-block: 0.4em; }
+.prose-tag a:hover {
+  color: var(--primary-hover);
+}
+.prose-tag strong {
+  color: var(--foreground);
+  font-weight: 600;
+}
+.prose-tag em {
+  font-style: italic;
+}
+.prose-tag ul,
+.prose-tag ol {
+  margin-block: 1.1em;
+  padding-left: 1.5em;
+}
+.prose-tag ul {
+  list-style: disc;
+}
+.prose-tag ol {
+  list-style: decimal;
+}
+.prose-tag li {
+  margin-block: 0.4em;
+}
 .prose-tag blockquote {
   border-left: 3px solid var(--primary);
   padding-left: 1.2em;
@@ -237,7 +307,11 @@ h4 {
   font-size: 0.9em;
   line-height: 1.6;
 }
-.prose-tag pre code { background: transparent; border: 0; padding: 0; }
+.prose-tag pre code {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
 .prose-tag hr {
   border: 0;
   border-top: 1px solid var(--border);
@@ -253,7 +327,7 @@ h4 {
    stacked to give depth without literal motion. */
 .hero-light {
   background:
-    radial-gradient(circle at 15% 0%,  rgba(0, 128, 128, 0.18) 0,  transparent 45%),
+    radial-gradient(circle at 15% 0%, rgba(0, 128, 128, 0.18) 0, transparent 45%),
     radial-gradient(circle at 90% 100%, rgba(245, 158, 11, 0.08) 0, transparent 50%),
     radial-gradient(circle at 50% 50%, rgba(0, 128, 128, 0.04) 0, transparent 60%);
 }
@@ -266,7 +340,9 @@ h4 {
  * slide at a time. On-screen controls render in PitchShell.
  */
 
-.pitch-present .pitch-chrome { display: none !important; }
+.pitch-present .pitch-chrome {
+  display: none !important;
+}
 
 .pitch-present-main {
   scroll-snap-type: y mandatory;
@@ -278,7 +354,9 @@ h4 {
 }
 
 /* Hidden in normal browsing — only visible when printing */
-.pitch-print-only { display: none; }
+.pitch-print-only {
+  display: none;
+}
 
 /* ------------------------------------------------------------------
  * Print deck — /pitch/print
@@ -328,13 +406,22 @@ h4 {
   transform-origin: top center;
 }
 @media screen and (max-width: 1280px) {
-  .pitch-print-slide { transform: scale(0.7); margin-bottom: -64mm; }
+  .pitch-print-slide {
+    transform: scale(0.7);
+    margin-bottom: -64mm;
+  }
 }
 @media screen and (max-width: 900px) {
-  .pitch-print-slide { transform: scale(0.45); margin-bottom: -116mm; }
+  .pitch-print-slide {
+    transform: scale(0.45);
+    margin-bottom: -116mm;
+  }
 }
 @media screen and (max-width: 640px) {
-  .pitch-print-slide { transform: scale(0.3); margin-bottom: -148mm; }
+  .pitch-print-slide {
+    transform: scale(0.3);
+    margin-bottom: -148mm;
+  }
 }
 
 /* ------------------------------------------------------------------
@@ -354,9 +441,10 @@ h4 {
     -webkit-print-color-adjust: exact;
   }
 
-  html, body {
+  html,
+  body {
     background: #0a0a0a !important;
-    color: #E5E5E5 !important;
+    color: #e5e5e5 !important;
     margin: 0 !important;
     padding: 0 !important;
   }
@@ -372,21 +460,27 @@ h4 {
   }
 
   /* Kill animations + transitions so we don't snapshot mid-frame */
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation: none !important;
     transition: none !important;
   }
 
   /* Sticky → static so it doesn't generate a phantom blank page */
-  .sticky { position: static !important; }
+  .sticky {
+    position: static !important;
+  }
 
   /* On the print stage, strip the on-screen scale + shadow + gaps */
   .pitch-print-stage {
+    display: block !important;
     background: transparent !important;
     padding: 0 !important;
     gap: 0 !important;
   }
   .pitch-print-deck {
+    display: block !important;
     gap: 0 !important;
   }
 
@@ -419,7 +513,7 @@ h4 {
     display: none !important;
   }
   body:not(:has(.pitch-print-slide))::before {
-    content: "Use the Download button (or visit /pitch/print) to save the PDF.  This is the live deck page, not the print surface.";
+    content: 'Use the Download button (or visit /pitch/print) to save the PDF.  This is the live deck page, not the print surface.';
     display: block;
     padding: 40mm 30mm;
     font-family: var(--font-mono), ui-monospace, monospace;

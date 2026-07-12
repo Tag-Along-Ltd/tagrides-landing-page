@@ -69,7 +69,7 @@ const jsonLd = {
     'https://www.instagram.com/tagrides/',
     'https://x.com/tagrides_',
     'https://www.linkedin.com/company/104305162/',
-    'https://www.facebook.com/61566568220406/about',
+    'https://www.facebook.com/people/TagRides/61566568220406/',
   ],
   address: {
     '@type': 'PostalAddress',

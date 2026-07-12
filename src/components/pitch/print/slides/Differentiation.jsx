@@ -11,8 +11,8 @@ export function PrintDifferentiation({ page, total, audience, watermark }) {
     <Slide page={page} total={total} audience={audience} watermark={watermark} section="Why we win">
       <SlideHeading
         eyebrow="WHY WE WIN"
-        title="Every competitor solves part of it. We solve all of it."
-        subtitle="One sentence per competitor — what they got right, what they missed."
+        title="Why TagRides works differently."
+        subtitle="One sentence per model — what it clears well, and where Along behaves differently."
       />
 
       <div
