@@ -82,6 +82,9 @@ const jsonLd = {
 };
 
 export default function RootLayout({ children }) {
+  const enableVercelAnalytics =
+    Boolean(process.env.VERCEL) && process.env.TAGRIDES_HOSTING_TARGET !== 'cloudflare-pages';
+
   return (
     <html
       lang="en"
@@ -101,7 +104,7 @@ export default function RootLayout({ children }) {
         />
         <ToastContainer />
         {children}
-        <Analytics />
+        {enableVercelAnalytics && <Analytics />}
       </body>
     </html>
   );
