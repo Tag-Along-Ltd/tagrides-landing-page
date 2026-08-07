@@ -1,168 +1,173 @@
 'use client';
 
-import {
-  MapPin,
-  ListChecks,
-  MessageSquare,
-  UserCheck,
-  Car,
-  Wallet,
-  Route,
-  Users,
-  TrendingUp,
-  CircleDollarSign,
-  Navigation,
-  CheckCircle2,
-} from 'lucide-react';
+import Image from 'next/image';
+import { useState } from 'react';
+import { ArrowRight, Check, MapPin, Route, ShieldCheck } from 'lucide-react';
 
-import { Reveal, RevealStagger, RevealItem } from './Reveal';
+import { Reveal } from './Reveal';
 
-const RIDER_STEPS = [
+const SCREENS = [
   {
-    icon: MapPin,
-    title: 'Tell us where you’re going',
-    body: 'Pick your destination. We find drivers heading the same way.',
+    image: '/assets/pitch/screen-search.png',
+    shortLabel: 'Search',
+    title: 'Choose where you are going',
+    body: 'Search a Lagos destination and see route-aware pickup options around you.',
   },
   {
-    icon: ListChecks,
-    title: 'See your live departure board',
-    body: 'Multiple drivers, each with route, ETA, vehicle, rating, and seats — all in one view.',
+    image: '/assets/pitch/screen-confirm.png',
+    shortLabel: 'Choose',
+    title: 'Confirm your Tag-Along ride',
+    body: 'Choose a driver already heading your way, review the shared route, and request a seat.',
   },
   {
-    icon: MessageSquare,
-    title: 'Send your fare offer',
-    body: 'The driver accepts it or counters once.',
+    image: '/assets/pitch/screen-negotiate-real.png',
+    shortLabel: 'Agree',
+    title: 'Agree the fare before pickup',
+    body: 'Compare drivers heading your way, edit the offer, and send it without endless bidding.',
   },
   {
-    icon: UserCheck,
-    title: 'Choose what works',
-    body: 'Accept, decline, or keep an option open as a backup.',
-  },
-  {
-    icon: Car,
-    title: 'Hop on, ride along',
-    body: 'Get picked up near your start. Drop off at your stop. No detours, no surprises.',
-  },
-  {
-    icon: Wallet,
-    title: 'Pay your way',
-    body: 'Cash or in-app wallet. Every fare is logged before pickup, so there are no arguments later.',
+    image: '/assets/pitch/screen-track-real.png',
+    shortLabel: 'Ride',
+    title: 'Track the shared leg',
+    body: 'See pickup and drop-off on the map, follow the driver, and keep the trip recorded.',
   },
 ];
 
-const DRIVER_STEPS = [
-  {
-    icon: Route,
-    title: 'Tell the app your route',
-    body: 'Where are you going today? Work? School? The market? Post it.',
-  },
-  {
-    icon: Users,
-    title: 'See riders along your way',
-    body: 'Real-time, on your route. No detours, no wild goose chases.',
-  },
-  {
-    icon: CircleDollarSign,
-    title: 'Accept or counter once',
-    body: 'The rider makes the final call.',
-  },
-  {
-    icon: CheckCircle2,
-    title: 'Pick who to take',
-    body: 'Up to your seat capacity. You’re in control of every choice.',
-  },
-  {
-    icon: Navigation,
-    title: 'Pick up. Drop off. Drive on.',
-    body: 'The app guides you. The rider tracks you. Everyone knows where things stand.',
-  },
-  {
-    icon: TrendingUp,
-    title: 'Earn from a trip you were already making',
-    body: 'Daily commute = daily income. Your car was going there anyway.',
-  },
+const DRIVER_POINTS = [
+  'Post the route you already planned',
+  'Choose riders and open seats',
+  'Accept or counter each fare once',
 ];
 
-function JourneyGrid({ steps, accent = 'primary' }) {
-  const ringClass =
-    accent === 'accent'
-      ? 'ring-accent/30 bg-accent/10 text-accent'
-      : 'ring-primary/25 bg-primary/10 text-primary';
-  const badgeClass =
-    accent === 'accent' ? 'bg-accent text-accent-foreground' : 'bg-primary text-primary-foreground';
+export function ProductJourney() {
+  const [activeScreen, setActiveScreen] = useState(0);
+  const screen = SCREENS[activeScreen];
 
   return (
-    <RevealStagger className="mt-14 grid gap-5 md:grid-cols-3">
-      {steps.map((step, i) => {
-        const Icon = step.icon;
-        return (
-          <RevealItem
-            key={step.title}
-            className="relative rounded-2xl border border-border bg-surface p-6 transition hover:border-primary/40"
-          >
-            <div className="flex items-center gap-3">
-              <span
-                className={`inline-flex size-7 items-center justify-center rounded-full font-mono text-xs font-semibold ${badgeClass}`}
-              >
-                {i + 1}
-              </span>
+    <section id="how-it-works" className="relative bg-surface/40">
+      <div className="mx-auto max-w-6xl px-6 py-16 md:py-28">
+        <Reveal>
+          <div className="grid gap-8 md:grid-cols-[1fr_0.7fr] md:items-end">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+                The product, already running
+              </p>
+              <h2 className="mt-3 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
+                One route. A clear flow for everyone in it.
+              </h2>
+            </div>
+            <p className="text-base leading-relaxed text-foreground-muted md:text-lg">
+              Riders find and track the seat. Drivers keep control of the route, the riders, and the
+              fare.
+            </p>
+          </div>
+        </Reveal>
+
+        <div className="mt-12 grid overflow-hidden rounded-3xl border border-border bg-elevated lg:grid-cols-[0.82fr_1.18fr]">
+          <Reveal className="flex flex-col justify-between border-b border-border p-7 md:p-10 lg:border-r lg:border-b-0">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-primary ring-1 ring-primary/25">
+                <Route className="size-3.5" />
+                Driver control
+              </div>
+              <h3 className="mt-6 font-display text-2xl font-bold leading-tight tracking-tight text-foreground md:text-4xl">
+                Your normal route stays yours.
+              </h3>
+              <p className="mt-5 text-base leading-relaxed text-foreground-muted">
+                TagRides adds matched demand around the trip you were making anyway. It does not
+                turn your commute into a chain of blind pickup detours.
+              </p>
+              <ul className="mt-8 space-y-4">
+                {DRIVER_POINTS.map((point) => (
+                  <li key={point} className="flex items-start gap-3 text-sm text-foreground">
+                    <span className="mt-0.5 inline-flex size-5 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary">
+                      <Check className="size-3" />
+                    </span>
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mt-10 flex items-center gap-3 border-t border-border pt-6 text-xs font-semibold uppercase tracking-[0.15em] text-foreground-disabled">
+              <MapPin className="size-4 text-accent" />
+              Yaba to Lagos Island first
+            </div>
+          </Reveal>
+
+          <div className="relative min-h-[620px] overflow-hidden bg-background p-5 sm:p-8 md:min-h-[700px]">
+            <div className="hero-light absolute inset-0 opacity-50" aria-hidden="true" />
+            <div className="relative flex h-full flex-col">
               <div
-                className={`inline-flex size-9 items-center justify-center rounded-lg ring-1 ${ringClass}`}
+                className="flex gap-2 overflow-x-auto pb-2"
+                role="tablist"
+                aria-label="Rider app flow"
               >
-                <Icon className="size-4" />
+                {SCREENS.map((item, index) => (
+                  <button
+                    key={item.shortLabel}
+                    type="button"
+                    role="tab"
+                    aria-selected={activeScreen === index}
+                    onClick={() => setActiveScreen(index)}
+                    className={`shrink-0 rounded-full px-4 py-2 text-xs font-semibold transition ${
+                      activeScreen === index
+                        ? 'bg-primary text-primary-foreground'
+                        : 'border border-border bg-surface text-foreground-muted hover:text-foreground'
+                    }`}
+                  >
+                    {String(index + 1).padStart(2, '0')} · {item.shortLabel}
+                  </button>
+                ))}
+              </div>
+
+              <div className="mt-7 grid flex-1 gap-7 sm:grid-cols-[minmax(0,1fr)_220px] sm:items-center md:grid-cols-[minmax(0,1fr)_260px]">
+                <div className="self-center">
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                    Rider flow
+                  </p>
+                  <h3 className="mt-3 font-display text-2xl font-bold tracking-tight text-foreground md:text-3xl">
+                    {screen.title}
+                  </h3>
+                  <p className="mt-4 max-w-sm text-sm leading-relaxed text-foreground-muted md:text-base">
+                    {screen.body}
+                  </p>
+                  <div className="mt-7 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-accent">
+                    Live product screen
+                    <ShieldCheck className="size-4" />
+                  </div>
+                </div>
+
+                <div className="mx-auto w-[210px] md:w-[250px]">
+                  <div className="relative aspect-[768/1663] overflow-hidden rounded-[2rem] border border-white/15 bg-black shadow-2xl shadow-primary/20 ring-1 ring-primary/20">
+                    <Image
+                      key={screen.image}
+                      src={screen.image}
+                      alt={screen.title}
+                      fill
+                      sizes="(max-width: 640px) 210px, 250px"
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-6 flex items-center justify-between border-t border-border pt-5">
+                <span className="font-mono text-xs text-foreground-disabled">
+                  {activeScreen + 1} / {SCREENS.length}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => setActiveScreen((activeScreen + 1) % SCREENS.length)}
+                  className="group inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-primary-hover"
+                >
+                  Next screen
+                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+                </button>
               </div>
             </div>
-            <h3 className="mt-5 font-display text-base font-semibold leading-snug tracking-tight text-foreground">
-              {step.title}
-            </h3>
-            <p className="mt-2 text-sm leading-relaxed text-foreground-muted">{step.body}</p>
-          </RevealItem>
-        );
-      })}
-    </RevealStagger>
-  );
-}
-
-export function RiderJourney() {
-  return (
-    <section id="rider-journey" className="relative">
-      <div className="mx-auto max-w-6xl px-6 py-14 md:py-28">
-        <Reveal>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-            For riders
-          </p>
-          <h2 className="mt-3 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
-            Riders are already looking for this.
-          </h2>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground-muted md:text-lg">
-            They want a private-car seat priced closer to the shared transport they already use —
-            danfo-level fare logic, without the guesswork. Lagos gives us the first real demand
-            signal.
-          </p>
-        </Reveal>
-        <JourneyGrid steps={RIDER_STEPS} accent="primary" />
-      </div>
-    </section>
-  );
-}
-
-export function DriverJourney() {
-  return (
-    <section id="driver-journey" className="relative bg-surface/40">
-      <div className="mx-auto max-w-6xl px-6 py-14 md:py-28">
-        <Reveal>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-            For drivers
-          </p>
-          <h2 className="mt-3 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
-            Turn your daily commute into daily income.
-          </h2>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground-muted md:text-lg">
-            You stay in control: your route, your seats, your fare, your pickup choices. TagRides
-            adds the demand, records, and accountability layer around the trip.
-          </p>
-        </Reveal>
-        <JourneyGrid steps={DRIVER_STEPS} accent="accent" />
+          </div>
+        </div>
       </div>
     </section>
   );

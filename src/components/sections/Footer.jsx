@@ -10,7 +10,16 @@ import brand from '@/data/brand.json';
 // doesn't ship trademark-protected logos, and these stay crisper anyway.
 function InstagramLogo(props) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+      {...props}
+    >
       <rect x="3" y="3" width="18" height="18" rx="5" />
       <circle cx="12" cy="12" r="4" />
       <circle cx="17.5" cy="6.5" r="1.1" fill="currentColor" stroke="none" />
@@ -43,36 +52,36 @@ function FacebookLogo(props) {
 }
 
 const SOCIAL = [
-  { label: 'Instagram',  href: brand.socials.instagram, Icon: InstagramLogo },
-  { label: 'X (Twitter)', href: brand.socials.twitter,  Icon: XLogo },
-  { label: 'LinkedIn',    href: brand.socials.linkedin, Icon: LinkedinLogo },
-  { label: 'Facebook',    href: brand.socials.facebook, Icon: FacebookLogo },
+  { label: 'Instagram', href: brand.socials.instagram, Icon: InstagramLogo },
+  { label: 'X (Twitter)', href: brand.socials.twitter, Icon: XLogo },
+  { label: 'LinkedIn', href: brand.socials.linkedin, Icon: LinkedinLogo },
+  { label: 'Facebook', href: brand.socials.facebook, Icon: FacebookLogo },
 ];
 
 const COLUMNS = [
   {
     title: 'About',
     items: [
-      { label: 'Story',         href: '/about-us' },
-      { label: 'Field notes',   href: '/blog' },
-      { label: 'Brand',         href: '/brand' },
+      { label: 'Story', href: '/about-us' },
+      { label: 'Field notes', href: '/blog' },
+      { label: 'Brand', href: '/brand' },
     ],
   },
   {
     title: 'Product',
     items: [
-      { label: 'How it works',  href: '/#rider-journey' },
-      { label: 'Safety',        href: '/#safety' },
-      { label: 'Pricing',       href: '/#pricing' },
-      { label: 'Train the AI',  href: '/contribute' },
+      { label: 'How it works', href: '/#how-it-works' },
+      { label: 'Safety', href: '/#safety' },
+      { label: 'Pricing', href: '/#pricing' },
+      { label: 'Train the AI', href: '/contribute' },
     ],
   },
   {
     title: 'For Partners',
     items: [
-      { label: 'Investors',     href: 'mailto:investors@tagrider.com' },
-      { label: 'Press',         href: 'mailto:press@tagrider.com' },
-      { label: 'Talk to us',    href: 'mailto:hello@tagrider.com' },
+      { label: 'Investors', href: 'mailto:investors@tagrider.com' },
+      { label: 'Press', href: 'mailto:press@tagrider.com' },
+      { label: 'Talk to us', href: 'mailto:hello@tagrider.com' },
     ],
   },
 ];
@@ -84,7 +93,11 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-[1.4fr_repeat(3,1fr)]">
           {/* Brand block */}
           <div>
-            <Link href="/" aria-label="Tag Rides — home" className="inline-block transition hover:opacity-80">
+            <Link
+              href="/"
+              aria-label="Tag Rides — home"
+              className="inline-block transition hover:opacity-80"
+            >
               <Lockup size={36} />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-foreground-muted">
@@ -135,8 +148,7 @@ export function Footer() {
         <div className="mt-16 flex flex-col gap-4 border-t border-border pt-8 text-xs text-foreground-muted md:flex-row md:items-center md:justify-between">
           <div className="space-y-1">
             <p>
-              Operated by{' '}
-              <span className="font-medium text-foreground">{brand.company}</span> ·{' '}
+              Operated by <span className="font-medium text-foreground">{brand.company}</span> ·{' '}
               {brand.location.shortAddress}
             </p>
             <p className="text-foreground-disabled">
@@ -144,8 +156,12 @@ export function Footer() {
             </p>
           </div>
           <div className="flex items-center gap-5">
-            <Link href="/privacy" className="hover:text-foreground">Privacy</Link>
-            <Link href="/terms"   className="hover:text-foreground">Terms</Link>
+            <Link href="/privacy" className="hover:text-foreground">
+              Privacy
+            </Link>
+            <Link href="/terms" className="hover:text-foreground">
+              Terms
+            </Link>
           </div>
         </div>
       </div>

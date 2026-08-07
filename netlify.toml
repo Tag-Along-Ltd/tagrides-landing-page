@@ -4,3 +4,27 @@
 
 [build.environment]
   NEXT_TELEMETRY_DISABLED = "1"
+
+[[redirects]]
+  from = "/brand-kit"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/brand-kit/*"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/pitch/ai-poc"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/pitch/ai-poc/*"
+  to = "/404"
+  status = 404
+  force = true

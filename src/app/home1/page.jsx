@@ -4,24 +4,12 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
 import { DriverDiscoveryCarousel } from '@/components/sections/DriverDiscoveryCarousel';
-import dynamic from 'next/dynamic';
-
-// Charting is below the fold. Skip on SSR; load after hydrate.
-const LagosResearchCarousel = dynamic(
-  () => import('@/components/sections/LagosResearchCarousel').then((m) => m.LagosResearchCarousel),
-  { ssr: false, loading: () => <div className="h-[500px]" /> },
-);
 import { AuroraText } from '@/components/magicui/aurora-text';
 import { Header } from '@/components/sections/Header';
-import { Problem } from '@/components/sections/Problem';
-import { StoryLadder } from '@/components/sections/StoryLadder';
-import { Solution } from '@/components/sections/Solution';
-import { RiderJourney, DriverJourney } from '@/components/sections/Journeys';
-import { TwoModes } from '@/components/sections/TwoModes';
+import { ProductJourney } from '@/components/sections/Journeys';
 import { PricingPhilosophy } from '@/components/sections/PricingPhilosophy';
 import { Safety } from '@/components/sections/Safety';
-import { VisionNumbers } from '@/components/sections/VisionNumbers';
-import { WhyNow } from '@/components/sections/WhyNow';
+import { TractionProof } from '@/components/sections/TractionProof';
 import { BackedBy } from '@/components/sections/BackedBy';
 import { FinalCTA } from '@/components/sections/FinalCTA';
 import { Footer } from '@/components/sections/Footer';
@@ -130,18 +118,11 @@ const Home1 = () => {
         </div>
       </section>
 
-      <Problem />
-      <Solution />
-      <DriverJourney />
-      <RiderJourney />
+      <ProductJourney />
       <PricingPhilosophy />
       <Safety />
-      <TwoModes />
-      <StoryLadder />
-      <LagosResearchCarousel />
+      <TractionProof />
       <BackedBy />
-      <VisionNumbers />
-      <WhyNow />
       <FinalCTA />
       <Footer />
     </main>

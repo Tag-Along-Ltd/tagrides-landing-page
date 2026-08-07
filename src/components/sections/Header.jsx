@@ -8,10 +8,10 @@ import brand from '@/data/brand.json';
 import { cn } from '@/lib/utils';
 
 const NAV = [
-  { label: 'For drivers', href: '/#driver-journey' },
-  { label: 'For riders', href: '/#rider-journey' },
-  { label: 'Safety',       href: '/#safety' },
-  { label: 'About',        href: '/about-us' },
+  { label: 'How it works', href: '/#how-it-works' },
+  { label: 'Pricing', href: '/#pricing' },
+  { label: 'Safety', href: '/#safety' },
+  { label: 'About', href: '/about-us' },
 ];
 
 // Floating, translucent header — sits over every page hero without

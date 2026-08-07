@@ -1,16 +1,25 @@
 'use client';
 
-import { ShieldCheck, Star, Receipt, Share2, Siren, Wallet } from 'lucide-react';
+import { BadgeCheck, MapPinned, Receipt } from 'lucide-react';
 
 import { Reveal, RevealStagger, RevealItem } from './Reveal';
 
 const SIGNALS = [
-  { icon: ShieldCheck, title: 'Verified drivers',                  body: 'Drivers are checked with ID, vehicle details, and market-specific verification before activation.' },
-  { icon: Star,        title: 'Real ratings, both ways',           body: 'Riders rate drivers. Drivers rate riders. Both build a record over time.' },
-  { icon: Receipt,     title: 'Every fare logged before pickup',   body: 'No "this was supposed to cost less" at the end of the trip.' },
-  { icon: Share2,      title: 'Trip tracking',                     body: 'Share your live trip with a friend or family member with one tap.' },
-  { icon: Siren,       title: 'In-app incident reporting',         body: 'Report an issue with the trip, fare, route, rider, and driver records already attached.' },
-  { icon: Wallet,      title: 'Cash or wallet, your choice',       body: 'We support how people actually pay in each launch market. No forced card-first onboarding.' },
+  {
+    icon: BadgeCheck,
+    title: 'Know who you ride with',
+    body: 'Driver identity and vehicle details are checked before activation. Riders and drivers both build ratings over time.',
+  },
+  {
+    icon: MapPinned,
+    title: 'Keep the trip visible',
+    body: 'Track the pickup, share the live trip, and report an incident with the route and participant records attached.',
+  },
+  {
+    icon: Receipt,
+    title: 'Agree before pickup',
+    body: 'The fare is recorded before the ride starts. Pay with cash or wallet without changing the agreed amount.',
+  },
 ];
 
 export function Safety() {
