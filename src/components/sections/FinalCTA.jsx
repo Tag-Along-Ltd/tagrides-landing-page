@@ -31,14 +31,18 @@ export function FinalCTA() {
       const res = await fetch(landingApiPath('/api/waitlist'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, website: fd.get('website') || '' }),
+        body: JSON.stringify({
+          email,
+          website: fd.get('website') || '',
+          source: 'homepage-final-cta',
+        }),
       });
       if (res.ok) {
         const data = await res.json().catch(() => ({}));
         toast.success(
           data?.alreadySubscribed
             ? "You're already on the list — see you at launch."
-            : "On the list. We'll email when Tag Rides opens the first pilot corridor.",
+            : "On the list. We'll email when TagRides opens the first pilot corridor.",
           { theme: 'dark' },
         );
         setEmail('');
@@ -68,11 +72,11 @@ export function FinalCTA() {
       <div className="relative mx-auto max-w-3xl px-6 py-20 text-center md:py-28">
         <Reveal>
           <h2 className="font-display text-4xl font-extrabold leading-[1.05] tracking-tight md:text-6xl">
-            Start before the first corridor opens.
+            Get ready for the first corridor.
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-white/85 md:text-lg">
-            Onboard now, complete verification, and be ready when riders start booking along the
-            first live routes.
+            Apply for pilot onboarding and be ready when riders start booking along the first public
+            route.
           </p>
 
           <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -80,7 +84,7 @@ export function FinalCTA() {
               href={brand.app.signinDriver}
               className="group inline-flex h-12 items-center justify-center gap-2 rounded-full bg-white px-6 text-sm font-semibold text-primary transition hover:bg-accent hover:text-accent-foreground"
             >
-              Start driving
+              Apply as a pilot driver
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
             </a>
           </div>
@@ -92,6 +96,7 @@ export function FinalCTA() {
           {/* Inline waitlist email — secondary conversion for rider demand */}
           <form
             onSubmit={handleSubmit}
+            aria-busy={status === 'submitting'}
             className="mx-auto mt-4 flex w-full max-w-md flex-col gap-3 sm:flex-row sm:items-center"
           >
             <label htmlFor="final-waitlist-email" className="sr-only">
@@ -126,6 +131,22 @@ export function FinalCTA() {
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
             </button>
           </form>
+
+          <p className="mx-auto mt-3 max-w-md text-xs text-white/70">
+            We use your email only for launch updates. Read our{' '}
+            <Link href="/privacy" className="text-white underline underline-offset-4">
+              privacy notice
+            </Link>
+            .
+          </p>
+
+          <p className="sr-only" role="status" aria-live="polite">
+            {status === 'submitting'
+              ? 'Adding your email to the waitlist.'
+              : status === 'done'
+                ? 'Your email is on the waitlist.'
+                : ''}
+          </p>
 
           <p className="mt-8 text-xs uppercase tracking-[0.18em] text-white/65">
             Partners, press, investors:{' '}

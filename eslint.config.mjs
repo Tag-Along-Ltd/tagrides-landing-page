@@ -1,10 +1,17 @@
 import nextCoreWebVitals from 'eslint-config-next/core-web-vitals';
 import prettier from 'eslint-config-prettier/flat';
 
-export default [
+const config = [
   {
-    ignores: ['.next/**', 'node_modules/**', 'public/**', 'src/lotties/**'],
+    ignores: ['.next/**', '.netlify/**', 'node_modules/**', 'public/**', 'src/lotties/**'],
   },
   ...nextCoreWebVitals,
   prettier,
+  {
+    rules: {
+      'react/no-unescaped-entities': 'off',
+    },
+  },
 ];
+
+export default config;

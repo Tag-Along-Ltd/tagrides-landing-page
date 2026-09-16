@@ -4,31 +4,16 @@ import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
 import { Reveal, RevealStagger, RevealItem } from '@/components/sections/Reveal';
-import clientPromise from '@/lib/mongodb';
+import { getPublishedPosts } from '@/lib/posts';
 
 export const metadata = {
   title: 'Field notes — TagRides',
   description:
-    'Lagos-first route-share, danfo-level fare logic, and the work of building TagRides for dense cities — in plain language.',
+    'Safety, shared-route economics and the work of building TagRides. A global transport ambition, starting with a focused Lagos pilot.',
+  alternates: { canonical: '/blog' },
 };
 
 export const dynamic = 'force-static';
-
-async function getPosts() {
-  try {
-    const client = await clientPromise;
-    return await client
-      .db('myBlog')
-      .collection('posts')
-      .find({ status: 'published' }, { projection: { content: 0 } })
-      .sort({ publishedAt: -1 })
-      .limit(50)
-      .toArray();
-  } catch (err) {
-    console.error('blog index Mongo read failed', err);
-    return [];
-  }
-}
 
 function formatDate(d) {
   if (!d) return '';
@@ -40,7 +25,7 @@ function formatDate(d) {
 }
 
 export default async function BlogIndexPage() {
-  const posts = await getPosts();
+  const posts = await getPublishedPosts();
 
   return (
     <main id="main-content" className="min-h-screen bg-background text-foreground-muted">
@@ -56,8 +41,8 @@ export default async function BlogIndexPage() {
               How Lagos moves — and what that teaches every dense city.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-foreground-muted md:text-lg">
-              Short essays on route-share economics, danfo-level fare logic, accountable shared
-              mobility, and the work of building TagRides. Plain language. No filler.
+              The people, economics and practical work behind shared mobility. A global ambition,
+              grounded in Lagos—and an invitation to help build the first route.
             </p>
           </Reveal>
         </div>
@@ -138,13 +123,16 @@ function EmptyState() {
   return (
     <Reveal>
       <div className="mx-auto max-w-xl rounded-3xl border border-border bg-surface p-10 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Shipping soon</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+          Shipping soon
+        </p>
         <h2 className="mt-3 font-display text-2xl font-bold tracking-tight text-foreground md:text-3xl">
           First essays land this quarter.
         </h2>
         <p className="mt-4 text-sm leading-relaxed text-foreground-muted">
-          We&rsquo;re writing about route-share economics, the first Lagos corridor, and what we learned
-          from 210 rider responses. Drop your email on the home page to be the first to read them.
+          We&rsquo;re writing about route-share economics, the first Lagos corridor, and what we
+          learned from 210 rider responses. Drop your email on the home page to be the first to read
+          them.
         </p>
         <Link
           href="/#join"

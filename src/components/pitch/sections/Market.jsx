@@ -87,13 +87,32 @@ export function Market() {
             </div>
             <div className="font-mono text-xs text-foreground-muted">Scenario model</div>
           </div>
-          <div className="h-[280px] md:h-[340px]">
+          <div aria-hidden="true" className="h-[280px] md:h-[340px]">
             <ReactECharts
               option={option}
               style={{ height: '100%', width: '100%' }}
               opts={{ renderer: 'svg' }}
             />
           </div>
+          <table className="sr-only">
+            <caption>Illustrative annual rider fares by operating scale</caption>
+            <thead>
+              <tr>
+                <th scope="col">Scale</th>
+                <th scope="col">Annual rider fares</th>
+                <th scope="col">Scenario detail</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.scale.map((item) => (
+                <tr key={item.label}>
+                  <th scope="row">{item.label}</th>
+                  <td>{item.display}</td>
+                  <td>{item.detail}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </motion.div>
 
         <motion.div

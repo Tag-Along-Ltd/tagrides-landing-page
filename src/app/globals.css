@@ -332,6 +332,26 @@ h4 {
     radial-gradient(circle at 50% 50%, rgba(0, 128, 128, 0.04) 0, transparent 60%);
 }
 
+/* The home hero is a single atmosphere, not a lit rectangle behind Swiper.
+   Every light fades to transparent before the edge of its painting area. */
+.home-hero-light {
+  background:
+    radial-gradient(ellipse 65% 65% at 12% 20%, rgba(0, 128, 128, 0.16), transparent 78%),
+    radial-gradient(ellipse 45% 60% at 85% 55%, rgba(245, 158, 11, 0.045), transparent 78%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 65%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 65%, transparent 100%);
+}
+
+.driver-carousel-aura {
+  inset: -160px -140px -120px;
+  background: radial-gradient(
+    ellipse closest-side at 50% 48%,
+    rgba(0, 128, 128, 0.24) 0%,
+    rgba(0, 128, 128, 0.09) 48%,
+    transparent 100%
+  );
+}
+
 /* ------------------------------------------------------------------
  * Pitch deck — Present mode + Print
  * ------------------------------------------------------------------
@@ -509,10 +529,13 @@ h4 {
    * button, the result would be unreadable.  Hide it and surface a
    * note telling them to use /pitch/print.
    * ------------------------------------------------------------------ */
-  body:not(:has(.pitch-print-slide)) main {
+  body:not(:has(.pitch-print-slide)):not(:has(.brand-print-page)):not(:has(.brand-template-page))
+    main {
     display: none !important;
   }
-  body:not(:has(.pitch-print-slide))::before {
+  body:not(:has(.pitch-print-slide)):not(:has(.brand-print-page)):not(
+      :has(.brand-template-page)
+    )::before {
     content: 'Use the Download button (or visit /pitch/print) to save the PDF.  This is the live deck page, not the print surface.';
     display: block;
     padding: 40mm 30mm;

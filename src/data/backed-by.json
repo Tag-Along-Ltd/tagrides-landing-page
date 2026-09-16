@@ -1,7 +1,7 @@
 {
   "eyebrow": "Built through",
-  "headline": "Supported by programs built for African scale.",
-  "lead": "Tag Rides is a Tony Elumelu Foundation grantee, a Microsoft for Startups Founders Hub member, and an ALX Ventures program graduate. The first corridor is local; the support network is built for scale.",
+  "headline": "We’ve had help getting this far.",
+  "lead": "Grant and enterprise support, programme experience, and cloud credits have helped us build. The next step is a focused Lagos pilot with drivers and a commuter community.",
   "programs": [
     {
       "name": "Tony Elumelu Foundation",
@@ -15,7 +15,7 @@
       "name": "Google for Startups",
       "shorthand": "Google for Startups",
       "role": "Ecosystem participant",
-      "note": "In the Google for Startups program.",
+      "note": "Google for Startups ecosystem participation and cloud credits.",
       "weight": "primary",
       "logoSrc": null
     },
@@ -23,7 +23,7 @@
       "name": "Microsoft for Startups",
       "shorthand": "Microsoft for Startups",
       "role": "Founders Hub",
-      "note": "Building on Azure as a Microsoft Founders Hub member.",
+      "note": "Founders Hub membership and cloud credits for the build.",
       "weight": "standard",
       "logoSrc": null
     },
@@ -31,7 +31,23 @@
       "name": "ALX Ventures",
       "shorthand": "ALX Ventures",
       "role": "Program graduate",
-      "note": "Founder-stage venture program.",
+      "note": "Founder-stage venture programme experience.",
+      "weight": "standard",
+      "logoSrc": null
+    },
+    {
+      "name": "AWS Activate",
+      "shorthand": "AWS",
+      "role": "Cloud credits",
+      "note": "Cloud credits supporting the infrastructure behind the MVP.",
+      "weight": "standard",
+      "logoSrc": null
+    },
+    {
+      "name": "Ugwumba Enterprise Challenge",
+      "shorthand": "Ugwumba",
+      "role": "Enterprise support",
+      "note": "Support through the Ugwumba Enterprise Challenge.",
       "weight": "standard",
       "logoSrc": null
     }

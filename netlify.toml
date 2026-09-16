@@ -4,6 +4,8 @@
 
 [build.environment]
   NEXT_TELEMETRY_DISABLED = "1"
+  NEXT_PUBLIC_SITE_URL = "https://tagrider.com"
+  NEXT_PUBLIC_ALLOWED_ORIGIN = "https://tagrider.com"
 
 [[redirects]]
   from = "/brand-kit"

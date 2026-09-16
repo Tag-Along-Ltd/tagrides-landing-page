@@ -1,8 +1,11 @@
 'use client';
 
-import { Star, MapPin, Users, Clock } from 'lucide-react';
+import { useState } from 'react';
+import Image from 'next/image';
+import { Pause, Play, MapPin, Users, Clock } from 'lucide-react';
+import { useReducedMotion } from 'motion/react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectCoverflow, Pagination } from 'swiper/modules';
+import { A11y, Autoplay, EffectCoverflow, Pagination } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
@@ -10,17 +13,12 @@ import 'swiper/css/pagination';
 
 import { cn } from '@/lib/utils';
 
-// Avatar URLs use https://pravatar.cc — free, deterministic by `img` ID,
-// no API key required. Swap each `avatar` field for a real driver photo
-// once you've got them.
-const DRIVERS = [
-  { id: 1, name: 'Tunde A.',   from: 'Yaba',     to: 'V.I.',    eta: 12, fare: 600,  rating: 4.8, seats: 2, car: 'Corolla',  avatar: 'https://i.pravatar.cc/150?img=12' },
-  { id: 2, name: 'Aisha O.',   from: 'Surulere', to: 'Lekki',   eta: 28, fare: 900,  rating: 4.7, seats: 1, car: 'Sonata',   avatar: 'https://i.pravatar.cc/150?img=44' },
-  { id: 3, name: 'Chinedu E.', from: 'Ikeja',    to: 'Ajah',    eta: 45, fare: 1200, rating: 4.9, seats: 3, car: 'Pilot',    avatar: 'https://i.pravatar.cc/150?img=33' },
-  { id: 4, name: 'Funmi B.',   from: 'Festac',   to: 'CMS',     eta: 22, fare: 550,  rating: 4.6, seats: 2, car: 'Picanto',  avatar: 'https://i.pravatar.cc/150?img=47' },
-  { id: 5, name: 'Bola S.',    from: 'Magodo',   to: 'Yaba',    eta: 18, fare: 450,  rating: 4.8, seats: 3, car: 'Camry',    avatar: 'https://i.pravatar.cc/150?img=15' },
-  { id: 6, name: 'Kemi A.',    from: 'Ojo',      to: 'Marina',  eta: 38, fare: 800,  rating: 4.7, seats: 2, car: 'Accord',   avatar: 'https://i.pravatar.cc/150?img=23' },
-  { id: 7, name: 'Ifeanyi U.', from: 'Gbagada',  to: 'Ikoyi',   eta: 24, fare: 700,  rating: 4.9, seats: 1, car: 'Picanto',  avatar: 'https://i.pravatar.cc/150?img=8'  },
+const DEMO_REQUESTS = [
+  { id: 1, name: 'Tunde A.', from: 'Yaba', to: 'Marina', eta: 12, fare: 600, seats: 2 },
+  { id: 2, name: 'Aisha O.', from: 'Onike', to: 'Marina', eta: 18, fare: 650, seats: 1 },
+  { id: 3, name: 'David O.', from: 'Sabo', to: 'V.I.', eta: 16, fare: 700, seats: 3 },
+  { id: 4, name: 'Funmi B.', from: 'Adekunle', to: 'CMS', eta: 14, fare: 550, seats: 2 },
+  { id: 5, name: 'Ada E.', from: 'UNILAG', to: 'Marina', eta: 20, fare: 700, seats: 3 },
 ];
 
 function DriverCard({ driver, isActive }) {
@@ -28,27 +26,23 @@ function DriverCard({ driver, isActive }) {
     <div
       className={cn(
         'w-[260px] rounded-3xl border bg-elevated p-6 transition-all duration-500',
-        isActive
-          ? 'border-primary/50 shadow-[0_30px_90px_-30px_rgba(0,128,128,0.6)]'
-          : 'border-border bg-surface/70 opacity-60',
+        isActive ? 'border-primary/60' : 'border-border bg-surface/70 opacity-60',
       )}
     >
       <div className="flex items-start gap-4">
-        <div className="relative">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={driver.avatar}
-            alt={driver.name}
-            className="size-14 rounded-full object-cover ring-2 ring-primary/40"
-          />
-          <div className="absolute -bottom-1 -right-1 flex items-center gap-0.5 rounded-full bg-background px-1.5 py-0.5 text-[10px] font-medium text-foreground ring-1 ring-border">
-            <Star className="size-2.5 fill-accent-star text-accent-star" />
-            {driver.rating}
-          </div>
-        </div>
+        <Image
+          src={`/assets/commuters/commuter-0${driver.id}.webp`}
+          alt=""
+          width={56}
+          height={56}
+          unoptimized
+          className="size-14 shrink-0 rounded-full object-cover ring-2 ring-primary/40"
+        />
         <div className="min-w-0 flex-1">
           <p className="truncate text-base font-semibold text-foreground">{driver.name}</p>
-          <p className="text-[10px] uppercase tracking-[0.14em] text-foreground-muted">Rider request</p>
+          <p className="text-[10px] uppercase tracking-[0.14em] text-foreground-muted">
+            Example request
+          </p>
           <p className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-foreground">
             <MapPin className="size-3.5 text-primary" />
             {driver.from} <span className="text-foreground-muted">→</span> {driver.to}
@@ -88,20 +82,37 @@ function DriverCard({ driver, isActive }) {
 }
 
 export function DriverDiscoveryCarousel({ className }) {
+  const reduceMotion = useReducedMotion();
+  const [swiper, setSwiper] = useState(null);
+  const [paused, setPaused] = useState(false);
+
+  function toggleAutoplay() {
+    if (!swiper || reduceMotion) return;
+    if (paused) swiper.autoplay.start();
+    else swiper.autoplay.stop();
+    setPaused(!paused);
+  }
+
   return (
-    <div className={cn('relative w-full', className)}>
-      {/* Ambient teal glow */}
-      <div className="pointer-events-none absolute inset-0 -z-10 mx-auto h-[380px] max-w-[560px] rounded-full bg-primary/10 blur-3xl" />
+    <div className={cn('driver-carousel relative isolate w-full', className)}>
+      {/* Keep the light OUTSIDE Swiper's clipping viewport. A radial fade,
+          rather than a card shadow, avoids a rectangular cutoff at its edges. */}
+      <div className="driver-carousel-aura pointer-events-none absolute -z-10" aria-hidden="true" />
 
       <Swiper
-        modules={[EffectCoverflow, Autoplay, Pagination]}
+        modules={[A11y, EffectCoverflow, Autoplay, Pagination]}
         effect="coverflow"
         centeredSlides
         slidesPerView="auto"
         loop
         grabCursor
         speed={650}
-        autoplay={{ delay: 3200, disableOnInteraction: false }}
+        autoplay={reduceMotion ? false : { delay: 3200, disableOnInteraction: false }}
+        onSwiper={setSwiper}
+        a11y={{
+          containerMessage: 'Illustrative rider requests',
+          slideLabelMessage: 'Example {{index}} of {{slidesLength}}',
+        }}
         coverflowEffect={{
           rotate: 0,
           stretch: -30,
@@ -115,16 +126,29 @@ export function DriverDiscoveryCarousel({ className }) {
         }}
         className="overflow-hidden !px-2 [&_.swiper-pagination]:!relative [&_.swiper-pagination]:!mt-8"
       >
-        {DRIVERS.map((driver, i) => (
+        {DEMO_REQUESTS.map((driver) => (
           <SwiperSlide key={driver.id} className="!relative !w-[260px]">
             {({ isActive }) => <DriverCard driver={driver} isActive={isActive} />}
           </SwiperSlide>
         ))}
       </Swiper>
 
-      <p className="mt-6 text-center text-xs uppercase tracking-[0.18em] text-foreground-muted">
-        Driver view · illustrative rider demand
-      </p>
+      <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-center text-[10px] uppercase tracking-[0.14em] text-foreground-muted">
+        <span>Driver view · fictional requests · stock portraits</span>
+        <button
+          type="button"
+          onClick={toggleAutoplay}
+          className="inline-flex items-center gap-1 rounded-full border border-border px-2 py-1 text-foreground-muted transition hover:text-foreground motion-reduce:hidden"
+          aria-label={paused ? 'Play demo requests' : 'Pause demo requests'}
+        >
+          {paused ? (
+            <Play aria-hidden="true" className="size-3" />
+          ) : (
+            <Pause aria-hidden="true" className="size-3" />
+          )}
+          {paused ? 'Play' : 'Pause'}
+        </button>
+      </div>
     </div>
   );
 }

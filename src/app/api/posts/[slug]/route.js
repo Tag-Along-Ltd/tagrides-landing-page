@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 
 import clientPromise from '@/lib/mongodb';
+import { blogPosts } from '@/data/blog-posts';
 
 const DB_NAME = 'myBlog';
 const COLLECTION = 'posts';
@@ -23,6 +24,8 @@ function isAdmin(request) {
 
 export async function GET(request, { params }) {
   const { slug } = await params;
+  const releasePost = blogPosts.find((post) => post.slug === slug && post.status === 'published');
+  if (releasePost) return withCors(NextResponse.json({ post: releasePost }));
   try {
     const client = await clientPromise;
     const collection = client.db(DB_NAME).collection(COLLECTION);
@@ -45,6 +48,14 @@ export async function PUT(request, { params }) {
     return withCors(NextResponse.json({ error: 'Unauthorized.' }, { status: 401 }));
   }
   const { slug } = await params;
+  if (blogPosts.some((post) => post.slug === slug)) {
+    return withCors(
+      NextResponse.json(
+        { error: 'This article is managed in the website repository.' },
+        { status: 409 },
+      ),
+    );
+  }
   let body;
   try {
     body = await request.json();
@@ -57,7 +68,11 @@ export async function PUT(request, { params }) {
   if (typeof body.excerpt === 'string') update.excerpt = body.excerpt.trim().slice(0, 280);
   if (typeof body.content === 'string') update.content = body.content.trim().slice(0, 200_000);
   if (typeof body.author === 'string') update.author = body.author.trim().slice(0, 120);
-  if (Array.isArray(body.tags)) update.tags = body.tags.slice(0, 10).map(String).map((s) => s.slice(0, 32));
+  if (Array.isArray(body.tags))
+    update.tags = body.tags
+      .slice(0, 10)
+      .map(String)
+      .map((s) => s.slice(0, 32));
   if (typeof body.coverImage === 'string') update.coverImage = body.coverImage.slice(0, 500);
   if (body.status === 'published' || body.status === 'draft' || body.status === 'archived') {
     update.status = body.status;
@@ -87,6 +102,14 @@ export async function DELETE(request, { params }) {
     return withCors(NextResponse.json({ error: 'Unauthorized.' }, { status: 401 }));
   }
   const { slug } = await params;
+  if (blogPosts.some((post) => post.slug === slug)) {
+    return withCors(
+      NextResponse.json(
+        { error: 'This article is managed in the website repository.' },
+        { status: 409 },
+      ),
+    );
+  }
   try {
     const client = await clientPromise;
     const collection = client.db(DB_NAME).collection(COLLECTION);

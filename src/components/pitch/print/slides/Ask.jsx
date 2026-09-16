@@ -7,19 +7,13 @@ import pitch from '@/data/pitch.json';
 // page carries: snapshot (round / amount / runway) + use-of-funds +
 // the 18-month milestones. Contact card is its own slide so this one
 // doesn't feel crammed.
-export function PrintAsk({ page, total, audience, watermark }) {
+export function PrintAsk({ page, total, audience, audienceKey, watermark }) {
   const d = pitch.ask;
-  const cfg = pitch.audiences[audience] ?? pitch.audiences.investor;
+  const cfg = pitch.audiences[audienceKey] ?? pitch.audiences.investor;
   const ask = cfg.ask ?? pitch.audiences.investor.ask;
 
   return (
-    <Slide
-      page={page}
-      total={total}
-      audience={cfg.label}
-      watermark={watermark}
-      section="The Ask"
-    >
+    <Slide page={page} total={total} audience={cfg.label} watermark={watermark} section="The Ask">
       {/* Headline */}
       <div
         style={{
@@ -120,41 +114,60 @@ export function PrintAsk({ page, total, audience, watermark }) {
           >
             Use of funds
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', flex: 1 }}>
-          {ask.use.map((u) => (
-            <div key={u.label}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1mm' }}>
-                <span
-                  style={{
-                    fontFamily: 'var(--font-display)',
-                    fontSize: '10pt',
-                    fontWeight: 700,
-                    color: '#E5E5E5',
-                  }}
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-evenly',
+              flex: 1,
+            }}
+          >
+            {ask.use.map((u) => (
+              <div key={u.label}>
+                <div
+                  style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1mm' }}
                 >
-                  {u.label}
-                </span>
-                <span
-                  style={{
-                    fontFamily: 'var(--font-mono)',
-                    fontSize: '9pt',
-                    color: '#E5E5E5',
-                    fontVariantNumeric: 'tabular-nums',
-                  }}
-                >
-                  {u.pct}%
-                </span>
-              </div>
-              <div style={{ height: '2mm', backgroundColor: '#222', borderRadius: '999px', overflow: 'hidden', marginTop: '2mm' }}>
-                <div style={{ width: `${u.pct}%`, height: '100%', backgroundColor: '#008080' }} />
-              </div>
-              {u.detail && (
-                <div style={{ fontSize: '8.5pt', lineHeight: 1.4, color: '#888', marginTop: '2mm' }}>
-                  {u.detail}
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-display)',
+                      fontSize: '10pt',
+                      fontWeight: 700,
+                      color: '#E5E5E5',
+                    }}
+                  >
+                    {u.label}
+                  </span>
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '9pt',
+                      color: '#E5E5E5',
+                      fontVariantNumeric: 'tabular-nums',
+                    }}
+                  >
+                    {u.pct}%
+                  </span>
                 </div>
-              )}
-            </div>
-          ))}
+                <div
+                  style={{
+                    height: '2mm',
+                    backgroundColor: '#222',
+                    borderRadius: '999px',
+                    overflow: 'hidden',
+                    marginTop: '2mm',
+                  }}
+                >
+                  <div style={{ width: `${u.pct}%`, height: '100%', backgroundColor: '#008080' }} />
+                </div>
+                {u.detail && (
+                  <div
+                    style={{ fontSize: '8.5pt', lineHeight: 1.4, color: '#888', marginTop: '2mm' }}
+                  >
+                    {u.detail}
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
 
@@ -172,7 +185,17 @@ export function PrintAsk({ page, total, audience, watermark }) {
           >
             What this unlocks · 18 months
           </div>
-          <ol style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', flex: 1 }}>
+          <ol
+            style={{
+              listStyle: 'none',
+              padding: 0,
+              margin: 0,
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-evenly',
+              flex: 1,
+            }}
+          >
             {(ask.milestones ?? []).map((m, i) => (
               <li
                 key={i}

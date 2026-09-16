@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" fill="none">
+  <rect width="1200" height="675" fill="#101919"/>
+  <g stroke="#213737" stroke-width="1" opacity=".55">
+    <path d="M0 135h1200M0 270h1200M0 405h1200M0 540h1200M150 0v675M300 0v675M450 0v675M600 0v675M750 0v675M900 0v675M1050 0v675"/>
+  </g>
+  <text x="80" y="92" fill="#F59E0B" font-family="Arial,sans-serif" font-size="20" letter-spacing="4">TAGRIDES / FIELD NOTES</text>
+  <text x="80" y="180" fill="#E5E5E5" font-family="Arial,sans-serif" font-weight="700" font-size="62">Their route.</text>
+  <text x="80" y="252" fill="#BFE5E5" font-family="Arial,sans-serif" font-weight="700" font-size="62">Your ride.</text>
+  <path d="M90 450h240c80 0 80-90 160-90h480" stroke="#5F8F8F" stroke-width="14" stroke-linecap="round"/>
+  <path d="M550 550v-90c0-65 35-100 100-100" stroke="#F59E0B" stroke-width="7" stroke-linecap="round" stroke-dasharray="9 16"/>
+  <path d="M650 360h320" stroke="#BFE5E5" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="90" cy="450" r="18" fill="#101919" stroke="#5F8F8F" stroke-width="7"/>
+  <circle cx="550" cy="550" r="15" fill="#F59E0B"/>
+  <circle cx="650" cy="360" r="21" fill="#101919" stroke="#F59E0B" stroke-width="7"/>
+  <circle cx="990" cy="360" r="24" fill="#BFE5E5"/>
+  <path d="m985 350 10 10-10 10" stroke="#101919" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="80" y="507" fill="#B3B3B3" font-family="Arial,sans-serif" font-size="20">A journey already planned</text>
+  <text x="586" y="557" fill="#F59E0B" font-family="Arial,sans-serif" font-size="20">The connection</text>
+  <text x="764" y="322" fill="#BFE5E5" font-family="Arial,sans-serif" font-size="20">The shared stretch</text>
+  <text x="80" y="628" fill="#B3B3B3" font-family="Arial,sans-serif" font-size="17">LAGOS FIRST · A GLOBAL AMBITION</text>
+</svg>

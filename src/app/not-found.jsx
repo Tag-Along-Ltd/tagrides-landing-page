@@ -7,7 +7,7 @@ import { Logo } from '@/components/brand/Logo';
 import { AuroraText } from '@/components/magicui/aurora-text';
 
 export const metadata = {
-  title: '404 — Tag Rides',
+  title: '404 — TagRides',
   description: 'This page took a wrong turn. Let us walk you back to the main road.',
 };
 
@@ -46,7 +46,7 @@ export default function NotFound() {
                 href="/about-us"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-primary/60 bg-transparent px-6 text-sm font-semibold text-primary transition hover:bg-primary/10"
               >
-                About Tag Rides
+                About TagRides
               </Link>
             </div>
           </div>

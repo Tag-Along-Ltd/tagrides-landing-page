@@ -6,8 +6,7 @@ import { Users, Sparkles } from 'lucide-react';
 import { PitchSection, SectionHeading } from '../../motion/Section';
 import pitch from '@/data/pitch.json';
 
-// Modes — Tag-Along vs Direct. Two cards side by side, the left
-// (Tag-Along, the differentiated mode) is visually weighted.
+// Tag-Along is live; Direct remains visible only as a future roadmap mode.
 export function Modes() {
   const data = pitch.modes;
   return (
@@ -30,9 +29,11 @@ function ModeCard({ mode, primary = false }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.6, delay: primary ? 0 : 0.1 }}
-      className={primary
-        ? 'relative overflow-hidden rounded-2xl bg-primary p-8 text-primary-foreground ring-1 ring-primary md:p-10'
-        : 'relative overflow-hidden rounded-2xl bg-surface/70 p-8 ring-1 ring-border/40 md:p-10'}
+      className={
+        primary
+          ? 'relative overflow-hidden rounded-2xl bg-primary p-8 text-primary-foreground ring-1 ring-primary md:p-10'
+          : 'relative overflow-hidden rounded-2xl bg-surface/70 p-8 ring-1 ring-border/40 md:p-10'
+      }
     >
       <div className="flex items-center justify-between">
         <Icon className={primary ? 'size-7 text-primary-foreground' : 'size-7 text-accent'} />
@@ -42,15 +43,21 @@ function ModeCard({ mode, primary = false }) {
           </span>
         )}
       </div>
-      <h3 className={primary
-        ? 'mt-6 font-display text-3xl font-extrabold tracking-tight md:text-4xl'
-        : 'mt-6 font-display text-3xl font-extrabold tracking-tight text-foreground md:text-4xl'}
+      <h3
+        className={
+          primary
+            ? 'mt-6 font-display text-3xl font-extrabold tracking-tight md:text-4xl'
+            : 'mt-6 font-display text-3xl font-extrabold tracking-tight text-foreground md:text-4xl'
+        }
       >
         {mode.name}
       </h3>
-      <p className={primary
-        ? 'mt-3 text-base leading-relaxed text-primary-foreground/85 md:text-lg'
-        : 'mt-3 text-base leading-relaxed text-foreground-muted md:text-lg'}
+      <p
+        className={
+          primary
+            ? 'mt-3 text-base leading-relaxed text-primary-foreground/85 md:text-lg'
+            : 'mt-3 text-base leading-relaxed text-foreground-muted md:text-lg'
+        }
       >
         {mode.tagline}
       </p>
@@ -58,15 +65,19 @@ function ModeCard({ mode, primary = false }) {
         {mode.features.map((f, i) => (
           <li
             key={i}
-            className={primary
-              ? 'flex gap-3 text-sm leading-snug text-primary-foreground/90 md:text-base'
-              : 'flex gap-3 text-sm leading-snug text-foreground md:text-base'}
+            className={
+              primary
+                ? 'flex gap-3 text-sm leading-snug text-primary-foreground/90 md:text-base'
+                : 'flex gap-3 text-sm leading-snug text-foreground md:text-base'
+            }
           >
             <span
               aria-hidden
-              className={primary
-                ? 'mt-2 size-1.5 shrink-0 rotate-45 bg-primary-foreground'
-                : 'mt-2 size-1.5 shrink-0 rotate-45 bg-accent'}
+              className={
+                primary
+                  ? 'mt-2 size-1.5 shrink-0 rotate-45 bg-primary-foreground'
+                  : 'mt-2 size-1.5 shrink-0 rotate-45 bg-accent'
+              }
             />
             <span>{f}</span>
           </li>

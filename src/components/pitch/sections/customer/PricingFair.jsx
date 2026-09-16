@@ -39,7 +39,7 @@ export function PricingFair() {
               <div className="mt-5 grid grid-cols-2 gap-4">
                 <div>
                   <div className="font-mono text-[10px] tracking-[0.18em] text-foreground-muted md:text-xs">
-                    BOLT ECONOMY
+                    REFERENCE RIDE-HAIL
                   </div>
                   <div className="mt-1 font-display text-2xl font-bold text-foreground-muted line-through md:text-3xl">
                     ₦{r.boltNaira.toLocaleString()}
@@ -47,7 +47,7 @@ export function PricingFair() {
                 </div>
                 <div>
                   <div className="font-mono text-[10px] tracking-[0.18em] text-primary md:text-xs">
-                    TAGRIDES
+                    MODELED TAGRIDES
                   </div>
                   <div className="mt-1 font-display text-2xl font-extrabold text-primary md:text-3xl">
                     ₦{r.tagAlongNaira.toLocaleString()}
@@ -56,7 +56,7 @@ export function PricingFair() {
               </div>
 
               <div className="mt-5 border-t border-border/30 pt-4">
-                <div className="text-sm text-foreground-muted md:text-base">You keep</div>
+                <div className="text-sm text-foreground-muted md:text-base">Modeled difference</div>
                 <div className="font-display text-3xl font-extrabold text-accent tabular-nums md:text-4xl">
                   ₦{savings.toLocaleString()}
                 </div>

@@ -8,12 +8,12 @@ import { Reveal, RevealItem, RevealStagger } from './Reveal';
 const PROOF = [
   {
     icon: Smartphone,
-    value: 'Live MVP',
-    label: 'Flutter app and real-time trip flow running on AWS',
+    value: 'Private MVP',
+    label: 'Flutter app and real-time trip flow in internal testing on AWS',
   },
   {
     icon: Users,
-    value: '210+',
+    value: '210',
     label: 'Lagos riders surveyed before the product was built',
   },
   {
@@ -24,7 +24,7 @@ const PROOF = [
   {
     icon: MapPin,
     value: '1 corridor',
-    label: 'Yaba to Lagos Island is the focused first launch',
+    label: 'Focused pilot preparation around Yaba; the exact route is being agreed',
   },
 ];
 
@@ -38,7 +38,7 @@ export function TractionProof() {
               Built from Lagos, not assumptions
             </p>
             <h2 className="mt-3 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
-              Researched, built, and already running.
+              Researched, built, and preparing for public launch.
             </h2>
           </div>
           <p className="text-base leading-relaxed text-foreground-muted md:text-lg">
@@ -67,7 +67,7 @@ export function TractionProof() {
 
         <Reveal delay={0.1} className="mt-8">
           <Link
-            href="/pitch?investor"
+            href="/pitch?audience=investor"
             className="inline-flex items-center gap-2 text-sm font-semibold text-primary transition hover:text-primary-hover"
           >
             See the research and company deck

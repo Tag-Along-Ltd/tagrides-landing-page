@@ -2,6 +2,7 @@
 
 import { motion } from 'motion/react';
 import { ArrowUpRight } from 'lucide-react';
+import Link from 'next/link';
 
 import { PitchSection } from '../../motion/Section';
 import pitch from '@/data/pitch.json';
@@ -52,18 +53,18 @@ export function AppCTA() {
           transition={{ duration: 0.6, delay: 0.45 }}
           className="mt-12 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4"
         >
-          <a
-            href={brand.app.signin}
+          <Link
+            href="/#join"
             className="group flex w-full items-center justify-center gap-2 rounded-full bg-background/15 px-6 py-3.5 font-semibold ring-1 ring-primary-foreground/30 backdrop-blur transition hover:bg-background/25 sm:w-auto"
           >
             Join the waitlist
             <ArrowUpRight className="size-4 transition group-hover:translate-x-0.5" />
-          </a>
+          </Link>
           <a
             href={brand.app.signinDriver}
             className="group flex w-full items-center justify-center gap-2 rounded-full bg-foreground px-6 py-3.5 font-semibold text-background transition hover:opacity-90 sm:w-auto"
           >
-            Start driving
+            Apply as a pilot driver
             <ArrowUpRight className="size-4 transition group-hover:translate-x-0.5" />
           </a>
         </motion.div>

@@ -59,7 +59,7 @@ export const metadata = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Tag Rides',
+  name: 'TagRides',
   legalName: 'TAG-ALONG LTD',
   url: 'https://tagrider.com',
   logo: 'https://tagrider.com/assets/brand/mark.svg',
@@ -78,7 +78,7 @@ const jsonLd = {
     addressCountry: 'NG',
   },
   areaServed: { '@type': 'City', name: 'Lagos' },
-  founder: { '@type': 'Person', name: 'Olaiya Odili-Chuks' },
+  founder: { '@type': 'Person', name: 'Oniya Olaiya' },
 };
 
 export default function RootLayout({ children }) {

@@ -16,8 +16,8 @@ const SCREENS = [
   {
     image: '/assets/pitch/screen-confirm.png',
     shortLabel: 'Choose',
-    title: 'Confirm your Tag-Along ride',
-    body: 'Choose a driver already heading your way, review the shared route, and request a seat.',
+    title: 'Review route-matched drivers',
+    body: 'Review drivers already heading your way and send separate offers for the shared leg.',
   },
   {
     image: '/assets/pitch/screen-negotiate-real.png',
@@ -50,15 +50,15 @@ export function ProductJourney() {
           <div className="grid gap-8 md:grid-cols-[1fr_0.7fr] md:items-end">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
-                The product, already running
+                Private MVP flow
               </p>
               <h2 className="mt-3 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
                 One route. A clear flow for everyone in it.
               </h2>
             </div>
             <p className="text-base leading-relaxed text-foreground-muted md:text-lg">
-              Riders find and track the seat. Drivers keep control of the route, the riders, and the
-              fare.
+              Riders can keep accepted options open until boarding. Drivers keep control of their
+              route, seats, and fare response.
             </p>
           </div>
         </Reveal>
@@ -100,15 +100,14 @@ export function ProductJourney() {
             <div className="relative flex h-full flex-col">
               <div
                 className="flex gap-2 overflow-x-auto pb-2"
-                role="tablist"
-                aria-label="Rider app flow"
+                role="group"
+                aria-label="Choose a rider app screen"
               >
                 {SCREENS.map((item, index) => (
                   <button
                     key={item.shortLabel}
                     type="button"
-                    role="tab"
-                    aria-selected={activeScreen === index}
+                    aria-pressed={activeScreen === index}
                     onClick={() => setActiveScreen(index)}
                     className={`shrink-0 rounded-full px-4 py-2 text-xs font-semibold transition ${
                       activeScreen === index
@@ -121,7 +120,10 @@ export function ProductJourney() {
                 ))}
               </div>
 
-              <div className="mt-7 grid flex-1 gap-7 sm:grid-cols-[minmax(0,1fr)_220px] sm:items-center md:grid-cols-[minmax(0,1fr)_260px]">
+              <div
+                aria-live="polite"
+                className="mt-7 grid flex-1 gap-7 sm:grid-cols-[minmax(0,1fr)_220px] sm:items-center md:grid-cols-[minmax(0,1fr)_260px]"
+              >
                 <div className="self-center">
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
                     Rider flow
@@ -133,7 +135,7 @@ export function ProductJourney() {
                     {screen.body}
                   </p>
                   <div className="mt-7 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-accent">
-                    Live product screen
+                    Private MVP screen
                     <ShieldCheck className="size-4" />
                   </div>
                 </div>

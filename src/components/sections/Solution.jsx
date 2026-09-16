@@ -10,6 +10,10 @@ const PICKUPS = [
   { x: 78, label: '₦700', who: 'Chinedu' },
 ];
 
+// The supplied product recording will replace the route illustration in this
+// exact panel. Keep null until the optimized local MP4 is available.
+const PRODUCT_DEMO_SRC = null;
+
 export function Solution() {
   return (
     <section id="solution" className="relative bg-surface/40">
@@ -33,67 +37,72 @@ export function Solution() {
         <Reveal delay={0.1} className="mt-14">
           <div className="relative overflow-hidden rounded-3xl border border-border bg-elevated p-6 md:p-10">
             <div className="absolute inset-0 hero-light opacity-50" aria-hidden="true" />
-            <div className="relative h-[200px] md:h-[260px]">
-              <svg viewBox="0 0 1000 240" className="h-full w-full" preserveAspectRatio="none">
-                <defs>
-                  <linearGradient id="route" x1="0" x2="1" y1="0" y2="0">
-                    <stop offset="0%" stopColor="#008080" stopOpacity="0.2" />
-                    <stop offset="50%" stopColor="#008080" stopOpacity="0.9" />
-                    <stop offset="100%" stopColor="#F59E0B" stopOpacity="0.9" />
-                  </linearGradient>
-                  <filter id="glow">
-                    <feGaussianBlur stdDeviation="3" result="blur" />
-                    <feMerge>
-                      <feMergeNode in="blur" />
-                      <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                  </filter>
-                </defs>
-                {/* Path */}
-                <motion.path
-                  d="M 30 180 Q 200 60, 400 130 T 750 100 T 970 80"
-                  fill="none"
-                  stroke="url(#route)"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeDasharray="6 6"
-                  initial={{ pathLength: 0 }}
-                  whileInView={{ pathLength: 1 }}
-                  viewport={{ once: true, margin: '-80px' }}
-                  transition={{ duration: 1.6, ease: 'easeOut' }}
-                  filter="url(#glow)"
-                />
-                {/* Start: car */}
-                <g transform="translate(20, 170)">
-                  <circle r="14" fill="#008080" />
-                  <circle r="6" fill="#0a0a0a" />
-                </g>
-                {/* End: flag */}
-                <g transform="translate(978, 75)">
-                  <circle r="12" fill="#F59E0B" opacity="0.25" />
-                  <circle r="6" fill="#F59E0B" />
-                </g>
-              </svg>
-
-              {/* Pickup labels */}
-              <div className="pointer-events-none absolute inset-0">
-                {PICKUPS.map((p, i) => (
-                  <motion.div
-                    key={p.who}
-                    initial={{ opacity: 0, y: 6 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: '-80px' }}
-                    transition={{ duration: 0.4, delay: 0.4 + i * 0.25 }}
-                    className="absolute -translate-x-1/2 -translate-y-full"
-                    style={{ left: `${p.x}%`, top: '60%' }}
-                  >
-                    <div className="rounded-full border border-primary/50 bg-background/90 px-3 py-1 font-mono text-xs font-medium text-foreground backdrop-blur-sm">
-                      {p.who} · {p.label}
-                    </div>
-                  </motion.div>
-                ))}
+            {PRODUCT_DEMO_SRC ? (
+              <div className="relative aspect-video overflow-hidden rounded-2xl border border-border bg-background">
+                <video controls playsInline preload="metadata" className="size-full object-cover">
+                  <source src={PRODUCT_DEMO_SRC} type="video/mp4" />
+                  Your browser does not support embedded video.
+                </video>
               </div>
-            </div>
+            ) : (
+              <div className="relative h-[200px] md:h-[260px]">
+                <svg viewBox="0 0 1000 240" className="h-full w-full" preserveAspectRatio="none">
+                  <defs>
+                    <linearGradient id="route" x1="0" x2="1" y1="0" y2="0">
+                      <stop offset="0%" stopColor="#008080" stopOpacity="0.2" />
+                      <stop offset="50%" stopColor="#008080" stopOpacity="0.9" />
+                      <stop offset="100%" stopColor="#F59E0B" stopOpacity="0.9" />
+                    </linearGradient>
+                    <filter id="glow">
+                      <feGaussianBlur stdDeviation="3" result="blur" />
+                      <feMerge>
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
+                  </defs>
+                  <motion.path
+                    d="M 30 180 Q 200 60, 400 130 T 750 100 T 970 80"
+                    fill="none"
+                    stroke="url(#route)"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeDasharray="6 6"
+                    initial={{ pathLength: 0 }}
+                    whileInView={{ pathLength: 1 }}
+                    viewport={{ once: true, margin: '-80px' }}
+                    transition={{ duration: 1.6, ease: 'easeOut' }}
+                    filter="url(#glow)"
+                  />
+                  <g transform="translate(20, 170)">
+                    <circle r="14" fill="#008080" />
+                    <circle r="6" fill="#0a0a0a" />
+                  </g>
+                  <g transform="translate(978, 75)">
+                    <circle r="12" fill="#F59E0B" opacity="0.25" />
+                    <circle r="6" fill="#F59E0B" />
+                  </g>
+                </svg>
+
+                <div className="pointer-events-none absolute inset-0">
+                  {PICKUPS.map((p, i) => (
+                    <motion.div
+                      key={p.who}
+                      initial={{ opacity: 0, y: 6 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, margin: '-80px' }}
+                      transition={{ duration: 0.4, delay: 0.4 + i * 0.25 }}
+                      className="absolute -translate-x-1/2 -translate-y-full"
+                      style={{ left: `${p.x}%`, top: '60%' }}
+                    >
+                      <div className="rounded-full border border-primary/50 bg-background/90 px-3 py-1 font-mono text-xs font-medium text-foreground backdrop-blur-sm">
+                        {p.who} · {p.label}
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            )}
             <div className="mt-8 grid gap-4 text-center text-xs uppercase tracking-[0.18em] text-foreground-muted md:grid-cols-3">
               <div className="rounded-xl border border-border bg-background/40 p-4">
                 <p className="text-foreground-muted">Driver heads</p>

@@ -24,10 +24,16 @@ Cloudflare Pages is used as a static frontend host. The current MongoDB Node
 driver API routes do not run in the Cloudflare Workers runtime, so form/API
 calls must point to a Node-compatible API base.
 
-The Cloudflare build temporarily excludes `src/app/api` and the Mongo-backed
-`src/app/blog/[slug]` route during static export, then restores them. The blog
-index remains live and degrades to the existing empty state when Mongo is not
-available at build time.
+The Cloudflare build temporarily excludes `src/app/api` during static export,
+then restores it. Blog detail routes are now included: `generateStaticParams`
+builds the same published catalog used by the index and sitemap. Release-managed
+articles in `src/data/blog-posts.js` are always available; additional published
+Mongo articles are included when the database is available at build time.
+
+Both hosts publish the blog pages as build-time snapshots. New database-only
+slugs require a build before their HTML pages are available. Release-managed
+articles take precedence over database copies of the same slug; edit those in
+the repository, not through the posts API.
 
 ```sh
 NEXT_PUBLIC_LANDING_API_BASE_URL=https://<node-api-host> npm run build:cloudflare

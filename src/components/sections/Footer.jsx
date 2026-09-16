@@ -64,7 +64,6 @@ const COLUMNS = [
     items: [
       { label: 'Story', href: '/about-us' },
       { label: 'Field notes', href: '/blog' },
-      { label: 'Brand', href: '/brand' },
     ],
   },
   {
@@ -79,6 +78,8 @@ const COLUMNS = [
   {
     title: 'For Partners',
     items: [
+      { label: 'Support the Lagos pilot', href: '/support' },
+      { label: 'Company deck', href: '/pitch' },
       { label: 'Investors', href: 'mailto:investors@tagrider.com' },
       { label: 'Press', href: 'mailto:press@tagrider.com' },
       { label: 'Talk to us', href: 'mailto:hello@tagrider.com' },
@@ -95,7 +96,7 @@ export function Footer() {
           <div>
             <Link
               href="/"
-              aria-label="Tag Rides — home"
+              aria-label="TagRides home"
               className="inline-block transition hover:opacity-80"
             >
               <Lockup size={36} />

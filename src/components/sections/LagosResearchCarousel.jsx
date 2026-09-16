@@ -167,13 +167,12 @@ const slides = [
 export function LagosResearchCarousel() {
   const chartHeight = 'h-[420px] md:h-[480px]';
   const optionsByIndex = useMemo(
-    () =>
-      slides.map((s) => (s.chartType === 'donut' ? donutOption(s.data) : barOption(s.data))),
+    () => slides.map((s) => (s.chartType === 'donut' ? donutOption(s.data) : barOption(s.data))),
     [],
   );
 
   return (
-    <section className="relative mx-auto max-w-5xl px-6 py-16 md:py-32">
+    <section className="relative mx-auto max-w-5xl overflow-hidden px-6 py-16 md:py-32">
       <div className="mb-12 text-center">
         <p className="text-sm font-medium uppercase tracking-[0.2em] text-primary">
           Lagos is the proof market
@@ -195,7 +194,10 @@ export function LagosResearchCarousel() {
         pagination={{ clickable: true }}
         grabCursor
         className="lagos-research-cube !overflow-visible"
-        style={{ '--swiper-pagination-color': '#14b8a6', '--swiper-pagination-bullet-inactive-color': '#525252' }}
+        style={{
+          '--swiper-pagination-color': '#14b8a6',
+          '--swiper-pagination-bullet-inactive-color': '#525252',
+        }}
       >
         {slides.map((slide, i) => (
           <SwiperSlide key={slide.title} className="!overflow-visible">

@@ -81,7 +81,7 @@ export function BackedBy({ id = 'backed-by', className }) {
           <p className="text-base leading-relaxed text-foreground-muted md:text-lg">{data.lead}</p>
         </Reveal>
 
-        <RevealStagger className="mt-14 grid gap-4 sm:grid-cols-2 md:gap-5 lg:grid-cols-4">
+        <RevealStagger className="mt-14 grid gap-4 sm:grid-cols-2 md:gap-5 lg:grid-cols-3">
           {data.programs.map((program) => (
             <ProgramCard key={program.name} program={program} />
           ))}

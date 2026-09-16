@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server';
 
 import clientPromise from '@/lib/mongodb';
 import { checkRateLimit } from '@/lib/rateLimit';
+import { blogPosts } from '@/data/blog-posts';
+import { mergePublishedPosts } from '@/lib/blogCatalog.mjs';
 
 const DB_NAME = 'myBlog';
 const COLLECTION = 'posts';
@@ -34,7 +36,9 @@ function isAdmin(request) {
 }
 
 function readTimeMinutes(content) {
-  const words = String(content || '').trim().split(/\s+/).length;
+  const words = String(content || '')
+    .trim()
+    .split(/\s+/).length;
   return Math.max(1, Math.round(words / 220));
 }
 
@@ -57,7 +61,14 @@ export async function GET(request) {
   const url = new URL(request.url);
   const status = url.searchParams.get('status') || 'published';
   const tag = url.searchParams.get('tag');
-  const limit = Math.min(100, Math.max(1, parseInt(url.searchParams.get('limit') || '50', 10)));
+  const requestedLimit = parseInt(url.searchParams.get('limit') || '50', 10);
+  const limit = Number.isFinite(requestedLimit) ? Math.min(100, Math.max(1, requestedLimit)) : 50;
+  function publishedList(databasePosts = []) {
+    return mergePublishedPosts(blogPosts, databasePosts)
+      .filter((post) => !tag || post.tags?.includes(tag))
+      .slice(0, limit)
+      .map(({ content: _content, ...post }) => post);
+  }
 
   if (status !== 'published' && !isAdmin(request)) {
     return withCors(NextResponse.json({ error: 'Unauthorized.' }, { status: 401 }));
@@ -73,8 +84,13 @@ export async function GET(request) {
       .sort({ publishedAt: -1 })
       .limit(limit)
       .toArray();
-    return withCors(NextResponse.json({ posts: docs }));
+    return withCors(
+      NextResponse.json({ posts: status === 'published' ? publishedList(docs) : docs }),
+    );
   } catch (err) {
+    if (status === 'published') {
+      return withCors(NextResponse.json({ posts: publishedList() }));
+    }
     console.error('posts list failed', err);
     return withCors(NextResponse.json({ error: 'Could not load posts.' }, { status: 502 }));
   }
@@ -100,13 +116,24 @@ export async function POST(request) {
     return withCors(NextResponse.json({ error: 'Invalid JSON body.' }, { status: 400 }));
   }
 
-  const title = String(body?.title || '').trim().slice(0, 200);
-  const excerpt = String(body?.excerpt || '').trim().slice(0, 280);
-  const content = String(body?.content || '').trim().slice(0, 200_000);
-  const author = String(body?.author || 'Tag Rides').trim().slice(0, 120);
+  const title = String(body?.title || '')
+    .trim()
+    .slice(0, 200);
+  const excerpt = String(body?.excerpt || '')
+    .trim()
+    .slice(0, 280);
+  const content = String(body?.content || '')
+    .trim()
+    .slice(0, 200_000);
+  const author = String(body?.author || 'TagRides')
+    .trim()
+    .slice(0, 120);
   const slug = body?.slug ? slugify(body.slug) : slugify(title);
   const tags = Array.isArray(body?.tags)
-    ? body.tags.slice(0, 10).map(String).map((s) => s.slice(0, 32))
+    ? body.tags
+        .slice(0, 10)
+        .map(String)
+        .map((s) => s.slice(0, 32))
     : [];
   const coverImage = body?.coverImage ? String(body.coverImage).slice(0, 500) : null;
   const status = body?.status === 'draft' ? 'draft' : 'published';
@@ -114,6 +141,15 @@ export async function POST(request) {
   if (!title || !excerpt || !content || !slug) {
     return withCors(
       NextResponse.json({ error: 'title, excerpt, content, slug are required.' }, { status: 400 }),
+    );
+  }
+
+  if (blogPosts.some((post) => post.slug === slug)) {
+    return withCors(
+      NextResponse.json(
+        { error: 'This article is managed in the website repository.' },
+        { status: 409 },
+      ),
     );
   }
 

@@ -16,7 +16,7 @@ import { EarthGlobe } from '@/components/magicui/earth-globe';
 import { Starfield } from '@/components/magicui/starfield';
 import { Header } from '@/components/sections/Header';
 import { Reveal, RevealStagger, RevealItem } from '@/components/sections/Reveal';
-import { InlineVideoShowcase } from '@/components/sections/InlineVideoShowcase';
+import { FounderVideo } from '@/components/sections/FounderVideo';
 import { LagosResearchCarousel } from '@/components/sections/LagosResearchCarousel';
 import { BackedBy } from '@/components/sections/BackedBy';
 import { FinalCTA } from '@/components/sections/FinalCTA';
@@ -29,42 +29,61 @@ const STORY_BLOCKS = [
     eyebrow: 'Why',
     icon: Compass,
     title: 'Cities already share rides.',
-    body:
-      'From danfo to keke to kabu-kabu and the friend-of-a-friend driving past your junction, communal travel is how Lagos has always moved. Other cities have their own versions. What they lack is structure — matching, verification, fare records, and accountability. Tag Rides starts there.',
+    body: 'From danfo to keke to kabu-kabu and the friend-of-a-friend driving past your junction, communal travel is how Lagos has always moved. Other cities have their own versions. What they lack is structure — matching, verification, fare records, and accountability. TagRides starts there.',
   },
   {
     eyebrow: 'How we listened',
     icon: Ear,
     title: `${survey.totalResponses} riders. One brief.`,
-    body:
-      'Before writing a single line of product code, we surveyed Lagos riders about what they actually use, what it costs them, and what they wish was different. Price led the brief. Convenience and safety followed. Lagos gave us the first proof market.',
+    body: 'Before writing a single line of product code, we surveyed Lagos riders about what they actually use, what it costs them, and what they wish was different. Price led the brief. Convenience and safety followed. Lagos gave us the first proof market.',
   },
   {
     eyebrow: 'What we’re building',
     icon: Scale,
     title: 'Danfo-level fare logic, made into a product.',
-    body:
-      'Fares start around the public-transport price for that route — danfo in Lagos, the local equivalent elsewhere. A driver already heading that way has near-zero marginal cost on the empty seat. The product adds the structure around it: verified profiles, two-way ratings, fares logged before pickup, and trip visibility.',
+    body: 'Fares start around the public-transport price for that route — danfo in Lagos, the local equivalent elsewhere. A driver already heading that way has near-zero marginal cost on the empty seat. The product adds the structure around it: verified profiles, two-way ratings, fares logged before pickup, and trip visibility.',
   },
 ];
 
 const MILESTONES = [
-  { year: '2023', icon: ClipboardList, title: 'Listening',  body: `Surveyed ${survey.totalResponses} Lagos riders. The first brief came directly from what they said.` },
-  { year: '2024', icon: HandCoins,     title: 'Funded',     body: 'Selected for the Tony Elumelu Foundation grant. The first cheque that took TagRides from idea to plan.' },
-  { year: '2025', icon: Wrench,        title: 'Built',      body: 'Product development inside the Google for Startups and Microsoft for Startups (Founders Hub) ecosystems.' },
-  { year: '2026', icon: Rocket,        title: 'Launching',  body: `First Lagos corridor — the proof market for the model.` },
-  { year: 'Next', icon: Globe2,        title: 'Expanding',  body: 'Abuja next. Accra and Nairobi on the roadmap — cities where shared-route behavior already exists.' },
+  {
+    year: '2023',
+    icon: ClipboardList,
+    title: 'Listening',
+    body: `Surveyed ${survey.totalResponses} Lagos riders. The first brief came directly from what they said.`,
+  },
+  {
+    year: '2024',
+    icon: HandCoins,
+    title: 'Funded',
+    body: 'Selected for the Tony Elumelu Foundation grant. The first cheque that took TagRides from idea to plan.',
+  },
+  {
+    year: '2025',
+    icon: Wrench,
+    title: 'Built',
+    body: 'Product development inside the Google for Startups and Microsoft for Startups (Founders Hub) ecosystems.',
+  },
+  {
+    year: '2026',
+    icon: Rocket,
+    title: 'Launching',
+    body: `First Lagos corridor — the proof market for the model.`,
+  },
+  {
+    year: 'Next',
+    icon: Globe2,
+    title: 'Expanding',
+    body: 'Abuja next. Accra and Nairobi on the roadmap — cities where shared-route behavior already exists.',
+  },
 ];
 
 const CITIES = [
-  { city: 'Lagos',   sub: 'Lagos State, Nigeria',  status: 'Launching first' },
-  { city: 'Abuja',   sub: 'FCT, Nigeria',          status: 'Next' },
-  { city: 'Accra',   sub: 'Greater Accra, Ghana',  status: 'On the roadmap' },
+  { city: 'Lagos', sub: 'Lagos State, Nigeria', status: 'Launching first' },
+  { city: 'Abuja', sub: 'FCT, Nigeria', status: 'Next' },
+  { city: 'Accra', sub: 'Greater Accra, Ghana', status: 'On the roadmap' },
   { city: 'Nairobi', sub: 'Nairobi County, Kenya', status: 'On the roadmap' },
 ];
-
-const HERO_VIDEO_THUMB = '/assets/video/lagos-traffic-hero-poster.jpg';
-const HERO_VIDEO_URL = 'https://www.youtube.com/embed/qh3NGpYRG3I';
 
 export default function AboutUsPage() {
   return (
@@ -159,22 +178,18 @@ export default function AboutUsPage() {
       </section>
 
       {/* Video */}
-      <section className="relative bg-surface/40">
+      <section id="founder-film" className="relative scroll-mt-24 bg-surface/40">
         <div className="mx-auto max-w-5xl px-6 py-14 md:py-28">
           <Reveal>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">In motion</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+              Meet the founder
+            </p>
             <h2 className="mt-3 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
-              See {brand.name} in motion.
+              The story behind the shared journey.
             </h2>
           </Reveal>
           <Reveal delay={0.1} className="mt-10">
-            <InlineVideoShowcase
-              youtubeSrc={HERO_VIDEO_URL}
-              poster={HERO_VIDEO_THUMB}
-              duration="0:45"
-              label="TagRides demo"
-              caption="Auto-plays muted as you scroll past · click for sound · ESC to close"
-            />
+            <FounderVideo showSupportLink />
           </Reveal>
         </div>
       </section>
@@ -183,7 +198,9 @@ export default function AboutUsPage() {
       <section className="relative">
         <div className="mx-auto max-w-6xl px-6 py-14 md:py-28">
           <Reveal className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">The story</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+              The story
+            </p>
             <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
               Built first in Lagos, for the way many cities already move.
             </h2>
@@ -220,7 +237,9 @@ export default function AboutUsPage() {
       <section className="relative bg-surface/40">
         <div className="mx-auto max-w-6xl px-6 py-14 md:py-28">
           <Reveal className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Milestones</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+              Milestones
+            </p>
             <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
               The path from a survey to a launch.
             </h2>

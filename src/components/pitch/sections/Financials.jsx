@@ -82,13 +82,32 @@ export function Financials() {
           <div className="mb-3 font-mono text-xs text-foreground-muted">
             5-year projection · USD
           </div>
-          <div className="h-[300px] md:h-[400px]">
+          <div aria-hidden="true" className="h-[300px] md:h-[400px]">
             <ReactECharts
               option={option}
               style={{ height: '100%', width: '100%' }}
               opts={{ renderer: 'svg' }}
             />
           </div>
+          <table className="sr-only">
+            <caption>Five-year management projection in US dollars</caption>
+            <thead>
+              <tr>
+                <th scope="col">Year</th>
+                <th scope="col">Revenue</th>
+                <th scope="col">Expenses</th>
+              </tr>
+            </thead>
+            <tbody>
+              {data.projection.map((item) => (
+                <tr key={item.year}>
+                  <th scope="row">Year {item.year}</th>
+                  <td>${item.revenue.toLocaleString()}</td>
+                  <td>${item.expenses.toLocaleString()}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </motion.div>
 
         <div className="space-y-3 md:space-y-4">

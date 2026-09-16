@@ -84,11 +84,14 @@ export function PitchShell({
   }, [sectionKeys]);
 
   // Section navigation — used by both keyboard + the on-screen controls
-  const goToSlide = useCallback((index) => {
-    const clamped = Math.max(0, Math.min(sectionKeys.length - 1, index));
-    const el = document.getElementById(sectionIdFor(sectionKeys[clamped]));
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, [sectionKeys]);
+  const goToSlide = useCallback(
+    (index) => {
+      const clamped = Math.max(0, Math.min(sectionKeys.length - 1, index));
+      const el = document.getElementById(sectionIdFor(sectionKeys[clamped]));
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    },
+    [sectionKeys],
+  );
 
   // Keyboard: P toggles present, arrows + space advance, Esc exits.
   // Active in both modes — P always toggles; arrows always navigate
@@ -112,7 +115,12 @@ export function PitchShell({
         onPresentToggle?.(false);
         return;
       }
-      if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === 'PageDown' || e.key === ' ') {
+      if (
+        e.key === 'ArrowRight' ||
+        e.key === 'ArrowDown' ||
+        e.key === 'PageDown' ||
+        e.key === ' '
+      ) {
         if (e.key === ' ' && !presentMode) return; // don't hijack space outside present
         e.preventDefault();
         goToSlide(currentSlide + 1);
@@ -135,6 +143,26 @@ export function PitchShell({
     window.open(`/pitch/print?audience=${audience}&auto=1`, '_blank', 'noopener');
   }, [audience]);
 
+  function handleAudienceKeyDown(event, key) {
+    if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+    event.preventDefault();
+    event.stopPropagation();
+
+    const currentIndex = AUDIENCE_ORDER.indexOf(key);
+    const nextIndex =
+      event.key === 'Home'
+        ? 0
+        : event.key === 'End'
+          ? AUDIENCE_ORDER.length - 1
+          : (currentIndex + (event.key === 'ArrowRight' ? 1 : -1) + AUDIENCE_ORDER.length) %
+            AUDIENCE_ORDER.length;
+    const nextAudience = AUDIENCE_ORDER[nextIndex];
+    onAudienceChange?.(nextAudience);
+    requestAnimationFrame(() =>
+      document.querySelector(`[data-audience-tab="${nextAudience}"]`)?.focus(),
+    );
+  }
+
   useEffect(() => {
     if (!toast) return;
     const t = setTimeout(() => setToast(null), 4200);
@@ -143,14 +171,19 @@ export function PitchShell({
 
   return (
     <div
-      className={cn('relative isolate min-h-screen bg-background text-foreground', presentMode && 'pitch-present')}
+      className={cn(
+        'relative isolate min-h-screen bg-background text-foreground',
+        presentMode && 'pitch-present',
+      )}
       data-audience={audience}
     >
       {/* Print attribution — only visible in @media print */}
       <div className="pitch-print-only">
         <div className="print-header">
           <div className="print-brand">TagRides · TAG-ALONG LTD</div>
-          <div className="print-meta">{pitch.audiences[audience].label} Deck · {pitch.cover.version}</div>
+          <div className="print-meta">
+            {pitch.audiences[audience].label} Deck · {pitch.cover.version}
+          </div>
         </div>
       </div>
 
@@ -165,8 +198,12 @@ export function PitchShell({
 
       {/* Top header (hidden in present + print) */}
       <header className="pitch-chrome sticky top-0 z-40 w-full border-b border-border/40 bg-background/70 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3 md:px-8 md:py-4">
-          <Link href="/" aria-label="Back to tagrider.com" className="shrink-0 transition hover:opacity-80">
+        <div className="mx-auto flex max-w-7xl items-center gap-2 px-4 py-3 sm:gap-4 md:px-8 md:py-4">
+          <Link
+            href="/"
+            aria-label="Back to tagrider.com"
+            className="hidden shrink-0 transition hover:opacity-80 sm:block"
+          >
             <Lockup size={28} />
           </Link>
 
@@ -175,7 +212,7 @@ export function PitchShell({
           <nav
             role="tablist"
             aria-label="Pitch audience"
-            className="flex flex-1 items-center justify-center gap-1 rounded-full bg-elevated/60 p-1 ring-1 ring-border/40 md:flex-none md:justify-start"
+            className="flex min-w-0 flex-1 items-center gap-1 overflow-x-auto rounded-full bg-elevated/60 p-1 ring-1 ring-border/40 md:flex-none"
           >
             {AUDIENCE_ORDER.map((key) => {
               const cfg = pitch.audiences[key];
@@ -185,10 +222,15 @@ export function PitchShell({
                   key={key}
                   role="tab"
                   aria-selected={active}
+                  tabIndex={active ? 0 : -1}
+                  data-audience-tab={key}
+                  onKeyDown={(event) => handleAudienceKeyDown(event, key)}
                   onClick={() => onAudienceChange?.(key)}
                   className={cn(
-                    'relative rounded-full px-3 py-1.5 text-xs font-semibold transition md:px-4 md:py-2 md:text-sm',
-                    active ? 'text-primary-foreground' : 'text-foreground-muted hover:text-foreground',
+                    'relative whitespace-nowrap rounded-full px-2.5 py-1.5 text-xs font-semibold transition md:px-4 md:py-2 md:text-sm',
+                    active
+                      ? 'text-primary-foreground'
+                      : 'text-foreground-muted hover:text-foreground',
                   )}
                 >
                   {active && (
@@ -204,7 +246,7 @@ export function PitchShell({
             })}
           </nav>
 
-          <div className="ml-auto flex items-center gap-2">
+          <div className="ml-auto flex shrink-0 items-center gap-2">
             <button
               type="button"
               onClick={() => onPresentToggle?.(true)}
@@ -213,7 +255,7 @@ export function PitchShell({
               title="Press P"
             >
               <Presentation className="size-4" />
-              Present
+              <span className="hidden lg:inline">Present</span>
             </button>
             <button
               type="button"
@@ -225,6 +267,15 @@ export function PitchShell({
               <span className="hidden sm:inline">Download</span>
             </button>
           </div>
+        </div>
+        <div className="border-t border-border/40 px-4 py-2 text-center text-xs text-foreground-muted">
+          Help put the first route to work.{' '}
+          <Link
+            href="/support"
+            className="font-semibold text-primary-soft underline underline-offset-4"
+          >
+            Support the Lagos pilot
+          </Link>
         </div>
       </header>
 
@@ -242,11 +293,7 @@ export function PitchShell({
       {/* Right-edge section dot-rail. Desktop-only. Hides in present
           mode (the bottom bar covers nav already) and in print. */}
       {!presentMode && (
-        <SectionDotRail
-          sectionKeys={sectionKeys}
-          currentSlide={currentSlide}
-          onJump={goToSlide}
-        />
+        <SectionDotRail sectionKeys={sectionKeys} currentSlide={currentSlide} onJump={goToSlide} />
       )}
 
       {/* Present-mode overlay UI */}
@@ -342,9 +389,9 @@ function sectionIdFor(key) {
   const aliases = {
     lagosCost: 'cost',
     problemPersonal: 'problem',
-    howItWorks:      'how',
-    pricingFair:     'pricing',
-    appCTA:          'app',
+    howItWorks: 'how',
+    pricingFair: 'pricing',
+    appCTA: 'app',
   };
   return aliases[key] ?? key;
 }
@@ -368,6 +415,7 @@ const NAV_LABELS = {
   milestones: 'Milestones',
   impact: 'Impact',
   ask: 'Ask',
+  support: 'Support',
   howItWorks: 'How',
   modes: 'Modes',
   safety: 'Safety',

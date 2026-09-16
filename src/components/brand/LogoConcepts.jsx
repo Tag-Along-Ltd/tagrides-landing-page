@@ -1,7 +1,7 @@
 'use client';
 
 // ─────────────────────────────────────────────────────────────────────────
-// Three logo concepts for Tag Rides. Each one is a self-contained SVG
+// Three logo concepts for TagRides. Each one is a self-contained SVG
 // component so it scales cleanly from a 16px favicon to a 10ft banner.
 // The current "chainlink as the g in tag" mark is replaced by these.
 // ─────────────────────────────────────────────────────────────────────────
@@ -21,7 +21,7 @@ export function MarkStronger({ size = 96, className }) {
       viewBox="0 0 100 60"
       fill="none"
       className={className}
-      aria-label="Tag Rides — Stronger Together mark"
+      aria-label="TagRides — Stronger Together mark"
     >
       <defs>
         <mask id="cut-amber">
@@ -63,7 +63,7 @@ export function MarkRoute({ size = 110, className }) {
       viewBox="0 0 110 46"
       fill="none"
       className={className}
-      aria-label="Tag Rides — Route mark"
+      aria-label="TagRides — Route mark"
     >
       <defs>
         <linearGradient id="route-grad" x1="0" x2="1">
@@ -103,7 +103,7 @@ export function MarkTag({ size = 88, className }) {
       viewBox="0 0 60 80"
       fill="none"
       className={className}
-      aria-label="Tag Rides — Tag mark"
+      aria-label="TagRides — Tag mark"
     >
       <defs>
         <linearGradient id="pin-grad" x1="0.3" x2="0.7" y1="0" y2="1">
@@ -131,7 +131,13 @@ export function Wordmark({ mark, accent = false, className = '' }) {
   return (
     <span className={`inline-flex items-baseline gap-1 font-display ${className}`}>
       <span className="font-extrabold tracking-tight text-foreground">tag</span>
-      <span className={accent ? 'font-extrabold tracking-tight text-accent' : 'font-extrabold tracking-tight text-primary'}>
+      <span
+        className={
+          accent
+            ? 'font-extrabold tracking-tight text-accent'
+            : 'font-extrabold tracking-tight text-primary'
+        }
+      >
         rides
       </span>
     </span>

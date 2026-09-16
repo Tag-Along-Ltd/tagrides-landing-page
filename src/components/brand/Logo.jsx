@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 const TEAL = '#008080';
 const AMBER = '#F59E0B';
 
-// Canonical Tag Rides mark — concept "Stronger Together." Single source of
+// Canonical TagRides mark — concept "Stronger Together." Single source of
 // truth across the site. For non-React contexts (HTML email, Flutter
 // splash, OG images, favicons) use the SVG exports under
 // /public/assets/brand/ — they are byte-identical.
@@ -12,7 +12,7 @@ export function Logo({
   size = 40,
   variant = 'color', // 'color' | 'mono' | 'reverse'
   className,
-  title = 'Tag Rides',
+  title = 'TagRides',
 }) {
   const a = variant === 'color' ? TEAL : 'currentColor';
   const b = variant === 'color' ? AMBER : 'currentColor';
@@ -51,14 +51,24 @@ export function Wordmark({ className, variant = 'inline' }) {
   // variant === 'inverted' → "tag" white + "rides" amber
   if (variant === 'inverted') {
     return (
-      <span className={cn('inline-flex items-baseline font-display font-extrabold tracking-tight', className)}>
+      <span
+        className={cn(
+          'inline-flex items-baseline font-display font-extrabold tracking-tight',
+          className,
+        )}
+      >
         <span className="text-white">tag</span>
         <span className="text-accent">rides</span>
       </span>
     );
   }
   return (
-    <span className={cn('inline-flex items-baseline font-display font-extrabold tracking-tight', className)}>
+    <span
+      className={cn(
+        'inline-flex items-baseline font-display font-extrabold tracking-tight',
+        className,
+      )}
+    >
       <span className="text-foreground">tag</span>
       <span className="text-primary">rides</span>
     </span>

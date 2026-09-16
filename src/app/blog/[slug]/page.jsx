@@ -5,40 +5,41 @@ import ReactMarkdown from 'react-markdown';
 
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
-import clientPromise from '@/lib/mongodb';
+import { getPublishedPosts, getPublishedPost } from '@/lib/posts';
+import { SupportCTA } from '@/components/support/SupportCTA';
 
 export const dynamicParams = false;
 
-export function generateStaticParams() {
-  return [];
-}
-
-async function getPost(slug) {
-  try {
-    const client = await clientPromise;
-    return await client.db('myBlog').collection('posts').findOne({ slug, status: 'published' });
-  } catch (err) {
-    console.error('post fetch failed', err);
-    return null;
-  }
+export async function generateStaticParams() {
+  return (await getPublishedPosts()).map(({ slug }) => ({ slug }));
 }
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
-  const post = await getPost(slug);
-  if (!post) return { title: 'Post not found — Tag Rides' };
+  const post = await getPublishedPost(slug);
+  if (!post) return { title: 'Post not found — TagRides' };
   return {
-    title: `${post.title} — Tag Rides`,
+    title: `${post.title} — TagRides`,
     description: post.excerpt,
+    alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: 'article',
-      publishedTime: post.publishedAt?.toISOString?.() || undefined,
+      url: `/blog/${post.slug}`,
+      publishedTime: new Date(post.publishedAt).toISOString(),
+      modifiedTime: new Date(post.updatedAt || post.publishedAt).toISOString(),
       authors: [post.author],
-      images: post.coverImage
-        ? [{ url: post.coverImage }]
-        : [{ url: '/assets/brand/og-image.png', width: 1200, height: 630 }],
+      images:
+        post.coverImage && !post.coverImage.endsWith('.svg')
+          ? [{ url: post.coverImage }]
+          : [{ url: '/assets/brand/og-image.png', width: 1200, height: 630 }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: ['/assets/brand/og-image.png'],
     },
   };
 }
@@ -54,7 +55,7 @@ function formatDate(d) {
 
 export default async function PostPage({ params }) {
   const { slug } = await params;
-  const post = await getPost(slug);
+  const post = await getPublishedPost(slug);
   if (!post) notFound();
 
   return (
@@ -68,24 +69,25 @@ export default async function PostPage({ params }) {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={post.coverImage}
-              alt=""
+              alt={post.coverAlt || ''}
               className="aspect-[16/9] w-full rounded-3xl border border-border object-cover"
             />
           </div>
         )}
 
         {/* Header */}
-        <header className={`mx-auto max-w-3xl px-6 ${post.coverImage ? 'mt-12' : 'mt-28 md:mt-36'}`}>
+        <header
+          className={`mx-auto max-w-3xl px-6 ${post.coverImage ? 'mt-12' : 'mt-28 md:mt-36'}`}
+        >
           {Array.isArray(post.tags) && post.tags.length > 0 && (
             <div className="flex flex-wrap gap-2">
               {post.tags.slice(0, 4).map((tag) => (
-                <Link
+                <span
                   key={tag}
-                  href={`/blog?tag=${encodeURIComponent(tag)}`}
                   className="rounded-full border border-border bg-surface px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-foreground-muted transition hover:border-primary/40 hover:text-foreground"
                 >
                   {tag}
-                </Link>
+                </span>
               ))}
             </div>
           )}
@@ -102,6 +104,10 @@ export default async function PostPage({ params }) {
               <Calendar className="size-3.5" />
               {formatDate(post.publishedAt)}
             </span>
+            {post.updatedAt &&
+              new Date(post.updatedAt).getTime() !== new Date(post.publishedAt).getTime() && (
+                <span>Updated {formatDate(post.updatedAt)}</span>
+              )}
             {post.readTimeMinutes ? (
               <span className="inline-flex items-center gap-1.5">
                 <Clock className="size-3.5" />
@@ -130,6 +136,7 @@ export default async function PostPage({ params }) {
         </div>
       </article>
 
+      <SupportCTA />
       <Footer />
     </main>
   );

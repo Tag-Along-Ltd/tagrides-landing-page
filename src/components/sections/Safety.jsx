@@ -8,17 +8,17 @@ const SIGNALS = [
   {
     icon: BadgeCheck,
     title: 'Know who you ride with',
-    body: 'Driver identity and vehicle details are checked before activation. Riders and drivers both build ratings over time.',
+    body: 'The pilot plan requires driver identity and vehicle details to be checked before activation, with two-sided ratings after trips.',
   },
   {
     icon: MapPinned,
     title: 'Keep the trip visible',
-    body: 'Track the pickup, share the live trip, and report an incident with the route and participant records attached.',
+    body: 'Live-trip sharing and incident reporting are being tested so the pilot can retain route and participant records.',
   },
   {
     icon: Receipt,
     title: 'Agree before pickup',
-    body: 'The fare is recorded before the ride starts. Pay with cash or wallet without changing the agreed amount.',
+    body: 'The pilot flow records the accepted fare before pickup. Payment options will be confirmed before public launch.',
   },
 ];
 
@@ -31,7 +31,7 @@ export function Safety() {
             Built for accountable shared mobility
           </p>
           <h2 className="mt-3 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
-            Safety isn&rsquo;t a feature. It&rsquo;s the whole point.
+            Accountability is a launch requirement.
           </h2>
         </Reveal>
 

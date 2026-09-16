@@ -10,7 +10,10 @@ export function PrintContact({ page, total, audience, watermark }) {
   const d = pitch.ask.contact;
   return (
     <Slide page={page} total={total} audience={audience} watermark={watermark} section="Contact">
-      <div className="flex flex-1 flex-col items-center justify-center text-center" style={{ gap: '6mm' }}>
+      <div
+        className="flex flex-1 flex-col items-center justify-center text-center"
+        style={{ gap: '6mm' }}
+      >
         <Logo size={48} variant="color" />
 
         <div
@@ -64,7 +67,15 @@ export function PrintContact({ page, total, audience, watermark }) {
           >
             {d.name}
           </div>
-          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '9pt', letterSpacing: '0.12em', color: '#F59E0B', textTransform: 'uppercase' }}>
+          <div
+            style={{
+              fontFamily: 'var(--font-mono)',
+              fontSize: '9pt',
+              letterSpacing: '0.12em',
+              color: '#F59E0B',
+              textTransform: 'uppercase',
+            }}
+          >
             {d.role}
           </div>
           <div
@@ -76,17 +87,28 @@ export function PrintContact({ page, total, audience, watermark }) {
               textAlign: 'left',
             }}
           >
-            <ContactItem label="Email" value={d.email} />
-            <ContactItem label="Phone" value={d.phone} />
-            <ContactItem label="Web"   value={d.site.replace(/^https?:\/\//, '')} />
+            <ContactItem label="Email" value={d.email} href={`mailto:${d.email}`} />
+            <ContactItem label="Phone" value={d.phone} href={`tel:${d.phone.replace(/\s/g, '')}`} />
+            <ContactItem label="Web" value={d.site.replace(/^https?:\/\//, '')} href={d.site} />
           </div>
         </div>
+        <a
+          href="https://tagrider.com/support"
+          style={{
+            fontSize: '10pt',
+            color: '#BFE5E5',
+            textDecoration: 'underline',
+            textUnderlineOffset: '3px',
+          }}
+        >
+          Help put the first route to work · tagrider.com/support
+        </a>
       </div>
     </Slide>
   );
 }
 
-function ContactItem({ label, value }) {
+function ContactItem({ label, value, href }) {
   return (
     <div>
       <div
@@ -101,9 +123,12 @@ function ContactItem({ label, value }) {
       >
         {label}
       </div>
-      <div style={{ fontSize: '10pt', fontWeight: 600, color: '#E5E5E5', wordBreak: 'break-all' }}>
+      <a
+        href={href}
+        style={{ fontSize: '10pt', fontWeight: 600, color: '#E5E5E5', wordBreak: 'break-all' }}
+      >
         {value}
-      </div>
+      </a>
     </div>
   );
 }

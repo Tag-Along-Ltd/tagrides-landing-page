@@ -14,6 +14,10 @@ export function PrintProblem({ page, total, audience, watermark }) {
     <Slide page={page} total={total} audience={audience} watermark={watermark} section="Problem">
       <SlideHeading eyebrow={d.eyebrow} title={d.title} subtitle={d.subtitle} />
 
+      <p style={{ margin: '-3mm 0 5mm', fontSize: '8pt', color: '#888' }}>
+        Composite personas based on rider research; not individual testimonials.
+      </p>
+
       <div
         style={{
           display: 'grid',
@@ -103,7 +107,17 @@ function PersonaCard({ persona, kind }) {
         }}
       />
 
-      <ul style={{ listStyle: 'none', padding: 0, margin: '7mm 0 0 0', display: 'flex', flexDirection: 'column', gap: '5mm', flex: 1 }}>
+      <ul
+        style={{
+          listStyle: 'none',
+          padding: 0,
+          margin: '7mm 0 0 0',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '5mm',
+          flex: 1,
+        }}
+      >
         {persona.pain.map((point, i) => (
           <li
             key={i}

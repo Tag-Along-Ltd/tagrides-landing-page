@@ -19,8 +19,17 @@ export function Competitive() {
 
       {/* Matrix */}
       <div className="mt-16 overflow-hidden rounded-2xl bg-surface/60 ring-1 ring-border/30 md:mt-20">
-        <div className="overflow-x-auto">
+        <p className="px-4 pt-4 text-xs text-foreground-muted md:hidden">
+          Swipe to compare services.
+        </p>
+        <div
+          className="overflow-x-auto"
+          tabIndex={0}
+          role="region"
+          aria-label="Service capability comparison"
+        >
           <table className="w-full min-w-[600px] text-sm md:text-base">
+            <caption className="sr-only">Comparison of how mobility services handle a ride</caption>
             <thead>
               <tr className="border-b border-border/40">
                 <th className="p-4 text-left font-mono text-xs tracking-wider text-foreground-muted md:p-6">
@@ -29,9 +38,11 @@ export function Competitive() {
                 {cols.map((c) => (
                   <th
                     key={c.name}
-                    className={c.us
-                      ? 'p-4 text-center font-display font-bold text-primary md:p-6 md:text-lg'
-                      : 'p-4 text-center font-display font-bold text-foreground-muted md:p-6 md:text-lg'}
+                    className={
+                      c.us
+                        ? 'p-4 text-center font-display font-bold text-primary md:p-6 md:text-lg'
+                        : 'p-4 text-center font-display font-bold text-foreground-muted md:p-6 md:text-lg'
+                    }
                   >
                     {c.name}
                     {c.us && (
@@ -57,9 +68,9 @@ export function Competitive() {
                   {cols.map((c) => (
                     <td
                       key={c.name + row}
-                      className={c.us
-                        ? 'p-4 text-center bg-primary/5 md:p-6'
-                        : 'p-4 text-center md:p-6'}
+                      className={
+                        c.us ? 'p-4 text-center bg-primary/5 md:p-6' : 'p-4 text-center md:p-6'
+                      }
                     >
                       <Verdict value={c.values[i]} highlight={c.us} />
                     </td>
@@ -99,19 +110,38 @@ function Verdict({ value, highlight }) {
   // Map yes/no/partial/high/med/low to consistent glyphs + colour.
   // `highlight` boosts colour saturation in the "us" column.
   if (value === 'yes') {
-    return <Check className={highlight ? 'mx-auto size-5 text-primary' : 'mx-auto size-5 text-success'} />;
+    return (
+      <>
+        <Check
+          aria-hidden="true"
+          className={highlight ? 'mx-auto size-5 text-primary' : 'mx-auto size-5 text-success'}
+        />
+        <span className="sr-only">Yes</span>
+      </>
+    );
   }
   if (value === 'no') {
-    return <X className="mx-auto size-5 text-foreground-muted/50" />;
+    return (
+      <>
+        <X aria-hidden="true" className="mx-auto size-5 text-foreground-muted/50" />
+        <span className="sr-only">No</span>
+      </>
+    );
   }
   if (value === 'partial') {
-    return <Minus className="mx-auto size-5 text-accent" />;
+    return (
+      <>
+        <Minus aria-hidden="true" className="mx-auto size-5 text-accent" />
+        <span className="sr-only">Partial</span>
+      </>
+    );
   }
   // Quality tier word values
-  const cls = {
-    high: highlight ? 'text-primary font-semibold' : 'text-success font-semibold',
-    med:  'text-accent font-semibold',
-    low:  'text-danger font-semibold',
-  }[value] ?? 'text-foreground-muted';
+  const cls =
+    {
+      high: highlight ? 'text-primary font-semibold' : 'text-success font-semibold',
+      med: 'text-accent font-semibold',
+      low: 'text-danger font-semibold',
+    }[value] ?? 'text-foreground-muted';
   return <span className={`font-mono text-xs uppercase tracking-wider ${cls}`}>{value}</span>;
 }

@@ -1,28 +1,25 @@
 'use client';
 
-import { Check, X, Minus } from 'lucide-react';
-
 import { Reveal } from './Reveal';
 
 const ROWS = [
-  { service: 'Uber / Bolt', cost: '₦₦₦', safety: 'check', negotiable: 'x', cashless: 'Required' },
-  { service: 'Danfo / Kabu-kabu', cost: '₦', safety: 'x', negotiable: 'limit', cashless: 'No' },
   {
-    service: 'TagRides',
-    cost: '₦ or below',
-    safety: 'check',
-    negotiable: 'check',
-    cashless: 'Optional',
+    service: 'Private ride-hail',
+    journey: 'A car is dispatched for one private trip',
+    pricing: 'Platform quote for the whole trip',
+  },
+  {
+    service: 'Informal shared transport',
+    journey: 'Passengers share a fixed or familiar route',
+    pricing: 'Route or operator fare',
+  },
+  {
+    service: 'TagRides pilot model',
+    journey: "A rider joins a driver's existing route",
+    pricing: 'Rider offers; driver accepts or counters once',
     highlight: true,
   },
 ];
-
-function Glyph({ kind }) {
-  if (kind === 'check') return <Check className="size-4 text-success" />;
-  if (kind === 'x') return <X className="size-4 text-danger" />;
-  if (kind === 'limit') return <Minus className="size-4 text-foreground-muted" />;
-  return <span className="font-mono text-sm text-foreground">{kind}</span>;
-}
 
 export function PricingPhilosophy() {
   return (
@@ -39,53 +36,54 @@ export function PricingPhilosophy() {
       <div className="relative mx-auto max-w-6xl px-6 py-16 md:py-32">
         <Reveal>
           <h2 className="max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight md:text-5xl">
-            Danfo-level fares.
+            Public-transport fares are the benchmark.
             <br />
-            <span className="text-accent">Ride-hailing-level accountability.</span>
+            <span className="text-white">The agreed fare stays visible.</span>
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/85 md:text-lg">
-            Each matching driver gets a separate fare for the road they share with the rider. The
-            rider can edit each offer; the driver accepts or counters once. No repeated bidding or
-            hidden surge pricing.
+            TagRides researched 30 Lagos routes in November 2024. The pilot will test whether
+            route-aligned seats can stay near local shared-transport benchmarks while recording the
+            fare before pickup.
           </p>
         </Reveal>
 
         {/* Comparison table */}
         <Reveal delay={0.1} className="mt-12">
-          <div className="overflow-hidden rounded-3xl border border-white/15 bg-white/[0.06] backdrop-blur-sm">
-            <div className="grid grid-cols-5 gap-2 border-b border-white/10 bg-white/[0.04] px-6 py-4 text-[10px] font-semibold uppercase tracking-[0.18em] text-white/70">
-              <div className="col-span-1">Service</div>
-              <div className="text-center">Avg cost</div>
-              <div className="text-center">Safety</div>
-              <div className="text-center">Negotiable</div>
-              <div className="text-center">Cashless</div>
-            </div>
-            {ROWS.map((row) => (
-              <div
-                key={row.service}
-                className={`grid grid-cols-5 items-center gap-2 px-6 py-5 text-sm transition ${
-                  row.highlight ? 'bg-accent/15 text-white' : 'text-white/85'
-                }`}
-              >
-                <div className="col-span-1 font-display font-semibold text-white">
-                  {row.service}
-                  {row.highlight && (
-                    <span className="ml-2 inline-block rounded-full bg-accent px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-accent-foreground">
-                      Us
-                    </span>
-                  )}
-                </div>
-                <div className="text-center font-mono">{row.cost}</div>
-                <div className="flex justify-center">
-                  <Glyph kind={row.safety} />
-                </div>
-                <div className="flex justify-center">
-                  <Glyph kind={row.negotiable} />
-                </div>
-                <div className="text-center font-mono text-xs">{row.cashless}</div>
-              </div>
-            ))}
+          <div className="overflow-x-auto rounded-3xl border border-white/15 bg-white/[0.06] backdrop-blur-sm">
+            <table className="w-full min-w-[640px] text-left text-sm">
+              <caption className="sr-only">How the TagRides pilot pricing model differs</caption>
+              <thead className="border-b border-white/10 bg-white/[0.04] text-[10px] font-semibold uppercase tracking-[0.18em] text-white/70">
+                <tr>
+                  <th scope="col" className="px-6 py-4">
+                    Service model
+                  </th>
+                  <th scope="col" className="px-6 py-4">
+                    Journey
+                  </th>
+                  <th scope="col" className="px-6 py-4">
+                    Pricing basis
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {ROWS.map((row) => (
+                  <tr
+                    key={row.service}
+                    className={
+                      row.highlight ? 'bg-white/10' : 'border-b border-white/10 last:border-0'
+                    }
+                  >
+                    <th scope="row" className="px-6 py-5 font-display font-semibold text-white">
+                      {row.service}
+                    </th>
+                    <td className="px-6 py-5 text-white/85">{row.journey}</td>
+                    <td className="px-6 py-5 text-white/85">{row.pricing}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
+          <p className="mt-3 text-xs text-white/70">Planning target, not a fare guarantee.</p>
         </Reveal>
       </div>
     </section>

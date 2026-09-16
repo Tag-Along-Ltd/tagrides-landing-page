@@ -1,5 +1,5 @@
 {
-  "_": "Canonical content for /pitch. Edit here, not in components. Per-audience overrides under `audiences.{key}.overrides`. Numbers verified against tagrides-pitch-deck.pdf + survey CSVs (210 responses) + Lagos route research (Nov-2024).",
+  "_": "Canonical content for /pitch. Edit here, not in components. Per-audience overrides live under audiences.{key}. Claims still require their cited primary evidence before external use.",
 
   "audiences": {
     "investor": {
@@ -26,15 +26,15 @@
         "currency": "USD",
         "stage": "Pre-seed",
         "runway": "18 months",
-        "instrument": "SAFE (post-money) — valuation deferred to Seed round",
+        "instrument": "Post-money SAFE — final economic terms to be confirmed",
         "committed": [
           {
             "label": "Tony Elumelu Foundation grant",
-            "detail": "Non-dilutive seed capital, Feb 2024"
+            "detail": "Non-dilutive seed capital, awarded in 2024"
           },
           {
             "label": "Ugwumba Enterprise Challenge",
-            "detail": "2024 winner — non-dilutive prize capital"
+            "detail": "Winner — non-dilutive prize capital"
           },
           {
             "label": "$52K cloud credits",
@@ -92,15 +92,15 @@
         "currency": "USD",
         "stage": "Pre-seed",
         "runway": "18 months",
-        "instrument": "SAFE (post-money) — valuation deferred to Seed round",
+        "instrument": "Post-money SAFE — final economic terms to be confirmed",
         "committed": [
           {
             "label": "Tony Elumelu Foundation grant",
-            "detail": "Non-dilutive seed capital, Feb 2024"
+            "detail": "Non-dilutive seed capital, awarded in 2024"
           },
           {
             "label": "Ugwumba Enterprise Challenge",
-            "detail": "2024 winner — non-dilutive prize capital"
+            "detail": "Winner — non-dilutive prize capital"
           },
           {
             "label": "$52K cloud credits",
@@ -273,8 +273,8 @@
 
   "product": {
     "eyebrow": "THE PRODUCT",
-    "title": "Built in Flutter. Live on AWS. Already running.",
-    "subtitle": "The full rider flow, end to end, in one app — already in the hands of internal testers across Lagos.",
+    "title": "Built in Flutter. Private MVP deployed on AWS.",
+    "subtitle": "The end-to-end rider flow is in internal testing. The first public corridor has not launched yet.",
     "flows": [
       {
         "screen": "searchDestination",
@@ -283,7 +283,7 @@
       },
       {
         "screen": "confirmRide",
-        "title": "Along or Direct?",
+        "title": "Confirm your Tag-Along ride",
         "image": "/assets/pitch/screen-confirm.png"
       },
       {
@@ -392,7 +392,7 @@
         "title": "Supply",
         "timeframe": "Months 3–6",
         "icon": "supply",
-        "detail": "300 verified drivers and route operators already travelling daily Yaba ↔ Island routes.",
+        "detail": "Target: onboard 300 verified drivers and route operators who already travel daily Yaba ↔ Island routes.",
         "tactics": [
           "Onboarding incentive: ₦15K signup + first-50-rides bonus",
           "Recruit commuters, taxis, vans, and existing route operators on the Mainland-Island axis",
@@ -437,7 +437,7 @@
   "problemPersonal": {
     "eyebrow": "WHAT YOU ALREADY KNOW",
     "title": "Your city is already sharing rides. The system just has not caught up.",
-    "subtitle": "These are the things riders and drivers already live with. Tag Rides starts in Lagos because Lagos makes the problem impossible to ignore.",
+    "subtitle": "Illustrative composite voices based on rider research, not attributed testimonials. TagRides starts in Lagos because Lagos makes the problem impossible to ignore.",
     "complaints": [
       {
         "quote": "I'm paying ₦5,000 to Bolt every morning so I don't have to sit in a danfo. That's ₦100,000 a month I don't have to lose.",
@@ -465,8 +465,8 @@
     "steps": [
       {
         "title": "Tell us where you're going",
-        "detail": "Type your destination. Tag Rides finds drivers already heading that way.",
-        "hint": "Average match time: under 90 seconds."
+        "detail": "Type your destination. TagRides finds drivers already heading that way.",
+        "hint": "Pilot target: surface route matches in under 90 seconds."
       },
       {
         "title": "Send the fare offer",
@@ -483,8 +483,8 @@
 
   "modes": {
     "eyebrow": "TWO MODES, ONE APP",
-    "title": "Tag-Along first. Direct when you need the whole car.",
-    "subtitle": "The signature mode is Tag-Along — share the route, share the fare. Direct is there when privacy matters more than price.",
+    "title": "Tag-Along first. Direct comes later.",
+    "subtitle": "The private MVP focuses on Tag-Along — share the route, share the fare. A dedicated whole-car Direct option is planned for a later release.",
     "modes": [
       {
         "name": "Tag-Along",
@@ -498,12 +498,12 @@
       },
       {
         "name": "Direct",
-        "tagline": "The whole car. Door-to-door. When the trip is yours alone.",
+        "tagline": "Coming later: a dedicated whole-car, door-to-door option.",
         "features": [
           "Standard ride-hail comfort",
           "Driver routes to your destination directly",
           "Distance + time pricing",
-          "Same verified drivers; same rating system"
+          "Planned to use the same driver checks and rating system"
         ]
       }
     ]
@@ -517,40 +517,40 @@
       {
         "icon": "badge",
         "title": "Verified drivers",
-        "detail": "Government ID, vehicle details, and launch-market checks on file before activation."
+        "detail": "The pilot plan requires government ID, vehicle details, and launch-market checks before activation."
       },
       {
         "icon": "shield",
         "title": "Two-sided ratings",
-        "detail": "Both riders and drivers rate every trip. One-star patterns lose access to the network."
+        "detail": "The pilot is designed for riders and drivers to rate each trip, with repeated poor conduct reviewed for access decisions."
       },
       {
         "icon": "pin",
         "title": "Live trip tracking",
-        "detail": "Share your live location with up to three trusted contacts during every ride."
+        "detail": "Live-location sharing with trusted contacts is being tested for the pilot."
       },
       {
         "icon": "sos",
         "title": "In-app emergency",
-        "detail": "One tap shares your live coordinates and trip details with the right safety contacts for that market."
+        "detail": "Emergency sharing and market-specific escalation contacts are planned for pilot readiness."
       },
       {
         "icon": "star",
         "title": "Match by track record",
-        "detail": "Riders see driver rating, completed trips, and verified-since date before accepting an offer."
+        "detail": "The pilot design shows driver rating, completed trips, and verification date before an offer is accepted."
       },
       {
         "icon": "log",
         "title": "Trip log",
-        "detail": "Every ride is logged: route, fare, riders, driver, and time, so disputes have a record."
+        "detail": "The pilot design records route, fare, participants, and time to support dispute review."
       }
     ]
   },
 
   "pricingFair": {
     "eyebrow": "WHAT YOU'LL ACTUALLY PAY",
-    "title": "Danfo-level fares. Ride-hailing-level accountability.",
-    "subtitle": "We ran the numbers on 30 actual Lagos journeys. The local fares are the proof; the route-share logic travels to other cities.",
+    "title": "Modeled toward shared-fare prices, with digital trip records.",
+    "subtitle": "Illustrative comparison based on internal research across 30 Lagos routes. TagRides amounts are pilot targets, not live quotes or guaranteed fares.",
     "examples": [
       { "from": "Mushin", "to": "Iju Road", "boltNaira": 5000, "tagAlongNaira": 800 },
       {
@@ -615,8 +615,8 @@
 
   "traction": {
     "eyebrow": "WHERE WE ARE",
-    "title": "Backed, built, and quietly accumulating users.",
-    "subtitle": "Live MVP. Real surveys. Capital and credits already secured.",
+    "title": "Backed, built, and preparing for the first corridor.",
+    "subtitle": "Private MVP. Rider research. Waitlist interest. Non-dilutive support.",
     "proof": [
       {
         "value": "210",
@@ -625,24 +625,24 @@
       },
       {
         "value": "90",
-        "label": "Waitlist signups",
-        "context": "Mostly along the Yaba commute belt"
+        "label": "Reported waitlist signups",
+        "context": "Internal count; not independently verified"
       },
       {
         "value": "$52K",
-        "label": "Cloud credits secured",
-        "context": "AWS $25K + Microsoft $25K + Google $2K"
+        "label": "Reported cloud credits secured",
+        "context": "Company-reported: AWS $25K + Microsoft $25K + Google $2K"
       },
       {
         "value": "1",
-        "label": "Live MVP on AWS",
-        "context": "Flutter app, Go services, MQTT real-time"
+        "label": "Private MVP on AWS",
+        "context": "Flutter app, Go services, MQTT; internal testing"
       }
     ],
     "backers": [
-      { "name": "Tony Elumelu Foundation", "note": "Seed grant, Feb 2024" },
+      { "name": "Tony Elumelu Foundation", "note": "Seed grant recipient, 2024" },
       { "name": "ALX Ventures", "note": "Programme alumni" },
-      { "name": "Ugwumba Enterprise Challenge", "note": "2024 winner" },
+      { "name": "Ugwumba Enterprise Challenge", "note": "Challenge winner" },
       { "name": "AWS Activate", "note": "$25,000 in credits" }
     ]
   },
@@ -656,7 +656,7 @@
         "name": "Oniya Olaiya",
         "role": "Founder & CEO · Engineering Lead",
         "image": "/assets/pitch/team-olaiya.jpg",
-        "bio": "Ships the full stack — Flutter rider + driver app, Go backend services, MQTT real-time geolocation pipeline, AWS infra. Built the production system independently. ALX Ventures alum; relocating from EC2 development to in-market Lagos lead."
+        "bio": "Ships the full stack — Flutter rider + driver app, Go backend services, MQTT real-time geolocation pipeline, AWS infra. Took ownership of the production system as funding tightened. ALX Ventures alum; preparing TagRides for its first Lagos corridor launch."
       },
       {
         "name": "Efemena Abraham",
@@ -675,8 +675,8 @@
 
   "financials": {
     "eyebrow": "FINANCIALS",
-    "title": "Profitable from year two on a 5-year run.",
-    "subtitle": "Conservative — driver supply is the rate-limit, not demand. Cohort retention modeled at 35% by month 3.",
+    "title": "A five-year management projection.",
+    "subtitle": "Planning assumptions, not historical performance. Driver supply and 35% month-three cohort retention remain to be validated in the public pilot.",
     "projection": [
       { "year": 1, "revenue": 100000, "expenses": 106000 },
       { "year": 2, "revenue": 180000, "expenses": 112500 },
@@ -688,7 +688,7 @@
       { "label": "Avg ride fare", "value": "₦1,200" },
       { "label": "Avg tag-along share", "value": "₦300 / leg" },
       { "label": "Take rate", "value": "12%" },
-      { "label": "Contribution per ride", "value": "₦144" }
+      { "label": "Platform revenue per ride", "value": "₦144" }
     ]
   },
 
@@ -696,11 +696,14 @@
     "eyebrow": "MILESTONES",
     "title": "Built quietly. Scaled deliberately.",
     "items": [
-      { "when": "2024 Q1", "label": "Founded TAG-ALONG LTD", "status": "done" },
-      { "when": "2024 Q2", "label": "200+ Lagosian survey complete", "status": "done" },
-      { "when": "2024 Q4", "label": "Tony Elumelu Foundation grant", "status": "done" },
-      { "when": "2025 Q2", "label": "MVP live on AWS — Flutter + Go", "status": "done" },
-      { "when": "2025 Q4", "label": "Won Ugwumba Enterprise Challenge", "status": "done" },
+      { "when": "2023", "label": "Registered TAG-ALONG LTD", "status": "done" },
+      { "when": "2023 Q3", "label": "Surveyed 210 Lagos riders", "status": "done" },
+      { "when": "2024", "label": "Tony Elumelu Foundation grant", "status": "done" },
+      {
+        "when": "2025 Q2",
+        "label": "Private MVP deployed on AWS — Flutter + Go",
+        "status": "done"
+      },
       { "when": "2026 Q3", "label": "Pre-seed close ($750K target)", "status": "now" },
       {
         "when": "2026 Q4",
@@ -720,10 +723,10 @@
   "impact": {
     "eyebrow": "ECONOMIC IMPACT",
     "title": "Formalising the informal — and making cities work.",
-    "subtitle": "Tag Rides turns everyday drivers into verified entrepreneurs, digitising a $2B informal transport market.",
+    "subtitle": "TagRides is designed to help everyday drivers earn from route-aligned empty seats while adding digital trip records.",
     "outcomes": [
       { "value": "5-city", "label": "Replicable corridor playbook after Lagos proof" },
-      { "value": "$2B+", "label": "Informal transport category ready for digitisation" },
+      { "value": "Digital", "label": "Trip and fare records for an informal transport category" },
       { "value": "More", "label": "Empty seats earning without extra pickup detours" }
     ],
     "sdgs": [
@@ -736,7 +739,7 @@
   "ask": {
     "eyebrow": "THE ASK",
     "title": "Seeking $750K to make Lagos the proof.",
-    "subtitle": "Pre-seed on a SAFE. Eighteen months of runway. Non-dilutive backing already secured from Tony Elumelu Foundation, Ugwumba Enterprise Challenge, and $52K in cloud credits. We're now raising priced capital to launch the Yaba ↔ Lagos Island corridor, reach Seed-ready unit economics, and earn the right to do this in every city the math fails.",
+    "subtitle": "Pre-seed financing on a post-money SAFE. Eighteen months of runway. Non-dilutive backing already secured from Tony Elumelu Foundation, Ugwumba Enterprise Challenge, and $52K in cloud credits. We're raising to launch the Yaba ↔ Lagos Island corridor, validate unit economics, and build the evidence for expansion.",
     "contact": {
       "name": "Oniya Olaiya",
       "role": "Founder & CEO",

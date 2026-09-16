@@ -9,22 +9,18 @@ import { landingApiPath } from '@/lib/landingApi';
 
 const TIMES = [
   { value: 'morning-rush', label: 'Morning rush (6–10am)' },
-  { value: 'midday',       label: 'Midday (10am–3pm)'    },
+  { value: 'midday', label: 'Midday (10am–3pm)' },
   { value: 'evening-rush', label: 'Evening rush (3–8pm)' },
-  { value: 'late-night',   label: 'Late night (8pm–6am)' },
-  { value: 'variable',     label: 'It varies'            },
+  { value: 'late-night', label: 'Late night (8pm–6am)' },
+  { value: 'variable', label: 'It varies' },
 ];
 const DURATIONS = [
   { value: 'under-15', label: 'Under 15 min' },
-  { value: '15-30',    label: '15–30 min'    },
-  { value: '30-60',    label: '30–60 min'    },
-  { value: '60-plus',  label: '1 hour+'      },
+  { value: '15-30', label: '15–30 min' },
+  { value: '30-60', label: '30–60 min' },
+  { value: '60-plus', label: '1 hour+' },
 ];
-const MODES = [
-  { value: 'along',  label: 'Tag-Along (shared)'    },
-  { value: 'direct', label: 'Direct (whole car)'    },
-  { value: 'either', label: 'Either / depends'      },
-];
+const MODES = [{ value: 'along', label: 'Tag-Along (shared)' }];
 
 const INITIAL = {
   start: '',
@@ -69,7 +65,7 @@ export function TripFareForm() {
         setTimeout(() => setStatus('idle'), 1500);
         return;
       }
-      toast.error(data?.error || 'Couldn\'t save that. Try again?', { theme: 'dark' });
+      toast.error(data?.error || "Couldn't save that. Try again?", { theme: 'dark' });
       setStatus('idle');
     } catch {
       toast.error('Network hiccup. Try again?', { theme: 'dark' });
@@ -89,9 +85,9 @@ export function TripFareForm() {
             What&rsquo;s fair on your route?
           </h2>
           <p className="mt-5 text-base leading-relaxed text-foreground-muted md:text-lg">
-            We&rsquo;re teaching the app to suggest prices around what real riders already pay for shared
-            transport — danfo in Lagos, the local equivalent elsewhere. Add a route you take and you
-            help us draft fairer fares for everyone heading the same way.
+            We&rsquo;re teaching the app to suggest prices around what real riders already pay for
+            shared transport — danfo in Lagos, the local equivalent elsewhere. Add a route you take
+            and you help us draft fairer fares for everyone heading the same way.
           </p>
         </Reveal>
 
@@ -233,7 +229,8 @@ export function TripFareForm() {
 
             <label className="block">
               <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.16em] text-foreground-muted">
-                Anything else worth knowing? <span className="text-foreground-disabled">(optional)</span>
+                Anything else worth knowing?{' '}
+                <span className="text-foreground-disabled">(optional)</span>
               </span>
               <textarea
                 rows={3}
