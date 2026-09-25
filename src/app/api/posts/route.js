@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 import clientPromise from '@/lib/mongodb';
 import { checkRateLimit } from '@/lib/rateLimit';
-import { blogPosts } from '@/data/blog-posts';
+import { getReleasePosts } from '@/lib/releasePosts';
 import { mergePublishedPosts } from '@/lib/blogCatalog.mjs';
 
 const DB_NAME = 'myBlog';
@@ -58,16 +58,20 @@ export async function OPTIONS() {
  *   ?limit=N       → default 50, max 100
  */
 export async function GET(request) {
+  const releasePosts = await getReleasePosts();
   const url = new URL(request.url);
   const status = url.searchParams.get('status') || 'published';
   const tag = url.searchParams.get('tag');
   const requestedLimit = parseInt(url.searchParams.get('limit') || '50', 10);
   const limit = Number.isFinite(requestedLimit) ? Math.min(100, Math.max(1, requestedLimit)) : 50;
   function publishedList(databasePosts = []) {
-    return mergePublishedPosts(blogPosts, databasePosts)
+    return mergePublishedPosts(releasePosts, databasePosts)
       .filter((post) => !tag || post.tags?.includes(tag))
       .slice(0, limit)
-      .map(({ content: _content, ...post }) => post);
+      .map(
+        ({ content: _content, linkedin: _linkedin, media: _media, videos: _videos, ...post }) =>
+          post,
+      );
   }
 
   if (status !== 'published' && !isAdmin(request)) {
@@ -144,7 +148,7 @@ export async function POST(request) {
     );
   }
 
-  if (blogPosts.some((post) => post.slug === slug)) {
+  if ((await getReleasePosts()).some((post) => post.slug === slug)) {
     return withCors(
       NextResponse.json(
         { error: 'This article is managed in the website repository.' },

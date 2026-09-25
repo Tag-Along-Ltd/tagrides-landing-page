@@ -1,0 +1,140 @@
+{
+  "series": "Shared Value",
+  "author": "Oniya Olaiya",
+  "authorRole": "Founder, TagRides",
+  "newsReviewedAt": "2026-09-25",
+  "publishedAt": "2026-09-25T10:29:14.247Z",
+  "status": "published",
+  "articles": [
+    {
+      "directory": "01-drivers",
+      "slug": "drivers-time-fuel-and-shared-routes",
+      "title": "A driver's time should earn more than the fuel it burns",
+      "description": "The case for sharing a journey without losing control of your day.",
+      "audience": "Drivers & livelihoods",
+      "cover": "drivers-cover.svg",
+      "coverAlt": "A driver route connects available passenger seats. TagRides Shared Value, part one.",
+      "takeaway": "A shared journey should work for the person behind the wheel, after the costs of providing it.",
+      "colour": "teal"
+    },
+    {
+      "directory": "02-riders",
+      "slug": "everyday-mobility-rider-budget-and-choice",
+      "title": "Getting around should leave room for a life",
+      "description": "School, business, appointments or time with family—a useful journey should fit your budget and your plans.",
+      "audience": "Riders & everyday life",
+      "cover": "riders-cover.svg",
+      "coverAlt": "A rider's amber path joins a shared teal journey. TagRides Shared Value, part two.",
+      "takeaway": "The useful fare is the one that makes the complete journey work—and still makes sense tomorrow.",
+      "colour": "amber"
+    },
+    {
+      "directory": "03-cities-environment-investors",
+      "slug": "shared-journeys-cities-climate-and-investment",
+      "title": "The next transport breakthrough may already have a seat",
+      "description": "What better use of existing journeys could mean for cities, the environment and the people investing in both.",
+      "audience": "Cities & long-term value",
+      "cover": "cities-cover.svg",
+      "coverAlt": "Shared routes connect with a wider transport network. TagRides Shared Value, part three.",
+      "takeaway": "The opportunity is more useful travel from existing capacity. The proof is what changes on real journeys.",
+      "colour": "teal"
+    }
+  ],
+  "videos": {
+    "https://www.youtube.com/watch?v=DgZ3WJ2dQFo": {
+      "title": "Fuel costs and the global energy market",
+      "publisher": "Channels Television",
+      "dateLabel": "22 September 2026",
+      "duration": "55:09 · Full programme",
+      "kind": "Recent interview",
+      "thumbnail": "https://i.ytimg.com/vi/DgZ3WJ2dQFo/hqdefault.jpg",
+      "description": "Petroleum Minister Heineken Lokpobiri discusses the government's view of energy prices on Politics Today. Read alongside the independent Lagos station-price reporting cited in this article.",
+      "sourceUrl": "https://www.channelstv.com/2026/09/22/energy-cost-is-global-tinubu-govt-has-no-power-to-control-fuel-price-minister/"
+    },
+    "https://www.youtube.com/watch?v=cJ1wKm4dF3w": {
+      "title": "Why fuel-price relief can take time",
+      "publisher": "Channels Television",
+      "dateLabel": "1 July 2026",
+      "duration": "14:36",
+      "kind": "Background explainer",
+      "thumbnail": "https://i.ytimg.com/vi/cJ1wKm4dF3w/hqdefault.jpg",
+      "description": "Economist Dumebi Oluwole explains the uncertainty around pump-price reductions. This July interview provides background; the September news reports supply the newer price and fare context.",
+      "sourceUrl": "https://www.channelstv.com/2026/07/01/video-why-petrol-price-is-not-easing-fast-analyst/"
+    },
+    "https://www.youtube.com/watch?v=EM0QlMhdbxE": {
+      "title": "A biogas proposal for Lagos transport",
+      "publisher": "LAMATA TV",
+      "dateLabel": "Archive page · 6 March 2025",
+      "duration": "3:57",
+      "kind": "Archive background",
+      "thumbnail": "https://i.ytimg.com/vi/EM0QlMhdbxE/hqdefault.jpg",
+      "description": "LAMATA's earlier video on a biogas proposal to address transport costs. It illustrates another approach to transport energy; it is not a new September announcement or proof of deployment.",
+      "sourceUrl": "https://www.lamata-ng.com/video/lagos-commissioners-back-biogas-plan-to-cut-transport-costs/"
+    }
+  },
+  "media": {
+    "driver-offer.webp": {
+      "kind": "component",
+      "label": "Inside the app",
+      "title": "See the journey. Understand the offer.",
+      "caption": "A driver offer preview, using example data. Pickup, drop-off and fare appear together. “Get” shows the amount after the platform fee, before fuel and other driving costs.",
+      "src": "/assets/articles/shared-value/driver-offer.webp"
+    },
+    "rider-search.webp": {
+      "kind": "phone",
+      "label": "Product view",
+      "title": "Start with where you need to go.",
+      "caption": "Start with your destination before reviewing suitable journeys. Earlier TagRides product capture; the latest app layout may differ.",
+      "src": "/assets/articles/shared-value/rider-search.webp"
+    },
+    "rider-offer.webp": {
+      "kind": "component",
+      "label": "From the product demo",
+      "title": "Keep your driver options in view.",
+      "caption": "The rider's Driver options panel, showing a chosen driver alongside two other options, ratings and example fares. Cropped from the original product demo at 00:34, after the narration caption clears. Demonstration data, not current offers.",
+      "src": "/assets/articles/shared-value/rider-offer.webp"
+    },
+    "city-map.webp": {
+      "kind": "phone",
+      "label": "Captured on iOS",
+      "title": "Every connection starts in a real place.",
+      "caption": "The TagRides home screen around Yaba, captured on the iOS simulator on 25 September 2026. Map locations provide context, not an announced service area or public-transport integration.",
+      "src": "/assets/articles/shared-value/city-map.webp"
+    },
+    "driver-value.svg": {
+      "kind": "diagram",
+      "caption": "The driver's useful return is what remains after the relevant costs. An explanatory framework, not a forecast.",
+      "src": "/assets/articles/shared-value/driver-value.svg"
+    },
+    "seat-model.svg": {
+      "kind": "diagram",
+      "caption": "Illustrative seat count: four offered places, two passengers boarded through the app and one place used outside it leave one available place. An accepted Along fare is not an advance reservation.",
+      "src": "/assets/articles/shared-value/seat-model.svg"
+    },
+    "rider-priorities.svg": {
+      "kind": "diagram",
+      "caption": "Source: TagRides' early survey of 210 Lagos riders. Respondents could name several priorities; these are company-sample counts, not citywide estimates.",
+      "src": "/assets/articles/shared-value/rider-priorities.svg"
+    },
+    "whole-journey.svg": {
+      "kind": "diagram",
+      "caption": "Compare the complete trip: shared-leg fare, connecting fares and relevant fees. Consider walking and waiting alongside the cash total.",
+      "src": "/assets/articles/shared-value/whole-journey.svg"
+    },
+    "impact-test.svg": {
+      "kind": "diagram",
+      "caption": "Three questions for assessing a shared ride's environmental effect. A measurement framework, not measured TagRides impact.",
+      "src": "/assets/articles/shared-value/impact-test.svg"
+    },
+    "transit-connection.svg": {
+      "kind": "diagram",
+      "caption": "A possible feeder journey, shown schematically. No live bus service, ticket integration or fixed route is being announced.",
+      "src": "/assets/articles/shared-value/transit-connection.svg"
+    },
+    "repeat-value.svg": {
+      "kind": "diagram",
+      "caption": "A framework for evaluating the pilot: repeat riders, worthwhile driver earnings, dependable pickups and sustainable service costs.",
+      "src": "/assets/articles/shared-value/repeat-value.svg"
+    }
+  }
+}

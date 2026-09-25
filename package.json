@@ -10,6 +10,9 @@
     "deploy:cloudflare": "npm run build:cloudflare && npx wrangler pages deploy out --project-name=tagrides-landing-page",
     "start": "next start",
     "lint": "eslint .",
+    "media:azure": "node scripts/media/azure-openai.mjs",
+    "test:help": "node scripts/validate-help.mjs",
+    "test:articles": "node scripts/validate-articles.mjs && node --test scripts/test-blog-catalog.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
@@ -29,7 +32,7 @@
     "lucide-react": "^1.20.0",
     "mongodb": "^6.8.0",
     "motion": "^12.40.0",
-    "next": "^16.2.9",
+    "next": "16.3.3",
     "react": "^19.0.0",
     "react-circular-progressbar": "^2.2.0",
     "react-countup": "^6.5.3",
@@ -43,10 +46,12 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4.3.1",
     "eslint": "^9.39.4",
-    "eslint-config-next": "^16.2.9",
+    "eslint-config-next": "16.3.3",
     "eslint-config-prettier": "^10.1.8",
+    "playwright": "^1.58.2",
     "postcss": "^8.5.15",
     "prettier": "^3.8.4",
+    "sharp": "0.35.4",
     "tailwindcss": "^4.3.1"
   }
 }

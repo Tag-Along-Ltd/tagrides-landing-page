@@ -1,4 +1,14 @@
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import { helpArticles, helpCategories } from '../src/data/help/articles.mjs';
+
+const series = JSON.parse(await readFile('content/articles/shared-value/manifest.json', 'utf8'));
+const newArticleRoutes = series.articles.map(({ slug }) => `/blog/${slug}`);
+const helpRoutes = [
+  '/help',
+  ...helpCategories.map(({ id }) => `/help/${id}`),
+  ...helpArticles.map(({ slug }) => `/help/${slug}`),
+];
 
 // Read-only smoke checks against a running local production build.
 // Usage: node scripts/check-release.mjs http://127.0.0.1:3190
@@ -11,6 +21,8 @@ const routes = [
   '/blog',
   '/blog/the-car-is-going-there-anyway',
   '/blog/marginal-zero-economics',
+  ...newArticleRoutes,
+  ...helpRoutes,
   '/pitch',
   '/pitch?audience=judge',
   '/pitch?audience=customer',
@@ -45,6 +57,8 @@ for (const value of [
 for (const route of [
   '/support',
   '/blog',
+  ...newArticleRoutes,
+  ...helpRoutes,
   '/blog/the-car-is-going-there-anyway',
   '/blog/marginal-zero-economics',
 ]) {
@@ -96,12 +110,28 @@ const xml = await xmlResponse.text();
 assert.ok(!xml.includes('localhost'), 'Sitemap contains a local development URL');
 for (const route of [
   '/support',
+  ...newArticleRoutes,
+  ...helpRoutes,
   '/blog/the-car-is-going-there-anyway',
   '/blog/marginal-zero-economics',
 ]) {
   assert.ok(xml.includes(`<loc>${canonical}${route}</loc>`), `Missing sitemap URL: ${route}`);
 }
 const index = await (await fetch(base + '/api/posts')).json();
+for (const article of series.articles) {
+  const post = index.posts.find(({ slug }) => slug === article.slug);
+  assert.ok(post, `API index missing ${article.slug}`);
+  assert.ok(!('content' in post) && !('linkedin' in post), 'List API leaked full/editorial copy');
+  const detail = await (await fetch(`${base}/api/posts/${article.slug}`)).json();
+  assert.equal(detail.post.title, article.title);
+  assert.ok(!('linkedin' in detail.post), 'LinkedIn preparation must remain internal');
+  assert.ok(!html.get(`/blog/${article.slug}`).includes('Review the shorter LinkedIn version'));
+  assert.equal(
+    (await fetch(base + `/assets/articles/shared-value/${article.cover.replace('.svg', '.png')}`))
+      .status,
+    200,
+  );
+}
 for (const slug of ['the-car-is-going-there-anyway', 'marginal-zero-economics']) {
   const post = index.posts.find((item) => item.slug === slug);
   assert.ok(post, `API index missing ${slug}`);

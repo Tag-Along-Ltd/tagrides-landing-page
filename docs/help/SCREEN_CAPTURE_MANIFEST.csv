@@ -1,0 +1,73 @@
+screen_id,article_id,screen_or_panel,state_to_capture,annotation_focus,audience,platform,status
+G01,H01,Startup splash,light theme,Teal and amber rings,public,web-mobile,planned
+G02,H01,Startup and loading,dark theme,Brand and readable progress,public,web-mobile,planned
+G03,H02,Sign in,empty form,Country and phone input,public,web-mobile,planned
+G04,H02,Phone verification,code entry,Code destination and resend,public,web-mobile,planned
+G05,H02,Phone verification,invalid or expired,Recovery without duplicate account,public,web-mobile,planned
+G06,H02,Sign up,valid synthetic details,Required fields and next step,public,web-mobile,planned
+G07,H02,Email verified,success plus expired alternate,Return or request new link,public,web-mobile,planned
+G08,H03,Onboarding,route-sharing explanation,Different destinations with overlapping route,public,web-mobile,planned
+G09,H17,Profile and role,synthetic profile,Rider-driver role and sign out,public,web-mobile,planned
+G10,H18,Help and Support,FAQ and contact tabs,Actual assistance channel,public,web-mobile,planned
+R01,H04,Rider Home,location ready,Current position versus destination,public,web-mobile,planned
+R02,H04,Location permission,denied,Enable location or supported fallback,public,web-mobile,planned
+R03,H04,Destination search,results for confirmed terminal,Name and map pin consistency,public,web-mobile,planned
+R04,H04,Ride confirmation,Along Shared selected,Pickup destination seats payment and request,public,web-mobile,planned
+R05,H05,Discovery,no drivers,No-match next action,public,web-mobile,planned
+R06,H05,Driver card,car and keke alternatives,Vehicle fare rating seats distance and ETA,public,web-mobile,planned
+R07,H05,Driver options sheet,multiple options,Selected option and alternatives,public,web-mobile,planned
+R08,H05,Map legend,route and walking approach,Pickup drop-off vehicle and walk path,public,web-mobile,planned
+R09,H06,Negotiation,offer entered,Offer amount and submit action,public,web-mobile,planned
+R10,H06,Negotiation,counter received,Accept or leave counter,public,web-mobile,planned
+R11,H06,Offer,expired or pending acknowledgement,What is not yet confirmed,public,web-mobile,planned
+R12,H06,Selected driver strip,chosen,Selection versus boarding commitment,public,web-mobile,planned
+R13,H09,Selected driver strip,contested or full,Capacity message and alternative,public,web-mobile,planned
+R14,H09,Selected driver,driver disappeared or switched,New driver and updated fare,public,web-mobile,planned
+R15,H07,Pickup approach,walking to meeting point,Correct road side and public landmark,public,web-mobile,planned
+R16,H07,Driver arrival,waiting,Identity plate fare and wait window,public,web-mobile,planned
+R17,H08,In ride,boarded,Journey status and destination,public,web-mobile,planned
+R18,H18,Trip assistance,report or alert prompt,What the action will do,public,web-mobile,planned
+R19,H08,Ride complete,receipt,Agreed fare and payment state,public,web-mobile,planned
+R20,H08,Rating,optional feedback,Submit or skip,public,web-mobile,planned
+R21,H09,Cancellation,confirmation,Consequence and return path,public,web-mobile,planned
+R22,H09,Network recovery,offline then restored,Stale state versus confirmed update,public,web-mobile,planned
+R23,H09,Active ride resume,after idle refresh,Same trip identity and state,public,web-mobile,planned
+V01,H10,Driver introduction,entry,Own-route earnings and verification,public,web-mobile,planned
+V02,H10,Driver Home,not eligible,Next incomplete verification section,public,web-mobile,planned
+V03,H10,Bank details,synthetic resolved account,Resolution and save acknowledgement,public,web-mobile,planned
+V04,H10,Personal details,synthetic completed form,Required details and next step,public,web-mobile,planned
+V05,H11,Vehicle details,car,Make model year plate colour passenger seats,public,web-mobile,planned
+V06,H11,Vehicle details,tricycle,Manual make model and actual capacity,public,web-mobile,planned
+V07,H11,Vehicle documents,tricycle required list,Required versus optional and expiry,public,web-mobile,planned
+V08,H10,Driver documents,selected versus uploaded,Status meaning and upload action,public,web-mobile,planned
+V09,H10,Document preview,synthetic sample,Readable image or PDF and back,public,web-mobile,planned
+V10,H10,Verification summary,ready to submit,Five sections and edit links,public,web-mobile,planned
+V11,H10,Verification status,pending,Submission is not approval,public,web-mobile,planned
+V12,H10,Verification status,rejected section,Specific reason edit and resubmit,public,web-mobile,planned
+V13,H10,Driver Home,eligible,Backend approval and route action,public,web-mobile,planned
+D01,H12,Driver Home,Along selected,Origin destination and mode,public,web-mobile,planned
+D02,H12,Confirm route,seats selected,Passenger seats offered and Start trip,public,web-mobile,planned
+D03,H13,Driver marketplace,stationary,Route status and journey board,public,web-mobile,planned
+D04,H14,Driver marketplace,moving simulation,Reduced controls and next stop,public,web-mobile,planned
+D05,H13,Incoming offer,car and keke examples,Pickup drop-off gross net and route fit,public,web-mobile,planned
+D06,H13,Offer decision,counter and acceptance,Price and acknowledgement,public,web-mobile,planned
+D07,H13,Offer decision,expired or failed,Retry with current price,public,web-mobile,planned
+D08,H14,Journey roster,pending and onboard riders,Counts and passenger states,public,web-mobile,planned
+D09,H14,Shared stop roster,multiple passengers,Same stop distinct people,public,web-mobile,planned
+D10,H14,Pickup sheet,arrived,Rider identity and Confirm pickup,public,web-mobile,planned
+D11,H14,Pickup sheet,confirmation failed,Retained action and retry,public,web-mobile,planned
+D12,H14,Waiting,deadline reached,Wait extension versus no-show,public,web-mobile,planned
+D13,H14,Seats,full and reserved-pickup cases,Capacity labels and valid boarding,public,web-mobile,planned
+D14,H14,Unexpected stop,controlled fixture,Reason and resume path,public,web-mobile,planned
+D15,H15,Drop-off,correct passenger at stop,Confirm then server acknowledgement,public,web-mobile,planned
+D16,H15,Session complete,all passengers dropped,Gross fees net settlement and exit,public,web-mobile,planned
+D17,H20,Driver dashboard,fixture history,Period and metric meanings,public,web-mobile,planned
+D18,H17,Driver history,expanded session,Completed passenger rides and gross fares,public,web-mobile,captured
+M01,H16,Wallet,balance summary,Available held and pending amounts,public,web-mobile,planned
+M02,H16,Top up,amount selection,Amount and next step,public,web-mobile,planned
+M03,H16,Checkout,test payment,Return success failure and cancellation,public,web-mobile,planned
+M04,H16,Transactions,pending and completed,Settlement evidence,public,web-mobile,planned
+M05,H16,Withdrawal,eligible and blocked,Limits schedule cooling and next action,public,web-mobile,planned
+M06,H17,History,completed and cancelled,Status date and amount,public,web-mobile,planned
+M07,H17,History detail,receipt,Route and agreed fare,public,web-mobile,planned
+M08,H17,Referral,synthetic code,Share versus reward eligibility,public,web-mobile,planned

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img"><title>Of 210 riders, 192 named pricing, 153 convenience and 147 safety.</title><rect x="0" y="0" width="1600" height="900" rx="0" fill="#F5F2EB"/><svg x="64" y="55" width="100" height="60" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60" fill="none" role="img" aria-label="Tag Rides mark">
+  <title>Tag Rides — Stronger Together mark</title>
+  <defs>
+    <mask id="cut-teal">
+      <rect width="100" height="60" fill="white"/>
+      <circle cx="65" cy="30" r="22" fill="black"/>
+    </mask>
+  </defs>
+  <!-- Teal ring (full) -->
+  <circle cx="35" cy="30" r="22" stroke="#008080" stroke-width="6"/>
+  <!-- Amber ring, masked to read as interlocked behind the teal -->
+  <g mask="url(#cut-teal)">
+    <circle cx="65" cy="30" r="22" stroke="#F59E0B" stroke-width="6"/>
+  </g>
+  <!-- Teal arc back on top for the over/under interlace -->
+  <path d="M 56 17 A 22 22 0 0 1 56 43" stroke="#008080" stroke-width="6" stroke-linecap="round"/>
+</svg>
+<text x="190" y="95" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#52635F" font-weight="700">SHARED VALUE</text><text x="64" y="215" font-family="DejaVu Sans,sans-serif" font-size="58" fill="#102E2C" font-weight="700">What Lagos riders told us.</text><text x="64" y="365" font-family="DejaVu Sans,sans-serif" font-size="32" fill="#102E2C" font-weight="700">Pricing</text><rect x="380" y="325" width="930" height="54" rx="10" fill="#DEE6DF"/><rect x="380" y="325" width="850.2857142857143" height="54" rx="10" fill="#008080"/><text x="1350" y="365" font-family="DejaVu Sans,sans-serif" font-size="40" fill="#102E2C" font-weight="700">192</text><text x="64" y="495" font-family="DejaVu Sans,sans-serif" font-size="32" fill="#102E2C" font-weight="700">Convenience</text><rect x="380" y="455" width="930" height="54" rx="10" fill="#DEE6DF"/><rect x="380" y="455" width="677.5714285714286" height="54" rx="10" fill="#438F82"/><text x="1350" y="495" font-family="DejaVu Sans,sans-serif" font-size="40" fill="#102E2C" font-weight="700">153</text><text x="64" y="625" font-family="DejaVu Sans,sans-serif" font-size="32" fill="#102E2C" font-weight="700">Safety</text><rect x="380" y="585" width="930" height="54" rx="10" fill="#DEE6DF"/><rect x="380" y="585" width="651.0" height="54" rx="10" fill="#B77A0C"/><text x="1350" y="625" font-family="DejaVu Sans,sans-serif" font-size="40" fill="#102E2C" font-weight="700">147</text><text x="64" y="760" font-family="DejaVu Sans,sans-serif" font-size="27" fill="#52635F" font-weight="400">210 riders · Company research · Priorities could overlap</text><path d="M64 800 H1536" fill="none" stroke="#D3D9D2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray=""/><text x="64" y="853" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#102E2C" font-weight="700">Their route. Your ride.</text><text x="1030" y="853" font-family="DejaVu Sans,sans-serif" font-size="21" fill="#52635F" font-weight="400">TagRides · Editorial illustration</text></svg>

@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 import clientPromise from '@/lib/mongodb';
-import { blogPosts } from '@/data/blog-posts';
+import { getReleasePosts } from '@/lib/releasePosts';
 
 const DB_NAME = 'myBlog';
 const COLLECTION = 'posts';
@@ -24,8 +24,13 @@ function isAdmin(request) {
 
 export async function GET(request, { params }) {
   const { slug } = await params;
-  const releasePost = blogPosts.find((post) => post.slug === slug && post.status === 'published');
-  if (releasePost) return withCors(NextResponse.json({ post: releasePost }));
+  const releasePost = (await getReleasePosts()).find(
+    (post) => post.slug === slug && post.status === 'published',
+  );
+  if (releasePost) {
+    const { linkedin: _linkedin, ...post } = releasePost;
+    return withCors(NextResponse.json({ post }));
+  }
   try {
     const client = await clientPromise;
     const collection = client.db(DB_NAME).collection(COLLECTION);
@@ -48,7 +53,7 @@ export async function PUT(request, { params }) {
     return withCors(NextResponse.json({ error: 'Unauthorized.' }, { status: 401 }));
   }
   const { slug } = await params;
-  if (blogPosts.some((post) => post.slug === slug)) {
+  if ((await getReleasePosts()).some((post) => post.slug === slug)) {
     return withCors(
       NextResponse.json(
         { error: 'This article is managed in the website repository.' },
@@ -102,7 +107,7 @@ export async function DELETE(request, { params }) {
     return withCors(NextResponse.json({ error: 'Unauthorized.' }, { status: 401 }));
   }
   const { slug } = await params;
-  if (blogPosts.some((post) => post.slug === slug)) {
+  if ((await getReleasePosts()).some((post) => post.slug === slug)) {
     return withCors(
       NextResponse.json(
         { error: 'This article is managed in the website repository.' },

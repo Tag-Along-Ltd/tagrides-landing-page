@@ -186,22 +186,13 @@
 
   "lagosCost": {
     "eyebrow": "WHAT IT COSTS TO MOVE IN LAGOS",
-    "title": "Ride-hailing is 3–10× more expensive than the alternative.",
-    "subtitle": "30 routes researched, Nov 2024. Same start. Same destination. Same time of day. The gap is the market.",
+    "title": "What our Lagos fare research found.",
+    "subtitle": "Historical route comparisons from November 2024. A shared passenger place and a dedicated car are different purchases. These are company observations, not current quotes or measured TagRides savings.",
     "stats": [
-      { "value": 30, "suffix": " hrs/wk", "label": "Average time a Lagosian spends in traffic" },
-      { "value": 264, "suffix": " /km", "label": "Cars per kilometer in Lagos (global avg: 11)" },
-      {
-        "value": 8,
-        "prefix": "$",
-        "suffix": "B+",
-        "label": "Estimated annual productivity loss from Lagos congestion"
-      },
-      {
-        "value": 85,
-        "suffix": "%",
-        "label": "Approx. share of the world priced out of daily private ride-hail"
-      }
+      { "value": 210, "label": "Lagos riders in our early company survey" },
+      { "value": 192, "label": "Survey respondents who named pricing as a priority" },
+      { "value": 30, "label": "Routes covered in company-reported November 2024 research" },
+      { "value": 10, "label": "Historical route comparisons shown below" }
     ],
     "routes": [
       { "from": "Mushin", "to": "Iju Road", "minNaira": 500, "maxNaira": 900, "boltNaira": 5000 },
@@ -245,7 +236,7 @@
       },
       { "from": "Ajah", "to": "Lekki", "minNaira": 1000, "maxNaira": 1500, "boltNaira": 5700 }
     ],
-    "source": "TagRides field research — 30 Lagos routes, n=30 respondents, Nov 2024."
+    "source": "TagRides company research: early survey of 210 Lagos riders; separate November 2024 fare research described as 30 routes / 30 respondents, with 10 published examples shown here."
   },
 
   "solution": {

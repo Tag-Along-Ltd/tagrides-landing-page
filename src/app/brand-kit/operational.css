@@ -1,0 +1,780 @@
+.brand-print-page,
+.brand-template-page {
+  background: #111;
+  min-height: 100vh;
+}
+.brand-print-toolbar,
+.brand-template-toolbar {
+  align-items: center;
+  background: #0a0a0af2;
+  border-bottom: 1px solid #ffffff18;
+  color: #ddd;
+  display: grid;
+  font-size: 12px;
+  grid-template-columns: 1fr auto 1fr;
+  padding: 14px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.brand-print-toolbar a,
+.brand-template-toolbar a,
+.brand-print-toolbar button,
+.brand-template-toolbar button {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+.brand-print-toolbar button,
+.brand-template-toolbar button {
+  background: #008080;
+  border: 0;
+  border-radius: 999px;
+  color: white;
+  font-weight: 700;
+  justify-self: end;
+  padding: 10px 16px;
+}
+.brand-template-page {
+  padding: 80px 24px;
+}
+.brand-template-toolbar {
+  left: 0;
+  position: fixed;
+  right: 0;
+}
+.op-sheet,
+.op-business-card,
+.op-id-card,
+.op-email-signature {
+  background: #fff;
+  color: #151515;
+  box-shadow: 0 30px 90px #0008;
+  margin: 40px auto;
+  position: relative;
+}
+.op-a4 {
+  height: 297mm;
+  padding: 18mm 17mm 14mm;
+  width: 210mm;
+}
+.op-a5 {
+  height: 210mm;
+  padding: 12mm;
+  width: 148mm;
+}
+.op-dl {
+  height: 99mm;
+  padding: 10mm;
+  width: 210mm;
+}
+.op-envelope {
+  height: 110mm;
+  overflow: hidden;
+  padding: 12mm;
+  width: 220mm;
+}
+.current-document-date {
+  border-bottom: 1px solid #999;
+  display: inline-block;
+  font-weight: 700;
+  min-width: 31mm;
+  padding: 0 1mm 1mm;
+}
+.op-doc-header {
+  align-items: flex-start;
+  border-bottom: 2px solid #008080;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 8mm;
+}
+.op-doc-header > img {
+  height: auto;
+  width: 54mm;
+}
+.op-doc-header > div {
+  text-align: right;
+}
+.op-doc-header small {
+  color: #777;
+  display: block;
+  font: 600 7pt var(--font-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.op-doc-header h1 {
+  color: #151515 !important;
+  font: 800 25pt/1 var(--font-display);
+  margin: 4mm 0 2mm;
+}
+.op-doc-header span {
+  color: #008080;
+  font: 600 7pt var(--font-mono);
+}
+.op-parties {
+  display: grid;
+  gap: 12mm;
+  grid-template-columns: 1fr 1fr;
+  padding: 10mm 0;
+}
+.op-parties small,
+.op-summary small {
+  color: #008080;
+  font: 700 7pt var(--font-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.op-parties p {
+  font-size: 8pt;
+  margin: 4mm 0;
+}
+.op-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.op-table th {
+  background: #0a0a0a;
+  color: white;
+  font: 600 7pt var(--font-mono);
+  letter-spacing: 0.06em;
+  padding: 4mm;
+  text-align: left;
+  text-transform: uppercase;
+}
+.op-table td {
+  border: 1px solid #ddd;
+  height: 14mm;
+  padding: 3mm;
+}
+.op-table th:nth-child(1) {
+  width: 48%;
+}
+.op-summary {
+  display: grid;
+  gap: 12mm;
+  grid-template-columns: 1.4fr 0.6fr;
+  margin-top: 7mm;
+}
+.op-summary p {
+  font-size: 8pt;
+  line-height: 1.8;
+}
+.op-summary > div:last-child {
+  background: #f1f5f4;
+  padding: 5mm;
+}
+.op-summary strong {
+  border-top: 2px solid #008080;
+  display: block;
+  margin-top: 5mm;
+  padding-top: 4mm;
+}
+.op-signatures {
+  border-top: 1px solid #ddd;
+  display: grid;
+  font-size: 8pt;
+  gap: 10mm;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 7mm;
+  padding-top: 8mm;
+}
+.op-a4:not(.op-letterhead) .op-signatures {
+  bottom: 47mm;
+  left: 17mm;
+  margin: 0;
+  position: absolute;
+  right: 70mm;
+}
+.op-doc-footer {
+  align-items: end;
+  border-top: 1px solid #ddd;
+  bottom: 7mm;
+  display: grid;
+  gap: 8mm;
+  grid-template-columns: 1fr 1fr;
+  left: 17mm;
+  padding-top: 5mm;
+  position: absolute;
+  right: 17mm;
+}
+.op-contact {
+  display: flex;
+  flex-direction: column;
+  font-size: 6pt;
+  gap: 1mm;
+  line-height: 1.4;
+}
+.op-doc-footer > p {
+  color: #777;
+  font-size: 6pt;
+  line-height: 1.5;
+  margin: 0;
+  text-align: right;
+}
+.op-letter-meta {
+  font-size: 9pt;
+  line-height: 2;
+  margin: 16mm 0 12mm;
+}
+.op-letter-body {
+  font-size: 10pt;
+  line-height: 1.9;
+}
+.op-letter-body strong,
+.op-letter-body span {
+  display: block;
+}
+.op-letter-footer {
+  border-top: 2px solid #008080;
+  bottom: 14mm;
+  left: 17mm;
+  padding-top: 6mm;
+  position: absolute;
+  right: 17mm;
+}
+.op-receipt .op-doc-header > img {
+  width: 38mm;
+}
+.op-receipt .op-doc-header h1 {
+  font-size: 20pt;
+}
+.op-receipt-total {
+  background: #e8f3f3;
+  margin: 9mm 0;
+  padding: 7mm;
+}
+.op-receipt-total small {
+  color: #008080;
+  display: block;
+  font: 700 7pt var(--font-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.op-receipt-total strong {
+  display: block;
+  font: 800 22pt var(--font-display);
+  margin-top: 3mm;
+}
+.op-receipt-lines {
+  font-size: 8pt;
+  line-height: 2.4;
+}
+.op-receipt .op-doc-footer {
+  bottom: 10mm;
+  left: 12mm;
+  right: 12mm;
+}
+.op-card-sheet {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  margin: 50px auto;
+  max-width: 1200px;
+}
+.op-business-card {
+  height: 55mm;
+  margin: 0;
+  overflow: hidden;
+  padding: 7mm;
+  width: 85mm;
+}
+.op-business-card h1,
+.op-id-card h1,
+.op-email-signature h1 {
+  color: inherit !important;
+}
+.op-card-front {
+  background: #0a0a0a;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.op-card-front:after {
+  background: #f59e0b;
+  content: '';
+  height: 4mm;
+  inset: auto 0 0;
+  position: absolute;
+}
+.op-card-front img {
+  width: 44mm;
+}
+.op-card-front strong {
+  font: 800 15pt var(--font-display);
+}
+.op-card-front span {
+  color: #888;
+  font: 600 6pt var(--font-mono);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.op-card-back h1 {
+  color: #151515 !important;
+  font: 800 14pt var(--font-display);
+  margin: 0;
+}
+.op-card-back p {
+  color: #008080;
+  font: 700 6pt var(--font-mono);
+  letter-spacing: 0.1em;
+  margin: 1mm 0;
+  text-transform: uppercase;
+}
+.op-card-contact {
+  display: flex;
+  flex-direction: column;
+  font-size: 6.5pt;
+  gap: 1mm;
+  margin-top: 8mm;
+}
+.op-card-back > img {
+  bottom: 7mm;
+  position: absolute;
+  right: 7mm;
+  width: 18mm;
+}
+.op-card-back > small {
+  bottom: 4mm;
+  color: #777;
+  font-size: 5pt;
+  position: absolute;
+  right: 7mm;
+}
+.op-id-card {
+  height: 53.98mm;
+  margin: 0;
+  overflow: hidden;
+  padding: 6mm;
+  width: 85.6mm;
+}
+.op-id-front {
+  background: #0a0a0a;
+  color: white;
+}
+.op-id-front > img {
+  width: 35mm;
+}
+.op-id-photo {
+  align-items: center;
+  background: #282828;
+  border: 1px solid #555;
+  display: flex;
+  font: 600 5pt var(--font-mono);
+  height: 25mm;
+  justify-content: center;
+  position: absolute;
+  right: 6mm;
+  top: 6mm;
+  width: 20mm;
+}
+.op-id-front h1 {
+  font: 800 13pt var(--font-display);
+  margin: 11mm 0 1mm;
+}
+.op-id-front p {
+  color: #14b8a6;
+  font-size: 7pt;
+  margin: 0 0 5mm;
+}
+.op-id-front span,
+.op-id-front small {
+  display: block;
+  font: 500 5.5pt var(--font-mono);
+  margin-top: 1.5mm;
+}
+.op-id-back > img:first-child {
+  width: 30mm;
+}
+.op-id-back p {
+  font-size: 6.5pt;
+  line-height: 1.5;
+  max-width: 50mm;
+}
+.op-id-back > div {
+  display: flex;
+  flex-direction: column;
+  font-size: 5.5pt;
+  gap: 1mm;
+}
+.op-id-back .op-id-qr {
+  bottom: 6mm;
+  position: absolute;
+  right: 6mm;
+  width: 18mm;
+}
+.op-id-back small {
+  bottom: 3mm;
+  color: #777;
+  font-size: 4.5pt;
+  position: absolute;
+  right: 6mm;
+}
+.op-email-signature {
+  align-items: center;
+  display: flex;
+  height: 180px;
+  margin-top: 100px;
+  padding: 24px;
+  width: 600px;
+}
+.op-email-signature > div {
+  align-items: center;
+  border-right: 2px solid #008080;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  padding-right: 25px;
+  width: 150px;
+}
+.op-email-signature img {
+  width: 110px;
+}
+.op-email-signature section {
+  display: flex;
+  flex-direction: column;
+  padding-left: 25px;
+}
+.op-email-signature h1 {
+  color: #151515 !important;
+  font: 800 24px var(--font-display);
+  margin: 0;
+}
+.op-email-signature p {
+  color: #008080;
+  font-size: 11px;
+  font-weight: 700;
+  margin: 4px 0 14px;
+}
+.op-email-signature span,
+.op-email-signature a {
+  font-size: 10px;
+  line-height: 1.6;
+}
+.op-email-signature small {
+  color: #f59e0b;
+  font-size: 10px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+.op-inspection-meta {
+  display: grid;
+  font-size: 8pt;
+  gap: 6mm;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  padding: 9mm 0;
+}
+.op-inspection-table td {
+  height: 16mm;
+}
+.op-handover-summary {
+  border: 1px solid #ddd;
+  margin-top: 10mm;
+  padding: 5mm;
+}
+.op-handover-summary small,
+.op-application-board small {
+  color: #008080;
+  font: 700 7pt var(--font-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.op-handover-summary p {
+  height: 38mm;
+}
+.op-checklist {
+  margin-top: 8mm;
+}
+.op-checklist p {
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  font-size: 9pt;
+  gap: 4mm;
+  margin: 0;
+  padding: 4mm 0;
+}
+.op-checklist i {
+  border: 1px solid #555;
+  height: 5mm;
+  width: 5mm;
+}
+.op-compliment > img,
+.op-envelope > img {
+  width: 52mm;
+}
+.op-compliment > .op-contact,
+.op-envelope > .op-contact {
+  position: absolute;
+  right: 10mm;
+  text-align: right;
+  top: 10mm;
+}
+.op-compliment h1 {
+  color: #151515 !important;
+  font: 800 24pt var(--font-display);
+  margin: 13mm 0 7mm;
+}
+.op-note-line {
+  border-bottom: 1px solid #bbb;
+  color: #888;
+  font-size: 8pt;
+  min-height: 15mm;
+}
+.op-compliment > small {
+  bottom: 8mm;
+  color: #f59e0b;
+  font-weight: 700;
+  position: absolute;
+}
+.op-envelope-recipient {
+  color: #777;
+  font-size: 10pt;
+  line-height: 2;
+  margin: 20mm 0 0 105mm;
+}
+.op-envelope > small {
+  bottom: 8mm;
+  color: #888;
+  font-size: 6pt;
+  position: absolute;
+  right: 12mm;
+}
+.op-application-board,
+.op-stamp-sheet {
+  background: #fff;
+  box-shadow: 0 30px 90px #0008;
+  color: #151515;
+  height: 210mm;
+  margin: 40px auto;
+  overflow: hidden;
+  padding: 14mm 16mm;
+  position: relative;
+  width: 297mm;
+}
+.op-social-layouts {
+  display: grid;
+  gap: 8mm;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 12mm;
+}
+.op-social-layouts > div {
+  background: #0a0a0a;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 125mm;
+  justify-content: flex-end;
+  padding: 8mm;
+}
+.op-social-layouts > div:nth-child(2) {
+  background: #008080;
+}
+.op-social-layouts > div:nth-child(3) {
+  background: #f5f3ed;
+  color: #111;
+}
+.op-social-layouts img {
+  margin-bottom: auto;
+  max-height: 18mm;
+  max-width: 42mm;
+}
+.op-social-layouts strong {
+  font: 800 23pt/1 var(--font-display);
+}
+.op-social-layouts span {
+  color: #f59e0b;
+  font: 600 7pt var(--font-mono);
+  margin-top: 5mm;
+  text-transform: uppercase;
+}
+.op-social-kit > p,
+.op-livery-board > p {
+  font-size: 8pt;
+  line-height: 1.6;
+  margin-top: 7mm;
+}
+.op-site-board {
+  background: #0a0a0a;
+  color: white;
+  padding: 20mm;
+}
+.op-site-board > img {
+  width: 70mm;
+}
+.op-site-board > small {
+  display: block;
+  margin-top: 20mm;
+}
+.op-site-board h1 {
+  color: white !important;
+  font: 800 44pt/1 var(--font-display);
+  margin: 6mm 0;
+}
+.op-site-board > p {
+  color: #aaa;
+  font-size: 14pt;
+}
+.op-site-board > div {
+  align-items: center;
+  bottom: 25mm;
+  display: flex;
+  gap: 6mm;
+  position: absolute;
+}
+.op-site-board > div img {
+  background: white;
+  padding: 2mm;
+  width: 32mm;
+}
+.op-site-board > div span {
+  color: #f59e0b;
+  font-weight: 700;
+}
+.op-site-board footer {
+  bottom: 12mm;
+  color: #aaa;
+  font-size: 8pt;
+  position: absolute;
+}
+.op-livery-board > svg {
+  display: block;
+  margin: 7mm auto 0;
+  max-height: 120mm;
+  width: 88%;
+}
+.op-stamp-sheet {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 210mm;
+  justify-content: center;
+  width: 148mm;
+}
+.op-stamp {
+  align-items: center;
+  border: 3mm double #008080;
+  border-radius: 50%;
+  color: #008080;
+  display: flex;
+  flex-direction: column;
+  height: 90mm;
+  justify-content: center;
+  width: 90mm;
+}
+.op-stamp img {
+  width: 28mm;
+}
+.op-stamp strong {
+  font: 800 10pt var(--font-display);
+  margin-top: 4mm;
+}
+.op-stamp span {
+  font: 600 5pt var(--font-mono);
+  letter-spacing: 0.14em;
+  margin-top: 2mm;
+}
+.op-stamp-sheet h1 {
+  color: #151515 !important;
+  font: 800 16pt var(--font-display);
+  margin: 12mm 0 4mm;
+  text-align: center;
+}
+.op-stamp-sheet > p {
+  color: #777;
+  font-size: 7pt;
+  line-height: 1.5;
+  text-align: center;
+}
+@media print {
+  @page {
+    margin: 0;
+  }
+  .brand-print-toolbar,
+  .brand-template-toolbar {
+    display: none !important;
+  }
+  .brand-print-page,
+  .brand-template-page {
+    background: white !important;
+    padding: 0 !important;
+  }
+  .brand-print-page [class*='printDeck'] {
+    display: block !important;
+    padding: 0 !important;
+  }
+  .brand-print-page [class*='printSlide'] {
+    break-after: page;
+    box-shadow: none !important;
+    margin: 0 !important;
+    page-break-after: always;
+  }
+  .brand-print-page [class*='printSlide']:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+  .op-sheet,
+  .op-business-card,
+  .op-id-card,
+  .op-email-signature,
+  .op-application-board,
+  .op-stamp-sheet {
+    box-shadow: none;
+    margin: 0;
+  }
+  .op-card-sheet {
+    display: block;
+    margin: 0;
+  }
+  .op-business-card,
+  .op-id-card {
+    break-after: page;
+    page-break-after: always;
+  }
+  .op-business-card:last-child,
+  .op-id-card:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+  .op-email-signature {
+    margin: 0;
+  }
+}
+@media (max-width: 800px) {
+  .brand-print-toolbar,
+  .brand-template-toolbar {
+    grid-template-columns: 1fr auto;
+  }
+  .brand-print-toolbar > span,
+  .brand-template-toolbar > span {
+    display: none;
+  }
+  .brand-template-page {
+    overflow: hidden;
+    padding-inline: 12px;
+  }
+  .op-a4 {
+    zoom: calc((100vw - 24px) / 793.7px);
+  }
+  .op-application-board {
+    zoom: calc((100vw - 24px) / 1122.52px);
+  }
+  .op-a5,
+  .op-stamp-sheet {
+    zoom: calc((100vw - 24px) / 559.37px);
+  }
+  .op-dl {
+    zoom: calc((100vw - 24px) / 793.7px);
+  }
+  .op-envelope {
+    zoom: calc((100vw - 24px) / 831.5px);
+  }
+  .op-card-sheet {
+    justify-content: flex-start;
+    min-width: 700px;
+  }
+  .op-email-signature {
+    margin-left: 0;
+  }
+}

@@ -1,5 +1,7 @@
 # Tag Rides Landing Page — Project Context
 
+> **Historical planning notes.** The stack and setup instructions below describe the original template, not the current application. The website now uses Next.js 16, React 19 and Tailwind 4. Follow `README.md` for current development, checks and release instructions; do not downgrade dependencies or re-run the historical installation repair.
+
 > **Read this first.** This file is the briefing for any new Claude Code session opened in this folder. It captures everything decided in the conversation that led to the current state, so you don't need to reference any prior chat.
 
 ---

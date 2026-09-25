@@ -63,7 +63,7 @@ const COLUMNS = [
     title: 'About',
     items: [
       { label: 'Story', href: '/about-us' },
-      { label: 'Field notes', href: '/blog' },
+      { label: 'Articles', href: '/blog' },
     ],
   },
   {
@@ -72,6 +72,7 @@ const COLUMNS = [
       { label: 'How it works', href: '/#how-it-works' },
       { label: 'Safety', href: '/#safety' },
       { label: 'Pricing', href: '/#pricing' },
+      { label: 'Help centre', href: '/help' },
       { label: 'Train the AI', href: '/contribute' },
     ],
   },

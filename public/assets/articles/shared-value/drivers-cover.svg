@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img"><title>Your route. More possibility.</title><rect x="0" y="0" width="1600" height="900" rx="0" fill="#102E2C"/><svg x="64" y="55" width="100" height="60" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 60" fill="none" role="img" aria-label="Tag Rides mark">
+  <title>Tag Rides — Stronger Together mark</title>
+  <defs>
+    <mask id="cut-teal">
+      <rect width="100" height="60" fill="white"/>
+      <circle cx="65" cy="30" r="22" fill="black"/>
+    </mask>
+  </defs>
+  <!-- Teal ring (full) -->
+  <circle cx="35" cy="30" r="22" stroke="#008080" stroke-width="6"/>
+  <!-- Amber ring, masked to read as interlocked behind the teal -->
+  <g mask="url(#cut-teal)">
+    <circle cx="65" cy="30" r="22" stroke="#F59E0B" stroke-width="6"/>
+  </g>
+  <!-- Teal arc back on top for the over/under interlace -->
+  <path d="M 56 17 A 22 22 0 0 1 56 43" stroke="#008080" stroke-width="6" stroke-linecap="round"/>
+</svg>
+<text x="190" y="95" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#B9CECA" font-weight="700">SHARED VALUE</text><text x="1435" y="105" font-family="DejaVu Sans,sans-serif" font-size="45" fill="#F59E0B" font-weight="700">01</text><text x="64" y="210" font-family="DejaVu Sans,sans-serif" font-size="22" fill="#B9CECA" font-weight="700">DRIVERS &amp; LIVELIHOODS</text><text x="64" y="345" font-family="DejaVu Sans,sans-serif" font-size="82" fill="#F5F2EB" font-weight="700">Your route.</text><text x="64" y="448" font-family="DejaVu Sans,sans-serif" font-size="82" fill="#F5F2EB" font-weight="700">More possibility.</text><rect x="998" y="210" width="530" height="510" rx="36" fill="#204340"/><path d="M1050 535 H1460" fill="none" stroke="#63C5B5" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray=""/><rect x="1080" y="350" width="72" height="83" rx="15" fill="#63C5B5"/><rect x="1072" y="413" width="88" height="24" rx="10" fill="#63C5B5"/><path d="M1084 436 v19 M1148 436 v19" fill="none" stroke="#63C5B5" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray=""/><circle cx="1115" cy="535" r="14" fill="#F59E0B"/><rect x="1230" y="350" width="72" height="83" rx="15" fill="#63C5B5"/><rect x="1222" y="413" width="88" height="24" rx="10" fill="#63C5B5"/><path d="M1234 436 v19 M1298 436 v19" fill="none" stroke="#63C5B5" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray=""/><circle cx="1265" cy="535" r="14" fill="#F59E0B"/><rect x="1380" y="350" width="72" height="83" rx="15" fill="#63C5B5"/><rect x="1372" y="413" width="88" height="24" rx="10" fill="#63C5B5"/><path d="M1384 436 v19 M1448 436 v19" fill="none" stroke="#63C5B5" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray=""/><circle cx="1415" cy="535" r="14" fill="#F59E0B"/><text x="1050" y="630" font-family="DejaVu Sans,sans-serif" font-size="25" fill="#B9CECA" font-weight="700">THE JOURNEY</text><text x="1050" y="674" font-family="DejaVu Sans,sans-serif" font-size="25" fill="#B9CECA" font-weight="700">ALREADY PLANNED</text><text x="64" y="730" font-family="DejaVu Sans,sans-serif" font-size="27" fill="#F5F2EB" font-weight="400">A Lagos-first idea. A shared opportunity.</text><path d="M64 800 H1536" fill="none" stroke="#3C5651" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray=""/><text x="64" y="853" font-family="DejaVu Sans,sans-serif" font-size="23" fill="#F5F2EB" font-weight="700">Their route. Your ride.</text><text x="1030" y="853" font-family="DejaVu Sans,sans-serif" font-size="21" fill="#B9CECA" font-weight="400">TagRides · Editorial illustration</text></svg>

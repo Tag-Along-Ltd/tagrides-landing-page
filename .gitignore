@@ -11,6 +11,7 @@
 
 # next.js
 /.next/
+/.next-help-review/
 /out/
 
 # production
@@ -54,3 +55,13 @@ next-env.d.ts
 slide-*.png
 v[0-9]*.png
 web-*.png
+
+# Local production/editing work and review captures (not website source).
+/artifacts/
+/media/
+/.cloudflare-build/
+/hadassah-*.png
+/yhly-*.png
+/deno.lock
+/public/assets/pitch/image.png
+**/__pycache__/

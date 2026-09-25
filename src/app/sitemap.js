@@ -1,4 +1,5 @@
 import { getPublishedPosts } from '@/lib/posts';
+import { helpArticles, helpCategories, helpReview } from '@/data/help/articles.mjs';
 
 const BASE = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') || 'https://tagrider.com';
 
@@ -14,6 +15,16 @@ export default async function sitemap() {
     { url: `${BASE}/contribute`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${BASE}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${BASE}/support`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    ...[
+      '',
+      ...helpCategories.map(({ id }) => `/${id}`),
+      ...helpArticles.map(({ slug }) => `/${slug}`),
+    ].map((suffix) => ({
+      url: `${BASE}/help${suffix}`,
+      lastModified: new Date(`${helpReview.date}T12:00:00Z`),
+      changeFrequency: 'monthly',
+      priority: suffix ? 0.6 : 0.8,
+    })),
     ...posts.map((post) => ({
       url: `${BASE}/blog/${post.slug}`,
       lastModified: new Date(post.updatedAt || post.publishedAt),
