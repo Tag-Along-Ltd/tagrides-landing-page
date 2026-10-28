@@ -41,7 +41,7 @@ export function SupportCTA() {
             href="/support#founder-film"
             className="text-sm font-semibold text-primary-soft underline underline-offset-4"
           >
-            Watch the founder’s 2½-minute pitch
+            Watch the 4-minute TagRides story
           </Link>
         </div>
       </div>

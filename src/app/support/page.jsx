@@ -4,7 +4,7 @@ import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
 import { BackedBy } from '@/components/sections/BackedBy';
 import { BankTransfer } from '@/components/support/BankTransfer';
-import { FounderVideo } from '@/components/sections/FounderVideo';
+import { StoryFilm } from '@/components/sections/StoryFilm';
 import { support, supportEmail } from '@/data/support';
 
 const title = 'Help put the first TagRides route to work';
@@ -103,7 +103,7 @@ export default function SupportPage() {
         <div className="mb-7 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-              The person behind the product
+              Watch the story
             </p>
             <h2
               id="founder-film-heading"
@@ -119,7 +119,7 @@ export default function SupportPage() {
             Ready to support? <ArrowRight className="size-4" aria-hidden="true" />
           </a>
         </div>
-        <FounderVideo />
+        <StoryFilm />
       </section>
 
       <div className="mx-auto grid max-w-6xl gap-12 px-6 pb-20 lg:grid-cols-[1fr_1fr] lg:gap-16">

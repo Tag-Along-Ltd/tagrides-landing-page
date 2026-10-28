@@ -8,7 +8,7 @@ But you don’t know their route. They don’t know you need a ride. Neither of 
 
 **That missing connection is why we’re building TagRides.**
 
-Prefer to hear the story? [Watch the founder’s 2½-minute pitch](/support#founder-film), then choose how to help put the first route to work.
+Prefer to hear the story? [Watch the 4-minute TagRides story](/support#founder-film), then choose how to help put the first route to work.
 
 ## “Who am I getting in with?” is a serious question
 

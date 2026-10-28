@@ -16,7 +16,7 @@ import { EarthGlobe } from '@/components/magicui/earth-globe';
 import { Starfield } from '@/components/magicui/starfield';
 import { Header } from '@/components/sections/Header';
 import { Reveal, RevealStagger, RevealItem } from '@/components/sections/Reveal';
-import { FounderVideo } from '@/components/sections/FounderVideo';
+import { StoryFilm } from '@/components/sections/StoryFilm';
 import { LagosResearchCarousel } from '@/components/sections/LagosResearchCarousel';
 import { BackedBy } from '@/components/sections/BackedBy';
 import { FinalCTA } from '@/components/sections/FinalCTA';
@@ -182,14 +182,14 @@ export default function AboutUsPage() {
         <div className="mx-auto max-w-5xl px-6 py-14 md:py-28">
           <Reveal>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-              Meet the founder
+              Watch the story
             </p>
             <h2 className="mt-3 max-w-3xl font-display text-3xl font-bold leading-tight tracking-tight text-foreground md:text-5xl">
-              The story behind the shared journey.
+              The car is going there anyway.
             </h2>
           </Reveal>
           <Reveal delay={0.1} className="mt-10">
-            <FounderVideo showSupportLink />
+            <StoryFilm showSupportLink />
           </Reveal>
         </div>
       </section>
