@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { PitchSection } from '../../motion/Section';
 import pitch from '@/data/pitch.json';
 import brand from '@/data/brand.json';
+import { GooglePlayBadge } from '@/components/brand/GooglePlayBadge';
 
 // AppCTA — customer close. Big call to action: install the app, or
 // join the waitlist if not yet shipped to stores. Two-button layout
@@ -67,6 +68,7 @@ export function AppCTA() {
             Apply as a pilot driver
             <ArrowUpRight className="size-4 transition group-hover:translate-x-0.5" />
           </a>
+          <GooglePlayBadge className="-my-2" />
         </motion.div>
 
         <motion.div

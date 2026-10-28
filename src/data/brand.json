@@ -37,6 +37,8 @@
   "app": {
     "url": "https://app.tagrider.com",
     "signin": "https://app.tagrider.com/signin",
-    "signinDriver": "https://app.tagrider.com/signin?intent=drive"
+    "signinDriver": "https://app.tagrider.com/signin?intent=drive",
+    "googlePlay": "https://play.google.com/store/apps/details?id=com.tagrides.app",
+    "googlePlayLive": true
   }
 }

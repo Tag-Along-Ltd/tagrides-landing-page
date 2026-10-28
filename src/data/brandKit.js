@@ -4,7 +4,7 @@ export const brandBusiness = {
   tagline: 'Their route. Your ride.',
   website: 'https://tagrider.com',
   email: 'hello@tagrider.com',
-  operationsEmail: 'oniya.olaiya@tagrider.com',
+  operationsEmail: 'olaiya@tagrider.com',
   phone: '+234 9064 520 743',
   address:
     '6, Alh Memunatu Shelle Crescent, off Murphy Mudashiru Str., Rovers Estate, Owode-Ogombo, Lagos State, Nigeria',

@@ -17,6 +17,7 @@ import { FinalCTA } from '@/components/sections/FinalCTA';
 import { Footer } from '@/components/sections/Footer';
 import { SupportCTA } from '@/components/support/SupportCTA';
 import brand from '@/data/brand.json';
+import { GooglePlayBadge } from '@/components/brand/GooglePlayBadge';
 
 // Optimized from the Pexels source clip. Keep this local and compressed;
 // remote UHD autoplay video was the biggest landing-page performance hit.
@@ -93,8 +94,8 @@ const Home1 = () => {
             </h1>
 
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-foreground-muted md:text-xl">
-              Pick up riders already heading your way. Agree the fare before pickup, keep your
-              route, and let your empty seats pay their part.
+              Car, bus, keke or okada: pick up riders already heading your way. Agree the fare
+              before pickup, keep your route, and let your empty seats pay their part.
             </p>
 
             <p className="mt-5 font-display text-sm font-semibold tracking-tight text-accent md:text-base">
@@ -124,9 +125,10 @@ const Home1 = () => {
                 Join the rider waitlist
               </Link>
             </div>
+            <GooglePlayBadge className="-ml-2 mt-4" />
 
             <div className="mt-6 text-xs uppercase tracking-[0.18em] text-foreground-disabled">
-              For daily commuters · private-car owners · prospective pilot drivers
+              Cars · minibuses · kekes · motorcycles · any vehicle with an empty seat
             </div>
           </div>
 

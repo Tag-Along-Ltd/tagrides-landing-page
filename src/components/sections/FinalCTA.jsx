@@ -7,6 +7,7 @@ import { ArrowRight } from 'lucide-react';
 
 import { Reveal } from './Reveal';
 import brand from '@/data/brand.json';
+import { GooglePlayBadge } from '@/components/brand/GooglePlayBadge';
 import { landingApiPath } from '@/lib/landingApi';
 
 // Pre-launch CTA — two-bucket conversion split:
@@ -87,6 +88,7 @@ export function FinalCTA() {
               Apply as a pilot driver
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
             </a>
+            <GooglePlayBadge className="-my-2" />
           </div>
 
           <p className="mt-12 text-sm font-semibold text-white/85">

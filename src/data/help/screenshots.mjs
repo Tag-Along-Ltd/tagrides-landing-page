@@ -321,9 +321,9 @@ export const helpScreenshots = {
     'Confirm a real pickup after identifying the passenger.',
     'Driver pickup panel with Aisha, stops, fare, wait countdown and Confirm pickup; the sample map is waiting for driver location.',
     [
-      point('Identify the passenger and check the requested seats.', 95, 28),
-      point('Read the wait countdown.', 95, 57),
-      point('Confirm pickup only for the passenger who is boarding.', 95, 64),
+      point('Identify the passenger and check the requested seats.', 95, 60),
+      point('Read the wait countdown.', 95, 88),
+      point('Confirm pickup only for the passenger who is boarding.', 95, 94),
     ],
   ),
   D12: image(
@@ -344,14 +344,24 @@ export const helpScreenshots = {
       'Do not increase physical capacity to work around a contradictory state.',
     ],
   ),
+  D15: image(
+    'D15',
+    'The passenger drop-off confirmation, opened as a bottom sheet.',
+    'Driver drop-off sheet showing Aisha, the completed stops, 500-naira fare, 75-naira fee, 425-naira earnings, optional rating and Confirm dropoff.',
+    [
+      point('Check the completed passenger and stops.', 95, 38),
+      point('Fare, service fee and earnings are separate amounts.', 95, 55),
+      point('Feedback is optional; confirm the passenger’s drop-off.', 95, 93),
+    ],
+  ),
   D16: image(
     'D16',
     'Reconcile the route’s gross fare, service fee and net earnings.',
     'Driver completion with sample totals of 500 naira gross, 75 fee, 425 net and a confirmed wallet earning.',
     [
-      point('Gross, fee and net are different amounts.', 95, 23),
-      point('Read the settlement note and per-rider line.', 95, 37),
-      point('Return home after completion.', 95, 46),
+      point('Gross, fee and net are different amounts.', 95, 73),
+      point('Read the settlement note and per-rider line.', 95, 87),
+      point('Return home after completion.', 95, 96),
     ],
   ),
   D17: image(

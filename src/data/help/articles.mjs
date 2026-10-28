@@ -1258,12 +1258,15 @@ export const helpArticles = [
   make(
     'account',
     'delete-account',
-    'Request account deletion',
-    'Find the deletion control and understand the difference between deleting an account and logging out.',
+    'Delete your TagRides account and data',
+    'How to delete your TagRides account (TAG-ALONG LTD) in the app or by email, what is deleted, and what is kept.',
     {
       before: [
-        'Resolve any active journey, pending payment or support case you need to keep accessible.',
-        'Keep the records you need before requesting deletion.',
+        'This page covers the TagRides app published by TAG-ALONG LTD on Google Play.',
+        'No app? Email privacy@tagrider.com from the email address on your account, or include the phone number you signed up with, with the subject Delete my TagRides account. We confirm your identity and complete the request within 30 days.',
+        'Deleted: your profile (name, email, phone number, photo), sign-in sessions and devices, rating comments, stored driver location history, and for drivers your driver profile, vehicle details and uploaded documents and photos.',
+        'Kept: trip, wallet, payment, refund and payout records, and star ratings, are kept under a random reference that no longer shows your name, email or phone number, for as long as Nigerian tax, accounting and dispute rules require. Records needed for an open dispute, a fraud or safety case, or a legal request are kept until it is resolved.',
+        'Resolve any active journey, pending payment or support case you need to keep accessible, and keep the records you need before deleting.',
       ],
       steps: [
         step(

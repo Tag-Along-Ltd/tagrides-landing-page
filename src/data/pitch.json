@@ -59,10 +59,10 @@
           }
         ],
         "milestones": [
-          "Yaba ↔ Lagos Island corridor live with 300 verified drivers (Q4 2026)",
-          "20,000 monthly active riders along the Yaba commute belt (Q2 2027)",
-          "$15K MRR — unit economics validated, ready for Seed (Q4 2027)",
-          "Lagos-wide expansion playbook proven, Abuja pilot scoped (Q1 2028)"
+          "Month 3 after funding: Yaba ↔ Lagos Island corridor live to the public",
+          "Month 6: 300 verified drivers across cars, buses and kekes on the corridor",
+          "Month 12: 20,000 monthly riders, about $18K monthly revenue",
+          "Month 18: unit economics proven on one corridor, seed-ready with the next corridor scoped"
         ]
       }
     },
@@ -149,7 +149,7 @@
   "cover": {
     "eyebrow": "TAG-ALONG LTD · LAGOS FIRST",
     "title": "Their route. Your ride.",
-    "subtitle": "Built first in Lagos for everyone daily ride-hail leaves behind. Drivers heading your way pick you up, you agree the fare directly, and you pay only for your leg of the trip.",
+    "subtitle": "Built first in Lagos for everyone daily ride-hail leaves behind. Cars, buses, kekes and okadas already heading your way pick you up, you agree the fare directly, and you pay only for your leg of the trip.",
     "presenter": "Oniya Olaiya, Founder & CEO",
     "version": "v1.0 · 2026"
   },
@@ -166,7 +166,7 @@
         "image": "/assets/pitch/persona-fatima.jpg",
         "pain": [
           "Pays ₦4,500–₦7,400 daily for Bolt to feel safe — 6–10× what a danfo costs.",
-          "Loses 30+ hours a week to traffic and stop-and-go pickups.",
+          "Loses 30+ hours a month to traffic and stop-and-go pickups.",
           "Doesn't trust danfos: no records, no accountability, no comfort."
         ]
       },
@@ -242,30 +242,30 @@
   "solution": {
     "eyebrow": "THE SOLUTION",
     "title": "Tag along the routes drivers already drive.",
-    "subtitle": "Drivers stay on their route. Riders walk to a parked driver or to a pickup point on a moving driver's route.",
+    "subtitle": "Any vehicle with an empty seat can join: car, minibus, keke or motorcycle where lawful. Drivers stay on their route. Riders walk to a parked driver or to a pickup point on a moving driver's route.",
     "mechanics": [
       {
         "step": "1",
-        "title": "Share the trip",
-        "detail": "An Along driver enters a destination and available seats. TagRides maps the route and works out the pickup."
+        "title": "Drivers share their trip",
+        "detail": "A driver in any vehicle enters where they are going and how many seats are free. Parked at a loading point or already moving, they stay on their own route."
       },
       {
         "step": "2",
-        "title": "Send separate offers",
-        "detail": "TagRides drafts a fare for the road shared with each driver. The rider can edit and send several offers; each driver accepts or counters once."
+        "title": "Riders send offers",
+        "detail": "TagRides suggests a fair price for the part of the route the rider shares. Riders can offer to several drivers; each accepts or counters once."
       },
       {
         "step": "3",
-        "title": "Start with the first match",
-        "detail": "TagRides makes the first agreed match the pickup automatically. The rider can switch to another accepted driver until boarding confirms the seat and payment."
+        "title": "First agreed driver picks up",
+        "detail": "The first driver who agrees becomes the pickup, and the others stay as backups. The seat is only confirmed when the rider boards."
       }
     ]
   },
 
   "product": {
     "eyebrow": "THE PRODUCT",
-    "title": "Built in Flutter. Private MVP deployed on AWS.",
-    "subtitle": "The end-to-end rider flow is in internal testing. The first public corridor has not launched yet.",
+    "title": "Built in Flutter and Go. Android app in Google Play testing.",
+    "subtitle": "The full rider and driver flow runs on our own AWS backend. The Android app is in Google Play internal testing; the first public corridor launches after the round.",
     "flows": [
       {
         "screen": "searchDestination",
@@ -292,43 +292,43 @@
 
   "market": {
     "eyebrow": "THE MARKET",
-    "title": "A global market hidden in journeys already happening.",
-    "subtitle": "TagRides fills empty seats in cars, taxis, vans, minibuses, tricycles, and motorcycles where lawful, without creating a new driver trip. Lagos is the first launch market, not the limit.",
+    "title": "Start with one corridor. Every dense city has more.",
+    "subtitle": "TagRides fills empty seats in cars, buses, kekes and motorcycles where lawful, without creating a new driver trip. Sized bottom-up from our own pricing: ₦1,200 average shared fare, 15% take rate.",
     "scale": [
       {
+        "label": "1 corridor",
+        "value": 0.0015,
+        "display": "$1.5M",
+        "detail": "Yaba ↔ Lagos Island · 5,300 rides/day · fare value per year ($0.22M TagRides revenue)"
+      },
+      {
+        "label": "Lagos-wide",
+        "value": 0.0141,
+        "display": "$14.1M",
+        "detail": "10 corridors · 50,000 rides/day · fare value per year ($2.1M revenue)"
+      },
+      {
         "label": "5 cities",
-        "value": 0.0219,
-        "display": "$21.9M",
-        "detail": "3,000 rides/day/city · $4 average fare"
-      },
-      {
-        "label": "10 cities",
-        "value": 0.1825,
-        "display": "$182.5M",
-        "detail": "10,000 rides/day/city · $5 average fare"
-      },
-      {
-        "label": "20 cities",
-        "value": 1.095,
-        "display": "$1.10B",
-        "detail": "25,000 rides/day/city · $6 average fare"
+        "value": 0.0706,
+        "display": "$70.6M",
+        "detail": "Lagos-scale networks · 250,000 rides/day · fare value per year ($10.6M revenue)"
       }
     ],
     "facts": [
       {
-        "value": "5",
-        "label": "Launch-city operating case"
+        "value": "₦1,200",
+        "label": "Average shared fare per rider"
       },
       {
-        "value": "15,000",
-        "label": "Illustrative daily rides across five cities"
+        "value": "15%",
+        "label": "TagRides take rate"
       },
       {
-        "value": "$4",
-        "label": "Assumed average rider fare in the five-city case"
+        "value": "₦1,550",
+        "label": "Assumed naira per US dollar"
       }
     ],
-    "source": "TagRides scenario model. Planning assumptions, not a third-party market forecast."
+    "source": "TagRides scenario model, not a third-party forecast. Fare value = rides × ₦1,200 × 365 ÷ ₦1,550/$; revenue = 15% of fare value."
   },
 
   "model": {
@@ -338,8 +338,8 @@
     "streams": [
       {
         "label": "Commission on rider fares",
-        "share": "10–15%",
-        "detail": "Charged only when the rider boards. Driver and rider both see the fee up-front."
+        "share": "15%",
+        "detail": "Taken only when the rider boards. Driver and rider see the fee up front."
       },
       {
         "label": "Platform services",
@@ -349,16 +349,16 @@
     ],
     "pricing": [
       {
-        "label": "Distance-based base",
-        "detail": "Per-km tariff visible before the rider taps Request."
+        "label": "Distance-based draft fare",
+        "detail": "A per-km draft for the shared part of the route, shown before the rider sends an offer."
       },
       {
-        "label": "Time-of-day modifier",
-        "detail": "Higher during rush — but capped at the driver's accepted offer, never algorithmic surge."
+        "label": "Pay for your leg only",
+        "detail": "Riders pay for the stretch they share, not for a whole car or a detour."
       },
       {
         "label": "One-round fare decision",
-        "detail": "The rider sends the system's draft. The driver accepts or counters once. The rider accepts, declines, or leaves the response open."
+        "detail": "The driver accepts or counters once. No algorithmic surge pricing."
       }
     ]
   },
@@ -370,7 +370,7 @@
     "lanes": [
       {
         "title": "Wedge",
-        "timeframe": "Months 0–3",
+        "timeframe": "Months 0–3 after funding",
         "icon": "wedge",
         "detail": "Own the Yaba ↔ Lagos Island corridor — the iconic Mainland-to-Island commute. UNILAG, YabaTech, Computer Village, Sabo, Adekunle, Onike all feed into Marina across Eko Bridge.",
         "tactics": [
@@ -386,7 +386,7 @@
         "detail": "Target: onboard 300 verified drivers and route operators who already travel daily Yaba ↔ Island routes.",
         "tactics": [
           "Onboarding incentive: ₦15K signup + first-50-rides bonus",
-          "Recruit commuters, taxis, vans, and existing route operators on the Mainland-Island axis",
+          "Recruit car owners, bus and keke operators who already run Mainland-Island routes",
           "Driver community ops (WhatsApp groups, weekly meetups)",
           "Partner with vehicle inspection + insurance providers"
         ]
@@ -397,6 +397,7 @@
         "icon": "demand",
         "detail": "20,000 monthly active riders along the Yaba commute belt.",
         "tactics": [
+          "Scheduled morning and evening departures: riders book a held seat ahead, walk-ups fill the rest",
           "Referral economy (₦500 credit per converted invite)",
           "UNILAG + YabaTech campus brand ambassadors",
           "Content SEO targeting Lagos commute queries (Yaba → CMS, Sabo → Marina etc)"
@@ -404,7 +405,7 @@
       },
       {
         "title": "Expansion",
-        "timeframe": "Year 2+",
+        "timeframe": "Month 18+",
         "icon": "expansion",
         "detail": "Lagos-wide → Abuja → Accra / Nairobi / Kigali. Then cities where daily private ride-hail prices out the working class — SE Asia, LATAM, the same corridor playbook ports.",
         "tactics": [
@@ -573,15 +574,88 @@
         "Offers sent to several matched drivers",
         "Multiple accepted options",
         "Backups survive primary selection",
-        "Seat is confirmed when the rider boards"
+        "Seat is confirmed when the rider boards",
+        "Any vehicle type: car, bus, keke, motorcycle"
       ],
       "cols": [
-        { "name": "TagRides", "us": true, "values": ["yes", "yes", "yes", "yes", "yes", "yes"] },
-        { "name": "Uber / Bolt", "us": false, "values": ["no", "no", "no", "no", "no", "no"] },
-        { "name": "InDrive", "us": false, "values": ["no", "no", "yes", "no", "no", "no"] },
-        { "name": "BlaBlaCar", "us": false, "values": ["yes", "partial", "no", "no", "no", "no"] },
-        { "name": "Shuttlers", "us": false, "values": ["yes", "yes", "no", "no", "no", "no"] },
-        { "name": "Danfo", "us": false, "values": ["yes", "yes", "partial", "no", "no", "yes"] }
+        {
+          "name": "TagRides",
+          "us": true,
+          "values": [
+            "yes",
+            "yes",
+            "yes",
+            "yes",
+            "yes",
+            "yes",
+            "yes"
+          ]
+        },
+        {
+          "name": "Uber / Bolt",
+          "us": false,
+          "values": [
+            "no",
+            "no",
+            "no",
+            "no",
+            "no",
+            "no",
+            "partial"
+          ]
+        },
+        {
+          "name": "InDrive",
+          "us": false,
+          "values": [
+            "no",
+            "no",
+            "yes",
+            "no",
+            "no",
+            "no",
+            "partial"
+          ]
+        },
+        {
+          "name": "BlaBlaCar",
+          "us": false,
+          "values": [
+            "yes",
+            "partial",
+            "no",
+            "no",
+            "no",
+            "no",
+            "no"
+          ]
+        },
+        {
+          "name": "Shuttlers",
+          "us": false,
+          "values": [
+            "yes",
+            "yes",
+            "no",
+            "no",
+            "no",
+            "no",
+            "no"
+          ]
+        },
+        {
+          "name": "Danfo",
+          "us": false,
+          "values": [
+            "yes",
+            "yes",
+            "partial",
+            "no",
+            "no",
+            "yes",
+            "no"
+          ]
+        }
       ]
     },
     "differentiation": [
@@ -625,16 +699,28 @@
         "context": "Company-reported: AWS $25K + Microsoft $25K + Google $2K"
       },
       {
-        "value": "1",
-        "label": "Private MVP on AWS",
-        "context": "Flutter app, Go services, MQTT; internal testing"
+        "value": "Android",
+        "label": "App in Google Play testing",
+        "context": "Flutter app, Go services, real-time matching on AWS"
       }
     ],
     "backers": [
-      { "name": "Tony Elumelu Foundation", "note": "Seed grant recipient, 2024" },
-      { "name": "ALX Ventures", "note": "Programme alumni" },
-      { "name": "Ugwumba Enterprise Challenge", "note": "Challenge winner" },
-      { "name": "AWS Activate", "note": "$25,000 in credits" }
+      {
+        "name": "Tony Elumelu Foundation",
+        "note": "Seed grant recipient, 2024"
+      },
+      {
+        "name": "ALX Ventures",
+        "note": "Programme alumni"
+      },
+      {
+        "name": "Ugwumba Enterprise Challenge",
+        "note": "Challenge winner"
+      },
+      {
+        "name": "AWS Activate",
+        "note": "$25,000 in credits"
+      }
     ]
   },
 
@@ -647,7 +733,7 @@
         "name": "Oniya Olaiya",
         "role": "Founder & CEO · Engineering Lead",
         "image": "/assets/pitch/team-olaiya.jpg",
-        "bio": "Ships the full stack — Flutter rider + driver app, Go backend services, MQTT real-time geolocation pipeline, AWS infra. Took ownership of the production system as funding tightened. ALX Ventures alum; preparing TagRides for its first Lagos corridor launch."
+        "bio": "Built and runs the whole product: the Flutter rider and driver app, Go backend services, real-time matching and location pipeline, and AWS infrastructure. ALX Ventures alum, preparing the first public corridor."
       },
       {
         "name": "Efemena Abraham",
@@ -667,19 +753,51 @@
   "financials": {
     "eyebrow": "FINANCIALS",
     "title": "A five-year management projection.",
-    "subtitle": "Planning assumptions, not historical performance. Driver supply and 35% month-three cohort retention remain to be validated in the public pilot.",
+    "subtitle": "Management projection, not historical performance. Year 1 assumes an average of about 2,400 rides a day while the first corridor ramps; driver supply and 35% month-three retention are validated in the public pilot.",
     "projection": [
-      { "year": 1, "revenue": 100000, "expenses": 106000 },
-      { "year": 2, "revenue": 180000, "expenses": 112500 },
-      { "year": 3, "revenue": 300000, "expenses": 135000 },
-      { "year": 4, "revenue": 525000, "expenses": 168750 },
-      { "year": 5, "revenue": 750000, "expenses": 202500 }
+      {
+        "year": 1,
+        "revenue": 100000,
+        "expenses": 106000
+      },
+      {
+        "year": 2,
+        "revenue": 180000,
+        "expenses": 112500
+      },
+      {
+        "year": 3,
+        "revenue": 300000,
+        "expenses": 135000
+      },
+      {
+        "year": 4,
+        "revenue": 525000,
+        "expenses": 168750
+      },
+      {
+        "year": 5,
+        "revenue": 750000,
+        "expenses": 202500
+      }
     ],
     "unitEcon": [
-      { "label": "Avg ride fare", "value": "₦1,200" },
-      { "label": "Avg tag-along share", "value": "₦300 / leg" },
-      { "label": "Take rate", "value": "12%" },
-      { "label": "Platform revenue per ride", "value": "₦144" }
+      {
+        "label": "Avg shared fare",
+        "value": "₦1,200"
+      },
+      {
+        "label": "Take rate",
+        "value": "15%"
+      },
+      {
+        "label": "Revenue per ride",
+        "value": "₦180"
+      },
+      {
+        "label": "Rides/day for $100K a year",
+        "value": "≈2,400"
+      }
     ]
   },
 
@@ -687,25 +805,54 @@
     "eyebrow": "MILESTONES",
     "title": "Built quietly. Scaled deliberately.",
     "items": [
-      { "when": "2023", "label": "Registered TAG-ALONG LTD", "status": "done" },
-      { "when": "2023 Q3", "label": "Surveyed 210 Lagos riders", "status": "done" },
-      { "when": "2024", "label": "Tony Elumelu Foundation grant", "status": "done" },
       {
-        "when": "2025 Q2",
-        "label": "Private MVP deployed on AWS — Flutter + Go",
+        "when": "2023",
+        "label": "Registered TAG-ALONG LTD",
         "status": "done"
       },
-      { "when": "2026 Q3", "label": "Pre-seed close ($750K target)", "status": "now" },
       {
-        "when": "2026 Q4",
-        "label": "Public Lagos launch — Yaba ↔ Lagos Island corridor",
+        "when": "2023–24",
+        "label": "Surveyed 210 Lagos riders",
+        "status": "done"
+      },
+      {
+        "when": "2024",
+        "label": "Tony Elumelu Foundation grant",
+        "status": "done"
+      },
+      {
+        "when": "2025",
+        "label": "Private MVP on AWS: Flutter app, Go services",
+        "status": "done"
+      },
+      {
+        "when": "Oct 2026",
+        "label": "Android app in Google Play testing",
+        "status": "done"
+      },
+      {
+        "when": "Now",
+        "label": "Raising $750K pre-seed",
+        "status": "now"
+      },
+      {
+        "when": "Month 3",
+        "label": "Public launch: Yaba ↔ Lagos Island corridor",
         "status": "next"
       },
-      { "when": "2027", "label": "Lagos-wide expansion + Abuja pilot", "status": "next" },
-      { "when": "2028+", "label": "Nigeria-wide → Accra / Nairobi / Kigali", "status": "future" },
       {
-        "when": "2030+",
-        "label": "First non-African market — SE Asia / LATAM pilot",
+        "when": "Month 12",
+        "label": "20,000 monthly riders, ~$18K monthly revenue",
+        "status": "next"
+      },
+      {
+        "when": "Month 18+",
+        "label": "Lagos-wide corridors, then Abuja",
+        "status": "future"
+      },
+      {
+        "when": "Later",
+        "label": "Accra / Nairobi / Kigali, then SE Asia / LATAM",
         "status": "future"
       }
     ]
@@ -734,7 +881,7 @@
     "contact": {
       "name": "Oniya Olaiya",
       "role": "Founder & CEO",
-      "email": "oniya.olaiya@tagrider.com",
+      "email": "olaiya@tagrider.com",
       "phone": "+234 9064 520 743",
       "site": "https://tagrider.com",
       "portfolio": "https://oniya.tagrider.com"

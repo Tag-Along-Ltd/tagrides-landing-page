@@ -5,6 +5,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 import { Lockup } from '@/components/brand/Logo';
 import brand from '@/data/brand.json';
+import { GooglePlayBadge } from '@/components/brand/GooglePlayBadge';
 
 // Brand logos rendered as inline SVG glyphs — lucide-react intentionally
 // doesn't ship trademark-protected logos, and these stay crisper anyway.
@@ -106,6 +107,7 @@ export function Footer() {
               {brand.catchphrase} Built first in {brand.location.city}, for cities where routes are
               already shared.
             </p>
+            <GooglePlayBadge className="-ml-2 mt-3" height={52} />
 
             {/* Social icons — circular, line-icon, hover scales + flips accent */}
             <div className="mt-6 flex items-center gap-3">

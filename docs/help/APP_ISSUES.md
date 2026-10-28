@@ -25,6 +25,18 @@ No new app fixes are part of the article-writing pass.
 
 ## Documentation workflow findings (not app defects)
 
+### Follow-up: driver sheet placement (2026-09-25)
+
+The driver captures previously mounted sheets at the top of a Scaffold rather
+than opening modal routes. D10/D12/D13/D16 now use the production presenters;
+D15 adds the actual passenger drop-off sheet. Callouts were repositioned and
+all five images were visually reviewed. The large blank region below the old
+captures was a wrapper error. A separate native app issue was reproduced and
+fixed: drop-off/session-completion safe-area padding sat outside the painted
+surface, leaving a 34-pixel bottom gap. See frontend
+`docs/DRIVER_SHEET_LOGIN_REVIEW.md` for regression tests and login diagnostics.
+These are local updates; no landing-page deployment was performed.
+
 - Fixed the fixture's history envelope to include journey/session timestamps so
   the real parser can construct the record. The history screenshot now shows a
   real rendered sample journey rather than a malformed-fixture error.
